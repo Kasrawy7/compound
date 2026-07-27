@@ -333,7 +333,7 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
   </div>
   <div class="card">
     <h2>Baseline &amp; re-tests</h2>
-    <div class="note">Day 1, 28, 56, 84. The ankle, shoulder and balance rows are the ones that will change how you feel — they measure exactly what you said you don't trust.</div>
+    <div class="note">Day 1, 28, 56, 84. The ankle, shoulder and balance rows are the ones that will change how you feel — they measure the things people have least confidence in.</div>
     <div style="overflow-x:auto;margin-top:10px"><table><thead><tr><th>Measure</th><th>Target</th><th>D1</th><th>D28</th><th>D56</th><th>D84</th></tr></thead><tbody id="mtb"></tbody></table></div>
   </div>
 </section>
@@ -449,7 +449,7 @@ function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2])
 function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
 function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
 
-var BUILD='2026-07-28 · build 4 · muscle readiness';   /* bump this whenever the file changes, so you can tell which version is live */
+var BUILD='2026-07-28 · build 5 · muscle readiness';   /* bump this whenever the file changes, so you can tell which version is live */
 var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], v:2 };
 var S=rd()||JSON.parse(JSON.stringify(DEF));
 ['days','ex','met','wt','wa','reviews','ladder'].forEach(function(k){ if(!S[k])S[k]={}; });
@@ -467,7 +467,7 @@ var DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 var EX={
 /* --- lower A --- */
 squat:{n:'Goblet squat or leg press',s:4,r:'8–12',tag:'Quads',cues:['Goblet if ankle stiffness stops you reaching depth; leg press if it doesn\'t.','Full foot planted — big toe, little toe, heel.','Knees travel forward over the toes. That is allowed and it is what loads the quad.','Down for 2 seconds, up with intent.'],why:'Your main quad builder. Thin legs are a volume problem, and this carries most of it.'},
-bulg:{n:'Bulgarian split squat',s:3,r:'10 / leg',tag:'Quads · Hips',cues:['Back foot on a bench, front foot far enough forward that the front shin stays near vertical.','Drop straight down, not forward.','Hold a rail with one hand if balance is the limiter — that is not cheating, it lets you load the leg.'],why:'Unilateral loading is where hip stability actually gets built. You named weak hips; this is the fix.'},
+bulg:{n:'Bulgarian split squat',s:3,r:'10 / leg',tag:'Quads · Hips',cues:['Back foot on a bench, front foot far enough forward that the front shin stays near vertical.','Drop straight down, not forward.','Hold a rail with one hand if balance is the limiter — that is not cheating, it lets you load the leg.'],why:'Unilateral loading is where hip stability actually gets built. If your hips feel unreliable, this is the fix.'},
 legext:{n:'Leg extension',s:3,r:'12–15',tag:'Quads',cues:['Pause one second at the top, squeeze.','Lower slowly — 3 seconds.','No swinging or bouncing out of the bottom.'],why:'Isolated quad volume with no stability demand, so you can add real work without fatigue elsewhere.'},
 calfst:{n:'Standing calf raise',s:4,r:'12–15',tag:'Calves',cues:['Knee straight — this is the gastrocnemius.','Full stretch at the bottom, 2-second pause at the top.','Slow. Calves respond to time under tension, not bounce.'],why:'Half your calf. Skipping the pause is why most people\'s calves never grow.'},
 calfse:{n:'Seated calf raise',s:3,r:'15–20',tag:'Calves',cues:['Knee bent — this hits the soleus, which the standing version largely misses.','Higher reps, slower tempo.'],why:'The other half. Soleus is most of your standing endurance and ankle support.'},
@@ -489,9 +489,9 @@ rdl:{n:'Romanian deadlift',s:4,r:'8–10',tag:'Hamstrings',cues:['Hinge at the h
 hipt:{n:'Hip thrust',s:4,r:'10–12',tag:'Glutes',cues:['Upper back on a bench, chin tucked, ribs down.','Drive through the heels, squeeze the glutes at the top and pause.','Do not arch the lower back to get higher.'],why:'The most direct glute loading available. Glutes drive hip stability, which is on your list.'},
 hamc:{n:'Seated or lying hamstring curl',s:3,r:'12–15',tag:'Hamstrings',cues:['Slow on the way back down — that is where the growth is.','Point the toes toward your shins to bias the hamstring.'],why:'Hamstrings do two separate jobs. RDLs cover the hip one; this covers the knee one. You need both.'},
 revl:{n:'Reverse lunge',s:3,r:'10 / leg',tag:'Legs',cues:['Step backwards, not forwards.','Front shin stays near vertical, weight on the front leg.','Push through the front heel to return.'],why:'Kinder on the knees than forward lunges and more glute-dominant.'},
-hipab:{n:'Hip abduction (machine or band)',s:3,r:'15–20',tag:'Glute med',cues:['Lean the torso forward slightly to bias glute medius.','Pause at the end of range.'],why:'Glute medius controls the knee and pelvis. Weakness here shows up as exactly the hip and ankle complaints you described.'},
+hipab:{n:'Hip abduction (machine or band)',s:3,r:'15–20',tag:'Glute med',cues:['Lean the torso forward slightly to bias glute medius.','Pause at the end of range.'],why:'Glute medius controls the knee and pelvis. Weakness here shows up as exactly the sort of hip and ankle problems that limit squat depth and balance.'},
 slcalf:{n:'Single-leg calf raise',s:3,r:'12 / side',tag:'Calves',cues:['Hold something for balance, full range, slow.','Do the weaker side first and match the stronger side to it.'],why:'Two-legged raises let the stronger side hide. You have asymmetries; this finds them.'},
-toes:{n:'Toe splay + short foot',s:3,r:'15',tag:'Feet',cues:['Toe splay: spread the toes apart and hold 3 seconds.','Short foot: without curling the toes, draw the ball of the foot toward the heel to raise the arch. Hold 5 seconds.','Barefoot, seated at first, then standing.'],why:'Direct work for the weak feet you named. Two minutes, and virtually nobody does it.'},
+toes:{n:'Toe splay + short foot',s:3,r:'15',tag:'Feet',cues:['Toe splay: spread the toes apart and hold 3 seconds.','Short foot: without curling the toes, draw the ball of the foot toward the heel to raise the arch. Hold 5 seconds.','Barefoot, seated at first, then standing.'],why:'Direct work for weak feet. Two minutes, and virtually nobody does it.'},
 kraise:{n:'Hanging knee raise or dead bug',s:3,r:'12',tag:'Core',cues:['Dead bug if the hang bothers your shoulders — it is equally good.','Ribs pulled down toward the hips, lower back flat.','Slow. No swinging.'],why:'Anterior core stops the lower back compensating for tight hips.'},
 /* --- upper B --- */
 pdown:{n:'Lat pulldown',s:4,r:'10–12',tag:'Back',cues:['Medium grip — hands just outside shoulder width.','Bar comes to the upper chest, IN FRONT of your head.','Lead with the elbows driving down.'],why:'Vertical pulling for lat width.',safe:'IN FRONT of the head, medium grip, to the chest — every time. Behind-the-neck pulldowns are explicitly contraindicated after a Bankart repair, and wide grips push the shoulder toward the position of instability.'},
@@ -523,7 +523,7 @@ var MUS={
  grip:{n:'Grip & forearms',recov:48,sat:4,side:'f'},
  abs:{n:'Abs & anterior core',recov:60,sat:5,side:'f'},
  glutes:{n:'Glutes',recov:72,sat:6,side:'b',pri:1},
- gmed:{n:'Glute medius',recov:48,sat:4,side:'b',pri:1,note:'Controls the knee and pelvis. Weakness here shows up as the hip and ankle complaints you listed.'},
+ gmed:{n:'Glute medius',recov:48,sat:4,side:'b',pri:1,note:'Controls the knee and pelvis. Weakness here shows up as hip and ankle instability.'},
  quads:{n:'Quads',recov:72,sat:6,side:'f',pri:1},
  hams:{n:'Hamstrings',recov:72,sat:6,side:'b',pri:1},
  adduc:{n:'Adductors',recov:60,sat:4,side:'f'},
@@ -787,7 +787,7 @@ function actsFor(k){
 var LADDER=[
  {w:'1–2',r:'One 20-second exchange a day with someone you have no obligation to talk to — a cashier, gym staff, someone from another team.',t:'Volume at zero stakes. You are not trying to be interesting yet; you are trying to make initiating boring.'},
  {w:'3–4',r:'The second-question rule: ask one open question and two follow-ups before you say anything about yourself.',t:'This is the actual mechanic of avoiding small talk. Anyone asks one question. Almost nobody asks two follow-ups.'},
- {w:'5–6',r:'One conversation a week with a stranger that runs past two minutes. Gyms and cafés are the highest-yield settings.',t:'Sustained improvisation — the part you said feels forced. It stops feeling forced around rep fifteen.'},
+ {w:'5–6',r:'One conversation a week with a stranger that runs past two minutes. Gyms and cafés are the highest-yield settings.',t:'Sustained improvisation — the part that tends to feel forced. It stops feeling forced around rep fifteen.'},
  {w:'7–8',r:'Tell one prepared 90-second story to a group of friends. Then tell the same story in 45 seconds.',t:'Compression under mild pressure, in a safe room.'},
  {w:'9–10',r:'Say something unprompted in one work meeting a week — a position, not a question.',t:'Your voice in a room where you are being judged. Also the direct fix for feeling you are not delivering at your level.'},
  {w:'11–12',r:'One structured setting: a speaking group such as Toastmasters, a work presentation, or hosting a gathering yourself.',t:'Real stakes, real audience, real feedback. The rung that changes how you see yourself.'}
@@ -1657,7 +1657,7 @@ social:function(){
    +'<li style="margin-bottom:6px"><b style="color:var(--tx)">The second-question rule</b> is the whole trick. One question is an interview. Two follow-ups on the same answer is a conversation.</li>'
    +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Openers that go somewhere:</b> "What\'s had your attention lately?" · "What are you working on that you actually care about?" · "How did you end up doing that?" · "What\'s the part people get wrong?"</li>'
    +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Shared context beats cleverness.</b> Same gym, same wedding, same queue. Name the shared thing, ask about it. No wit required.</li>'
-   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Work the edges at big gatherings.</b> Groups of two are open, groups of five are closed. Talk to whoever is standing alone — they are relieved, not annoyed. This is the specific fix for the discomfort you described.</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Work the edges at big gatherings.</b> Groups of two are open, groups of five are closed. Talk to whoever is standing alone — they are relieved, not annoyed. This is the specific fix for feeling stranded at a big gathering.</li>'
    +'<li><b style="color:var(--tx)">You are allowed to leave.</b> Knowing you can exit after four minutes — "I\'m going to grab a drink, good to meet you" — is what makes starting feel low-risk.</li></ul></div>';
   return h;
 },
