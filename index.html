@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#0b0e13">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Reset 84">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230b0e13'/%3E%3Ccircle cx='90' cy='90' r='58' fill='none' stroke='%23222b3b' stroke-width='13'/%3E%3Cpath d='M90 32a58 58 0 0 1 41 99' fill='none' stroke='%234da3ff' stroke-width='13' stroke-linecap='round'/%3E%3Ctext x='90' y='104' font-family='-apple-system,Helvetica,sans-serif' font-size='44' font-weight='800' fill='%23e9eef6' text-anchor='middle'%3E84%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e13'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-size='26' font-weight='800' fill='%234da3ff' text-anchor='middle'%3E84%3C/text%3E%3C/svg%3E">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Reset 84</title>
+<style>
+:root{
+  --bg:#0b0e13; --card:#141922; --card2:#1b2230; --card3:#222b3b; --line:#28334a;
+  --tx:#e9eef6; --dim:#8f9cb3; --dim2:#5f6b81;
+  --ac:#4da3ff; --gd:#34d399; --wn:#fbbf24; --bd:#f87171; --pu:#a78bfa; --or:#fb923c;
+  --r:16px; --sh:0 4px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{overscroll-behavior-y:none}
+body{background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;padding-bottom:86px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 14px}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font:inherit;background:var(--bg);border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 10px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac)}
+input[type=number]{-moz-appearance:textfield}
+textarea{min-height:70px;resize:vertical}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:40;background:rgba(11,14,19,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topin{max-width:1000px;margin:0 auto;padding:11px 14px;display:flex;align-items:center;gap:12px}
+.logo{font-weight:800;letter-spacing:-.4px;font-size:17px;white-space:nowrap}
+.logo b{color:var(--ac)}
+.tmeta{display:flex;gap:7px;flex:1;overflow-x:auto;scrollbar-width:none}
+.tmeta::-webkit-scrollbar{display:none}
+.chip{background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:11.5px;white-space:nowrap;color:var(--dim);display:flex;gap:5px;align-items:center}
+.chip b{color:var(--tx);font-size:12.5px}
+.chip.hot{border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.1)}
+.chip.gd{border-color:rgba(52,211,153,.45);background:rgba(52,211,153,.1)}
+
+/* ---------- day header ---------- */
+.dayhead{display:flex;align-items:center;gap:14px;padding:16px 0 6px}
+.ring{position:relative;width:74px;height:74px;flex:0 0 74px}
+.ring svg{transform:rotate(-90deg)}
+.ring .pc{position:absolute;inset:0;display:grid;place-items:center;font-size:17px;font-weight:800;letter-spacing:-.5px}
+.dayhead .t1{font-size:20px;font-weight:750;letter-spacing:-.4px}
+.dayhead .t2{color:var(--dim);font-size:13px;margin-top:2px}
+.daynav{display:flex;gap:6px;margin-left:auto}
+.ico{width:34px;height:34px;border-radius:10px;background:var(--card2);border:1px solid var(--line);display:grid;place-items:center;font-size:15px;color:var(--dim)}
+.ico:active{transform:scale(.94)}
+
+/* ---------- sections ---------- */
+.sec{margin:20px 0 8px;display:flex;align-items:center;gap:9px}
+.sec h3{font-size:11.5px;text-transform:uppercase;letter-spacing:1.1px;color:var(--dim2);font-weight:700}
+.sec .ln{flex:1;height:1px;background:var(--line)}
+.sec .ct{font-size:11.5px;color:var(--dim2);font-variant-numeric:tabular-nums}
+
+/* ---------- activity card ---------- */
+.act{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:9px;overflow:hidden;transition:border-color .15s}
+.act.done{border-color:rgba(52,211,153,.4);background:linear-gradient(180deg,rgba(52,211,153,.06),var(--card))}
+.act.skip{opacity:.5}
+.act.open{border-color:var(--ac)}
+.arow{display:flex;align-items:center;gap:12px;padding:13px 14px}
+.tick{width:28px;height:28px;flex:0 0 28px;border-radius:9px;border:2px solid var(--dim2);display:grid;place-items:center;font-size:15px;font-weight:900;color:transparent;transition:.15s}
+.tick:active{transform:scale(.88)}
+.act.done .tick{background:var(--gd);border-color:var(--gd);color:#053}
+.act.skip .tick{background:var(--dim2);border-color:var(--dim2);color:#000}
+.ainfo{flex:1;min-width:0}
+.aname{font-weight:640;font-size:14.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.asub{color:var(--dim);font-size:12.5px;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.act.open .asub{white-space:normal}
+.atime{color:var(--dim2);font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.exp{width:26px;flex:0 0 26px;text-align:center;color:var(--dim2);font-size:12px;transition:transform .2s}
+.act.open .exp{transform:rotate(180deg);color:var(--ac)}
+.body{display:none;padding:0 14px 15px;border-top:1px solid var(--line);margin-top:2px}
+.act.open .body{display:block}
+.body h5{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:14px 0 7px;font-weight:700}
+.body ol,.body ul{padding-left:19px;color:var(--dim);font-size:13.5px}
+.body li{margin-bottom:5px}
+.body li b{color:var(--tx)}
+.why{background:var(--card2);border-left:3px solid var(--pu);border-radius:0 10px 10px 0;padding:10px 12px;font-size:13px;color:var(--dim);margin-top:12px}
+.why b{color:var(--pu)}
+.safe{background:rgba(251,191,36,.09);border:1px solid rgba(251,191,36,.32);border-radius:11px;padding:10px 12px;font-size:13px;color:#f2e2bd;margin-top:12px}
+.safe b{color:var(--wn)}
+
+.pill{font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;letter-spacing:.5px;text-transform:uppercase}
+.p-a{background:rgba(77,163,255,.16);color:var(--ac)}
+.p-g{background:rgba(52,211,153,.16);color:var(--gd)}
+.p-w{background:rgba(251,191,36,.16);color:var(--wn)}
+.p-b{background:rgba(248,113,113,.16);color:var(--bd)}
+.p-p{background:rgba(167,139,250,.16);color:var(--pu)}
+.p-o{background:rgba(251,146,60,.16);color:var(--or)}
+
+/* controls */
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{background:var(--ac);color:#04121f;border-radius:11px;padding:9px 15px;font-weight:700;font-size:13.5px}
+.btn:active{transform:scale(.97)}
+.btn.g{background:var(--card2);color:var(--tx);border:1px solid var(--line);font-weight:600}
+.btn.sm{padding:6px 12px;font-size:12.5px;border-radius:9px}
+.btn.wide{width:100%;justify-content:center;text-align:center}
+.btn.gd{background:var(--gd);color:#053}
+.btn.bd{background:rgba(248,113,113,.15);color:var(--bd);border:1px solid rgba(248,113,113,.35)}
+
+.count{display:flex;align-items:center;gap:10px}
+.cbtn{width:40px;height:40px;border-radius:12px;background:var(--card3);border:1px solid var(--line);display:grid;place-items:center;font-size:19px;font-weight:700;color:var(--tx)}
+.cbtn:active{transform:scale(.9)}
+.cval{font-size:24px;font-weight:800;min-width:52px;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.ctar{color:var(--dim2);font-size:12px}
+
+.dots{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.dot{width:26px;height:26px;border-radius:8px;background:var(--card3);border:1px solid var(--line);display:grid;place-items:center;font-size:11px;color:var(--dim2);font-weight:700}
+.dot.on{background:var(--ac);border-color:var(--ac);color:#04121f}
+
+.opts{display:grid;gap:7px;margin-top:4px}
+.opt{background:var(--card2);border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:13px;color:var(--dim);text-align:left;display:flex;gap:9px;align-items:flex-start}
+.opt.on{border-color:var(--gd);background:rgba(52,211,153,.08);color:var(--tx)}
+.opt i{font-style:normal;font-weight:800;color:var(--dim2);flex:0 0 auto}
+.opt.on i{color:var(--gd)}
+
+/* exercise table */
+.extab{margin-top:6px}
+.exrow{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:8px}
+.exhead{display:flex;align-items:center;gap:9px}
+.exhead .n{font-weight:640;font-size:13.5px;flex:1}
+.exhead .pr{font-size:11px;color:var(--dim2);white-space:nowrap}
+.exmeta{color:var(--dim);font-size:12px;margin-top:3px}
+.sets{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.setbox{background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:5px 7px;display:flex;align-items:center;gap:4px}
+.setbox span{font-size:10px;color:var(--dim2);font-weight:700}
+.setbox input{width:44px;padding:3px 4px;border:none;background:none;text-align:center;font-size:13px;font-weight:600}
+.exhow{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+.exrow.open .exhow{display:block}
+.exhow ul{padding-left:17px;font-size:12.5px;color:var(--dim)}
+.exhow li{margin-bottom:4px}
+
+/* nav */
+nav.bot{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(11,14,19,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:7px 6px calc(7px + env(safe-area-inset-bottom))}
+nav.bot .in{max-width:640px;margin:0 auto;display:flex}
+nav.bot button{flex:1;padding:7px 2px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--dim2);font-size:10px;font-weight:600;border-radius:12px}
+nav.bot button .g{font-size:19px;line-height:1}
+nav.bot button.on{color:var(--ac);background:rgba(77,163,255,.1)}
+
+.view{display:none}.view.on{display:block;animation:fade .18s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.card h2{font-size:15.5px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .note{color:var(--dim);font-size:13px;margin-top:5px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}
+th{color:var(--dim2);font-size:10.5px;text-transform:uppercase;letter-spacing:.8px}
+td.n{font-variant-numeric:tabular-nums}
+
+.bar{height:8px;background:var(--card3);border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--ac);border-radius:99px;transition:width .4s}
+.bar.gd>i{background:var(--gd)}
+.bar.wn>i{background:var(--wn)}
+
+.hm{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.hm i{aspect-ratio:1;border-radius:3px;background:var(--card3);display:block}
+.hmwrap{overflow-x:auto}
+
+.badge{background:var(--card2);border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center;opacity:.4}
+.badge.got{opacity:1;border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.07)}
+.badge .e{font-size:25px;line-height:1}
+.badge .n{font-size:11.5px;font-weight:700;margin-top:5px}
+.badge .d{font-size:10.5px;color:var(--dim2);margin-top:2px;line-height:1.35}
+
+/* modal / player */
+.mask{position:fixed;inset:0;z-index:90;background:rgba(4,6,10,.88);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+.mask.on{display:flex}
+.modal{background:var(--card);border:1px solid var(--line);border-radius:20px;max-width:460px;width:100%;padding:22px;box-shadow:var(--sh);max-height:88vh;overflow-y:auto}
+.pl-step{font-size:11px;color:var(--ac);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.pl-name{font-size:24px;font-weight:800;letter-spacing:-.6px;margin:6px 0 3px}
+.pl-how{color:var(--dim);font-size:13.5px;margin-bottom:14px}
+.pl-time{font-size:56px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:-2px;margin:6px 0}
+.pl-dots{display:flex;gap:4px;justify-content:center;margin:12px 0 16px;flex-wrap:wrap}
+.pl-dots i{width:8px;height:8px;border-radius:99px;background:var(--card3)}
+.pl-dots i.on{background:var(--ac)}
+.pl-dots i.did{background:var(--gd)}
+
+.toast{position:fixed;left:50%;bottom:98px;background:var(--gd);color:#042;padding:10px 20px;border-radius:999px;font-weight:700;font-size:13px;z-index:95;box-shadow:var(--sh);text-align:center;max-width:88vw;cursor:pointer;
+  opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(18px);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+.toast.on{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);
+  transition:opacity .25s ease,transform .25s ease,visibility 0s linear 0s}
+.toast.xp{background:var(--wn);color:#3a2a00}
+.toast.lv{background:var(--pu);color:#1a1030}
+
+.fw{position:fixed;inset:0;pointer-events:none;z-index:94}
+.fw i{position:absolute;width:8px;height:8px;border-radius:2px;animation:fall 1.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(560deg);opacity:0}}
+
+.src{color:var(--dim2);font-size:11px;margin-top:10px;line-height:1.5}
+.info{background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.28);border-radius:12px;padding:11px 13px;font-size:13px;color:#cfe3fb}
+.info b{color:var(--ac)}
+.warn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:11px 13px;font-size:13px;color:#f2e4c3}
+.warn b{color:var(--wn)}
+.empty{color:var(--dim2);font-size:13px;text-align:center;padding:22px 10px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--dim);white-space:nowrap}
+.tabs button.on{background:var(--ac);border-color:var(--ac);color:#04121f;font-weight:700}
+footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topin">
+  <div class="logo">RESET<b>84</b></div>
+  <div class="tmeta" id="tmeta"></div>
+</div></div>
+
+<div class="wrap">
+
+<!-- ============ TODAY ============ -->
+<section class="view on" id="v-today">
+  <div class="dayhead">
+    <div class="ring">
+      <svg width="74" height="74"><circle cx="37" cy="37" r="31" fill="none" stroke="#222b3b" stroke-width="7"/>
+      <circle id="ring-p" cx="37" cy="37" r="31" fill="none" stroke="#4da3ff" stroke-width="7" stroke-linecap="round" stroke-dasharray="195" stroke-dashoffset="195"/></svg>
+      <div class="pc" id="ring-t">0%</div>
+    </div>
+    <div>
+      <div class="t1" id="d-t1">Today</div>
+      <div class="t2" id="d-t2"></div>
+    </div>
+    <div class="daynav">
+      <button class="ico" id="d-prev">‹</button>
+      <button class="ico" id="d-today">•</button>
+      <button class="ico" id="d-next">›</button>
+    </div>
+  </div>
+  <div id="acts"></div>
+  <div class="card" style="margin-top:14px">
+    <h2>Note for today</h2>
+    <div class="note">What happened, what got in the way, what you noticed. One line is enough.</div>
+    <textarea id="d-note" style="margin-top:9px"></textarea>
+  </div>
+  <div class="info" style="margin-bottom:14px"><b>Missing one day does not break this.</b> Lally et al. tracked 96 people forming daily habits over twelve weeks: a single missed opportunity had no material effect. Two in a row is where it matters. Use <b>Skip</b> rather than leaving it blank — a logged miss is data, a hidden week is the only real failure.</div>
+</section>
+
+<!-- ============ PROGRAM ============ -->
+<section class="view" id="v-prog">
+  <div class="card">
+    <h2>The whole programme <span class="pill p-a">84 days</span></h2>
+    <div class="note">Every week, every day, everything in it. Tap a day to see exactly what it contains.</div>
+  </div>
+  <div class="tabs" id="wtabs"></div>
+  <div id="progbody"></div>
+</section>
+
+<!-- ============ LIBRARY ============ -->
+<section class="view" id="v-lib">
+  <div class="card">
+    <h2>Exercise &amp; drill library</h2>
+    <div class="note">How to do each one, what it's for, what to avoid, and every load you've logged.</div>
+    <input id="libq" placeholder="Search — squat, cuff, ankle, calf…" style="margin-top:11px">
+  </div>
+  <div id="libbody"></div>
+</section>
+
+<!-- ============ PROGRESS ============ -->
+<section class="view" id="v-prog2">
+  <div class="g2">
+    <div class="card">
+      <h2>Level <span id="lv-n" class="pill p-p">1</span></h2>
+      <div class="note" id="lv-name">Getting off the sofa</div>
+      <div class="row" style="justify-content:space-between;margin-top:12px;font-size:12.5px;color:var(--dim)">
+        <span><b style="color:var(--tx)" id="lv-xp">0</b> XP</span><span id="lv-next"></span>
+      </div>
+      <div class="bar" style="margin-top:6px"><i id="lv-bar" style="width:0%"></i></div>
+      <div class="src">You earn XP for logging, not for perfection. Skipping honestly still earns a little.</div>
+    </div>
+    <div class="card">
+      <h2>Adherence</h2>
+      <div class="note">Green is done, grey is missed, dark is still to come. Twelve columns, one per week.</div>
+      <div class="hmwrap" style="margin-top:12px"><div class="hm" id="hm"></div></div>
+      <div class="row" style="margin-top:10px;font-size:12px;color:var(--dim)"><span id="hm-stat"></span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Badges</h2>
+    <div class="note">Not decoration — each one marks something that's actually hard.</div>
+    <div class="g3" id="badges" style="margin-top:12px"></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <h2>Weight &amp; waist</h2>
+      <svg id="ch-wt" style="width:100%;height:110px;display:block;margin-top:8px"></svg>
+      <div class="row" style="margin-top:10px">
+        <input type="number" step="0.1" id="i-wt" placeholder="kg" style="flex:1;min-width:80px">
+        <input type="number" step="0.5" id="i-wa" placeholder="waist cm" style="flex:1;min-width:80px">
+        <button class="btn sm" id="b-wt">Log</button>
+      </div>
+      <div class="src">Same conditions every time: morning, after the bathroom, before food. Judge the weekly average, never a single day — daily swings of 1–2 kg are water.</div>
+    </div>
+    <div class="card">
+      <h2>Substances</h2>
+      <svg id="ch-sub" style="width:100%;height:110px;display:block;margin-top:8px"></svg>
+      <div class="row" style="margin-top:8px;gap:14px;font-size:12px;color:var(--dim)">
+        <span><i style="display:inline-block;width:9px;height:9px;background:var(--or);border-radius:2px"></i> IQOS sticks</span>
+        <span><i style="display:inline-block;width:9px;height:9px;background:var(--pu);border-radius:2px"></i> Weed sessions</span>
+      </div>
+      <div id="sub-stat" style="margin-top:10px;font-size:13px;color:var(--dim)"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Training volume by week</h2>
+    <div class="note">Total kg lifted (sets × reps × load). The number that should be trending up.</div>
+    <svg id="ch-vol" style="width:100%;height:120px;display:block;margin-top:10px"></svg>
+  </div>
+  <div class="card">
+    <h2>Baseline &amp; re-tests</h2>
+    <div class="note">Day 1, 28, 56, 84. The ankle, shoulder and balance rows are the ones that will change how you feel — they measure exactly what you said you don't trust.</div>
+    <div style="overflow-x:auto;margin-top:10px"><table><thead><tr><th>Measure</th><th>Target</th><th>D1</th><th>D28</th><th>D56</th><th>D84</th></tr></thead><tbody id="mtb"></tbody></table></div>
+  </div>
+</section>
+
+<!-- ============ MORE ============ -->
+<section class="view" id="v-more">
+  <div class="tabs" id="mtabs"></div>
+  <div id="morebody"></div>
+</section>
+
+</div>
+
+<nav class="bot"><div class="in">
+  <button data-v="today" class="on"><span class="g">◉</span>Today</button>
+  <button data-v="prog"><span class="g">▤</span>Programme</button>
+  <button data-v="lib"><span class="g">☰</span>Library</button>
+  <button data-v="prog2"><span class="g">◔</span>Progress</button>
+  <button data-v="more"><span class="g">⋯</span>More</button>
+</div></nav>
+
+<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<div class="fw" id="fw"></div>
+
+<script>
+/* ═══════════════════ STORAGE ═══════════════════ */
+var KEY='reset84_v2', canStore=true, memBlob=null;
+try{ localStorage.setItem('__t','1'); localStorage.removeItem('__t'); }catch(e){ canStore=false; }
+function rd(){ if(!canStore) return memBlob; try{ var r=localStorage.getItem(KEY); return r?JSON.parse(r):null; }catch(e){ return null; } }
+function wr(){
+  if(typeof cur!=='undefined' && S.days && S.days[cur]) S.days[cur].u=Date.now();  /* per-day stamp — what makes merging safe */
+  S.dev = S.dev || (Math.random().toString(36).slice(2,7));
+  if(!canStore){ memBlob=JSON.parse(JSON.stringify(S)); return; }
+  try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){ memBlob=JSON.parse(JSON.stringify(S)); }
+}
+
+/* ── merge two devices without losing anything ── */
+function doneCount(day){ if(!day||!day.a) return 0; return Object.keys(day.a).filter(function(x){ return day.a[x].done||day.a[x].skip; }).length; }
+function mergeState(inc){
+  if(!inc || typeof inc!=='object' || !inc.days) throw new Error('That does not look like a Reset 84 backup.');
+  var out=JSON.parse(JSON.stringify(S)), added=0, updated=0, kept=0;
+  Object.keys(inc.days).forEach(function(k){
+    var a=out.days[k], b=inc.days[k];
+    if(!a){ out.days[k]=b; added++; return; }
+    var au=a.u||0, bu=b.u||0;
+    if(bu>au){ out.days[k]=b; updated++; }
+    else if(bu===au && bu===0){
+      /* no timestamps to compare — keep whichever has more logged, then fill gaps */
+      if(doneCount(b)>doneCount(a)){ out.days[k]=b; updated++; }
+      else kept++;
+      Object.keys(b.a||{}).forEach(function(id){ if(!out.days[k].a[id]) out.days[k].a[id]=b.a[id]; });
+      if(!out.days[k].n && b.n) out.days[k].n=b.n;
+    } else {
+      kept++;
+      Object.keys(b.a||{}).forEach(function(id){ if(!a.a[id]) { a.a[id]=b.a[id]; } });
+      if(!a.n && b.n) a.n=b.n;
+    }
+  });
+  Object.keys(inc.ex||{}).forEach(function(x){ out.ex[x]=out.ex[x]||{};
+    Object.keys(inc.ex[x]).forEach(function(dt){ if(!out.ex[x][dt]) out.ex[x][dt]=inc.ex[x][dt]; }); });
+  ['wt','wa'].forEach(function(f){ out[f]=out[f]||{};
+    Object.keys(inc[f]||{}).forEach(function(dt){ if(out[f][dt]==null) out[f][dt]=inc[f][dt]; }); });
+  Object.keys(inc.met||{}).forEach(function(i){ out.met[i]=out.met[i]||{};
+    Object.keys(inc.met[i]).forEach(function(c){ if(!out.met[i][c]) out.met[i][c]=inc.met[i][c]; }); });
+  Object.keys(inc.reviews||{}).forEach(function(wk){ out.reviews[wk]=out.reviews[wk]||{};
+    Object.keys(inc.reviews[wk]).forEach(function(q){ if(!out.reviews[wk][q]) out.reviews[wk][q]=inc.reviews[wk][q]; }); });
+  Object.keys(inc.ladder||{}).forEach(function(i){ if(inc.ladder[i]) out.ladder[i]=true; });
+  (inc.badges||[]).forEach(function(b){ if(out.badges.indexOf(b)<0) out.badges.push(b); });
+  (inc.books||[]).forEach(function(b){ if(!out.books.some(function(x){ return x.d===b.d&&x.t===b.t&&x.min===b.min; })) out.books.push(b); });
+  out.xp=Math.max(out.xp||0, inc.xp||0);
+  if(inc.start && inc.start<out.start) out.start=inc.start;
+  S=out; wr();
+  return {added:added,updated:updated,kept:kept};
+}
+
+function iso(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2]); }
+function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
+function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
+
+var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], v:2 };
+var S=rd()||JSON.parse(JSON.stringify(DEF));
+['days','ex','met','wt','wa','reviews','ladder'].forEach(function(k){ if(!S[k])S[k]={}; });
+if(!S.books)S.books=[]; if(!S.badges)S.badges=[]; if(typeof S.xp!=='number')S.xp=0; if(!S.start)S.start=DEF.start;
+
+var TODAY=iso(new Date()), cur=TODAY;
+function dayN(k){ return diff(k,S.start)+1; }
+function wkN(k){ return Math.max(1,Math.ceil(dayN(k)/7)); }
+function DY(k){ if(!S.days[k]) S.days[k]={a:{},n:''}; if(!S.days[k].a)S.days[k].a={}; return S.days[k]; }
+function A(k,id){ var d=DY(k); if(!d.a[id]) d.a[id]={}; return d.a[id]; }
+function pretty(k){ return pd(k).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}); }
+var DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+/* ═══════════════════ EXERCISE LIBRARY ═══════════════════ */
+var EX={
+/* --- lower A --- */
+squat:{n:'Goblet squat or leg press',s:4,r:'8–12',tag:'Quads',cues:['Goblet if ankle stiffness stops you reaching depth; leg press if it doesn\'t.','Full foot planted — big toe, little toe, heel.','Knees travel forward over the toes. That is allowed and it is what loads the quad.','Down for 2 seconds, up with intent.'],why:'Your main quad builder. Thin legs are a volume problem, and this carries most of it.'},
+bulg:{n:'Bulgarian split squat',s:3,r:'10 / leg',tag:'Quads · Hips',cues:['Back foot on a bench, front foot far enough forward that the front shin stays near vertical.','Drop straight down, not forward.','Hold a rail with one hand if balance is the limiter — that is not cheating, it lets you load the leg.'],why:'Unilateral loading is where hip stability actually gets built. You named weak hips; this is the fix.'},
+legext:{n:'Leg extension',s:3,r:'12–15',tag:'Quads',cues:['Pause one second at the top, squeeze.','Lower slowly — 3 seconds.','No swinging or bouncing out of the bottom.'],why:'Isolated quad volume with no stability demand, so you can add real work without fatigue elsewhere.'},
+calfst:{n:'Standing calf raise',s:4,r:'12–15',tag:'Calves',cues:['Knee straight — this is the gastrocnemius.','Full stretch at the bottom, 2-second pause at the top.','Slow. Calves respond to time under tension, not bounce.'],why:'Half your calf. Skipping the pause is why most people\'s calves never grow.'},
+calfse:{n:'Seated calf raise',s:3,r:'15–20',tag:'Calves',cues:['Knee bent — this hits the soleus, which the standing version largely misses.','Higher reps, slower tempo.'],why:'The other half. Soleus is most of your standing endurance and ankle support.'},
+tib:{n:'Tibialis raise',s:3,r:'20',tag:'Ankles',cues:['Heels on the floor or a plate, lean back against a wall, pull your toes up toward your shins.','Slow down on the way back. That is the whole exercise.','Add load by standing further from the wall.'],why:'The front of your shin. This is the specific muscle behind "weak ankles" and almost nobody trains it. Directly on your list.'},
+cope:{n:'Copenhagen plank (short lever)',s:2,r:'20 s / side',tag:'Adductors',cues:['Start with the knee on the bench, not the ankle — that is the short lever version.','Body in one line, hips lifted.','Only progress to the ankle when 30 seconds is easy.'],why:'Adductors and hip stability. Neglected, and a common weak link when the hips feel unreliable.'},
+bal:{n:'Single-leg balance, eyes closed',s:3,r:'30 s / side',tag:'Feet · Ankles',cues:['Shoes off. Hands on hips.','Let the foot work — you should feel the arch and toes gripping.','If 30 seconds is impossible at first, that is your baseline, and it improves fast.'],why:'Foot and ankle proprioception. Harder than it sounds, and it is the cheapest thing you can do for the weak-feet complaint.'},
+/* --- upper A --- */
+floorp:{n:'Neutral-grip dumbbell floor press',s:3,r:'10–12',tag:'Chest',cues:['Lie on the floor. Palms facing each other.','Elbows stop when they touch the ground — that is the point.','Elbows tucked to about 45°, never flared to the sides.'],why:'The floor physically prevents your elbows travelling behind your body, which is the position that threatens a Bankart repair. Same chest work, no risk.',safe:'This replaces the barbell bench press for you. Do not substitute it back.'},
+csrow:{n:'Chest-supported dumbbell row',s:4,r:'10–12',tag:'Back',cues:['Chest on an incline bench so your torso cannot swing.','Pull the elbows back and down, not up.','Squeeze the shoulder blades at the top for a full second.'],why:'Back thickness with zero stabilising demand on your shoulders or lower back.'},
+crow:{n:'Seated cable row, neutral grip',s:3,r:'12',tag:'Back',cues:['Neutral grip, chest tall.','Shoulder blades initiate — the arms follow.','Do not lean back to move more weight.'],why:'Horizontal pulling balances the desk-job forward posture directly.'},
+facep:{n:'Face pull',s:3,r:'15–20',tag:'Cuff · Posture',cues:['Rope at eye height. Pull toward your face, hands ending beside your ears.','External rotation at the end — show your palms outward.','Light. This is never a strength movement.'],why:'External rotators and rear delts — the two things holding your shoulder blades where they belong. Posture and shoulder health in one.'},
+frontr:{n:'Thumb-up front raise',s:2,r:'12',tag:'Shoulders',cues:['Thumb pointing up throughout.','Stop at shoulder height. Not above.','Light weight, controlled.'],why:'Front delt work in the safest available plane.',safe:'Shoulder height is the ceiling. Post-Bankart guidance specifically flags overhead raises, and the thumb-up position is the one usually described as safe.'},
+sler:{n:'Side-lying external rotation',s:3,r:'15 / side',tag:'Rotator cuff',cues:['Lie on your side, elbow pinned to your ribs at 90°.','Rotate the forearm up only as far as it goes without the elbow drifting.','Tiny weight — 2 to 4 kg is normal and correct.'],why:'This is rotator cuff work, not shoulder work. It is the single most important movement in your programme for getting the shoulders back.',safe:'If you feel a pinch rather than a muscular effort, reduce range and tell your physio.'},
+pronY:{n:'Prone Y raise',s:3,r:'12',tag:'Lower trap',cues:['Face down on an incline bench, arms out at roughly 30° to make a Y.','Thumbs up, lift with the shoulder blade, not the arm.','No weight at first. Bodyweight is plenty.'],why:'Lower trapezius — the muscle that stops your shoulder blade tipping forward. Weak in nearly everyone with desk posture.'},
+hang:{n:'Dead hang',s:3,r:'20–30 s',tag:'Decompression',cues:['Overhand grip, shoulder width, let the body relax and lengthen.','Shoulders stay slightly engaged, not fully limp, if that feels better.'],why:'Decompresses the shoulder and stretches the lats.',safe:'ONLY if completely pain-free. If it pinches or feels unstable, skip it entirely and mention it at your physio appointment. Do not push into this one.'},
+arms:{n:'Rope curl + triceps pushdown',s:3,r:'12 each',tag:'Arms',cues:['Elbows stay at your sides.','Keep all triceps work in front of the body — no overhead extensions.'],why:'Arms. Also the least risky loading your shoulder sees all week.'},
+/* --- lower B --- */
+rdl:{n:'Romanian deadlift',s:4,r:'8–10',tag:'Hamstrings',cues:['Hinge at the hips. Push your backside back, do not squat down.','Bar or dumbbells stay close to your legs.','Stop the rep the moment your lower back wants to round. That point is your range.','Feel it stretch in the hamstrings, not the spine.'],why:'The best posterior chain builder there is, and the direct counterweight to eight hours of sitting.'},
+hipt:{n:'Hip thrust',s:4,r:'10–12',tag:'Glutes',cues:['Upper back on a bench, chin tucked, ribs down.','Drive through the heels, squeeze the glutes at the top and pause.','Do not arch the lower back to get higher.'],why:'The most direct glute loading available. Glutes drive hip stability, which is on your list.'},
+hamc:{n:'Seated or lying hamstring curl',s:3,r:'12–15',tag:'Hamstrings',cues:['Slow on the way back down — that is where the growth is.','Point the toes toward your shins to bias the hamstring.'],why:'Hamstrings do two separate jobs. RDLs cover the hip one; this covers the knee one. You need both.'},
+revl:{n:'Reverse lunge',s:3,r:'10 / leg',tag:'Legs',cues:['Step backwards, not forwards.','Front shin stays near vertical, weight on the front leg.','Push through the front heel to return.'],why:'Kinder on the knees than forward lunges and more glute-dominant.'},
+hipab:{n:'Hip abduction (machine or band)',s:3,r:'15–20',tag:'Glute med',cues:['Lean the torso forward slightly to bias glute medius.','Pause at the end of range.'],why:'Glute medius controls the knee and pelvis. Weakness here shows up as exactly the hip and ankle complaints you described.'},
+slcalf:{n:'Single-leg calf raise',s:3,r:'12 / side',tag:'Calves',cues:['Hold something for balance, full range, slow.','Do the weaker side first and match the stronger side to it.'],why:'Two-legged raises let the stronger side hide. You have asymmetries; this finds them.'},
+toes:{n:'Toe splay + short foot',s:3,r:'15',tag:'Feet',cues:['Toe splay: spread the toes apart and hold 3 seconds.','Short foot: without curling the toes, draw the ball of the foot toward the heel to raise the arch. Hold 5 seconds.','Barefoot, seated at first, then standing.'],why:'Direct work for the weak feet you named. Two minutes, and virtually nobody does it.'},
+kraise:{n:'Hanging knee raise or dead bug',s:3,r:'12',tag:'Core',cues:['Dead bug if the hang bothers your shoulders — it is equally good.','Ribs pulled down toward the hips, lower back flat.','Slow. No swinging.'],why:'Anterior core stops the lower back compensating for tight hips.'},
+/* --- upper B --- */
+pdown:{n:'Lat pulldown',s:4,r:'10–12',tag:'Back',cues:['Medium grip — hands just outside shoulder width.','Bar comes to the upper chest, IN FRONT of your head.','Lead with the elbows driving down.'],why:'Vertical pulling for lat width.',safe:'IN FRONT of the head, medium grip, to the chest — every time. Behind-the-neck pulldowns are explicitly contraindicated after a Bankart repair, and wide grips push the shoulder toward the position of instability.'},
+land:{n:'Half-kneeling landmine press',s:3,r:'10 / side',tag:'Shoulders',cues:['One knee down, bar in the hand on the same side as the down knee.','Press up and slightly forward along the bar\'s arc.','Your hand stays in front of you and inside your field of view the entire rep.'],why:'This is your overhead press substitute, and it is a deliberate choice rather than a compromise.',safe:'The angled bar path means your arm never reaches the abducted-and-externally-rotated position that threatens the repair. Post-Bankart guidance asks that you finish a press where you can still see your hand — this does that by design.'},
+dbrow:{n:'Single-arm dumbbell row',s:3,r:'12 / side',tag:'Back',cues:['One hand on a bench, flat back.','Let the shoulder blade travel — reach at the bottom, squeeze at the top.'],why:'Unilateral back work that lets the shoulder blade move through full range.'},
+incp:{n:'Incline dumbbell press, 30°, neutral grip',s:3,r:'10–12',tag:'Chest',cues:['Bench at 30°, no higher.','Palms facing each other, elbows tucked.','Stop before the elbows pass your torso.'],why:'Upper chest with the most shoulder-friendly grip and angle available.',safe:'30° maximum and neutral grip. A steeper incline moves this toward an overhead press.'},
+cer45:{n:'Cable external rotation at 45° abduction',s:3,r:'15 / side',tag:'Rotator cuff',cues:['Elbow supported at roughly 45° out from the body.','Rotate slowly, tiny weight.','Stop well short of the end range at first.'],why:'Progresses your cuff toward a more demanding angle than the side-lying version — this is how the shoulder gets trustworthy again.',safe:'Progress the angle only when the 0° version is completely comfortable. Never rush this one.'},
+latr:{n:'Lateral raise to 60–70°',s:3,r:'12–15',tag:'Shoulders',cues:['Stop below shoulder height. Roughly where your arm is at 60–70°.','Thumbs slightly up, elbows softly bent.','Light. Control the descent.'],why:'Side delt work inside a safe range.',safe:'Shorter range than you are used to, deliberately. Lateral raises above shoulder height are commonly flagged for their impingement effect on the cuff.'},
+reard:{n:'Rear delt fly',s:3,r:'15',tag:'Rear delts',cues:['Bent over or on an incline bench, arms out to the sides.','Small weight, squeeze at the end.'],why:'Rear delts are posture and shoulder health, and they are the delt everybody under-trains.'},
+farm:{n:'Farmer carry',s:3,r:'40 m',tag:'Grip · Trunk',cues:['Heavy dumbbells, walk tall, ribs stacked over hips.','Shoulders packed down, not shrugged up.','Breathe.'],why:'Grip, trunk and loaded shoulder stability with zero overhead risk. One of the best returns on time in the gym.'},
+/* --- cardio --- */
+z2:{n:'Zone 2 cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Conversational pace — you could talk but would not want to sing.','Roughly 60–70% of your maximum heart rate.','Walk, cycle or elliptical. Incline treadmill walking is ideal.'],why:'Aerobic base is what makes four lifting days recoverable. It is also half of the cardiovascular benefit.'},
+card:{n:'Moderate-vigorous cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Harder than Tuesday — breathing noticeably, still continuous.','Run, cycle, row. Swim only once your shoulders are cleared.'],why:'40 minutes of moderate-to-vigorous work four times a week is the dose used in the vascular-health trials, which found a clinically meaningful mean improvement on the standard index.'}
+};
+
+/* ── mobility flow ── */
+var FLOW=[
+ {n:'Knee-to-wall ankle rock',t:40,h:'Toe about 10 cm from a wall. Drive the knee forward to touch the wall, heel stays down. 10 each side.',g:'Ankles'},
+ {n:'Tibialis raise',t:40,h:'Heels down, lean back on a wall, pull the toes up. 20 slow reps.',g:'Ankles'},
+ {n:'Toe splay + short foot',t:45,h:'Spread the toes and hold 3 s. Then, without curling, draw the ball of the foot toward the heel to lift the arch, hold 5 s. 15 total.',g:'Feet'},
+ {n:'Single-leg balance, eyes closed',t:60,h:'Shoes off, hands on hips, 30 seconds each side. Let the foot grip.',g:'Feet'},
+ {n:'90/90 hip switch',t:50,h:'Sit with both knees bent at 90°, rotate both legs to the other side without using your hands. 8 each way.',g:'Hips'},
+ {n:'Couch stretch',t:60,h:'Back knee against a wall or sofa, front foot forward, squeeze the glute on the stretching side. 30 s each side.',g:'Hips'},
+ {n:'Cat–camel',t:35,h:'On all fours. Round the spine fully, then arch fully. 10 slow reps, move one vertebra at a time.',g:'Spine'},
+ {n:'Seated thoracic rotation',t:45,h:'Sit tall, hands behind the head, rotate the ribcage — not the hips. 8 each side.',g:'Spine'},
+ {n:'Wall slide',t:40,h:'Back and arms against a wall, slide the forearms up while keeping contact. Stop where contact breaks. 10 reps.',g:'Shoulders'},
+ {n:'Band external rotation',t:50,h:'Elbow pinned to your side at 90°, rotate the forearm outward against a band. 15 each side.',g:'Shoulders'},
+ {n:'Band pull-apart',t:35,h:'Arms straight in front, pull a band apart to your chest, squeeze the shoulder blades. 20 reps.',g:'Shoulders'},
+ {n:'Doorway pec stretch',t:45,h:'Forearm on a door frame at shoulder height, step through gently. 30 s each side. GENTLE — never force the arm back.',g:'Shoulders'},
+ {n:'Dead hang',t:25,h:'20 seconds. ONLY if completely pain-free — skip it otherwise and mention it to your physio.',g:'Shoulders'}
+];
+
+/* ── meals ── */
+var MEALS={
+ m1:{n:'Meal 1',o:['Greek yogurt 2% 250 g + oats 35 g + honey 5 g + almonds 10 g + strawberries 100 g','Egg whites 220 g + low-fat cheese 40 g + brown tortilla + cucumber + watermelon 150 g','Smoked salmon 100 g + light labneh 50 g + 2 slices wholewheat toast + cucumber + green apple 80 g']},
+ m2:{n:'Meal 2',o:['Chicken breast 200 g + sautéed vegetables + basmati 180 g cooked + 1 tsp olive oil','Lean beef steak 180 g + grilled vegetables + basmati 180 g cooked + 1 tsp olive oil','Fish fillet 240 g + garlic, lemon, vegetables + basmati 190 g cooked + 1 tsp olive oil']},
+ sn:{n:'Snack',o:['Cottage cheese 200 g + lettuce, cucumber, carrot + strawberries 100 g','Roast beef 100 g + lettuce, mushroom, peppers + green apple 80 g','Greek yogurt 2% 200 g + green apple 100 g']},
+ m3:{n:'Meal 3',o:['Chicken breast 170 g + sautéed vegetables + basmati 120 g cooked + 1 tsp olive oil','Lean beef steak 170 g + grilled vegetables + basmati 120 g cooked + 1 tsp olive oil','Fish fillet 220 g + garlic, lemon, vegetables + basmati 130 g cooked + 1 tsp olive oil']},
+ m4:{n:'Meal 4',o:['Cottage cheese 150 g + cucumber','Greek yogurt 2% 170 g + 85% dark chocolate 10 g','Roast beef 80 g + lettuce + cucumber']}
+};
+
+/* ── sessions ── */
+var SESS={
+ lowerA:{n:'Lower A — quads, calves, feet',warm:'5 min bike · knee-to-wall 2×10/side · tibialis raise 2×20 · glute bridge 2×15 · leg swings 10/side',ex:['squat','bulg','legext','calfst','calfse','tib','cope','bal'],fin:'10 min incline walk. Quad and calf stretch 30 s each.'},
+ upperA:{n:'Upper A — horizontal push &amp; pull',warm:'Band pull-apart 2×20 · scapular push-up 2×10 · external rotation 2×15/side · prone Y-T-W 2×8',ex:['floorp','csrow','crow','facep','frontr','sler','pronY','hang','arms'],fin:'Pec and lat stretch 2×30 s. No behind-the-back stretching, ever.'},
+ lowerB:{n:'Lower B — posterior chain &amp; hips',warm:'90/90 hip switch 2×8/side · glute bridge 2×15 · hamstring sweep 10/side · ankle circles',ex:['rdl','hipt','hamc','revl','hipab','slcalf','toes','kraise'],fin:'Pigeon 2×45 s/side. Couch stretch 2×45 s/side — the antidote to the chair.'},
+ upperB:{n:'Upper B — vertical pull &amp; shoulder rebuild',warm:'Band pull-apart 2×20 · cuff ER 2×15/side · scapular pull-up 2×8 · wall slide 2×10',ex:['pdown','land','dbrow','incp','cer45','latr','reard','farm'],fin:'Thoracic extension over a roller 2 min. Wall angels 2×10.'},
+ z2:{n:'Zone 2 — 40 min + mobility',warm:'The first five minutes is the warm-up.',ex:['z2'],fin:'Full 12-minute mobility flow, unhurried.'},
+ cardio:{n:'Cardio 40 min + mobility',warm:'5 min easy build.',ex:['card'],fin:'Full 12-minute mobility flow, unhurried.'}
+};
+var DAYSESS={0:'lowerA',1:'upperA',2:'z2',3:'lowerB',4:'upperB',5:'cardio',6:null};
+
+/* ═══════════════════ ACTIVITY DEFINITIONS ═══════════════════ */
+function iqCap(w){ if(w<8) return 20; if(w===8) return 15; if(w===9) return 10; if(w===10) return 5; return 0; }
+function weedRule(k){
+  var w=wkN(k), g=pd(k).getDay(), wknd=(g===5||g===6);
+  if(w<=4) return wknd?{cap:1,txt:'Weekend allowance — 1 session max today'}:{cap:0,txt:'Weekday — none. Phase 1 is Friday and Saturday only.'};
+  if(w<=6) return (g===5)?{cap:1,txt:'Friday only — 1 session max'}:{cap:0,txt:'Phase 2 — Friday only. Not today.'};
+  return {cap:0,txt:'Stopped. Quit date was day 43.'};
+}
+
+var ACTS={
+wake:{n:'Wake, water, no phone',ic:'☀',t:'08:15',xp:4,sec:'Morning',kind:'check',
+  sub:'500 ml before anything else. Phone stays out of reach.',
+  how:['Get up. Drink 500 ml of water before you look at a screen.','Phone stays wherever you left it last night — not in your hand.','The first ten minutes of your day sets whether you scroll or move.'],
+  why:'Target 08:15. If you are waking later than that now, move it in 20–30 minute steps every three or four days rather than in one jump — a single big shift usually buys four bad nights and then a return to the old time.'},
+flow:{n:'Ten-minute morning flow',ic:'◍',t:'08:20',xp:12,sec:'Morning',kind:'flow',
+  sub:'13 drills — ankles, feet, hips, spine, shoulders. Guided player.',
+  how:['Tap Start guided flow and follow it. It counts each drill for you.','Do it at whatever time you actually wake — the anchor is waking, not the clock.','Every day, including rest days.'],
+  why:'The single highest-leverage habit here. It hits the shoulders, ankles, hips and posture at once, takes ten minutes, needs no gym, and work cannot eat it.'},
+meal1:{n:'Meal 1 + supplements',ic:'🍽',t:'08:35',xp:6,sec:'Morning',kind:'meal',meal:'m1',
+  how:['Pick one of the three options. Weigh it for the first two weeks.','With it: creatine 5 g, multivitamin, omega-3.'],
+  why:'Breakfast is the easiest meal to control completely — no cooking, no negotiation. Between this and the two small meals, three of five are fully yours.'},
+audio:{n:'Audiobook on before the car',ic:'🎧',t:'08:50',xp:6,sec:'Commute',kind:'mins',tar:60,unit:'min',work:1,
+  sub:'One hour each way. Ten hours a week.',
+  how:['Queue it before you start the engine, not at the first traffic light.','Month 1: Dopamine Nation. Month 2: Supercommunicators. Month 3: The Psychology of Money.'],
+  why:'Two hours a day of commuting is roughly a book a week without adding a minute to the day. It is the largest block of reclaimable time in the schedule.'},
+deep:{n:'Deep work block',ic:'◫',t:'10:15',xp:10,sec:'Work',kind:'check',work:1,
+  sub:'90 minutes, one task, phone in a drawer.',
+  how:['10:15 to 11:45. One task, chosen before you sit down.','Phone in a drawer. Notifications off, not just silenced.','Write one paragraph afterwards in the learning log.'],
+  why:'In self-directed work, learning that is not scheduled does not happen — and it then registers as being behind rather than as an unmanaged calendar.'},
+meal2:{n:'Meal 2 — packed last night',ic:'🍱',t:'13:00',xp:6,sec:'Work',kind:'meal',meal:'m2',work:1,
+  how:['Packed the night before. Non-negotiable.','Add ~150 g extra cooked basmati here — this is where the extra training carbohydrate goes.'],
+  why:'If lunch is not in a box, lunch is whatever happens to be near the office.'},
+walk:{n:'Ten-minute walk, outside',ic:'🚶',t:'13:30',xp:6,sec:'Work',kind:'check',work:1,
+  how:['Outside. Actually outside, not the corridor.','Ten minutes is about 1,000–1,200 steps.'],
+  why:'This plus the gym gets you most of the way to 8,000 steps, which is where mortality risk flattens for adults under 60.'},
+snack:{n:'Snack + posture reset',ic:'🥗',t:'16:00',xp:5,sec:'Work',kind:'meal',meal:'sn',work:1,
+  how:['Pick an option.','Then two minutes: stand, 10 wall angels, 10 chin tucks, roll the shoulders back.'],
+  why:'Eight hours seated is the direct cause of most desk-job posture problems. Two minutes at 16:00 costs nothing.'},
+home:{n:'Home — change now, do not sit down',ic:'🚪',t:'19:00',xp:8,sec:'Evening',kind:'check',work:1,
+  sub:'Gym bag, straight back out. The sofa is the enemy.',
+  how:['Walk in. Change immediately.','Do not sit down in work clothes. Not for five minutes, not for one song.','Out of the door by 19:15.'],
+  why:'When the gym is near home the commute comes first, which puts a sofa between you and the session. This exact moment is where four training days a week becomes two.'},
+train:{n:'Training',ic:'🏋',t:'19:15',xp:24,sec:'Evening',kind:'train',
+  how:['Warm-up first — it is listed in the session.','Log every set. Last week\'s numbers are shown next to each exercise so you know what to beat.','Rest timer is built in: 90 s for accessories, 2–3 min for the main lifts.'],
+  why:'Four lifting days, two cardio days. Legs and shoulder rebuilding are the priorities.'},
+meal3:{n:'Meal 3 + whey',ic:'🍗',t:'20:40',xp:6,sec:'Evening',kind:'meal',meal:'m3',
+  how:['Pick an option. 25 g whey with it if you are short on the day\'s protein.'],
+  why:'Post-training meal. Protein target is 165 g a day; this and Meal 2 carry most of it.'},
+meal4:{n:'Meal 4 — if you need it',ic:'🥛',t:'21:30',xp:4,sec:'Night',kind:'meal',meal:'m4',opt:1,
+  how:['Optional. Use it if you are short on calories or protein for the day.'],
+  why:'Optional by design. Some days you will not need it, and forcing food you do not want is how plans start feeling like punishment.'},
+story:{n:'Story recording',ic:'🎙',t:'21:45',xp:10,sec:'Night',kind:'story',days:[0,2,4],
+  sub:'90 seconds, then the same story in 45.',
+  how:['Record on your phone. Nobody hears it. Delete it afterwards.','Shape: Context → Complication → Turn → So-what.','Record it in 90 seconds. Then record the same story in 45. The second one is always better.'],
+  why:'For most people the limiting factor in storytelling is compression, not material. The drill is cutting, which is why the second take is always the better one.'},
+read:{n:'Twenty minutes, paper book',ic:'📖',t:'22:00',xp:12,sec:'Night',kind:'read',tar:20,
+  how:['Paper. Not a phone, not a tablet.','Same chair, same time — context consistency is the actual mechanism behind habit formation.','Timer is built in.'],
+  why:'Half the point is the reading. The other half is proving you can hold attention on one thing for twenty minutes, which is the capacity doomscrolling erodes.'},
+logd:{n:'Log the day',ic:'✎',t:'22:40',xp:5,sec:'Night',kind:'check',
+  sub:'Sixty seconds. Log the misses too.',
+  how:['Tick what you did. Skip what you did not, with a reason.','Add one line in the note field.'],
+  why:'A red day logged honestly beats a green day you did not earn. The failure mode is not a bad week — it is quietly stopping opening the app because you do not want to look at it.'},
+phone:{n:'Phone out of the bedroom',ic:'📵',t:'23:15',xp:10,sec:'Night',kind:'check',
+  how:['Not on silent. Not face down. Out of the room.','Buy a cheap alarm clock if that is the excuse.'],
+  why:'The doomscrolling fix is environmental, not a willpower exercise. Distance beats discipline every time.'},
+sleep:{n:'Sleep',ic:'🌙',t:'23:45',xp:8,sec:'Night',kind:'num',unit:'hours',ph:'8.5',tar:7.5,
+  sub:'Target 8 h 30 m — 23:45 to 08:15.',
+  how:['Target 8 h 30 m — 23:45 to 08:15.','Log what you actually got, not what you meant to get.'],
+  why:'Memory consolidation happens during sleep, and adults need seven hours or more. Of everything here, this is usually the largest single lever and the fastest to move.'},
+/* all-day */
+water:{n:'Water',ic:'💧',t:'all day',xp:8,sec:'All day',kind:'count',tar:7,unit:'× 500 ml',
+  sub:'3.5 litres — seven 500 ml refills.',
+  how:['Keep a 1 litre bottle on your desk. Three and a half refills over the day.','Tap + each time you finish 500 ml.'],
+  why:'3–4 L is the standard range for a training adult at this bodyweight. Dehydration reads exactly like fatigue.'},
+steps:{n:'Steps',ic:'👣',t:'all day',xp:8,sec:'All day',kind:'num',tar:8000,unit:'steps',ph:'8000',
+  how:['Target 8,000. Read it off your phone at the end of the day.'],
+  why:'Paluch et al. (2022), 47,471 adults: mortality risk flattens at roughly 8,000–10,000 steps a day for the under-60s. Above that you are buying very little.'},
+prot:{n:'Protein &amp; calories',ic:'🥩',t:'all day',xp:10,sec:'All day',kind:'num',tar:165,unit:'g protein',ph:'165',
+  sub:'165 g protein · 2,400–2,500 kcal.',
+  how:['Target 165 g protein, 2,400–2,500 kcal.','A typical cutting plan lands nearer 2,070 kcal and 206 g protein. Adding ~100 g of carbohydrate around training brings it into range.'],
+  why:'At 80 kg, 2.0–2.2 g/kg is the useful range. Protein above that buys nothing, and the excess is displacing carbs that would fuel your leg training.'},
+social:{n:'Social rep',ic:'💬',t:'anytime',xp:14,sec:'All day',kind:'social',
+  how:['This week\'s rung is shown below. Do it once, log what happened in a line.'],
+  why:'Graded exposure is the mechanism that works: start at a level that feels almost embarrassingly easy and climb only when the rung is boring. Confidence follows evidence; it does not arrive first.'},
+iqos:{n:'IQOS',ic:'🚬',t:'all day',xp:8,sec:'All day',kind:'iqos',
+  how:['Count honestly. Weeks 1–7 you are only establishing a baseline — no cutting yet.','From week 8 the cap steps down: 15, then 10, then 5, then zero on day 71.'],
+  why:'Twenty sticks a day is nicotine in the same territory as twenty cigarettes. Nicotine acutely raises heart rate and blood pressure and constricts blood vessels, which works against both training recovery and vascular health.'},
+weed:{n:'Weed',ic:'🌿',t:'all day',xp:8,sec:'All day',kind:'weed',
+  how:['Log every session. The allowance for today is shown below.','Weeks 1–4: Friday and Saturday only. Weeks 5–6: Friday only. Week 7: stopped.'],
+  why:'Habits outlive the situations that created them — that is what makes them habits, and it is also why the fix is structural rather than a matter of resolve. Replace the function, not just the substance.'},
+/* saturday */
+review:{n:'Weekly review',ic:'◎',t:'15:00',xp:20,sec:'Saturday',kind:'review',days:[6],
+  sub:'Six questions, fifteen minutes.',
+  how:['Answer the six questions in the More tab.','On Saturday it shapes the week ahead. On Sunday night it is just guilt.'],
+  why:'One deliberate look back a week is what stops a bad Tuesday becoming a bad month.'},
+plan:{n:'Plan the week · pack Sunday\'s lunch · export backup',ic:'📦',t:'16:00',xp:10,sec:'Saturday',kind:'check',days:[6],
+  how:['Look at next week in the Programme tab.','Pack Sunday\'s Meal 2 now.','Export your backup from the More tab — storage is easy to lose.'],
+  why:'Three minutes of admin that prevents three separate failures.'},
+people:{n:'People — actual plans with actual humans',ic:'🫂',t:'18:00',xp:16,sec:'Saturday',kind:'check',days:[6],
+  how:['Make the plan earlier in the week, not at 18:00 on Saturday.','It counts if you leave the house and speak to people who are not your family.'],
+  why:'Not optional. Isolation, far more than difficulty, is what ends programmes like this. It is the single best predictor of whether the other eleven weeks hold.'}
+};
+
+var SECORDER=['Morning','Commute','Work','Evening','Night','Saturday','All day'];
+
+function actsFor(k){
+  var g=pd(k).getDay(), sat=(g===6), out=[];
+  Object.keys(ACTS).forEach(function(id){
+    var a=ACTS[id];
+    if(a.days && a.days.indexOf(g)<0) return;
+    if(a.work && sat) return;
+    if(sat && (id==='deep'||id==='audio'||id==='home'||id==='train'||id==='logd')) { if(id!=='logd') return; }
+    if(!sat && a.sec==='Saturday') return;
+    if(id==='train' && !DAYSESS[g]) return;
+    out.push(id);
+  });
+  out.sort(function(x,y){
+    var ax=ACTS[x],ay=ACTS[y];
+    var sx=SECORDER.indexOf(ax.sec), sy=SECORDER.indexOf(ay.sec);
+    if(sx!==sy) return sx-sy;
+    return String(ax.t).localeCompare(String(ay.t));
+  });
+  return out;
+}
+
+/* ── social ladder ── */
+var LADDER=[
+ {w:'1–2',r:'One 20-second exchange a day with someone you have no obligation to talk to — a cashier, gym staff, someone from another team.',t:'Volume at zero stakes. You are not trying to be interesting yet; you are trying to make initiating boring.'},
+ {w:'3–4',r:'The second-question rule: ask one open question and two follow-ups before you say anything about yourself.',t:'This is the actual mechanic of avoiding small talk. Anyone asks one question. Almost nobody asks two follow-ups.'},
+ {w:'5–6',r:'One conversation a week with a stranger that runs past two minutes. Gyms and cafés are the highest-yield settings.',t:'Sustained improvisation — the part you said feels forced. It stops feeling forced around rep fifteen.'},
+ {w:'7–8',r:'Tell one prepared 90-second story to a group of friends. Then tell the same story in 45 seconds.',t:'Compression under mild pressure, in a safe room.'},
+ {w:'9–10',r:'Say something unprompted in one work meeting a week — a position, not a question.',t:'Your voice in a room where you are being judged. Also the direct fix for feeling you are not delivering at your level.'},
+ {w:'11–12',r:'One structured setting: a speaking group such as Toastmasters, a work presentation, or hosting a gathering yourself.',t:'Real stakes, real audience, real feedback. The rung that changes how you see yourself.'}
+];
+function rung(k){ var w=wkN(k); return LADDER[Math.min(5,Math.floor((w-1)/2))]; }
+
+var PROMPTS=['A time you were certain and wrong.','A ten-minute stretch that changed a year.','Something you feared that turned out to be nothing.','The best decision you made when nobody was watching.','A stranger who said something you still think about.','A day you would least want to relive — and what it gave you.','A time you kept something to yourself and it got worse.','Something you were good at as a child and abandoned.','The last time you surprised yourself.','A thing you believed at 18 and have since dropped.','A small kindness you did not deserve.','The moment you knew the training was working.','A conversation you wish you had handled differently.','A decision that looked small at the time and was not.'];
+
+var METS=[
+ {n:'Weight',t:'trend down slowly'},{n:'Waist at navel',t:'down'},{n:'Mid-thigh',t:'UP — the legs number'},
+ {n:'Knee-to-wall L',t:'≥ 10 cm'},{n:'Knee-to-wall R',t:'≥ 10 cm'},
+ {n:'Pain-free overhead °',t:'toward 170–180°'},{n:'Balance eyes shut L',t:'≥ 30 s'},{n:'Balance eyes shut R',t:'≥ 30 s'},
+ {n:'Resting HR',t:'down 5–10 bpm'}
+];
+
+var LEVELS=[
+ [0,'Getting off the sofa'],[400,'Showing up'],[900,'Two weeks in'],[1600,'It has a rhythm'],
+ [2500,'Stronger than August'],[3600,'The habit is yours'],[5000,'Clean and consistent'],[6600,'Unrecognisable'],[8500,'Finished what you started']
+];
+var BADGES=[
+ {id:'d1',e:'🚩',n:'Day One',d:'Logged your first day'},
+ {id:'w1',e:'📅',n:'Week Standing',d:'7 days logged'},
+ {id:'fl10',e:'◍',n:'The Flow',d:'10 morning flows'},
+ {id:'fl50',e:'🧘',n:'Automatic',d:'50 morning flows'},
+ {id:'s4',e:'🏋',n:'Four Corners',d:'All 4 lifts in one week'},
+ {id:'s20',e:'💪',n:'Twenty Sessions',d:'20 training sessions'},
+ {id:'bk300',e:'📚',n:'Reader',d:'300 minutes of paper reading'},
+ {id:'so10',e:'💬',n:'Cold Open',d:'10 social reps'},
+ {id:'so30',e:'🎤',n:'Comfortable',d:'30 social reps'},
+ {id:'cl7',e:'🌱',n:'One Week Clean',d:'7 days, no weed'},
+ {id:'cl28',e:'🧠',n:'Twenty-Eight',d:'28 days clean — the CB1 recovery mark'},
+ {id:'nic1',e:'🚭',n:'Under the Cap',d:'7 days inside the IQOS cap'},
+ {id:'st20',e:'👣',n:'Walker',d:'8,000+ steps on 20 days'},
+ {id:'half',e:'⛰',n:'Halfway',d:'Reached day 42'},
+ {id:'fin',e:'🏁',n:'Eighty-Four',d:'Reached day 84'}
+];
+
+/* ═══════════════════ UI PLUMBING ═══════════════════ */
+function E(i){ return document.getElementById(i); }
+function esc(s){ return String(s).replace(/&(?![a-z]+;)/g,'&amp;').replace(/</g,'&lt;'); }
+var tT=null, TOAST_MS=3000;
+function hideToast(){ var t=E('toast'); if(!t) return; t.className='toast'+(t.dataset.cls?' '+t.dataset.cls:''); if(tT){ clearTimeout(tT); tT=null; } }
+function toast(m,cls){
+  var t=E('toast'); if(!t) return;
+  t.textContent=m; t.dataset.cls=cls||'';
+  t.className='toast on'+(cls?' '+cls:'');
+  if(tT) clearTimeout(tT);                       /* every new update restarts the 3 seconds */
+  tT=setTimeout(hideToast,TOAST_MS);
+}
+function save(silent){ wr(); if(!silent) chkBadges(); }
+
+function xpAdd(n){
+  var before=lvl().i; S.xp+=n; var after=lvl().i;
+  wr();
+  if(after>before){ toast('Level '+(after+1)+' — '+LEVELS[after][1],'lv'); boom(); }
+  paintTop();
+}
+function lvl(){ var i=0; for(var j=0;j<LEVELS.length;j++) if(S.xp>=LEVELS[j][0]) i=j; return {i:i,name:LEVELS[i][1],at:LEVELS[i][0],next:LEVELS[i+1]?LEVELS[i+1][0]:null}; }
+function boom(){
+  var f=E('fw'), c=['#4da3ff','#34d399','#fbbf24','#a78bfa','#fb923c'];
+  for(var i=0;i<34;i++){ var s=document.createElement('i');
+    s.style.left=(Math.random()*100)+'%'; s.style.top='-14px';
+    s.style.background=c[i%c.length]; s.style.animationDelay=(Math.random()*.35)+'s';
+    f.appendChild(s); }
+  setTimeout(function(){ f.innerHTML=''; },2000);
+}
+
+/* ── top chips ── */
+function paintTop(){
+  var n=dayN(TODAY), L=lvl(), st=streak(), cl=cleanDays();
+  var cap=iqCap(wkN(TODAY));
+  var qd=add(S.start,42), toQ=diff(qd,TODAY);
+  var h='';
+  h+='<div class="chip">Day <b>'+(n<1?'—':(n>84?'84+':n))+'</b>/84</div>';
+  h+='<div class="chip">Week <b>'+wkN(TODAY)+'</b></div>';
+  h+='<div class="chip'+(st>0?' gd':'')+'">🔥 <b>'+st+'</b> streak</div>';
+  h+='<div class="chip">Lv <b>'+(L.i+1)+'</b> · '+S.xp+' XP</div>';
+  h+='<div class="chip'+(cl>=7?' gd':'')+'">🌿 <b>'+cl+'</b>d clean</div>';
+  if(toQ>0) h+='<div class="chip hot">Quit date in <b>'+toQ+'</b>d</div>';
+  h+='<div class="chip">IQOS cap <b>'+(cap||'0')+'</b></div>';
+  E('tmeta').innerHTML=h;
+}
+function streak(){
+  var core=['flow','read','phone'], k=TODAY, n=0;
+  function ok(d){ var x=S.days[d]; return !!(x&&core.every(function(c){ return x.a[c]&&x.a[c].done; })); }
+  if(!ok(TODAY)) k=add(TODAY,-1);
+  for(var i=0;i<400;i++){ if(ok(k)){ n++; k=add(k,-1); } else break; }
+  return n;
+}
+function cleanDays(){
+  var last=null;
+  Object.keys(S.days).sort().forEach(function(d){ var a=S.days[d].a.weed; if(a&&a.c>0) last=d; });
+  return last? Math.max(0,diff(TODAY,last)) : Math.max(0,diff(TODAY,S.start));
+}
+
+/* ── nav ── */
+document.querySelectorAll('nav.bot button').forEach(function(b){
+  b.onclick=function(){ go(b.dataset.v); };
+});
+function go(v){
+  document.querySelectorAll('nav.bot button').forEach(function(b){ b.classList.toggle('on',b.dataset.v===v); });
+  document.querySelectorAll('.view').forEach(function(s){ s.classList.toggle('on', s.id==='v-'+v); });
+  window.scrollTo(0,0);
+  if(v==='prog') paintProg();
+  if(v==='lib') paintLib();
+  if(v==='prog2') paintProgress();
+  if(v==='more') paintMore();
+}
+
+/* ═══════════════════ TODAY ═══════════════════ */
+var openAct=null;
+function paintToday(){
+  var ids=actsFor(cur), d=DY(cur), n=dayN(cur);
+  E('d-t1').textContent = (cur===TODAY?'Today · ':'') + pretty(cur);
+  E('d-t2').textContent = (n>=1&&n<=84? 'Day '+n+' of 84 · week '+wkN(cur) : 'Outside the 84 days') +
+    (DAYSESS[pd(cur).getDay()] ? ' · '+SESS[DAYSESS[pd(cur).getDay()]].n.replace(/&amp;/g,'&') : ' · rest day');
+
+  var done=0, tot=0;
+  ids.forEach(function(id){ if(ACTS[id].opt) return; tot++; if(d.a[id]&&d.a[id].done) done++; });
+  var pct = tot? Math.round(done/tot*100):0;
+  E('ring-t').textContent=pct+'%';
+  E('ring-p').setAttribute('stroke-dashoffset', String(195-195*pct/100));
+  E('ring-p').setAttribute('stroke', pct>=100?'#34d399':(pct>=50?'#4da3ff':'#fbbf24'));
+
+  var html='', lastSec=null;
+  ids.forEach(function(id){
+    var a=ACTS[id], st=d.a[id]||{};
+    if(a.sec!==lastSec){
+      var secIds=ids.filter(function(x){ return ACTS[x].sec===a.sec; });
+      var sd=secIds.filter(function(x){ return d.a[x]&&d.a[x].done; }).length;
+      html+='<div class="sec"><h3>'+a.sec+'</h3><div class="ln"></div><div class="ct">'+sd+'/'+secIds.length+'</div></div>';
+      lastSec=a.sec;
+    }
+    var cls='act'+(st.done?' done':'')+(st.skip?' skip':'')+(openAct===id?' open':'');
+    html+='<div class="'+cls+'" data-a="'+id+'">'
+      +'<div class="arow">'
+        +'<button class="tick" data-tick="'+id+'">'+(st.skip?'–':'✓')+'</button>'
+        +'<div class="ainfo" data-open="'+id+'">'
+          +'<div class="aname">'+a.ic+' '+a.n+' '+badgeFor(id,st)+'</div>'
+          +'<div class="asub">'+subFor(id,st)+'</div>'
+        +'</div>'
+        +'<div class="atime">'+a.t+'<br><span style="color:var(--dim2);font-size:10px">'+a.xp+' xp</span></div>'
+        +'<button class="exp" data-open="'+id+'">▾</button>'
+      +'</div>'
+      +'<div class="body">'+(openAct===id? bodyFor(id):'')+'</div>'
+    +'</div>';
+  });
+  E('acts').innerHTML=html;
+
+  E('acts').querySelectorAll('[data-tick]').forEach(function(b){
+    b.onclick=function(ev){ ev.stopPropagation(); toggle(b.dataset.tick); };
+  });
+  E('acts').querySelectorAll('[data-open]').forEach(function(b){
+    b.onclick=function(){ openAct = (openAct===b.dataset.open? null : b.dataset.open); paintToday(); };
+  });
+  if(openAct) wireBody(openAct);
+
+  var nt=E('d-note'); nt.value=d.n||'';
+  nt.oninput=function(){ DY(cur).n=nt.value; wr(); };
+  paintTop();
+}
+function badgeFor(id,st){
+  var a=ACTS[id];
+  if(a.opt) return '<span class="pill p-p">optional</span>';
+  if(id==='train'){ var s=DAYSESS[pd(cur).getDay()]; return s&&s.indexOf('lower')===0?'<span class="pill p-o">legs</span>':(s==='upperA'||s==='upperB'?'<span class="pill p-w">shoulder care</span>':'<span class="pill p-a">cardio</span>'); }
+  if(id==='weed'){ var r=weedRule(cur); return r.cap? '<span class="pill p-w">allowance '+r.cap+'</span>':'<span class="pill p-g">none today</span>'; }
+  if(id==='iqos'){ var c=iqCap(wkN(cur)); return '<span class="pill '+(c?'p-o':'p-g')+'">cap '+c+'</span>'; }
+  return '';
+}
+function subFor(id,st){
+  var a=ACTS[id];
+  if(st.skip) return 'Skipped — '+esc(st.skip);
+  switch(a.kind){
+    case 'count': return (st.c||0)+' / '+a.tar+' '+a.unit;
+    case 'num': return st.v!=null? (st.v+' '+a.unit+(a.tar? (st.v>=a.tar?' ✓':' / '+a.tar):'')) : (a.sub || (a.tar? ('target '+a.tar+' '+a.unit) : a.unit));
+    case 'mins': return (st.v||0)+' / '+a.tar+' min';
+    case 'read': return (st.v||0)+' / 20 min'+(st.bk? ' · '+esc(st.bk):'');
+    case 'meal': return st.o!=null? 'Option '+(st.o+1)+' — '+esc(MEALS[a.meal].o[st.o]).slice(0,52)+'…' : 'Three options — pick one';
+    case 'iqos': return (st.c||0)+' sticks today';
+    case 'weed': return weedRule(cur).txt + (st.c? ' · logged '+st.c:'');
+    case 'train': var s=DAYSESS[pd(cur).getDay()]; return s? SESS[s].n.replace(/&amp;/g,'&') : 'Rest';
+    case 'flow': return st.done? 'Done — 13 drills':'13 drills, guided';
+    case 'social': return st.t? esc(st.t).slice(0,60) : 'Week '+wkN(cur)+' rung';
+    case 'story': return st.done? 'Recorded':'90 seconds, then 45';
+    default: return a.sub||'';
+  }
+}
+
+function bodyFor(id){
+  var a=ACTS[id], st=A(cur,id), h='';
+  h+='<h5>What to do</h5><ol>'+(a.how||[]).map(function(x){ return '<li>'+x+'</li>'; }).join('')+'</ol>';
+
+  if(a.kind==='count'){
+    h+='<h5>Log</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">of '+a.tar+' '+a.unit+'</div></div>';
+    h+='<div class="dots" id="cdots">'+Array.apply(null,{length:a.tar}).map(function(_,i){ return '<div class="dot'+((st.c||0)>i?' on':'')+'">'+(i+1)+'</div>'; }).join('')+'</div>';
+  }
+  if(a.kind==='num'){
+    h+='<h5>Log</h5><div class="row"><input type="number" id="nv" value="'+(st.v!=null?st.v:'')+'" placeholder="'+(a.ph||'')+'" style="max-width:130px"><span style="color:var(--dim);font-size:13px">'+a.unit+'</span></div>';
+  }
+  if(a.kind==='mins'){
+    h+='<h5>Log</h5><div class="row"><input type="number" id="nv" value="'+(st.v!=null?st.v:'')+'" placeholder="minutes" style="max-width:120px"><button class="btn g sm" data-quick="30">+30</button><button class="btn g sm" data-quick="60">+60</button><button class="btn g sm" data-quick="120">+120</button></div>';
+  }
+  if(a.kind==='read'){
+    h+='<h5>Log</h5><div class="row"><input id="bk" placeholder="Book title" value="'+esc(st.bk||'')+'" style="flex:1;min-width:140px"><input type="number" id="nv" value="'+(st.v!=null?st.v:'')+'" placeholder="min" style="max-width:80px"></div>';
+    h+='<div class="row" style="margin-top:9px"><button class="btn" id="rtimer">▶ Start 20-minute timer</button></div>';
+    h+='<div class="why"><b>This month:</b> paper — <em>Atomic Habits</em>. Commute — <em>Dopamine Nation</em>. Lembke explains precisely why the weed and the scrolling feel identical, and why the first fortnight without them feels flat. Read it <em>while</em> quitting, not after.</div>';
+  }
+  if(a.kind==='meal'){
+    var M=MEALS[a.meal];
+    h+='<h5>Pick one</h5><div class="opts">'+M.o.map(function(o,i){ return '<button class="opt'+(st.o===i?' on':'')+'" data-o="'+i+'"><i>'+(i+1)+'</i><span>'+o+'</span></button>'; }).join('')+'</div>';
+    h+='<div class="row" style="margin-top:9px"><input id="mnote" placeholder="Swapped something? Note it." value="'+esc(st.t||'')+'"></div>';
+    h+='<div class="why"><b>If someone else cooks:</b> do not ask for a separate diet to be cooked for you. Ask for two things only — protein grilled or baked rather than fried, and the rice and salad served unmixed so you can weigh your own portion.</div>';
+  }
+  if(a.kind==='iqos'){
+    var cap=iqCap(wkN(cur));
+    h+='<h5>Count</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">'+(cap? 'cap '+cap+' today':'quit — cap 0')+'</div></div>';
+    if(cap&&(st.c||0)>cap) h+='<div class="safe" style="margin-top:10px"><b>Over today\'s cap.</b> Not a disaster. Log it, look at what triggered it, and put a plan against that trigger tomorrow.</div>';
+    h+='<div class="why"><b>Step-down:</b> weeks 1–7 no change, just count. Week 8 → 15. Week 9 → 10. Week 10 → 5. Day 71 → zero. See a pharmacist in week 8 — a patch plus a fast-acting form beats either alone, and both beat willpower by roughly 50–60%.</div>';
+  }
+  if(a.kind==='weed'){
+    var r=weedRule(cur);
+    h+='<h5>Count</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">'+r.txt+'</div></div>';
+    h+='<div class="why"><b>Days clean:</b> '+cleanDays()+'. Quit date is day 43 — '+pretty(add(S.start,42))+'. After your last session: onset 24–72 h, peak days 2–6, most acute symptoms gone by ~3 weeks, CB1 receptors back to normal around day 28, and sleep is the last to settle — up to 30–45 days. That is the timeline, not a failure.</div>';
+    if((st.c||0)>r.cap && (st.c||0)>0) h+='<div class="safe" style="margin-top:10px"><b>Over the allowance.</b> Log it anyway — that is the whole point. Then ask what the 20:00–22:00 slot had in it, because an empty evening is the actual cause.</div>';
+  }
+  if(a.kind==='social'){
+    var R=rung(cur);
+    h+='<h5>This week\'s rung — weeks '+R.w+'</h5><div class="info">'+R.r+'</div>';
+    h+='<div class="why"><b>What it trains:</b> '+R.t+'</div>';
+    h+='<h5>What happened?</h5><textarea id="sot" placeholder="One line. Who, where, how it felt.">'+esc(st.t||'')+'</textarea>';
+  }
+  if(a.kind==='story'){
+    h+='<h5>Tonight\'s prompt</h5><div class="info" id="prm">'+PROMPTS[(dayN(cur)+3)%PROMPTS.length]+'</div>';
+    h+='<div class="row" style="margin-top:9px"><button class="btn g sm" id="newprm">Another prompt</button><button class="btn g sm" id="t90">▶ 90 s</button><button class="btn g sm" id="t45">▶ 45 s</button></div>';
+    h+='<h5>Notes</h5><textarea id="sot" placeholder="What worked, what you cut on the second take.">'+esc(st.t||'')+'</textarea>';
+  }
+  if(a.kind==='flow'){
+    h+='<div class="row" style="margin-top:6px"><button class="btn wide" id="startflow">▶ Start guided flow — 10 min</button></div>';
+    h+='<h5>The 13 drills</h5><ul>'+FLOW.map(function(f){ return '<li><b>'+f.n+'</b> — '+f.h+'</li>'; }).join('')+'</ul>';
+  }
+  if(a.kind==='train'){
+    var sk=DAYSESS[pd(cur).getDay()];
+    if(sk){
+      var Sx=SESS[sk];
+      h+='<div class="info"><b>Warm-up:</b> '+Sx.warm+'</div>';
+      h+='<div class="row" style="margin:10px 0"><button class="btn g sm" data-rest="90">⏱ 90 s rest</button><button class="btn g sm" data-rest="120">⏱ 2 min</button><button class="btn g sm" data-rest="180">⏱ 3 min</button></div>';
+      h+='<div class="extab">';
+      Sx.ex.forEach(function(xid){
+        var X=EX[xid], log=(st.ex&&st.ex[xid])||[], prev=lastLog(xid,cur);
+        h+='<div class="exrow" data-ex="'+xid+'">'
+          +'<div class="exhead"><div class="n">'+X.n+'</div><div class="pr">'+(prev?('last: '+prev):'—')+'</div><button class="btn g sm" data-exhow="'+xid+'">?</button></div>'
+          +'<div class="exmeta">'+X.s+' × '+X.r+' <span class="pill p-a" style="margin-left:5px">'+X.tag+'</span></div>'
+          +'<div class="sets">'+Array.apply(null,{length:X.s}).map(function(_,i){
+              var L=log[i]||{};
+              return '<div class="setbox"><span>'+(i+1)+'</span><input type="number" data-s="'+xid+'|'+i+'|w" value="'+(L.w!=null?L.w:'')+'" placeholder="kg"><span>×</span><input type="number" data-s="'+xid+'|'+i+'|r" value="'+(L.r!=null?L.r:'')+'" placeholder="r"></div>';
+            }).join('')+'</div>'
+          +'<div class="exhow"><ul>'+X.cues.map(function(c){ return '<li>'+c+'</li>'; }).join('')+'</ul>'
+            +'<div class="why"><b>Why:</b> '+X.why+'</div>'
+            +(X.safe? '<div class="safe"><b>Shoulder rule:</b> '+X.safe+'</div>':'')
+          +'</div></div>';
+      });
+      h+='</div>';
+      h+='<div class="note" style="margin-top:8px"><b style="color:var(--tx)">Finish:</b> '+Sx.fin+'</div>';
+      h+='<div class="safe" style="margin-top:12px"><b>Before you load those shoulders:</b> two Bankart repairs with current pain and limited overhead range needs a physiotherapist\'s assessment, not a web page. Nothing behind the head, pulldowns in front with a medium grip, lateral raises stop at 60–70°, never to failure, and any movement that hurts comes out of the plan.</div>';
+    }
+  }
+  if(a.kind==='review'){
+    h+='<div class="row"><button class="btn wide" id="gorev">Open the six questions →</button></div>';
+  }
+
+  h+='<div class="why"><b>Why this is in your plan:</b> '+a.why+'</div>';
+  h+='<div class="row" style="margin-top:13px">'
+    +'<button class="btn '+(st.done?'g':'gd')+'" data-done="'+id+'">'+(st.done?'Undo':'Mark done')+' </button>'
+    +'<button class="btn g sm" data-skip="'+id+'">'+(st.skip?'Un-skip':'Skip')+'</button></div>';
+  return h;
+}
+
+function wireBody(id){
+  var a=ACTS[id], st=A(cur,id), root=E('acts').querySelector('.act.open .body');
+  if(!root) return;
+  function set(f,v){ st[f]=v; wr(); }
+  root.querySelectorAll('[data-c]').forEach(function(b){
+    b.onclick=function(){
+      var d=b.dataset.c==='+'?1:-1;
+      st.c=Math.max(0,(st.c||0)+d);
+      if(d>0 && a.tar && st.c===a.tar && !st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n,'xp'); }
+      wr(); paintToday();
+    };
+  });
+  var nv=root.querySelector('#nv');
+  if(nv){ nv.oninput=function(){ st.v = nv.value===''?null:+nv.value; wr(); };
+          nv.onchange=function(){ if(a.tar&&st.v>=a.tar&&!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } paintToday(); }; }
+  root.querySelectorAll('[data-quick]').forEach(function(b){
+    b.onclick=function(){ st.v=(st.v||0)+ +b.dataset.quick; wr(); paintToday(); };
+  });
+  var bk=root.querySelector('#bk'); if(bk) bk.oninput=function(){ set('bk',bk.value); };
+  root.querySelectorAll('[data-o]').forEach(function(b){
+    b.onclick=function(){ st.o=+b.dataset.o; if(!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } wr(); paintToday(); };
+  });
+  var mn=root.querySelector('#mnote'); if(mn) mn.oninput=function(){ set('t',mn.value); };
+  var sot=root.querySelector('#sot'); if(sot) sot.oninput=function(){ set('t',sot.value); };
+  var np=root.querySelector('#newprm'); if(np) np.onclick=function(){ root.querySelector('#prm').textContent=PROMPTS[Math.floor(Math.random()*PROMPTS.length)]; };
+  var t90=root.querySelector('#t90'); if(t90) t90.onclick=function(){ timer(90,'90-second take'); };
+  var t45=root.querySelector('#t45'); if(t45) t45.onclick=function(){ timer(45,'45-second take — cut everything'); };
+  var rt=root.querySelector('#rtimer'); if(rt) rt.onclick=function(){ timer(1200,'Reading — 20 minutes'); };
+  root.querySelectorAll('[data-rest]').forEach(function(b){ b.onclick=function(){ timer(+b.dataset.rest,'Rest'); }; });
+  var sf=root.querySelector('#startflow'); if(sf) sf.onclick=function(){ flowPlay(0); };
+  var gr=root.querySelector('#gorev'); if(gr) gr.onclick=function(){ go('more'); setTimeout(function(){ moreTab='review'; paintMore(); },30); };
+  root.querySelectorAll('[data-exhow]').forEach(function(b){
+    b.onclick=function(){ b.closest('.exrow').classList.toggle('open'); };
+  });
+  root.querySelectorAll('[data-s]').forEach(function(i){
+    i.oninput=function(){
+      var p=i.dataset.s.split('|'), xid=p[0], idx=+p[1], f=p[2];
+      if(!st.ex) st.ex={}; if(!st.ex[xid]) st.ex[xid]=[];
+      if(!st.ex[xid][idx]) st.ex[xid][idx]={};
+      st.ex[xid][idx][f]= i.value===''?null:+i.value;
+      if(!S.ex[xid]) S.ex[xid]={};
+      S.ex[xid][cur]=st.ex[xid];
+      wr();
+    };
+  });
+  root.querySelectorAll('[data-done]').forEach(function(b){
+    b.onclick=function(){ toggle(b.dataset.done); };
+  });
+  root.querySelectorAll('[data-skip]').forEach(function(b){
+    b.onclick=function(){
+      if(st.skip){ delete st.skip; wr(); paintToday(); return; }
+      askSkip(id);
+    };
+  });
+}
+function lastLog(xid,before){
+  if(!S.ex[xid]) return '';
+  var ks=Object.keys(S.ex[xid]).filter(function(d){ return d<before; }).sort();
+  if(!ks.length) return '';
+  var sets=S.ex[xid][ks[ks.length-1]]||[];
+  var best=null;
+  sets.forEach(function(s){ if(s&&s.w!=null&&s.r!=null){ if(!best||s.w>best.w) best=s; } });
+  return best? (best.w+'kg × '+best.r) : '';
+}
+function toggle(id){
+  var a=ACTS[id], st=A(cur,id);
+  if(st.done){ st.done=false; S.xp=Math.max(0,S.xp-a.xp); }
+  else { st.done=true; delete st.skip; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n.replace(/&amp;/g,'&'),'xp');
+    var ids=actsFor(cur).filter(function(x){ return !ACTS[x].opt; });
+    if(ids.every(function(x){ var s=S.days[cur].a[x]; return s&&(s.done||s.skip); })){ boom(); toast('Day complete. That is the whole job.'); }
+  }
+  save(); paintToday();
+}
+function askSkip(id){
+  modal('<div class="pl-name" style="font-size:19px">Skip — '+ACTS[id].n.replace(/&amp;/g,'&')+'</div>'
+   +'<div class="pl-how">A logged skip is data. A blank is a hidden week. Pick the honest one.</div>'
+   +['No time','Too tired','Work ran over','Injury or pain','Travelling / away','Chose not to'].map(function(r){
+      return '<button class="opt" data-r="'+r+'" style="width:100%;margin-bottom:7px">'+r+'</button>'; }).join('')
+   +'<button class="btn g wide" data-close="1">Cancel</button>', function(m){
+     m.querySelectorAll('[data-r]').forEach(function(b){
+       b.onclick=function(){ var st=A(cur,id); st.skip=b.dataset.r; st.done=false; S.xp+=1; wr(); closeModal(); paintToday(); toast('Logged. +1 XP for honesty.','xp'); };
+     });
+   });
+}
+
+/* ── modal, timers, flow player ── */
+function modal(html,after){ var m=E('modal'); m.innerHTML=html; E('mask').classList.add('on');
+  m.querySelectorAll('[data-close]').forEach(function(b){ b.onclick=closeModal; });
+  if(after) after(m); }
+function closeModal(){ E('mask').classList.remove('on'); if(tick){ clearInterval(tick); tick=null; } }
+E('mask').onclick=function(e){ if(e.target===E('mask')) closeModal(); };
+var tick=null;
+function beep(){ try{ var c=new (window.AudioContext||window.webkitAudioContext)(); var o=c.createOscillator(), g=c.createGain();
+  o.connect(g); g.connect(c.destination); o.frequency.value=760; g.gain.value=.14; o.start();
+  setTimeout(function(){ o.stop(); c.close&&c.close(); },260); }catch(e){} }
+function fmt(s){ var m=Math.floor(s/60); return m+':'+String(s%60).padStart(2,'0'); }
+function timer(sec,label){
+  var left=sec;
+  modal('<div class="pl-step">'+label+'</div><div class="pl-time" id="tv">'+fmt(left)+'</div>'
+    +'<div class="row"><button class="btn g wide" data-close="1">Stop</button></div>');
+  if(tick) clearInterval(tick);
+  tick=setInterval(function(){
+    left--; var t=E('tv'); if(!t){ clearInterval(tick); tick=null; return; }
+    t.textContent=fmt(Math.max(0,left));
+    if(left<=0){ clearInterval(tick); tick=null; beep(); t.textContent='done'; setTimeout(closeModal,900); }
+  },1000);
+}
+function flowPlay(i){
+  if(i>=FLOW.length){
+    var st=A(cur,'flow'); if(!st.done){ st.done=true; xpAdd(ACTS.flow.xp); } wr();
+    modal('<div class="pl-step">Complete</div><div class="pl-name">Flow done</div>'
+      +'<div class="pl-how">Thirteen drills. Ankles, feet, hips, spine, shoulders. Ten minutes you cannot lose to work.</div>'
+      +'<button class="btn wide" data-close="1">Close</button>');
+    boom(); paintToday(); return;
+  }
+  var f=FLOW[i], left=f.t;
+  modal('<div class="pl-step">'+f.g+' · '+(i+1)+' of '+FLOW.length+'</div>'
+   +'<div class="pl-name">'+f.n+'</div><div class="pl-how">'+f.h+'</div>'
+   +'<div class="pl-time" id="tv">'+fmt(left)+'</div>'
+   +'<div class="pl-dots">'+FLOW.map(function(_,j){ return '<i class="'+(j<i?'did':(j===i?'on':''))+'"></i>'; }).join('')+'</div>'
+   +'<div class="row"><button class="btn" id="nx" style="flex:1">Next →</button><button class="btn g" data-close="1">Stop</button></div>',
+   function(m){ m.querySelector('#nx').onclick=function(){ if(tick){clearInterval(tick);tick=null;} flowPlay(i+1); }; });
+  if(tick) clearInterval(tick);
+  tick=setInterval(function(){
+    left--; var t=E('tv'); if(!t){ clearInterval(tick); tick=null; return; }
+    t.textContent=fmt(Math.max(0,left));
+    if(left<=0){ clearInterval(tick); tick=null; beep(); flowPlay(i+1); }
+  },1000);
+}
+
+/* ═══════════════════ PROGRAMME ═══════════════════ */
+var progWk=1;
+function paintProg(){
+  progWk=Math.min(12,Math.max(1,wkN(TODAY)));
+  E('wtabs').innerHTML=Array.apply(null,{length:12}).map(function(_,i){
+    return '<button data-w="'+(i+1)+'" class="'+((i+1)===progWk?'on':'')+'">Week '+(i+1)+'</button>'; }).join('');
+  E('wtabs').querySelectorAll('button').forEach(function(b){
+    b.onclick=function(){ progWk=+b.dataset.w;
+      E('wtabs').querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x===b); });
+      progBody(); };
+  });
+  progBody();
+}
+var PHASE=[
+ {w:[1,2],b:'Physio assessment. Learn the four sessions at conservative loads. Morning flow daily.',s:'Weed: Fri/Sat only. IQOS unchanged — deliberately.',so:'One 20-second exchange a day.',m:'Atomic Habits + Dopamine Nation. 90-min deep block daily.'},
+ {w:[3,4],b:'Add load. First re-test on day 28.',s:'Weed: Fri/Sat only, logged every time.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
+ {w:[5,6],b:'Progressive overload. Cardio to four sessions a week.',s:'Weed: Friday only.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
+ {w:[7,8],b:'Shoulder re-test. Overhead progression if cleared.',s:'Week 7: weed quit date. Week 8: IQOS cap 15.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
+ {w:[9,10],b:'Heaviest block. Day 56 re-test.',s:'IQOS 10 then 5. Weed held.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
+ {w:[11,12],b:'Day 84 re-test against baseline.',s:'IQOS quit day 71. Both held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
+];
+function progBody(){
+  var ph=PHASE.find(function(p){ return progWk>=p.w[0]&&progWk<=p.w[1]; });
+  var h='<div class="card"><h2>Week '+progWk+' <span class="pill p-a">'+pretty(add(S.start,(progWk-1)*7))+'</span></h2>'
+   +'<div style="margin-top:10px"><table><tbody>'
+   +'<tr><td style="width:80px;color:var(--dim)">Body</td><td>'+ph.b+'</td></tr>'
+   +'<tr><td style="color:var(--dim)">Substances</td><td>'+ph.s+'</td></tr>'
+   +'<tr><td style="color:var(--dim)">Social</td><td>'+ph.so+'</td></tr>'
+   +'<tr><td style="color:var(--dim)">Mind</td><td>'+ph.m+'</td></tr>'
+   +'</tbody></table></div></div>';
+  for(var i=0;i<7;i++){
+    var k=add(S.start,(progWk-1)*7+i), g=pd(k).getDay(), sk=DAYSESS[g];
+    var ids=actsFor(k), d=S.days[k], done=ids.filter(function(x){ return d&&d.a[x]&&d.a[x].done; }).length;
+    var isToday=(k===TODAY);
+    h+='<div class="card" style="'+(isToday?'border-color:var(--ac)':'')+'">'
+      +'<h2>'+DOW[g]+' · day '+dayN(k)+' '+(isToday?'<span class="pill p-a">today</span>':'')
+      +' <span style="margin-left:auto;font-size:12px;color:var(--dim2)">'+done+'/'+ids.filter(function(x){return !ACTS[x].opt;}).length+'</span></h2>'
+      +'<div class="note">'+(sk? SESS[sk].n : 'Rest, review and people')+'</div>'
+      +'<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px">'
+      + ids.map(function(x){ var s=d&&d.a[x]; return '<span class="pill '+(s&&s.done?'p-g':(s&&s.skip?'p-b':'p-a'))+'" style="text-transform:none;font-weight:600">'+ACTS[x].ic+' '+ACTS[x].n.replace(/&amp;/g,'&')+'</span>'; }).join('')
+      +'</div>'
+      +(sk? '<div class="row" style="margin-top:11px"><button class="btn g sm" data-jump="'+k+'">Open this day →</button></div>'
+          : '<div class="row" style="margin-top:11px"><button class="btn g sm" data-jump="'+k+'">Open this day →</button></div>')
+      +'</div>';
+  }
+  E('progbody').innerHTML=h;
+  E('progbody').querySelectorAll('[data-jump]').forEach(function(b){
+    b.onclick=function(){ cur=b.dataset.jump; openAct=null; go('today'); paintToday(); };
+  });
+}
+
+/* ═══════════════════ LIBRARY ═══════════════════ */
+function paintLib(){
+  var q=(E('libq').value||'').toLowerCase();
+  var h='';
+  var groups=[['Lower body','lowerA'],['Upper body','upperA'],['Posterior chain','lowerB'],['Shoulder rebuild','upperB'],['Cardio','z2']];
+  var seen={};
+  ['lowerA','upperA','lowerB','upperB','z2','cardio'].forEach(function(sk){
+    SESS[sk].ex.forEach(function(xid){
+      if(seen[xid]) return; seen[xid]=1;
+      var X=EX[xid];
+      if(q && (X.n+' '+X.tag+' '+X.why+' '+X.cues.join(' ')).toLowerCase().indexOf(q)<0) return;
+      var prev=lastLog(xid,add(TODAY,1));
+      h+='<div class="card"><h2>'+X.n+' <span class="pill p-a">'+X.tag+'</span>'+(X.safe?' <span class="pill p-w">shoulder rule</span>':'')+'</h2>'
+        +'<div class="note">'+X.s+' × '+X.r+(prev? ' · your last: <b style="color:var(--tx)">'+prev+'</b>':'')+'</div>'
+        +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:13px 0 7px">How</h5>'
+        +'<ul style="padding-left:18px;font-size:13px;color:var(--dim)">'+X.cues.map(function(c){ return '<li style="margin-bottom:4px">'+c+'</li>'; }).join('')+'</ul>'
+        +'<div class="why" style="margin-top:11px"><b>Why:</b> '+X.why+'</div>'
+        +(X.safe? '<div class="safe" style="margin-top:10px"><b>Shoulder rule:</b> '+X.safe+'</div>':'')
+        +histHtml(xid)
+        +'</div>';
+    });
+  });
+  FLOW.forEach(function(f,i){
+    if(q && (f.n+' '+f.h+' '+f.g).toLowerCase().indexOf(q)<0) return;
+    h+='<div class="card"><h2>'+f.n+' <span class="pill p-p">flow · '+f.g+'</span></h2><div class="note" style="margin-top:7px">'+f.h+'</div></div>';
+  });
+  E('libbody').innerHTML = h || '<div class="empty">Nothing matches that.</div>';
+}
+function histHtml(xid){
+  if(!S.ex[xid]) return '';
+  var ks=Object.keys(S.ex[xid]).sort().slice(-6).reverse();
+  if(!ks.length) return '';
+  return '<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:13px 0 6px">Your log</h5>'
+   +'<table><tbody>'+ks.map(function(k){
+     var sets=(S.ex[xid][k]||[]).filter(function(s){ return s&&s.w!=null; });
+     return '<tr><td class="n" style="color:var(--dim)">'+k+'</td><td class="n">'+(sets.map(function(s){ return s.w+'×'+(s.r!=null?s.r:'?'); }).join('  ·  ')||'—')+'</td></tr>';
+   }).join('')+'</tbody></table>';
+}
+E('libq').oninput=paintLib;
+
+/* ═══════════════════ PROGRESS ═══════════════════ */
+function paintProgress(){
+  var L=lvl();
+  E('lv-n').textContent=L.i+1; E('lv-name').textContent=L.name; E('lv-xp').textContent=S.xp;
+  if(L.next){ E('lv-next').textContent=(L.next-S.xp)+' XP to level '+(L.i+2);
+    E('lv-bar').style.width=Math.min(100,Math.round((S.xp-L.at)/(L.next-L.at)*100))+'%'; }
+  else { E('lv-next').textContent='Max level'; E('lv-bar').style.width='100%'; }
+
+  var hh='', done=0, poss=0;
+  for(var r=0;r<7;r++){ /* placeholder to keep grid square */ }
+  var cells=[];
+  for(var i=0;i<84;i++){
+    var k=add(S.start,i), ids=actsFor(k).filter(function(x){ return !ACTS[x].opt; });
+    var d=S.days[k], dn = d? ids.filter(function(x){ return d.a[x]&&d.a[x].done; }).length : 0;
+    var pct = ids.length? dn/ids.length : 0;
+    var fut = pd(k)>pd(TODAY);
+    var col = fut? '#1b2230' : (pct>=.85?'#34d399' : pct>=.6?'#2f9e78' : pct>=.35?'#7a6a2e' : pct>0?'#5a3a3a' : '#2a3244');
+    cells.push('<i title="'+k+' — '+Math.round(pct*100)+'%" style="background:'+col+'"></i>');
+    if(!fut){ poss+=ids.length; done+=dn; }
+  }
+  E('hm').innerHTML=cells.join('');
+  E('hm-stat').innerHTML = poss? '<b style="color:var(--tx)">'+Math.round(done/poss*100)+'%</b> of everything due so far, '+done+' of '+poss+' activities.' : 'Nothing due yet.';
+
+  E('badges').innerHTML=BADGES.map(function(b){
+    var got=S.badges.indexOf(b.id)>=0;
+    return '<div class="badge'+(got?' got':'')+'"><div class="e">'+b.e+'</div><div class="n">'+b.n+'</div><div class="d">'+b.d+'</div></div>';
+  }).join('');
+
+  lineChart('ch-wt',[{data:S.wt,c:'#4da3ff',lab:'kg'},{data:S.wa,c:'#fb923c',lab:'cm'}]);
+  var iq={},wd={};
+  Object.keys(S.days).forEach(function(k){
+    var a=S.days[k].a;
+    if(a.iqos&&a.iqos.c!=null) iq[k]=a.iqos.c;
+    if(a.weed&&a.weed.c!=null) wd[k]=a.weed.c;
+  });
+  lineChart('ch-sub',[{data:iq,c:'#fb923c'},{data:wd,c:'#a78bfa'}]);
+  var iqk=Object.keys(iq).sort(), avg=iqk.length? (iqk.reduce(function(s,k){ return s+iq[k]; },0)/iqk.length).toFixed(1):'—';
+  E('sub-stat').innerHTML='Days clean of weed: <b style="color:var(--gd)">'+cleanDays()+'</b> · average IQOS/day logged: <b style="color:var(--tx)">'+avg+'</b> · today\'s cap: <b style="color:var(--tx)">'+iqCap(wkN(TODAY))+'</b>';
+
+  var vol={};
+  Object.keys(S.days).forEach(function(k){
+    var t=S.days[k].a.train; if(!t||!t.ex) return;
+    var w=wkN(k), v=0;
+    Object.keys(t.ex).forEach(function(x){ (t.ex[x]||[]).forEach(function(s){ if(s&&s.w&&s.r) v+=s.w*s.r; }); });
+    vol[w]=(vol[w]||0)+v;
+  });
+  barChart('ch-vol',vol);
+
+  var h='';
+  METS.forEach(function(m,i){
+    h+='<tr><td>'+m.n+'</td><td style="color:var(--dim);font-size:11.5px">'+m.t+'</td>';
+    ['d1','d28','d56','d84'].forEach(function(c){
+      var v=(S.met[i]&&S.met[i][c])||'';
+      h+='<td><input class="mi" data-m="'+i+'" data-c="'+c+'" value="'+esc(v)+'" style="width:62px;padding:5px"></td>';
+    });
+    h+='</tr>';
+  });
+  E('mtb').innerHTML=h;
+  E('mtb').querySelectorAll('.mi').forEach(function(i){
+    i.oninput=function(){ var m=i.dataset.m; if(!S.met[m])S.met[m]={}; S.met[m][i.dataset.c]=i.value; wr(); };
+  });
+}
+function lineChart(id,series){
+  var svg=E(id), W=520, H=110;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var keys={}; series.forEach(function(s){ Object.keys(s.data).forEach(function(k){ keys[k]=1; }); });
+  var ks=Object.keys(keys).sort();
+  if(ks.length<2){ svg.innerHTML='<text x="4" y="58" fill="#5f6b81" font-size="12">Log at least two entries to see a trend.</text>'; return; }
+  var out='';
+  series.forEach(function(s){
+    var vals=ks.map(function(k){ return s.data[k]!=null? +s.data[k] : null; }).filter(function(v){ return v!=null; });
+    if(vals.length<2) return;
+    var mn=Math.min.apply(null,vals), mx=Math.max.apply(null,vals); if(mx===mn) mx=mn+1;
+    var p='', first=true;
+    ks.forEach(function(k,i){
+      var v=s.data[k]; if(v==null) return;
+      var x=8+(W-16)*(ks.length>1? i/(ks.length-1):0), y=H-14-((v-mn)/(mx-mn))*(H-30);
+      p+=(first?'M':'L')+x.toFixed(1)+' '+y.toFixed(1)+' '; first=false;
+      out+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2.5" fill="'+s.c+'"/>';
+    });
+    out='<path d="'+p+'" fill="none" stroke="'+s.c+'" stroke-width="2.2" stroke-linejoin="round"/>'+out;
+    out+='<text x="2" y="11" fill="'+s.c+'" font-size="9">'+mx+'</text><text x="2" y="'+(H-2)+'" fill="'+s.c+'" font-size="9">'+mn+'</text>';
+  });
+  svg.innerHTML=out||'<text x="4" y="58" fill="#5f6b81" font-size="12">Not enough data yet.</text>';
+}
+function barChart(id,obj){
+  var svg=E(id), W=520, H=120;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var mx=0; for(var w=1;w<=12;w++) mx=Math.max(mx,obj[w]||0);
+  if(!mx){ svg.innerHTML='<text x="4" y="62" fill="#5f6b81" font-size="12">Log some sets and this fills in.</text>'; return; }
+  var bw=(W-20)/12, out='';
+  for(var w=1;w<=12;w++){
+    var v=obj[w]||0, h=(v/mx)*(H-32), x=10+(w-1)*bw, y=H-20-h;
+    out+='<rect x="'+(x+3)+'" y="'+y.toFixed(1)+'" width="'+(bw-6)+'" height="'+Math.max(1,h).toFixed(1)+'" rx="3" fill="'+(v?'#4da3ff':'#222b3b')+'"/>';
+    out+='<text x="'+(x+bw/2)+'" y="'+(H-6)+'" fill="#5f6b81" font-size="9" text-anchor="middle">'+w+'</text>';
+    if(v) out+='<text x="'+(x+bw/2)+'" y="'+(y-4).toFixed(1)+'" fill="#8f9cb3" font-size="8" text-anchor="middle">'+Math.round(v/1000)+'k</text>';
+  }
+  svg.innerHTML=out;
+}
+E('b-wt').onclick=function(){
+  var w=E('i-wt').value, a=E('i-wa').value;
+  if(w) S.wt[TODAY]=+w; if(a) S.wa[TODAY]=+a;
+  wr(); E('i-wt').value=''; E('i-wa').value=''; paintProgress(); toast('Logged');
+};
+
+/* ── badges ── */
+function chkBadges(){
+  var fresh=[];
+  function give(id){ if(S.badges.indexOf(id)<0){ S.badges.push(id); fresh.push(id); } }
+  var ks=Object.keys(S.days);
+  if(ks.length>=1) give('d1');
+  if(ks.length>=7) give('w1');
+  var fl=ks.filter(function(k){ return S.days[k].a.flow&&S.days[k].a.flow.done; }).length;
+  if(fl>=10) give('fl10'); if(fl>=50) give('fl50');
+  var tr=ks.filter(function(k){ return S.days[k].a.train&&S.days[k].a.train.done; });
+  if(tr.length>=20) give('s20');
+  var byw={}; tr.forEach(function(k){ var w=wkN(k); byw[w]=(byw[w]||0)+1; });
+  if(Object.keys(byw).some(function(w){ return byw[w]>=4; })) give('s4');
+  var rm=ks.reduce(function(s,k){ var a=S.days[k].a.read; return s+((a&&a.v)||0); },0);
+  if(rm>=300) give('bk300');
+  var so=ks.filter(function(k){ return S.days[k].a.social&&S.days[k].a.social.done; }).length;
+  if(so>=10) give('so10'); if(so>=30) give('so30');
+  var cl=cleanDays(); if(cl>=7) give('cl7'); if(cl>=28) give('cl28');
+  var nic=ks.filter(function(k){ var a=S.days[k].a.iqos; return a&&a.c!=null&&a.c<=iqCap(wkN(k)); }).length;
+  if(nic>=7) give('nic1');
+  var st=ks.filter(function(k){ var a=S.days[k].a.steps; return a&&a.v>=8000; }).length;
+  if(st>=20) give('st20');
+  if(dayN(TODAY)>=42) give('half');
+  if(dayN(TODAY)>=84) give('fin');
+  if(fresh.length){
+    wr();
+    var names=fresh.map(function(id){ var b=BADGES.find(function(x){ return x.id===id; }); return b?b.n:id; });
+    toast(fresh.length===1? ('Badge unlocked — '+names[0]) : (fresh.length+' badges unlocked — '+names.join(', ')),'lv');
+    boom();
+  }
+}
+
+/* ═══════════════════ MORE ═══════════════════ */
+var moreTab='why';
+var MORETABS=[['why','How this works'],['review','Weekly review'],['food','Food & numbers'],['quit','Quitting'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
+function paintMore(){
+  E('mtabs').innerHTML=MORETABS.map(function(t){ return '<button data-t="'+t[0]+'" class="'+(t[0]===moreTab?'on':'')+'">'+t[1]+'</button>'; }).join('');
+  E('mtabs').querySelectorAll('button').forEach(function(b){ b.onclick=function(){ moreTab=b.dataset.t; paintMore(); }; });
+  E('morebody').innerHTML = MOREHTML[moreTab]();
+  if(moreTab==='review') wireReview();
+  if(moreTab==='data') wireData();
+  if(moreTab==='social') wireSocial();
+  if(moreTab==='sync') wireSync();
+}
+var MOREHTML={
+why:function(){ return '<div class="card"><h2>How this works</h2>'
+ +'<div class="note">Twelve weeks. Four lifting days, two cardio days, one rest day, and a short list of daily non-negotiables. The full written programme, including the reasoning behind each choice, lives in the Word document on your laptop.</div>'
+ +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">The five rules</h5>'
+ +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Edit it.</b> Change exercises, move days, cut what you do not believe in. A plan you have modified is one you will finish.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">The morning flow is the one that matters most.</b> Ten minutes, every day including rest days. It is the only habit here that a long workday cannot eat.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Log the misses.</b> Use Skip with a reason rather than leaving a blank. A red day recorded honestly is worth more than a green day you did not earn.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">One missed day does not break this.</b> Lally et al. followed 96 people forming daily habits over twelve weeks: a single missed opportunity had no material effect. Two in a row is where it starts to matter.</li>'
+ +'<li><b style="color:var(--tx)">Do it with people.</b> The social rung each week is not decoration. It is the part most likely to determine whether the other eleven weeks hold.</li>'
+ +'</ul>'
+ +'<div class="safe" style="margin-top:16px"><b>Two things this app cannot do.</b> It is not a physiotherapist, and shoulders with current pain and restricted overhead range need one before you load them. And it is not a substitute for talking to a professional about the parts of this that are not physical.</div></div>'; },
+
+review:function(){
+  var w=Math.min(12,Math.max(1,wkN(TODAY)));
+  var RVQ=[['q1','What actually happened this week? Facts, not judgement.'],['q2','Which day went wrong, and what specifically got in the way?'],['q3','What worked well enough that it should stay?'],['q4','One thing to change next week. One — not five.'],['q5','How did the social rep go? Easier or harder than last week?'],['q6','What do you need from someone else next week? (The one everyone skips.)']];
+  var h='<div class="card"><h2>Saturday review</h2><div class="note">Fifteen minutes, before the week starts. On Sunday night it is just guilt.</div>'
+   +'<div class="row" style="margin-top:11px"><select id="rvw" style="max-width:200px">'
+   +Array.apply(null,{length:12}).map(function(_,i){ return '<option value="'+(i+1)+'"'+((i+1)===w?' selected':'')+'>Week '+(i+1)+'</option>'; }).join('')
+   +'</select><span id="rvstat" style="color:var(--dim);font-size:12.5px"></span></div>';
+  h+='<div id="rvf" style="margin-top:14px">'+RVQ.map(function(q){
+    return '<h5 style="font-size:13px;text-transform:none;letter-spacing:0;color:var(--tx);margin:14px 0 6px">'+q[1]+'</h5><textarea data-q="'+q[0]+'"></textarea>'; }).join('')+'</div></div>';
+  return h;
+},
+
+food:function(){ return '<div class="card"><h2>Your numbers <span class="pill p-a">183 cm · 80 kg · BMI 23.9</span></h2>'
+ +'<div class="note">Calculated, not eyeballed. BMI 23.9 is the healthy range, which matters: you do not need an aggressive cut, and running one fights the thing you actually want, which is bigger legs.</div>'
+ +'<table style="margin-top:11px"><tbody>'
+ +'<tr><td>BMR (Mifflin–St Jeor)</td><td class="n"><b>1,824 kcal</b></td></tr>'
+ +'<tr><td>Maintenance with this training</td><td class="n"><b>≈ 2,690 kcal</b></td></tr>'
+ +'<tr><td><b>Daily target</b></td><td class="n"><span class="pill p-g">2,400–2,500 kcal</span></td></tr>'
+ +'<tr><td>Protein (2.0–2.2 g/kg)</td><td class="n"><b>160–176 g</b> · aim 165</td></tr>'
+ +'<tr><td>Fat</td><td class="n"><b>70–80 g</b></td></tr>'
+ +'<tr><td>Carbohydrate</td><td class="n"><b>≈ 290–300 g</b></td></tr>'
+ +'<tr><td>Expected fat loss</td><td class="n"><b>0.2–0.3 kg/week</b></td></tr>'
+ +'<tr><td>Water</td><td class="n"><b>3.5 L</b></td></tr></tbody></table>'
+ +'<div class="safe" style="margin-top:14px"><b>A standard cutting plan will run short of this.</b> A typical five-meal cutting template totals roughly <b>2,070 kcal and 206 g protein</b> — a 620 kcal deficit, about 0.57 kg a week, protein at 2.6 g/kg. That is a good fat-loss plan. It is not a grow-your-legs plan, and protein above ~2.2 g/kg buys nothing, so about 40 g of it is displacing carbs that would fuel your leg training.<br><br><b>The fix is small:</b> keep every meal as written and add ~100 g of carbohydrate around training — about 150 g more cooked basmati at Meal 2, plus a banana and a couple of dates pre-gym. That lands near 2,500 kcal with protein ~175 g, and turns a cut into slow recomposition. Run any change past whoever wrote your nutrition plan rather than doing it unilaterally.</div>'
+ +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">Supplements — what the evidence supports</h5>'
+ +'<table><thead><tr><th>Supplement</th><th>Dose</th><th>Verdict</th></tr></thead><tbody>'
+ +'<tr><td>Creatine</td><td>5 g daily</td><td><span class="pill p-g">Strong</span> Best-supported there is. Timing irrelevant.</td></tr>'
+ +'<tr><td>Whey</td><td>25 g post</td><td><span class="pill p-g">Strong</span> As a tool for hitting 165 g. No magic window.</td></tr>'
+ +'<tr><td>Beta-alanine</td><td>4 g split</td><td><span class="pill p-g">Good</span> For 1–4 minute efforts.</td></tr>'
+ +'<tr><td>Citrulline malate</td><td>6 g pre</td><td><span class="pill p-w">Modest</span> Pump is real, hypertrophy signal is weak.</td></tr>'
+ +'<tr><td>Omega-3</td><td>1–2 caps</td><td><span class="pill p-w">Modest</span> Worth it if you eat little fatty fish.</td></tr>'
+ +'<tr><td>Multivitamin</td><td>1 serving</td><td><span class="pill p-w">Insurance</span> Not performance. Harmless.</td></tr>'
+ +'<tr><td>Arginine</td><td>3 g pre</td><td><span class="pill p-b">Weak — skip</span> Poor oral bioavailability. Citrulline does it better.</td></tr>'
+ +'</tbody></table>'
+ +'<div class="safe" style="margin-top:14px"><b>Get bloodwork before you start.</b> Vitamin D, full blood count, lipids, HbA1c, thyroid, total testosterone. Vitamin D deficiency is common in Egypt despite the sunshine, and low vitamin D or a sluggish thyroid produces exactly the fatigue you have been reading as laziness. Rule out a physiological cause before concluding it is a character one.</div>'
+ +'<div class="src">Morton et al. (2018), 49 studies and 1,863 participants: fat-free mass gains plateaued around 1.62 g/kg/day, authors noting the true breakpoint is likely higher; 1.6–2.2 g/kg/day is the practical range. Maintenance is a formula estimate — adjust on your weekly weight trend, not the arithmetic. Meal-plan calories are approximations from the listed foods; brand and cooking method move them ±100 kcal.</div></div>'; },
+
+quit:function(){ return '<div class="card"><h2>Cannabis</h2>'
+ +'<div class="note">Weekends → Friday → stopped. Quit date is day 43: <b style="color:var(--wn)">'+pretty(add(S.start,42))+'</b>.</div>'
+ +'<table style="margin-top:11px"><thead><tr><th>Phase</th><th>Rule</th></tr></thead><tbody>'
+ +'<tr><td>Weeks 1–4</td><td>Friday and Saturday only, one session maximum. Log every use.</td></tr>'
+ +'<tr><td>Weeks 5–6</td><td>Friday only.</td></tr>'
+ +'<tr><td>Week 7 →</td><td><b>Stopped.</b> Nothing in the house. Two friends know the date.</td></tr>'
+ +'</tbody></table>'
+ +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">After your last session</h5>'
+ +'<table><tbody>'
+ +'<tr><td class="n">24–72 h</td><td>Onset: irritability, anxiety, restlessness, appetite drop, poor sleep.</td></tr>'
+ +'<tr><td class="n">Days 2–6</td><td>Peak. Protect this week — nothing new gets added, and drop a session if you need to.</td></tr>'
+ +'<tr><td class="n">~3 weeks</td><td>Most acute symptoms resolved.</td></tr>'
+ +'<tr><td class="n">~28 days</td><td>CB1 receptor availability measured back in line with people who never used regularly.</td></tr>'
+ +'<tr><td class="n">30–45 days</td><td>Sleep disruption and vivid dreams are last to go. Nobody warns people about this, which is why they relapse in week four thinking it should be over.</td></tr>'
+ +'</tbody></table>'
+ +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">The five things that decide it</h5>'
+ +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Fill the 20:00–22:00 slot.</b> Weed and doomscrolling do the same job — numbing after ten hours of work and two of traffic. Remove the substance without replacing the function and you are back inside a month.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">No supply in the house from the quit date.</b> Not hidden, not for guests. Gone.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Two friends get told the date.</b> Quitting silently, with nobody expecting anything of you, is the version that fails most often.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Write the if-then in advance.</b> "If I want to smoke on a Thursday, then I put my shoes on and walk ten minutes first." Decided beforehand, not in the moment.</li>'
+ +'<li><b style="color:var(--tx)">Know what the taper is for.</b> In the smoking literature abrupt quitting beats gradual reduction for long-term abstinence — roughly 16% versus 12%. The step-down here stops week one blowing up everything else you are starting. The hard stop still has to happen on the date, or it becomes a permanent taper.</li>'
+ +'</ul></div>'
+ +'<div class="card"><h2>IQOS <span class="pill p-o">~20/day</span></h2>'
+ +'<div class="safe"><b>A pack a day is heavy dependence, not a casual habit.</b> Twenty HeatSticks is nicotine in the same territory as twenty cigarettes. Two straight consequences: this is the item most likely to need pharmacological help rather than resolve — Cochrane reviews put nicotine replacement at roughly 50–60% better quit rates than nothing, and a patch plus a fast-acting form beats either alone — and at this dose it measurably works against training recovery and against vascular function. If you reach for it within thirty minutes of waking, that is the standard marker of high dependence; tell the pharmacist, because it changes the patch strength.</div>'
+ +'<table style="margin-top:13px"><thead><tr><th>Week</th><th>Cap</th><th>Note</th></tr></thead><tbody>'
+ +'<tr><td>1–7</td><td class="n">~20</td><td>No cutting. Just count honestly and build the baseline.</td></tr>'
+ +'<tr><td>8</td><td class="n">15</td><td>Plan starts. See a pharmacist. Cut the three most automatic ones first.</td></tr>'
+ +'<tr><td>9</td><td class="n">10</td><td>Patch on from here if using NRT.</td></tr>'
+ +'<tr><td>10</td><td class="n">5</td><td>Keep only the two or three that genuinely matter.</td></tr>'
+ +'<tr><td>11 (day 71)</td><td class="n">0</td><td><b>Quit date.</b> Device leaves the house.</td></tr>'
+ +'<tr><td>12</td><td class="n">0</td><td>Held.</td></tr>'
+ +'</tbody></table>'
+ +'<div class="src">CDC, Heated Tobacco Products · Public Health Law Center FAQ on the IQOS modified-risk authorisation — the FDA permits only a reduced-<em>exposure</em> claim for complete switchers, not reduced risk, and heated tobacco has not been shown to help people quit.</div></div>'; },
+
+social:function(){
+  var h='<div class="card"><h2>The confidence ladder</h2>'
+   +'<div class="note">Being comfortable with friends and stuck with strangers is not a personality trait — it is what thousands of reps of one and almost none of the other produces. Graded exposure works: start almost embarrassingly easy, climb when the rung is boring. Confidence follows evidence; it does not arrive first.</div>'
+   +'<table style="margin-top:12px"><thead><tr><th>Weeks</th><th>The rep</th><th>Done</th></tr></thead><tbody>';
+  LADDER.forEach(function(L,i){
+    var w=wkN(TODAY), rg=L.w.split('–').map(Number), now=w>=rg[0]&&w<=rg[1];
+    h+='<tr'+(now?' style="background:rgba(77,163,255,.07)"':'')+'><td><b>'+L.w+'</b>'+(now?' <span class="pill p-a">now</span>':'')+'</td><td>'+L.r+'<div style="color:var(--dim2);font-size:12px;margin-top:4px">'+L.t+'</div></td><td><input type="checkbox" data-l="'+i+'"'+(S.ladder[i]?' checked':'')+' style="width:auto"></td></tr>';
+  });
+  h+='</tbody></table></div>'
+   +'<div class="card"><h2>Storytelling</h2><div class="note">The instinct is usually that you need more material. You almost certainly do not — the limiting factor is compression. So the drill is cutting.</div>'
+   +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim);margin-top:11px">'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">The shape:</b> Context → Complication → Turn → So-what. Four beats, ninety seconds.</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Open mid-action.</b> "I was on my own in a foreign city and I\'d just been told I couldn\'t continue" — not "so a few years ago I transferred to a different course, and the way the credit system works there is…"</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">One concrete detail beats three adjectives.</b> The email from the university. The keys in the door. Not "it was a difficult period".</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Name the stakes in fifteen seconds</b> or nobody knows why they are listening.</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">End on the meaning, not a summary.</b> What it changed, not what happened.</li>'
+   +'<li><b style="color:var(--tx)">The drill:</b> 90 seconds, then the same story in 45. The second version is always better. Twenty repetitions of that is the whole skill.</li></ul></div>'
+   +'<div class="card"><h2>Killing small talk</h2><div class="note">The exit is not a better opening line. It is asking something the other person wants to answer and then not changing the subject.</div>'
+   +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim);margin-top:11px">'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">The second-question rule</b> is the whole trick. One question is an interview. Two follow-ups on the same answer is a conversation.</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Openers that go somewhere:</b> "What\'s had your attention lately?" · "What are you working on that you actually care about?" · "How did you end up doing that?" · "What\'s the part people get wrong?"</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Shared context beats cleverness.</b> Same gym, same wedding, same queue. Name the shared thing, ask about it. No wit required.</li>'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Work the edges at big gatherings.</b> Groups of two are open, groups of five are closed. Talk to whoever is standing alone — they are relieved, not annoyed. This is the specific fix for the discomfort you described.</li>'
+   +'<li><b style="color:var(--tx)">You are allowed to leave.</b> Knowing you can exit after four minutes — "I\'m going to grab a drink, good to meet you" — is what makes starting feel low-risk.</li></ul></div>';
+  return h;
+},
+
+read:function(){ return '<div class="card"><h2>Your commute is ten hours a week</h2>'
+ +'<div class="note">Two hours a day, five days. That is roughly a book a week on audio without adding a minute to your day. Add twenty minutes of paper each evening and you finish these twelve weeks having read around fifteen books. That, not a course, is what "more knowledgeable" looks like.</div>'
+ +'<table style="margin-top:12px"><thead><tr><th>Month</th><th>Paper</th><th>Audio</th></tr></thead><tbody>'
+ +'<tr><td><b>1</b></td><td><em>Atomic Habits</em> — Clear</td><td><em>Dopamine Nation</em> — Lembke</td></tr>'
+ +'<tr><td><b>2</b></td><td><em>Storyworthy</em> — Dicks</td><td><em>Supercommunicators</em> — Duhigg</td></tr>'
+ +'<tr><td><b>3</b></td><td><em>Deep Work</em> — Newport</td><td><em>The Psychology of Money</em> — Housel</td></tr>'
+ +'</tbody></table>'
+ +'<div class="why" style="margin-top:12px"><b>Order matters.</b> Lembke explains precisely why the weed and the scrolling feel identical and why the first fortnight without them feels flat. Read it while quitting, not afterwards. Dicks and Duhigg land exactly when you are on rungs 5–8 of the social ladder.</div></div>'
+ +'<div class="card"><h2>The "always behind" problem</h2>'
+ +'<div class="note">In early-stage, self-directed work there is no external definition of "caught up" to reach. Feeling behind is structurally guaranteed unless you build the structure yourself.</div>'
+ +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim);margin-top:11px">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">One 90-minute deep block daily, 10:15–11:45.</b> Phone in a drawer, one task. If nobody schedules your learning it does not happen, and then it registers as falling behind rather than as an unmanaged calendar.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Learning log, one paragraph a day.</b> Evidence against the feeling of standing still, and raw material for the next point.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Write down the thing you built.</b> Work that exists only in your head cannot be pointed at. Documented, it becomes demonstrably yours — worth more than another month of undocumented output. Highest-return work item on the list.</li>'
+ +'<li><b style="color:var(--tx)">Friday, 30 minutes:</b> what shipped, what is stuck, what I learned, what I need from someone else. The last one is the one everyone skips and the one that unblocks things.</li></ul>'
+ +'<div class="why" style="margin-top:12px"><b>Note the connection:</b> not delivering at your level and not speaking up around people you do not know well are usually one problem in two hats. Value that is not visible does not count, and visibility runs through speaking up. That is what rungs 9–10 of the ladder are for.</div></div>'
+ +'<div class="card"><h2>Your memory</h2>'
+ +'<div class="note">Four likely contributors. Three are already being addressed.</div>'
+ +'<table style="margin-top:11px"><tbody>'
+ +'<tr><td style="width:110px"><b>Cannabis</b></td><td>Acute effects on working memory and attention are well documented, and verbal learning tends to improve over sustained abstinence. Expect noticeable change in the month after your quit date.</td></tr>'
+ +'<tr><td><b>Sleep debt</b></td><td>Consolidation happens during sleep. The schedule puts you at 8 h 30 m. Probably your largest single factor and the fastest to move.</td></tr>'
+ +'<tr><td><b>Nicotine</b></td><td>Week 8 onward.</td></tr>'
+ +'<tr><td><b>No system</b></td><td>The fixable-today one, and not a brain problem. <b>One</b> capture inbox — one notes app, not five. Calendar reminders for anything time-bound. A five-minute shutdown each evening where tomorrow\'s three items get written down. Holding it in your head is the actual failure, and better recall would not rescue that strategy.</td></tr>'
+ +'</tbody></table></div>'; },
+
+sync:function(){
+  var nd=Object.keys(S.days).length;
+  return '<div class="card"><h2>Move a log between your phone and your laptop</h2>'
+   +'<div class="note">Each browser keeps its own copy — there is no server. This merges the two instead of overwriting, so whichever device you logged on, nothing is lost. Day-by-day, the most recently edited version wins, and anything only one device has is kept.</div>'
+   +'<div class="info" style="margin-top:12px"><b>The habit that makes this work:</b> after the gym, open Sync on your phone → Copy. Paste it into a note or message to yourself. On the laptop, open Sync → paste → Merge. Ten seconds, and only worth doing when you have actually logged something on the other device.</div>'
+   +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">1 · On the device you logged on</h5>'
+   +'<div class="row"><button class="btn" id="s-copy">Copy sync code</button><button class="btn g" id="s-file">Save as file</button>'
+   +'<span style="color:var(--dim2);font-size:12px">'+nd+' days · '+S.xp+' XP</span></div>'
+   +'<textarea id="s-out" readonly style="margin-top:10px;font-family:ui-monospace,monospace;font-size:10px;min-height:80px" placeholder="Tap Copy and it appears here too, in case the clipboard is blocked."></textarea>'
+   +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:18px 0 8px">2 · On the other device</h5>'
+   +'<textarea id="s-in" placeholder="Paste the sync code here" style="font-family:ui-monospace,monospace;font-size:10px;min-height:80px"></textarea>'
+   +'<div class="row" style="margin-top:9px"><button class="btn" id="s-merge">Merge it in</button>'
+   +'<label class="btn g" style="cursor:pointer">Merge from file<input type="file" id="s-mfile" accept=".json" style="display:none"></label></div>'
+   +'<div id="s-res" style="margin-top:12px"></div>'
+   +'<div class="src">Merging never deletes. If the same day was edited on both devices, the later edit wins and any activity the other device had on its own is folded in. Weight, measurements, exercise history, reviews and badges are combined rather than replaced.</div></div>'; },
+
+data:function(){ return '<div class="card"><h2>Your data</h2>'
+ +'<div class="note">Everything lives in this browser on this computer. Nothing is sent anywhere. Two consequences: clearing browser data wipes it, and it does not follow you to your phone.</div>'
+ +'<div class="row" style="margin-top:13px"><button class="btn" id="d-exp">Export backup</button>'
+ +'<label class="btn g" style="cursor:pointer">Import<input type="file" id="d-imp" accept=".json" style="display:none"></label>'
+ +'<button class="btn bd" id="d-rst">Reset everything</button></div>'
+ +'<div class="info" style="margin-top:13px"><b>Export every Saturday</b>, right after the review. Three seconds, and there is no undo on lost storage.</div>'
+ +(canStore?'':'<div class="safe" style="margin-top:11px"><b>This browser is blocking local storage.</b> Data will only last until you close the page. Export before you leave.</div>')
+ +'<div id="d-st" style="margin-top:11px;color:var(--dim);font-size:12.5px"></div></div>'
+ +'<div class="card"><h2>Start date</h2><div class="note">Day 1. Phases, quit dates and review weeks all count from here.</div>'
+ +'<div class="row" style="margin-top:11px"><input type="date" id="d-start" value="'+S.start+'" style="max-width:180px"><button class="btn sm" id="d-save">Save</button></div>'
+ +'<div style="margin-top:13px;font-size:13px;color:var(--dim);line-height:1.8">'
+ +'<b style="color:var(--tx)">Day 1:</b> '+pretty(S.start)+'<br>'
+ +'<b style="color:var(--tx)">Weed → Friday only:</b> '+pretty(add(S.start,28))+'<br>'
+ +'<b style="color:var(--tx)">Weed quit date:</b> '+pretty(add(S.start,42))+'<br>'
+ +'<b style="color:var(--tx)">IQOS step-down begins:</b> '+pretty(add(S.start,49))+'<br>'
+ +'<b style="color:var(--tx)">IQOS quit date:</b> '+pretty(add(S.start,70))+'<br>'
+ +'<b style="color:var(--tx)">Day 84:</b> '+pretty(add(S.start,83))+'</div></div>'
+ +'<div class="card"><h2>Add this to your home screen</h2><div class="note">On your phone: open this file in your browser, then Share → Add to Home Screen. It opens like an app and works offline, because everything is in this one file.</div></div>'; }
+};
+function wireReview(){
+  var sel=E('rvw');
+  function load(){
+    var w=sel.value; if(!S.reviews[w])S.reviews[w]={};
+    E('rvf').querySelectorAll('textarea').forEach(function(t){
+      t.value=S.reviews[w][t.dataset.q]||'';
+      t.oninput=function(){ S.reviews[w][t.dataset.q]=t.value; wr(); };
+    });
+    var st=add(S.start,(w-1)*7), done=0, poss=0;
+    for(var i=0;i<7;i++){ var k=add(st,i), ids=actsFor(k).filter(function(x){ return !ACTS[x].opt; }), d=S.days[k];
+      poss+=ids.length; if(d) done+=ids.filter(function(x){ return d.a[x]&&d.a[x].done; }).length; }
+    E('rvstat').innerHTML = poss? '<b style="color:var(--tx)">'+done+'/'+poss+'</b> hit that week ('+Math.round(done/poss*100)+'%)':'';
+  }
+  sel.onchange=load; load();
+}
+function wireSync(){
+  function payload(){ return JSON.stringify(S); }
+  function report(r){
+    E('s-res').innerHTML='<div class="info"><b>Merged.</b> '+r.added+' new day'+(r.added===1?'':'s')+' added, '
+      +r.updated+' updated from the other device, '+r.kept+' kept because this device was more recent. Nothing was deleted.</div>';
+    toast('Merged — nothing lost');
+  }
+  E('s-copy').onclick=function(){
+    var txt=payload();
+    E('s-out').value=txt;
+    var done=function(){ toast('Sync code copied'); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,function(){ E('s-out').select&&E('s-out').select(); toast('Select the text and copy it'); }); }
+    else { E('s-out').select&&E('s-out').select(); toast('Select the text and copy it'); }
+  };
+  E('s-file').onclick=function(){
+    var b=new Blob([payload()],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(b);
+    a.download='reset84-sync-'+TODAY+'.json'; a.click(); toast('Saved');
+  };
+  E('s-merge').onclick=function(){
+    var v=(E('s-in').value||'').trim();
+    if(!v){ E('s-res').innerHTML='<div class="warn"><b>Nothing pasted.</b></div>'; return; }
+    try{ var r=mergeState(JSON.parse(v)); E('s-in').value=''; report(r); paintToday(); }
+    catch(err){ E('s-res').innerHTML='<div class="warn"><b>Could not read that.</b> '+esc(err.message)+' Make sure you copied the whole code, from the first { to the last }.</div>'; }
+  };
+  E('s-mfile').onchange=function(e){
+    var f=e.target.files[0]; if(!f) return;
+    var rdr=new FileReader();
+    rdr.onload=function(){ try{ var r=mergeState(JSON.parse(rdr.result)); report(r); paintToday(); }
+      catch(err){ E('s-res').innerHTML='<div class="warn"><b>Could not read that file.</b> '+esc(err.message)+'</div>'; } };
+    rdr.readAsText(f);
+  };
+}
+function wireSocial(){
+  E('morebody').querySelectorAll('[data-l]').forEach(function(c){
+    c.onchange=function(){ S.ladder[c.dataset.l]=c.checked; wr(); };
+  });
+}
+function wireData(){
+  E('d-exp').onclick=function(){
+    var b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(b);
+    a.download='reset84-backup-'+TODAY+'.json'; a.click();
+    E('d-st').textContent='Exported reset84-backup-'+TODAY+'.json';
+  };
+  E('d-imp').onchange=function(e){
+    var f=e.target.files[0]; if(!f) return;
+    var r=new FileReader();
+    r.onload=function(){
+      try{
+        var inc=JSON.parse(r.result);
+        if(confirm('REPLACE everything on this device with the backup?\n\nOK = replace (this device\'s log is discarded).\nCancel = merge instead, which keeps both.')){
+          S=inc; wr(); E('d-st').textContent='Replaced. Reloading…'; setTimeout(function(){ location.reload(); },500);
+        } else {
+          var res=mergeState(inc);
+          E('d-st').textContent='Merged instead — '+res.added+' days added, '+res.updated+' updated, '+res.kept+' kept. Reloading…';
+          setTimeout(function(){ location.reload(); },900);
+        }
+      } catch(err){ E('d-st').textContent='That file could not be read.'; } };
+    r.readAsText(f);
+  };
+  E('d-rst').onclick=function(){ if(confirm('Erase everything? Export a backup first if you want to keep it.')){ S=JSON.parse(JSON.stringify(DEF)); wr(); location.reload(); } };
+  E('d-save').onclick=function(){ var v=E('d-start').value; if(v){ S.start=v; wr(); location.reload(); } };
+}
+
+/* ═══════════════════ BOOT ═══════════════════ */
+E('d-prev').onclick=function(){ cur=add(cur,-1); openAct=null; paintToday(); };
+E('d-next').onclick=function(){ cur=add(cur,1); openAct=null; paintToday(); };
+E('d-today').onclick=function(){ cur=TODAY; openAct=null; paintToday(); };
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeModal(); hideToast(); } });
+E('toast').onclick=hideToast;               /* tap to dismiss immediately */
+paintToday(); chkBadges();
+</script>
+<footer>RESET 84 · nothing here replaces a physiotherapist, a doctor or a therapist — it is a plan, not a diagnosis</footer>
+</body>
+</html>
