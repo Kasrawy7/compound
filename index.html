@@ -200,6 +200,19 @@ td.n{font-variant-numeric:tabular-nums}
 @keyframes fall{to{transform:translateY(110vh) rotate(560deg);opacity:0}}
 
 .src{color:var(--dim2);font-size:11px;margin-top:10px;line-height:1.5}
+i.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:3px;vertical-align:-1px}
+.bodywrap{display:flex;gap:6px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.bodywrap svg{max-width:47%;height:auto;flex:1 1 150px}
+.bodywrap .cap{text-align:center;font-size:10.5px;color:var(--dim2);letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+.msc{cursor:pointer;transition:opacity .15s}
+.msc:hover{opacity:.75}
+.msc.sel{stroke:#e9eef6;stroke-width:2.4}
+.vrow{margin-bottom:11px}
+.vrow .top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.vrow .top b{font-weight:650}
+.vbar{height:9px;background:var(--card3);border-radius:99px;position:relative;overflow:hidden}
+.vbar>i{display:block;height:100%;border-radius:99px}
+.vbar>u{position:absolute;top:-2px;bottom:-2px;width:2px;background:rgba(233,238,246,.45)}
 .info{background:rgba(77,163,255,.08);border:1px solid rgba(77,163,255,.28);border-radius:12px;padding:11px 13px;font-size:13px;color:#cfe3fb}
 .info b{color:var(--ac)}
 .warn{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:11px 13px;font-size:13px;color:#f2e4c3}
@@ -325,6 +338,40 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
   </div>
 </section>
 
+<!-- ============ BODY ============ -->
+<section class="view" id="v-body">
+  <div class="card">
+    <h2>Muscle readiness <span class="pill p-a">modelled, not measured</span></h2>
+    <div class="note">Built from the sets you log and how long ago you logged them. Green is fresh and ready, red was hammered recently. Tap any muscle for the detail.</div>
+    <div class="row" style="margin-top:12px;gap:12px;font-size:11.5px;color:var(--dim)">
+      <span><i class="sw" style="background:#34d399"></i> Fresh 80–100</span>
+      <span><i class="sw" style="background:#4da3ff"></i> Ready 60–79</span>
+      <span><i class="sw" style="background:#fbbf24"></i> Recovering 35–59</span>
+      <span><i class="sw" style="background:#f87171"></i> Worked &lt;35</span>
+    </div>
+    <div id="bd-maps"></div>
+    <div id="bd-summary" style="margin-top:6px"></div>
+  </div>
+  <div class="card" id="bd-detail"></div>
+  <div class="card">
+    <h2>Weekly volume <span class="pill p-w">last 7 days</span></h2>
+    <div class="note">Effective sets per muscle. The evidence-based range for growth is roughly 10–20 sets a week; your priority muscles are marked.</div>
+    <div id="bd-vol" style="margin-top:12px"></div>
+  </div>
+  <div class="card">
+    <h2>How this is worked out — and what it can't know</h2>
+    <div class="note">Worth reading once, so you know how much to trust the colours.</div>
+    <ul style="padding-left:18px;font-size:13px;color:var(--dim);margin-top:10px">
+      <li style="margin-bottom:6px">Every exercise is mapped to the muscles it works, weighted — 1.0 where it's the primary target, less where it's assisting. Your logged sets become <b style="color:var(--tx)">effective sets</b> per muscle.</li>
+      <li style="margin-bottom:6px">Fatigue then decays over a recovery window that differs by muscle: <b style="color:var(--tx)">72 hours</b> for large, high-damage muscles like quads, hamstrings, glutes, lats and chest; <b style="color:var(--tx)">60 hours</b> for mid-sized ones; <b style="color:var(--tx)">48 hours</b> for small, high-tolerance ones like the rotator cuff and tibialis. Muscle protein synthesis runs elevated for roughly 36–48 hours after training, and 48–72 hours between sessions on the same muscle is the standard recommendation.</li>
+      <li style="margin-bottom:6px"><b style="color:var(--tx)">Returning-to-training adjustment.</b> For the first four weeks the windows are stretched by 25%, because a novel or resumed stimulus causes more disruption and needs longer. It switches itself off from week 5.</li>
+      <li style="margin-bottom:6px">Sessions are assumed to happen at 19:15, since that's your slot. Log on the day you train and the timing will be right.</li>
+      <li><b style="color:var(--tx)">What it cannot know:</b> your sleep, your stress, how close to failure you actually went, or whether something hurts. It is a bookkeeping model, not a physiological reading. <b style="color:var(--tx)">A joint that hurts overrides a green muscle, every time</b> — especially your shoulders.</li>
+    </ul>
+    <div class="src">Recovery windows informed by: muscle protein synthesis elevated ~36–48 h post-session, shorter in trained lifters and longer in untrained; 48–72 h between sessions targeting the same muscle group is the common recommendation; weekly set targets from the resistance-training volume literature, where the dose-response runs to roughly 20 sets per muscle per week. Longer recovery for beginners reflects that a novel stimulus causes greater homeostatic disruption.</div>
+  </div>
+</section>
+
 <!-- ============ MORE ============ -->
 <section class="view" id="v-more">
   <div class="tabs" id="mtabs"></div>
@@ -337,6 +384,7 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
   <button data-v="today" class="on"><span class="g">◉</span>Today</button>
   <button data-v="prog"><span class="g">▤</span>Programme</button>
   <button data-v="lib"><span class="g">☰</span>Library</button>
+  <button data-v="body"><span class="g">◈</span>Body</button>
   <button data-v="prog2"><span class="g">◔</span>Progress</button>
   <button data-v="more"><span class="g">⋯</span>More</button>
 </div></nav>
@@ -401,6 +449,7 @@ function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2])
 function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
 function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
 
+var BUILD='2026-07-28 · build 4 · muscle readiness';   /* bump this whenever the file changes, so you can tell which version is live */
 var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], v:2 };
 var S=rd()||JSON.parse(JSON.stringify(DEF));
 ['days','ex','met','wt','wa','reviews','ladder'].forEach(function(k){ if(!S[k])S[k]={}; });
@@ -457,6 +506,120 @@ farm:{n:'Farmer carry',s:3,r:'40 m',tag:'Grip · Trunk',cues:['Heavy dumbbells, 
 z2:{n:'Zone 2 cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Conversational pace — you could talk but would not want to sing.','Roughly 60–70% of your maximum heart rate.','Walk, cycle or elliptical. Incline treadmill walking is ideal.'],why:'Aerobic base is what makes four lifting days recoverable. It is also half of the cardiovascular benefit.'},
 card:{n:'Moderate-vigorous cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Harder than Tuesday — breathing noticeably, still continuous.','Run, cycle, row. Swim only once your shoulders are cleared.'],why:'40 minutes of moderate-to-vigorous work four times a week is the dose used in the vascular-health trials, which found a clinically meaningful mean improvement on the standard index.'}
 };
+
+/* ═══════════════════ MUSCLE MODEL ═══════════════════ */
+/* recov = hours for fatigue to clear · sat = effective sets that count as fully worked · pri = one of his stated priorities */
+var MUS={
+ chest:{n:'Chest',recov:72,sat:6,side:'f'},
+ fdelt:{n:'Front delts',recov:60,sat:4,side:'f'},
+ sdelt:{n:'Side delts',recov:60,sat:4,side:'f'},
+ rdelt:{n:'Rear delts',recov:60,sat:4,side:'b'},
+ cuff:{n:'Rotator cuff',recov:48,sat:4,side:'b',pri:1,note:'The muscle group that decides whether your shoulders feel trustworthy. Worked every day in the morning flow as well as in the gym.'},
+ traps:{n:'Traps & lower trap',recov:60,sat:5,side:'b',pri:1,note:'Lower trap holds the shoulder blade where it belongs. Weak in almost everyone with desk posture.'},
+ lats:{n:'Lats & upper back',recov:72,sat:6,side:'b'},
+ lback:{n:'Spinal erectors',recov:72,sat:5,side:'b'},
+ biceps:{n:'Biceps',recov:60,sat:4,side:'f'},
+ triceps:{n:'Triceps',recov:60,sat:4,side:'b'},
+ grip:{n:'Grip & forearms',recov:48,sat:4,side:'f'},
+ abs:{n:'Abs & anterior core',recov:60,sat:5,side:'f'},
+ glutes:{n:'Glutes',recov:72,sat:6,side:'b',pri:1},
+ gmed:{n:'Glute medius',recov:48,sat:4,side:'b',pri:1,note:'Controls the knee and pelvis. Weakness here shows up as the hip and ankle complaints you listed.'},
+ quads:{n:'Quads',recov:72,sat:6,side:'f',pri:1},
+ hams:{n:'Hamstrings',recov:72,sat:6,side:'b',pri:1},
+ adduc:{n:'Adductors',recov:60,sat:4,side:'f'},
+ calves:{n:'Calves — gastroc & soleus',recov:60,sat:5,side:'b',pri:1,note:'Two muscles, two exercises: straight-knee raises hit the gastrocnemius, bent-knee seated raises hit the soleus. Skipping the seated version is why most calves never grow.'},
+ tib:{n:'Tibialis anterior',recov:48,sat:4,side:'f',pri:1,note:'The front of the shin. This is the muscle behind "weak ankles", and virtually nobody trains it.'}
+};
+/* exercise → muscles worked, weighted */
+var EXM={
+ squat:{quads:1,glutes:.5,adduc:.3,abs:.2,calves:.1},
+ bulg:{quads:.8,glutes:.8,gmed:.4,adduc:.3,abs:.2},
+ legext:{quads:1},
+ calfst:{calves:1}, calfse:{calves:1}, slcalf:{calves:1},
+ tib:{tib:1}, toes:{tib:.5},
+ cope:{adduc:1,abs:.4,gmed:.2},
+ bal:{tib:.4,calves:.3,gmed:.3},
+ floorp:{chest:1,fdelt:.5,triceps:.6},
+ csrow:{lats:1,rdelt:.4,biceps:.5,traps:.4},
+ crow:{lats:1,biceps:.4,rdelt:.3,traps:.3},
+ facep:{rdelt:.8,cuff:.7,traps:.5},
+ frontr:{fdelt:1},
+ sler:{cuff:1}, cer45:{cuff:1},
+ pronY:{traps:1,rdelt:.4,cuff:.3},
+ hang:{grip:.6,lats:.3},
+ arms:{biceps:1,triceps:1,grip:.3},
+ rdl:{hams:1,glutes:.7,lback:.7,grip:.3},
+ hipt:{glutes:1,hams:.4},
+ hamc:{hams:1},
+ revl:{quads:.7,glutes:.8,gmed:.3},
+ hipab:{gmed:1,glutes:.3},
+ kraise:{abs:1},
+ pdown:{lats:1,biceps:.4,rdelt:.2},
+ land:{fdelt:1,sdelt:.4,triceps:.5,abs:.3,cuff:.3},
+ dbrow:{lats:1,biceps:.4,traps:.3,grip:.3},
+ incp:{chest:1,fdelt:.6,triceps:.5},
+ latr:{sdelt:1,cuff:.2},
+ reard:{rdelt:1,traps:.3},
+ farm:{grip:1,traps:.5,abs:.4},
+ z2:{calves:.3,quads:.2},
+ card:{calves:.4,quads:.3,hams:.2}
+};
+var SESSION_HOUR=19.25;                 /* his slot — used to time-stamp a logged session */
+function recovMult(){ return dayN(TODAY)<=28 ? 1.25 : 1; }   /* returning to training: longer windows for 4 weeks */
+
+/* returns {id:{fresh, fat, last, sets7, hrs}} */
+function muscleState(){
+  var now=Date.now(), out={};
+  Object.keys(MUS).forEach(function(m){ out[m]={fresh:100,fat:0,last:null,sets7:0,hrs:null}; });
+  Object.keys(S.days).forEach(function(k){
+    var t=S.days[k] && S.days[k].a && S.days[k].a.train;
+    if(!t||!t.ex) return;
+    if(pd(k).getTime()>now) return;                 /* a day that hasn't started yet */
+    /* assume the 19:15 slot, but never pretend a session happened later than right now —
+       otherwise logging this evening's work at 18:00 would show as zero fatigue */
+    var when=Math.min(pd(k).getTime()+SESSION_HOUR*3600000, now);
+    var hrs=Math.max(0,(now-when)/3600000);
+    Object.keys(t.ex).forEach(function(xid){
+      var map=EXM[xid]; if(!map) return;
+      var sets=(t.ex[xid]||[]).filter(function(s){ return s && (s.w!=null||s.r!=null); }).length;
+      if(!sets) return;
+      Object.keys(map).forEach(function(m){
+        if(!out[m]) return;
+        var es=sets*map[m];
+        if(hrs<=168) out[m].sets7+=es;
+        var win=MUS[m].recov*recovMult();
+        var decay=Math.max(0,1-hrs/win);
+        out[m].fat+=es*decay;
+        if(out[m].last===null || when>out[m].last){ out[m].last=when; out[m].hrs=hrs; }
+      });
+    });
+  });
+  Object.keys(out).forEach(function(m){
+    var sat=MUS[m].sat;
+    out[m].fresh=Math.round(100*(1-Math.min(1,out[m].fat/sat)));
+    out[m].sets7=Math.round(out[m].sets7*10)/10;
+  });
+  return out;
+}
+function freshCol(v){ return v>=80?'#34d399':v>=60?'#4da3ff':v>=35?'#fbbf24':'#f87171'; }
+function freshWord(v){ return v>=80?'Fresh':v>=60?'Ready':v>=35?'Recovering':'Worked'; }
+function hoursTxt(h){
+  if(h==null) return 'never logged';
+  if(h<1) return 'less than an hour ago';
+  if(h<24) return Math.round(h)+' hours ago';
+  var d=h/24; return (d<1.5?'yesterday':Math.round(d)+' days ago');
+}
+function readyIn(m,st){
+  if(st.fresh>=80) return 'Ready now';
+  var win=MUS[m].recov*recovMult();
+  var left=Math.max(0,win-(st.hrs||0));
+  if(left<1) return 'Ready now';
+  return left<24? ('Fully clear in ~'+Math.round(left)+' h') : ('Fully clear in ~'+Math.round(left/24*10)/10+' days');
+}
+function exercisesFor(m){
+  return Object.keys(EXM).filter(function(x){ return EXM[x][m] && EX[x]; })
+    .sort(function(a,b){ return EXM[b][m]-EXM[a][m]; });
+}
 
 /* ── mobility flow ── */
 var FLOW=[
@@ -730,6 +893,7 @@ function go(v){
   window.scrollTo(0,0);
   if(v==='prog') paintProg();
   if(v==='lib') paintLib();
+  if(v==='body') paintBody();
   if(v==='prog2') paintProgress();
   if(v==='more') paintMore();
 }
@@ -1260,6 +1424,120 @@ function chkBadges(){
   }
 }
 
+/* ═══════════════════ BODY MAP ═══════════════════ */
+var BODY={
+ f:[ /* front — [muscleId, svg shapes] */
+  ['chest','<ellipse cx="84" cy="84" rx="17" ry="13"/><ellipse cx="116" cy="84" rx="17" ry="13"/>'],
+  ['fdelt','<ellipse cx="63" cy="70" rx="11" ry="10"/><ellipse cx="137" cy="70" rx="11" ry="10"/>'],
+  ['sdelt','<ellipse cx="53" cy="76" rx="7" ry="9"/><ellipse cx="147" cy="76" rx="7" ry="9"/>'],
+  ['biceps','<ellipse cx="53" cy="108" rx="8" ry="16"/><ellipse cx="147" cy="108" rx="8" ry="16"/>'],
+  ['grip','<ellipse cx="48" cy="144" rx="7" ry="18"/><ellipse cx="152" cy="144" rx="7" ry="18"/>'],
+  ['abs','<rect x="86" y="100" width="28" height="52" rx="9"/>'],
+  ['adduc','<ellipse cx="91" cy="205" rx="7" ry="24"/><ellipse cx="109" cy="205" rx="7" ry="24"/>'],
+  ['quads','<ellipse cx="78" cy="208" rx="14" ry="34"/><ellipse cx="122" cy="208" rx="14" ry="34"/>'],
+  ['tib','<ellipse cx="82" cy="288" rx="8" ry="26"/><ellipse cx="118" cy="288" rx="8" ry="26"/>']
+ ],
+ b:[
+  ['traps','<path d="M78 58 L100 50 L122 58 L114 86 L86 86 Z"/>'],
+  ['rdelt','<ellipse cx="63" cy="70" rx="11" ry="10"/><ellipse cx="137" cy="70" rx="11" ry="10"/>'],
+  ['cuff','<ellipse cx="76" cy="66" rx="7" ry="7"/><ellipse cx="124" cy="66" rx="7" ry="7"/>'],
+  ['lats','<path d="M78 88 L122 88 L118 132 L82 132 Z"/>'],
+  ['lback','<rect x="88" y="134" width="24" height="28" rx="7"/>'],
+  ['triceps','<ellipse cx="52" cy="108" rx="8" ry="16"/><ellipse cx="148" cy="108" rx="8" ry="16"/>'],
+  ['gmed','<ellipse cx="74" cy="170" rx="8" ry="8"/><ellipse cx="126" cy="170" rx="8" ry="8"/>'],
+  ['glutes','<ellipse cx="87" cy="180" rx="14" ry="14"/><ellipse cx="113" cy="180" rx="14" ry="14"/>'],
+  ['hams','<ellipse cx="80" cy="222" rx="13" ry="30"/><ellipse cx="120" cy="222" rx="13" ry="30"/>'],
+  ['calves','<ellipse cx="81" cy="288" rx="10" ry="26"/><ellipse cx="119" cy="288" rx="10" ry="26"/>']
+ ]
+};
+var selM=null;
+function bodySvg(side,st){
+  var outline='<ellipse cx="100" cy="30" rx="16" ry="18" fill="#1b2230" stroke="#28334a"/>'
+   +'<path d="M74 56 Q100 46 126 56 L132 130 Q126 160 122 168 L118 250 L112 330 L104 330 L100 250 L96 330 L88 330 L82 250 L78 168 Q74 160 68 130 Z" fill="#141922" stroke="#28334a" stroke-width="1"/>'
+   +'<path d="M74 60 L50 92 L44 168 M126 60 L150 92 L156 168" fill="none" stroke="#28334a" stroke-width="9" stroke-linecap="round"/>';
+  var shapes=BODY[side].map(function(r){
+    var m=r[0], v=st[m]?st[m].fresh:100;
+    return '<g class="msc'+(selM===m?' sel':'')+'" data-m="'+m+'" fill="'+freshCol(v)+'" fill-opacity="'+(0.35+0.55*(1-v/100)+0.1)+'" stroke="'+freshCol(v)+'" stroke-width="1">'+r[1]+'</g>';
+  }).join('');
+  return '<div style="flex:1 1 150px;max-width:49%"><svg viewBox="0 0 200 345" xmlns="http://www.w3.org/2000/svg">'+outline+shapes+'</svg>'
+   +'<div class="cap">'+(side==='f'?'Front':'Back')+'</div></div>';
+}
+function paintBody(){
+  var st=muscleState();
+  E('bd-maps').innerHTML='<div class="bodywrap">'+bodySvg('f',st)+bodySvg('b',st)+'</div>';
+  E('bd-maps').querySelectorAll('[data-m]').forEach(function(g){
+    g.onclick=function(){ selM=(selM===g.dataset.m?null:g.dataset.m); paintBody(); };
+  });
+
+  /* summary — what today's session will hit, and whether that's sensible */
+  var sk=DAYSESS[pd(TODAY).getDay()], warn=[], ok=[];
+  if(sk){
+    var hit={};
+    SESS[sk].ex.forEach(function(x){ var mp=EXM[x]||{}; Object.keys(mp).forEach(function(m){ hit[m]=Math.max(hit[m]||0,mp[m]); }); });
+    Object.keys(hit).forEach(function(m){
+      if(hit[m]<0.5) return;
+      if(st[m].fresh<35) warn.push(MUS[m].n+' ('+st[m].fresh+'%)');
+      else ok.push(MUS[m].n);
+    });
+  }
+  var sorted=Object.keys(MUS).sort(function(a,b){ return st[a].fresh-st[b].fresh; });
+  var worst=sorted.slice(0,3).filter(function(m){ return st[m].fresh<80; });
+  var h='';
+  if(!Object.keys(S.days).some(function(k){ return S.days[k].a.train&&S.days[k].a.train.ex; })){
+    h='<div class="info" style="margin-top:14px"><b>Nothing logged yet, so everything reads as fresh.</b> Log your sets in a training session and this fills in — it needs real data, and it will not invent any.</div>';
+  } else {
+    h='<div class="info" style="margin-top:14px"><b>'+(sk? 'Today is '+SESS[sk].n.replace(/&amp;/g,'&')+'.' : 'Today is a rest day.')+'</b> '
+     +(warn.length? 'Still carrying fatigue in <b>'+warn.join(', ')+'</b> — either go lighter on those or swap the session with a day that trains something else.'
+       : (sk? 'Everything it targets has recovered enough to train.' : 'Recovery day. That is doing work too.'))
+     +(worst.length? '<br><br><b>Least recovered right now:</b> '+worst.map(function(m){ return MUS[m].n+' '+st[m].fresh+'%'; }).join(' · ') : '')
+     +'</div>';
+  }
+  E('bd-summary').innerHTML=h;
+
+  /* detail panel */
+  if(selM){
+    var m=selM, s=st[m], ex=exercisesFor(m);
+    E('bd-detail').innerHTML='<h2>'+MUS[m].n+' <span class="pill" style="background:'+freshCol(s.fresh)+'22;color:'+freshCol(s.fresh)+'">'+s.fresh+'% · '+freshWord(s.fresh)+'</span>'+(MUS[m].pri?' <span class="pill p-o">priority</span>':'')+'</h2>'
+     +'<div class="bar" style="margin-top:10px"><i style="width:'+s.fresh+'%;background:'+freshCol(s.fresh)+'"></i></div>'
+     +'<table style="margin-top:14px"><tbody>'
+     +'<tr><td>Last trained</td><td class="n">'+hoursTxt(s.hrs)+'</td></tr>'
+     +'<tr><td>Status</td><td class="n">'+readyIn(m,s)+'</td></tr>'
+     +'<tr><td>Effective sets, last 7 days</td><td class="n"><b>'+s.sets7+'</b>'+(s.sets7<10?' <span class="pill p-w">under 10</span>':(s.sets7>20?' <span class="pill p-b">over 20</span>':' <span class="pill p-g">in range</span>'))+'</td></tr>'
+     +'<tr><td>Recovery window used</td><td class="n">'+Math.round(MUS[m].recov*recovMult())+' h'+(recovMult()>1?' (+25% while returning)':'')+'</td></tr>'
+     +'</tbody></table>'
+     +(MUS[m].note? '<div class="why" style="margin-top:12px"><b>Why this one matters for you:</b> '+MUS[m].note+'</div>':'')
+     +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:15px 0 7px">What trains it in your programme</h5>'
+     +'<div style="display:flex;flex-wrap:wrap;gap:5px">'+ex.map(function(x){
+        var w=EXM[x][m];
+        return '<span class="pill '+(w>=0.8?'p-a':'p-p')+'" style="text-transform:none;font-weight:600">'+EX[x].n+' · '+(w>=0.8?'primary':'assists')+'</span>';
+      }).join('')+'</div>'
+     +'<div class="row" style="margin-top:13px"><button class="btn g sm" id="bd-close">Close</button></div>';
+    var cb=E('bd-close'); if(cb) cb.onclick=function(){ selM=null; paintBody(); };
+  } else {
+    E('bd-detail').innerHTML='<h2>Tap a muscle</h2><div class="note">Tap any shaded area on either figure for its freshness, when you last trained it, weekly volume, and which of your exercises hit it.</div>'
+     +'<table style="margin-top:12px"><thead><tr><th>Muscle</th><th>Fresh</th><th>Last</th><th>Sets 7d</th></tr></thead><tbody>'
+     +sorted.map(function(m){ var s=st[m];
+        return '<tr><td>'+MUS[m].n+(MUS[m].pri?' <span class="pill p-o">pri</span>':'')+'</td>'
+         +'<td class="n" style="color:'+freshCol(s.fresh)+';font-weight:700">'+s.fresh+'%</td>'
+         +'<td class="n" style="color:var(--dim);font-size:12px">'+hoursTxt(s.hrs)+'</td>'
+         +'<td class="n">'+s.sets7+'</td></tr>';
+      }).join('')+'</tbody></table>';
+  }
+
+  /* weekly volume */
+  E('bd-vol').innerHTML=Object.keys(MUS).sort(function(a,b){
+      return (MUS[b].pri?1:0)-(MUS[a].pri?1:0) || st[b].sets7-st[a].sets7;
+    }).map(function(m){
+    var v=st[m].sets7, pct=Math.min(100,v/24*100);
+    var col=v>=10&&v<=20?'#34d399':(v>20?'#f87171':(v>0?'#fbbf24':'#3a4557'));
+    return '<div class="vrow"><div class="top"><b>'+MUS[m].n+(MUS[m].pri?' <span class="pill p-o">priority</span>':'')+'</b>'
+      +'<span style="color:var(--dim)">'+v+' sets</span></div>'
+      +'<div class="vbar"><i style="width:'+pct+'%;background:'+col+'"></i>'
+      +'<u style="left:'+(10/24*100)+'%"></u><u style="left:'+(20/24*100)+'%"></u></div></div>';
+  }).join('')
+   +'<div class="src">The two vertical marks are 10 and 20 sets. Below 10 is maintenance rather than growth; above 20 has diminishing returns and rising fatigue cost. Cardio contributes a small amount to calves and quads. Your daily mobility flow is deliberately excluded — it keeps the cuff and tibialis moving but it is not loading them.</div>';
+}
+
 /* ═══════════════════ MORE ═══════════════════ */
 var moreTab='why';
 var MORETABS=[['why','How this works'],['review','Weekly review'],['food','Food & numbers'],['quit','Quitting'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
@@ -1442,7 +1720,11 @@ data:function(){ return '<div class="card"><h2>Your data</h2>'
  +'<b style="color:var(--tx)">IQOS step-down begins:</b> '+pretty(add(S.start,49))+'<br>'
  +'<b style="color:var(--tx)">IQOS quit date:</b> '+pretty(add(S.start,70))+'<br>'
  +'<b style="color:var(--tx)">Day 84:</b> '+pretty(add(S.start,83))+'</div></div>'
- +'<div class="card"><h2>Add this to your home screen</h2><div class="note">On your phone: open this file in your browser, then Share → Add to Home Screen. It opens like an app and works offline, because everything is in this one file.</div></div>'; }
+ +'<div class="card"><h2>Add this to your home screen</h2><div class="note">On your phone: open this file in your browser, then Share → Add to Home Screen. It opens like an app and works offline, because everything is in this one file.</div></div>'
+ +'<div class="card"><h2>Which version am I running?</h2>'
+ +'<div class="note">Useful after replacing the file — if this still shows the old build, the browser is serving a cached copy.</div>'
+ +'<div style="margin-top:11px;font-size:13.5px"><b>'+BUILD+'</b></div>'
+ +'<div class="info" style="margin-top:12px"><b>Updating never touches your data.</b> Your log lives in the browser under this web address, not inside the file. Replace the file with a newer one and every tick, set and measurement is still there.<br><br>If a new build does not appear: on the phone, delete the home-screen icon, open the address in Safari, pull down to refresh, then add it again.</div></div>'; }
 };
 function wireReview(){
   var sel=E('rvw');
@@ -1530,6 +1812,7 @@ E('d-next').onclick=function(){ cur=add(cur,1); openAct=null; paintToday(); };
 E('d-today').onclick=function(){ cur=TODAY; openAct=null; paintToday(); };
 document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeModal(); hideToast(); } });
 E('toast').onclick=hideToast;               /* tap to dismiss immediately */
+var ft=document.querySelector('footer'); if(ft) ft.innerHTML+='<br>'+BUILD;
 paintToday(); chkBadges();
 </script>
 <footer>RESET 84 · nothing here replaces a physiotherapist, a doctor or a therapist — it is a plan, not a diagnosis</footer>
