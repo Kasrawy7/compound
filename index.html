@@ -223,6 +223,71 @@ i.sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:
 .tabs button{background:var(--card2);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12.5px;color:var(--dim);white-space:nowrap}
 .tabs button.on{background:var(--ac);border-color:var(--ac);color:#04121f;font-weight:700}
 footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8px;line-height:1.6}
+/* figures */
+.fig{--fig:#e9eef6;--fig-far:#5f6b81;--joint:rgba(11,14,19,.45);--hl:#4da3ff;--prop:#3a4864;--prop-fill:#1e2738;--warm:#fb923c;--pop:#fbbf24;display:block}
+.fig line,.fig path{fill:none;stroke:var(--fig);stroke-linecap:round;stroke-linejoin:round}
+.fig .th{stroke-width:9.5}.fig .sh{stroke-width:7.5}.fig .ft{stroke-width:6}.fig .ua{stroke-width:7}.fig .fa{stroke-width:5.8}.fig .neck{stroke-width:6}
+.fig .trunk{stroke-width:13}.fig .torsoF{fill:var(--fig);stroke-width:8}
+.fig .head,.fig .hand{fill:var(--fig)}.fig .far{stroke:var(--fig-far)}.fig .hand.far{fill:var(--fig-far);stroke:none}
+.fig .jt{fill:var(--joint)}
+.fig .hl{stroke:var(--hl)}.fig .hth{stroke-width:5}.fig .hsh{stroke-width:4}.fig .hua{stroke-width:3.6}.fig .hcore{stroke-width:6.5}.fig .hneck{stroke-width:3}
+.fig .hlc{fill:var(--hl)}
+.fig .ghostfig{opacity:.14}.fig.mini .ghostfig{display:none}
+.fig .floor{stroke:#28334a;stroke-width:2}.fig .prop{stroke:var(--prop);stroke-width:3}.fig .thick{stroke-width:5}
+.fig .wallp{stroke:var(--prop);stroke-width:4}.fig .eqp{fill:var(--prop-fill);stroke:var(--prop);stroke-width:1}.fig .soft{opacity:.9}.fig .ghost{opacity:.5}
+.fig .dbh{stroke:var(--warm);stroke-width:3}.fig .dbp{fill:var(--warm)}
+.fig .band{stroke:var(--warm);stroke-width:2.5;stroke-dasharray:4 3}.fig .bar{stroke:#8f9cb3;stroke-width:4}
+.fig .bench{stroke:var(--prop);stroke-width:8}.fig .towel{fill:var(--pop)}.fig .roller{fill:var(--warm);opacity:.4}.fig .scap{fill:var(--hl);stroke:none}
+.fig .arrow{stroke:var(--warm);stroke-width:2.5}.fig .ahp{fill:var(--warm);stroke:none}
+.fig circle.prop{fill:none;stroke:var(--prop);stroke-width:3}
+.fig.mini .th{stroke-width:11}.fig.mini .sh{stroke-width:9}.fig.mini .ua{stroke-width:8.5}.fig.mini .fa{stroke-width:7.5}.fig.mini .trunk{stroke-width:15}.fig.mini .floor,.fig.mini .prop{stroke-width:3}.fig.mini .jt{display:none}
+/* build 6 */
+.bodywrap{display:flex;gap:4px;justify-content:center;margin-top:12px;flex-wrap:nowrap}
+.bfig{flex:1 1 0;max-width:250px;text-align:center}
+.bodywrap .bfig svg{width:100%;max-width:100%;height:auto;display:block;flex:none}
+.bfig .sil{fill:#1a2231;stroke:#33405a;stroke-width:1}
+.bfig .sf .sil{fill:url(#skinf)}.bfig .sb .sil{fill:url(#skinb)}
+.msc{stroke:#0b0e13;stroke-width:.9;stroke-linejoin:round;cursor:pointer;transition:fill .4s}
+.msc.sel{stroke:#fff;stroke-width:1.9}
+.msh{pointer-events:none;stroke:none}.sf .msh{fill:url(#sheenf)}.sb .msh{fill:url(#sheenb)}
+.mln{pointer-events:none;fill:none;stroke:#0b0e13;stroke-opacity:.4;stroke-width:.8;stroke-linecap:round}
+.mnx{pointer-events:none;fill:none;stroke:#4a5878;stroke-width:.9;stroke-linecap:round}
+.heatkey{display:flex;align-items:center;gap:8px;justify-content:center;font-size:11px;color:var(--dim);margin-top:10px}
+.heatkey i{width:150px;height:8px;border-radius:9px;background:linear-gradient(90deg,#ef4444,#fb923c 35%,#facc15 60%,#34d399 80%,#2ac7a1)}
+.tn{margin-top:10px;display:grid;gap:6px}
+.tnrow,.srcrow,.drow{display:grid;grid-template-columns:56px 1fr auto;gap:10px;align-items:center;padding:6px 8px 6px 6px;border-radius:12px;background:var(--card2)}
+.srcrow,.drow{grid-template-columns:56px 1fr}.srcrow{margin-top:6px}
+.tnfig{width:56px;height:40px;border-radius:8px;background:var(--bg);overflow:hidden;display:grid;place-items:center}
+.tnfig .fig{width:56px;height:40px}
+.tnt{min-width:0;display:flex;flex-direction:column}.tnt b{font-size:13.5px;font-weight:650}.tnt small{font-size:11.5px;color:var(--dim);line-height:1.4}
+.tnrow .pill{white-space:nowrap;text-transform:none;font-size:10.5px}
+.hold{padding:10px 12px;border-radius:12px;background:var(--card2);margin-top:8px;cursor:pointer}
+.hold .hd{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}.hold .hd span{font-weight:800}
+.hold small{display:block;margin-top:7px;font-size:12px;color:var(--dim);line-height:1.5}.hold small b{color:var(--tx)}
+.ovr{color:var(--or);font-weight:700}
+.bar.sm{height:4px;margin-top:5px}
+.h5{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:15px 0 7px;font-weight:700}
+.seg3{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg3 button{flex:1;padding:9px 4px;font-size:13px;font-weight:600;border-right:1px solid var(--line);color:var(--dim)}.seg3 button:last-child{border-right:0}
+.seg3 button.on{background:var(--ac);color:#06101f}.seg3 button.on.s0{background:var(--gd)}.seg3 button.on.s1{background:var(--wn)}.seg3 button.on.s2{background:var(--bd)}
+.jrow{display:grid;grid-template-columns:104px 1fr;gap:10px;align-items:center;margin-top:8px;font-size:13.5px}
+.exfig{width:64px;height:46px;flex:none;border-radius:10px;background:var(--bg);overflow:hidden;padding:0;border:1px solid var(--line)}.exfig .fig{width:64px;height:46px}
+.exbig{background:var(--bg);border-radius:12px;margin-bottom:10px}.exbig .fig{width:100%;height:auto;max-height:230px}
+.exhead .n .exmeta{font-weight:400}
+.setdone{border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700;font-size:13px;color:var(--dim);background:var(--bg)}.setdone.on{background:var(--gd);border-color:var(--gd);color:#06101f}
+.plfig{background:var(--bg);border-radius:14px;margin:8px 0 10px}.plfig .fig{width:100%;height:auto;max-height:200px}
+.libfig{background:var(--bg);border-radius:12px;margin-top:11px}.libfig .fig{width:100%;height:auto;max-height:200px}
+.minbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 12px;padding:9px 12px;border:1px dashed var(--line);border-radius:12px;font-size:12.5px;color:var(--dim)}
+.minbar.on{border-style:solid;border-color:var(--wn);color:var(--tx)}.minbar .btn{white-space:nowrap}
+.dr{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--dim)}.dr:last-child{border-bottom:0}
+.dr i{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:none;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800}
+.dr.ok{color:var(--tx)}.dr.ok i{background:var(--gd);border-color:var(--gd);color:#06101f}
+.rank{counter-reset:r;list-style:none;padding:0;margin-top:12px}.rank li{position:relative;padding:0 0 13px 34px;font-size:13.5px;color:var(--dim)}
+.rank li:before{counter-increment:r;content:counter(r);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--card3);color:var(--tx);font-weight:800;font-size:12px;display:grid;place-items:center}
+.rank li b{color:var(--tx)}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px}.ck:last-child{border-bottom:0}
+.ck input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:#34d399}.ck small{display:block;color:var(--dim);font-size:12px;margin-top:2px}
+.opt span em{display:block;font-style:normal;color:var(--dim2);font-size:11.5px;margin-top:3px}
 </style>
 </head>
 <body>
@@ -342,35 +407,36 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 <section class="view" id="v-body">
   <div class="card">
     <h2>Muscle readiness <span class="pill p-a">modelled, not measured</span></h2>
-    <div class="note">Built from the sets you log and how long ago you logged them. Green is fresh and ready, red was hammered recently. Tap any muscle for the detail.</div>
-    <div class="row" style="margin-top:12px;gap:12px;font-size:11.5px;color:var(--dim)">
-      <span><i class="sw" style="background:#34d399"></i> Fresh 80–100</span>
-      <span><i class="sw" style="background:#4da3ff"></i> Ready 60–79</span>
-      <span><i class="sw" style="background:#fbbf24"></i> Recovering 35–59</span>
-      <span><i class="sw" style="background:#f87171"></i> Worked &lt;35</span>
-    </div>
+    <div class="note">Built from the sets you log, how hard the session felt, and how you slept since. Tap any muscle to see which exercise is still costing it.</div>
     <div id="bd-maps"></div>
-    <div id="bd-summary" style="margin-top:6px"></div>
   </div>
+  <div class="card" id="bd-tonight"></div>
+  <div class="card" id="bd-hold"></div>
   <div class="card" id="bd-detail"></div>
   <div class="card">
+    <h2>Joint check <span class="pill p-w">overrides the colours</span></h2>
+    <div class="note">Thirty seconds before training. A joint marked painful takes its exercises out of tonight, however green the muscle is.</div>
+    <div id="bd-joint" style="margin-top:6px"></div>
+  </div>
+  <div class="card">
     <h2>Weekly volume <span class="pill p-w">last 7 days</span></h2>
-    <div class="note">Effective sets per muscle. The evidence-based range for growth is roughly 10–20 sets a week; your priority muscles are marked.</div>
+    <div class="note">Effective sets per muscle. The evidence-based range for growth is roughly 10–20 sets a week; priority muscles are listed first.</div>
     <div id="bd-vol" style="margin-top:12px"></div>
   </div>
   <div class="card">
     <h2>How this is worked out — and what it can't know</h2>
     <div class="note">Worth reading once, so you know how much to trust the colours.</div>
     <ul style="padding-left:18px;font-size:13px;color:var(--dim);margin-top:10px">
-      <li style="margin-bottom:6px">Every exercise is mapped to the muscles it works, weighted — 1.0 where it's the primary target, less where it's assisting. Your logged sets become <b style="color:var(--tx)">effective sets</b> per muscle.</li>
-      <li style="margin-bottom:6px">Fatigue then decays over a recovery window that differs by muscle: <b style="color:var(--tx)">72 hours</b> for large, high-damage muscles like quads, hamstrings, glutes, lats and chest; <b style="color:var(--tx)">60 hours</b> for mid-sized ones; <b style="color:var(--tx)">48 hours</b> for small, high-tolerance ones like the rotator cuff and tibialis. Muscle protein synthesis runs elevated for roughly 36–48 hours after training, and 48–72 hours between sessions on the same muscle is the standard recommendation.</li>
-      <li style="margin-bottom:6px"><b style="color:var(--tx)">Returning-to-training adjustment.</b> For the first four weeks the windows are stretched by 25%, because a novel or resumed stimulus causes more disruption and needs longer. It switches itself off from week 5.</li>
-      <li style="margin-bottom:6px">Sessions are assumed to happen at 19:15, since that's your slot. Log on the day you train and the timing will be right.</li>
-      <li><b style="color:var(--tx)">What it cannot know:</b> your sleep, your stress, how close to failure you actually went, or whether something hurts. It is a bookkeeping model, not a physiological reading. <b style="color:var(--tx)">A joint that hurts overrides a green muscle, every time</b> — especially your shoulders.</li>
+      <li style="margin-bottom:6px">Every exercise is mapped to the muscles it works, weighted — 1.0 where it is the primary target, less where it assists. Logged sets become <b style="color:var(--tx)">effective sets</b> per muscle, scaled by how hard you rated the session and by how costly that kind of movement is to recover from.</li>
+      <li style="margin-bottom:6px">Fatigue then fades over a window that differs by muscle: <b style="color:var(--tx)">72 hours</b> for large muscles like quads, hamstrings, glutes, lats and chest; <b style="color:var(--tx)">60 hours</b> for mid-sized ones; <b style="color:var(--tx)">48 hours</b> for small, fast-recovering ones like the cuff, soleus and tibialis. Recovery is slow for the first day and faster after — the way soreness actually behaves.</li>
+      <li style="margin-bottom:6px"><b style="color:var(--tx)">Three things stretch the window:</b> the first four weeks back (+25%), short sleep on the nights since (+10% under 7.5 h, +20% under 6.5 h), and a session that pushed a muscle past what it can usefully recover from.</li>
+      <li style="margin-bottom:6px"><b style="color:var(--tx)">Attribution.</b> For each muscle the map keeps track of which exercise, on which day, the remaining fatigue came from — so it can tell you what to trim next time rather than only that something is tired.</li>
+      <li><b style="color:var(--tx)">What it cannot know:</b> stress, illness, or whether something hurts — unless you tell it. That is what the soreness buttons and the joint check are for. It is a bookkeeping model, not a physiological reading. <b style="color:var(--tx)">A joint that hurts overrides a green muscle, every time</b> — especially the shoulders.</li>
     </ul>
-    <div class="src">Recovery windows informed by: muscle protein synthesis elevated ~36–48 h post-session, shorter in trained lifters and longer in untrained; 48–72 h between sessions targeting the same muscle group is the common recommendation; weekly set targets from the resistance-training volume literature, where the dose-response runs to roughly 20 sets per muscle per week. Longer recovery for beginners reflects that a novel stimulus causes greater homeostatic disruption.</div>
+    <div class="src">Recovery windows informed by: muscle protein synthesis elevated ~36–48 h post-session, shorter in trained lifters and longer in untrained; 48–72 h between sessions on the same muscle is the common recommendation; weekly set targets from the resistance-training volume literature, where the dose-response runs to roughly 20 sets per muscle per week.</div>
   </div>
 </section>
+
 
 <!-- ============ MORE ============ -->
 <section class="view" id="v-more">
@@ -393,6 +459,338 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 <div class="toast" id="toast"></div>
 <div class="fw" id="fw"></div>
 
+<script>
+/* ═══════════════════ ILLUSTRATIONS — animated figure engine ═══════════════════
+   Kept in its own script block on purpose: if a browser cannot run it, the rest of the app still works. */
+var FIG=(function(){
+const LEN = {T:36, N:12, HR:8, U:19, F:18, TH:25, SH:25, FT:9};
+const R = d => d*Math.PI/180;
+const add=(a,b)=>[a[0]+b[0],a[1]+b[1]], sub=(a,b)=>[a[0]-b[0],a[1]-b[1]], mul=(a,k)=>[a[0]*k,a[1]*k];
+const dirv = deg => [Math.cos(R(deg)), Math.sin(R(deg))];
+const dist=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]);
+function ik(A,B,l1,l2,bend){
+  const d=dist(A,B)||0.001, u=mul(sub(B,A),1/d);
+  if(d>=l1+l2-0.01){ return [add(A,mul(u,l1)), add(A,mul(u,l1+l2))]; }
+  const a=(l1*l1-l2*l2+d*d)/(2*d), h=Math.sqrt(Math.max(0,l1*l1-a*a));
+  const base=add(A,mul(u,a)), perp=[-u[1],u[0]];
+  return [add(base,mul(perp,h*bend)), B];
+}
+function rotv(v,deg){const c=Math.cos(R(deg)),s=Math.sin(R(deg));return [v[0]*c-v[1]*s, v[0]*s+v[1]*c];}
+function resolve(sp){
+  const P=sp.p, t=(sp.t!=null?sp.t:-90), hw=sp.hw||0, sw=sp.sw||0;
+  const sc = sp.s ? sp.s : add(P, mul(dirv(t),LEN.T));
+  const s1=[sc[0]+sw,sc[1]], s2=[sc[0]-sw,sc[1]], p1=[P[0]+hw,P[1]], p2=[P[0]-hw,P[1]];
+  const head = add(add(sc, mul(dirv(t+(sp.hd||0)), LEN.N)), [sp.hx||0, sp.hy||0]);
+  const arm=(s,w,wr,e,eb)=>{ let wt = w || (wr? add(s, rotv(wr, t+90)) : add(s,[2,LEN.U+LEN.F-2]));
+    if(e) return [e, wt]; return ik(s, wt, LEN.U, LEN.F, (eb!=null?eb:1)); };
+  const [e,w]=arm(s1,sp.w,sp.wr,sp.e,sp.eb);
+  const [e2,w2]= (sp.w2||sp.wr2||sp.e2)? arm(s2,sp.w2,sp.wr2,sp.e2,(sp.eb2!=null?sp.eb2:sp.eb)) : [add(e,[-3,0]),add(w,[-3,0])];
+  const leg=(p,a,k,kb,ft)=>{ let kk,aa; if(k){kk=k;aa=a;} else [kk,aa]=ik(p,a,LEN.TH,LEN.SH,(kb!=null?kb:-1));
+    return [kk,aa,add(aa,mul(dirv(ft||0),LEN.FT))]; };
+  const [k,a,to]=leg(p1,sp.a,sp.k,sp.kb,sp.ft);
+  const [k2,a2,to2]= sp.a2? leg(p2,sp.a2,sp.k2,(sp.kb2!=null?sp.kb2:sp.kb),(sp.ft2!=null?sp.ft2:sp.ft)) : [add(k,[-3,0]),add(a,[-3,0]),add(to,[-3,0])];
+  return {p:p1,p2,s:s1,s2,sc,head,e,w,e2,w2,k,a,to,k2,a2,to2,P,c:sp.c||0,v:sp.v||0};
+}
+const KEYS=['p','p2','s','s2','sc','head','e','w','e2','w2','k','a','to','k2','a2','to2','P'];
+function lerpJ(A,B,f){const o={};KEYS.forEach(k=>o[k]=[A[k][0]+(B[k][0]-A[k][0])*f, A[k][1]+(B[k][1]-A[k][1])*f]);o.c=A.c+(B.c-A.c)*f;o.v=A.v+(B.v-A.v)*f;return o;}
+const f1=n=>Math.round(n*10)/10, pt=a=>f1(a[0])+','+f1(a[1]);
+const L2=(a,b,cls)=>`<line class="${cls}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}"/>`;
+const C2=(c,r,cls)=>`<circle class="${cls}" cx="${f1(c[0])}" cy="${f1(c[1])}" r="${r}"/>`;
+const mixp=(a,b,f)=>[a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f];
+function trunkPath(J){ const mid=mul(add(J.P,J.sc),0.5), dv=sub(J.sc,J.P), dl=Math.hypot(dv[0],dv[1])||1, perp=[-dv[1]/dl, dv[0]/dl]; const ctrl=add(mid,mul(perp,J.c)); return `M${pt(J.P)} Q${pt(ctrl)} ${pt(J.sc)}`; }
+function figureSVG(J, ex, opt){
+  opt=opt||{};
+  const front = ex.view==='front' || ex.view==='back', far = front ? '' : ' far';
+  const hl = opt.ghost ? [] : (ex.hl||[]), H = k => hl.indexOf(k)>=0;
+  const leg=(p,k,a,to,c)=>L2(p,k,'th'+c)+L2(k,a,'sh'+c)+L2(a,to,'ft'+c)+C2(k,2.1,'jt');
+  const arm=(sh,e,w,c)=>L2(sh,e,'ua'+c)+L2(e,w,'fa'+c)+C2(e,1.6,'jt')+C2(w,3.1,'hand'+c);
+  let s = leg(J.p2,J.k2,J.a2,J.to2,far) + arm(J.s2,J.e2,J.w2,far);
+  if(front) s += `<path class="torsoF" d="M${pt(J.s2)} L${pt(J.s)} L${pt(J.p)} L${pt(J.p2)} Z"/>`;
+  else s += `<path class="trunk" d="${trunkPath(J)}"/>`;
+  s += leg(J.p,J.k,J.a,J.to,'');
+  s += L2(J.sc,J.head,'neck') + C2(J.head,LEN.HR,'head');
+  const sides = front ? [[J.p,J.k,J.a,J.s,J.e],[J.p2,J.k2,J.a2,J.s2,J.e2]] : [[J.p,J.k,J.a,J.s,J.e]];
+  if(H('core')) s += L2(mixp(J.P,J.sc,.1),mixp(J.P,J.sc,.5),'hl hcore');
+  if(H('back')) s += L2(mixp(J.P,J.sc,.5),mixp(J.P,J.sc,.92),'hl hcore');
+  if(H('spine')) s += `<path class="hl hcore" d="${trunkPath(J)}"/>`;
+  if(H('neck')) s += L2(J.sc,J.head,'hl hneck');
+  sides.forEach(([p,k,a,sh,e])=>{
+    if(H('thigh')) s += L2(mixp(p,k,.12),mixp(p,k,.88),'hl hth');
+    if(H('calf')) s += L2(mixp(k,a,.1),mixp(k,a,.8),'hl hsh');
+    if(H('glute')) s += C2(p,6,'hlc');
+    if(H('ankle')) s += C2(a,4.4,'hlc');
+    if(H('arm')) s += L2(mixp(sh,e,.15),mixp(sh,e,.85),'hl hua');
+  });
+  s += arm(J.s,J.e,J.w,'');
+  if(H('shoulder')) sides.forEach(x=>{ s += C2(x[3],5,'hlc'); });
+  return s;
+}
+const P_ = {
+  floor:()=>`<line class="floor" x1="2" y1="128" x2="198" y2="128"/>`,
+  wall:(x,y1)=>`<line class="wallp" x1="${x}" y1="${y1==null?8:y1}" x2="${x}" y2="128"/>`,
+  rect:(x,y,w,h,cls)=>`<rect class="${cls||'eqp'}" x="${f1(x)}" y="${f1(y)}" width="${w}" height="${h}" rx="3"/>`,
+  line:(a,b,cls)=>`<line class="${cls||'prop'}" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}"/>`,
+  db:(c,ang)=>{const d=dirv(ang==null?90:ang),q=mul(d,7),a=sub(c,q),b=add(c,q);return `<line class="dbh" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}"/><circle class="dbp" cx="${f1(a[0])}" cy="${f1(a[1])}" r="4.2"/><circle class="dbp" cx="${f1(b[0])}" cy="${f1(b[1])}" r="4.2"/>`;},
+  band:(a,b)=>`<line class="band" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}"/>`,
+  plate:(c,r)=>`<circle class="dbp" cx="${f1(c[0])}" cy="${f1(c[1])}" r="${r||10}"/>`,
+  arrow:(a,b)=>`<line class="arrow" x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" marker-end="url(#ah)"/>`,
+  post:(x)=>`<rect class="eqp" x="${x}" y="14" width="6" height="114" rx="2"/>`,
+  step:(x,w,top)=>`<rect class="eqp" x="${x}" y="${top}" width="${w}" height="${128-top}" rx="2"/>`,
+};
+const ST = (x,extra)=>{ x=(x==null?100:x); return Object.assign({p:[x,75],t:-90,a:[x+3,124],a2:[x-2,124],w:[x+2,111],w2:[x-1,111]},extra||{}); };
+const EX = [
+ {id:'bike',poses:[
+   {p:[86,80],t:-70,w:[134,62],w2:[132,63],a:[110,114],a2:[92,102],kb:-1,ft:10,ft2:10},
+   {p:[86,80],t:-70,w:[134,62],w2:[132,63],a:[92,102],a2:[110,114],kb:-1,ft:10,ft2:10}],
+  props:J=>`<circle class="prop" cx="62" cy="110" r="16"/><circle class="prop" cx="142" cy="110" r="16"/>`+P_.line([62,110],[100,108])+P_.line([100,108],[84,84])+P_.line([100,108],[136,64])+P_.line([142,110],[136,64])+P_.rect(76,80,18,5)+P_.line([128,62],[140,60],'prop thick')+P_.floor(), dur:700},
+ {id:'cat_cow',poses:[
+   {p:[78,90],t:0,c:9,hd:-28,w:[116,126],w2:[113,126],k:[78,124],a:[54,124],k2:[76,124],a2:[52,124],ft:180,ft2:180},
+   {p:[78,90],t:0,c:-12,hd:40,w:[116,126],w2:[113,126],k:[78,124],a:[54,124],k2:[76,124],a2:[52,124],ft:180,ft2:180}],
+  props:J=>P_.floor(), dur:1800},
+ {id:'tspine_rot',poses:[
+   {p:[78,90],t:0,hd:30,e:[120,104],w:[124,86],w2:[113,126],k:[78,124],a:[54,124],k2:[76,124],a2:[52,124],ft:180,ft2:180},
+   {p:[78,90],t:0,hd:-35,e:[112,66],w:[122,84],w2:[113,126],k:[78,124],a:[54,124],k2:[76,124],a2:[52,124],ft:180,ft2:180}],
+  props:J=>P_.floor(), dur:1600},
+ {id:'hip_9090',poses:[
+   {p:[100,120],t:-88,k:[124,114],a:[118,124],ft:20,k2:[80,116],a2:[70,124],ft2:180,w:[80,123],w2:[76,123]},
+   {p:[100,120],t:-88,k:[80,116],a:[86,124],ft:160,k2:[122,114],a2:[130,124],ft2:0,w:[80,123],w2:[76,123]}],
+  props:J=>P_.floor(), dur:1500},
+ {id:'couch_stretch',poses:[
+   {p:[66,104],t:-62,w:[100,98],w2:[98,100],a:[102,124],kb:-1,k2:[48,124],a2:[44,100],ft2:-90},
+   {p:[64,103],t:-88,w:[96,100],w2:[94,101],a:[102,124],kb:-1,k2:[48,124],a2:[44,100],ft2:-90}],
+  props:J=>P_.wall(38)+P_.rect(42,121,12,7,'eqp soft')+P_.floor(), dur:2200},
+ {id:'deep_squat_hold',poses:[
+   {p:[90,108],t:-66,w:[146,84],w2:[146,88],a:[106,124],a2:[103,124],kb:-1},
+   {p:[88,113],t:-72,w:[146,86],w2:[146,90],a:[106,124],a2:[103,124],kb:-1}],
+  props:J=>P_.post(148)+P_.floor(), dur:2400},
+ {id:'knee_to_wall',poses:[
+   {p:[116,78],t:-84,w:[156,58],w2:[155,62],a:[136,124],a2:[92,124],ft2:12,kb:-1},
+   {p:[130,90],t:-78,w:[156,60],w2:[155,64],a:[136,124],a2:[92,122],ft2:25,kb:-1}],
+  props:J=>P_.wall(160)+P_.floor(), dur:1200},
+ {id:'tib_raise',poses:[
+   {p:[74,80],t:-95,w:[70,114],w2:[68,114],a:[97,124],a2:[95,124],ft:0},
+   {p:[74,80],t:-95,w:[70,114],w2:[68,114],a:[97,124],a2:[95,124],ft:-38,ft2:-38}],
+  props:J=>P_.wall(64)+P_.floor(), dur:900},
+ {id:'calf_raise_step',poses:[
+   {p:[96,66],t:-90,w:[126,70],w2:[125,72],a:[95.8,115.8],a2:[93.8,115.8],ft:-25,ft2:-25},
+   {p:[97,57],t:-90,w:[126,64],w2:[125,66],a:[96.6,106.8],a2:[94.6,106.8],ft:35,ft2:35}],
+  props:J=>P_.step(98,40,112)+P_.post(130)+P_.floor(), dur:1400},
+ {id:'sl_calf_raise',poses:[
+   {p:[96,66],t:-90,w:[126,70],w2:[125,72],a:[95.8,115.8],ft:-25,k2:[92,92],a2:[80,104],ft2:20},
+   {p:[97,57],t:-90,w:[126,64],w2:[125,66],a:[96.6,106.8],ft:35,k2:[93,83],a2:[81,95],ft2:20}],
+  props:J=>P_.step(98,40,112)+P_.post(130)+P_.floor(), dur:1400},
+ {id:'seated_calf',poses:[
+   {p:[70,92],t:-90,k:[95,92],a:[96,118],ft:-22,a2:[94,118],k2:[93,92],ft2:-22,w:[96,88],w2:[94,88]},
+   {p:[70,92],t:-90,k:[95,85],a:[96,111],ft:32,a2:[94,111],k2:[93,85],ft2:32,w:[96,81],w2:[94,81]}],
+  props:J=>P_.rect(48,96,34,8,'eqp')+P_.line([56,104],[56,128])+P_.line([76,104],[76,128])+P_.step(96,26,118)+P_.line([J.k[0]-14,J.k[1]-4],[J.k[0]+14,J.k[1]-4],'bar')+P_.plate([J.k[0]+16,J.k[1]-4],7)+P_.floor(), dur:1300},
+ {id:'sl_balance',poses:[
+   {p:[100,75],t:-88,w:[116,100],w2:[86,100],a:[101,124],k2:[118,92],a2:[110,110],ft2:10},
+   {p:[100,75],t:-92,w:[118,98],w2:[84,102],a:[101,124],k2:[117,93],a2:[108,111],ft2:10}],
+  props:J=>P_.floor(), dur:2200},
+ {id:'glute_bridge',poses:[
+   {p:[90,122],t:180,a:[120,124],a2:[118,124],kb:-1,w:[91,124],w2:[89,124]},
+   {p:[90,100],t:151,hd:29,a:[120,124],a2:[118,124],kb:-1,w:[91,124],w2:[89,124]}],
+  props:J=>P_.floor(), dur:1500},
+ {id:'sl_glute_bridge',poses:[
+   {p:[90,122],t:180,a:[120,124],kb:-1,a2:[136,104],ft2:-30,w:[91,124],w2:[89,124]},
+   {p:[90,100],t:151,hd:29,a:[120,124],kb:-1,a2:[138,86],ft2:-30,w:[91,124],w2:[89,124]}],
+  props:J=>P_.floor(), dur:1500},
+ {id:'lateral_walk',view:'front',poses:[
+   {p:[100,80],t:-90,hw:7,sw:12,a:[112,124],a2:[88,124],kb:-1,kb2:1,ft:0,ft2:180,w:[114,96],w2:[86,96]},
+   {p:[106,80],t:-90,hw:7,sw:12,a:[128,124],a2:[90,124],kb:-1,kb2:1,ft:0,ft2:180,w:[120,96],w2:[92,96]}],
+  props:J=>P_.band(J.k,J.k2)+P_.floor(), dur:900},
+ {id:'goblet_box_squat',poses:[
+   ST(102,{w:[112,54],w2:[110,56],a:[110,124],a2:[107,124]}),
+   {p:[82,90],t:-58,w:[112,64],w2:[110,66],a:[110,124],a2:[107,124],kb:-1}],
+  props:J=>P_.rect(54,92,32,36,'eqp soft')+P_.db(J.w,90)+P_.floor(), dur:1800},
+ {id:'split_squat',poses:[
+   {p:[100,78],t:-90,a:[126,124],a2:[74,118],ft2:40,kb:-1,w:[106,80],w2:[104,80]},
+   {p:[100,100],t:-90,a:[126,124],a2:[74,118],ft2:40,kb:-1,w:[106,102],w2:[104,102]}],
+  props:J=>P_.floor(), dur:1700},
+ {id:'leg_press',poses:[
+   {p:[72,104],t:-140,a:[100,86],a2:[98,88],kb:1,ft:-45,ft2:-45,w:[76,108],w2:[74,108]},
+   {p:[72,104],t:-140,a:[106,68],a2:[104,70],kb:1,ft:-45,ft2:-45,w:[76,108],w2:[74,108]}],
+  props:J=>P_.line([62,118],[30,78],'prop thick')+P_.line([60,108],[84,110],'prop thick')+P_.line([J.a[0]-12,J.a[1]-12],[J.a[0]+12,J.a[1]+12],'bar')+P_.line([100,128],[150,40],'prop')+P_.floor(), dur:1700},
+ {id:'step_up',poses:[
+   {p:[98,80],t:-82,a:[124,88],kb:-1,a2:[90,124],w:[104,84],w2:[96,84]},
+   {p:[126,42],t:-90,a:[129,88],a2:[118,82],k2:[124,62],ft2:30,w:[130,46],w2:[122,46]}],
+  props:J=>P_.step(110,40,92)+P_.floor(), dur:1800},
+ {id:'hip_thrust',poses:[
+   {p:[90,120],t:-133,hd:20,a:[124,124],a2:[122,124],kb:-1,w:[92,112],w2:[90,112]},
+   {p:[96,94],t:176,hd:30,a:[124,124],a2:[122,124],kb:-1,w:[98,86],w2:[96,86]}],
+  props:J=>P_.rect(28,96,40,10,'eqp')+P_.line([40,106],[40,128])+P_.line([60,106],[60,128])+P_.plate([J.p[0],J.p[1]-8],11)+P_.floor(), dur:1700},
+ {id:'back_ext_45',poses:[
+   {p:[92,78],t:55,wr:[4,10],wr2:[2,12],a:[62,116],a2:[60,117],kb:1,ft:-40,ft2:-40},
+   {p:[92,78],t:-45,wr:[4,10],wr2:[2,12],a:[62,116],a2:[60,117],kb:1,ft:-40,ft2:-40}],
+  props:J=>P_.rect(86,82,14,9,'eqp')+P_.line([93,91],[93,128],'prop thick')+P_.line([56,124],[68,112],'prop thick')+P_.line([62,128],[93,104],'prop')+P_.floor(), dur:1900},
+ {id:'cossack',view:'front',poses:[
+   {p:[76,100],t:-88,hw:6,sw:12,a:[62,124],a2:[142,124],kb:1,kb2:1,ft:180,ft2:-60,w:[98,70],w2:[96,74]},
+   {p:[124,100],t:-92,hw:6,sw:12,a:[158,124],a2:[60,124],kb:-1,kb2:-1,ft:60,ft2:180,w:[104,70],w2:[102,74]}],
+  props:J=>P_.post(97)+P_.floor(), dur:2200},
+ {id:'adductor_rockback',poses:[
+   {p:[82,92],t:-2,w:[118,126],w2:[115,126],k2:[82,124],a2:[58,124],ft2:180,a:[120,122],kb:1,ft:-30},
+   {p:[64,104],t:-14,w:[118,126],w2:[115,126],k2:[66,124],a2:[42,124],ft2:180,a:[112,124],kb:1,ft:-30}],
+  props:J=>P_.floor(), dur:1800},
+ {id:'hip_cars',poses:[
+   {p:[100,75],t:-90,w:[132,74],w2:[130,76],a2:[98,124],k:[124,66],a:[126,92],ft:20},
+   {p:[100,75],t:-88,w:[132,74],w2:[130,76],a2:[98,124],k:[110,96],a:[86,104],ft:200},
+   {p:[100,75],t:-82,w:[132,74],w2:[130,76],a2:[98,124],a:[66,116],kb:1,ft:110}],
+  props:J=>P_.post(134)+P_.floor(), dur:1500},
+ {id:'figure4',poses:[
+   {p:[96,120],t:180,k2:[114,98],a2:[128,124],ft2:0,k:[124,110],a:[113,98],ft:-30,w:[112,100],w2:[110,101]},
+   {p:[96,119],t:180,k2:[106,94],a2:[128,98],ft2:-10,k:[118,104],a:[105,93],ft:-30,w:[104,96],w2:[102,97]}],
+  props:J=>P_.floor(), dur:2400},
+ {id:'cs_db_row',poses:[
+   {p:[80,98],t:-40,w:[110,114],w2:[108,114],a:[52,124],a2:[50,124],kb:-1},
+   {p:[80,98],t:-40,w:[94,86],w2:[92,86],eb:1,eb2:1,a:[52,124],a2:[50,124],kb:-1}],
+  props:J=>P_.line([70,108],[124,62],'bench')+P_.line([96,88],[96,128],'prop thick')+P_.db(J.w,0)+P_.floor(), dur:1700},
+ {id:'hk_cable_row',poses:[
+   {p:[90,98],t:-90,a:[118,124],kb:-1,a2:[64,124],kb2:-1,ft2:180,w:[130,72],w2:[94,96]},
+   {p:[90,98],t:-90,a:[118,124],kb:-1,a2:[64,124],kb2:-1,ft2:180,w:[104,76],eb:1,w2:[94,96]}],
+  props:J=>P_.band(J.w,[186,72])+P_.rect(186,20,8,108,'eqp')+P_.floor(), dur:1700},
+ {id:'seated_cable_row',poses:[
+   {p:[70,100],t:-84,a:[118,100],a2:[116,100],kb:-1,ft:-80,ft2:-80,w:[116,80],w2:[114,80]},
+   {p:[70,100],t:-92,a:[118,100],a2:[116,100],kb:-1,ft:-80,ft2:-80,w:[90,86],w2:[88,86]}],
+  props:J=>P_.rect(48,102,40,8)+P_.line([122,104],[122,90],'prop thick')+P_.band(J.w,[176,90])+P_.rect(176,20,8,108,'eqp')+P_.floor(), dur:1700},
+ {id:'pushup_plus',poses:[
+   {p:[85,101],t:-25,w:[115,111],w2:[113,111],eb:-1,eb2:-1,a:[40,122],a2:[38,122],ft:45,ft2:45},
+   {p:[80.5,92.6],t:-37,w:[115,111],w2:[113,111],eb:-1,eb2:-1,a:[40,122],a2:[38,122],ft:45,ft2:45}],
+  props:J=>P_.rect(100,113,60,6,'eqp')+P_.line([108,119],[108,128],'prop thick')+P_.line([152,119],[152,128],'prop thick')+P_.floor(), dur:1700},
+ {id:'db_floor_press',poses:[
+   {p:[100,120],t:180,a:[124,124],a2:[122,124],kb:-1,e:[76,123],w:[78,104],e2:[74,123],w2:[76,104]},
+   {p:[100,120],t:180,a:[124,124],a2:[122,124],kb:-1,w:[66,84],w2:[64,84]}],
+  props:J=>P_.db(J.w,90)+P_.floor(), dur:1700},
+ {id:'pallof',poses:[
+   {p:[100,76],t:-90,a:[106,124],a2:[96,124],kb:-1,w:[110,66],w2:[108,66]},
+   {p:[100,76],t:-90,a:[106,124],a2:[96,124],kb:-1,w:[134,64],w2:[132,64]}],
+  props:J=>`<rect class="eqp ghost" x="40" y="14" width="8" height="114" rx="2"/>`+P_.band(J.w,[48,66])+P_.floor(), dur:1800},
+ {id:'dead_bug',poses:[
+   {p:[100,118],t:180,w:[30,112],w2:[66,82],k:[100,93],a:[124,93],ft:-90,a2:[148,114],ft2:-80},
+   {p:[100,118],t:180,w:[66,82],w2:[30,112],a:[148,114],ft:-80,k2:[100,93],a2:[124,93],ft2:-90}],
+  props:J=>P_.floor(), dur:1900},
+ {id:'chin_tuck',vb:[50,4,100,80],poses:[
+   {p:[100,75],t:-90,hx:5,hd:8,w:[102,111],w2:[99,111],a:[103,124],a2:[98,124]},
+   {p:[100,75],t:-90,hx:-2,hd:-4,w:[102,111],w2:[99,111],a:[103,124],a2:[98,124]}],
+  props:J=>P_.arrow([J.head[0]+14,J.head[1]],[J.head[0]+4,J.head[1]]), dur:1500},
+ {id:'iso_er_ir',view:'front',poses:[
+   {p:[100,75],t:-90,hw:7,sw:13,e:[114,58],w:[131,60],w2:[88,76],a:[107,124],a2:[93,124]},
+   {p:[100,75],t:-90,hw:7,sw:13,e:[114,58],w:[132,60],w2:[88,76],a:[107,124],a2:[93,124]}],
+  props:J=>P_.wall(136)+P_.arrow([122,52],[132,52])+`<rect class="towel" x="${f1(J.e[0]-2)}" y="${f1(J.e[1]-6)}" width="5" height="10" rx="2"/>`+P_.floor(), dur:1000},
+ {id:'banded_er',view:'front',poses:[
+   {p:[100,75],t:-90,hw:7,sw:13,e:[114,58],w:[100,64],w2:[88,76],a:[107,124],a2:[93,124]},
+   {p:[100,75],t:-90,hw:7,sw:13,e:[114,58],w:[130,62],w2:[88,76],a:[107,124],a2:[93,124]}],
+  props:J=>P_.band(J.w,[28,62])+P_.rect(22,20,6,108,'eqp')+`<rect class="towel" x="${f1(J.e[0]-2)}" y="${f1(J.e[1]-6)}" width="5" height="10" rx="2"/>`+P_.floor(), dur:1700},
+ {id:'sidelying_er',poses:[
+   {p:[98,114],t:180,hd:0,e:[76,108],w:[80,124],w2:[38,112],a:[142,120],a2:[144,122],kb:1},
+   {p:[98,114],t:180,hd:0,e:[76,108],w:[80,90],w2:[38,112],a:[142,120],a2:[144,122],kb:1}],
+  props:J=>P_.db(J.w,0)+P_.rect(70,104,8,6,'towel')+P_.floor(), dur:1900},
+ {id:'wall_slide',vb:[60,4,120,124],poses:[
+   {p:[126,76],t:-90,e:[140,54],w:[142,34],e2:[138,56],w2:[140,36],a:[130,124],a2:[126,124]},
+   {p:[126,76],t:-90,e:[140,34],w:[142,14],e2:[138,36],w2:[140,16],a:[130,124],a2:[126,124]}],
+  props:J=>P_.wall(150)+`<rect class="roller" x="141" y="${f1(Math.min(J.w[1],J.e[1])-2)}" width="9" height="${f1(Math.abs(J.e[1]-J.w[1])+6)}" rx="4"/>`+P_.floor(), dur:2000},
+ {id:'prone_iyt',poses:[
+   {p:[80,120],t:0,hd:-10,w:[152,103],w2:[150,105],a:[32,122],a2:[30,123],ft:90,ft2:90},
+   {p:[80,120],t:0,hd:-10,w:[143,96],w2:[141,99],a:[32,122],a2:[30,123],ft:90,ft2:90},
+   {p:[80,120],t:0,hd:-10,e:[118,104],w:[121,88],e2:[115,106],w2:[118,90],a:[32,122],a2:[30,123],ft:90,ft2:90}],
+  props:J=>P_.floor(), dur:1500},
+ {id:'serratus_punch',poses:[
+   {p:[100,120],t:180,a:[124,124],a2:[122,124],kb:-1,w:[66,86]},
+   {p:[100,120],t:180,s:[64,114],a:[124,124],a2:[122,124],kb:-1,w:[66,78]}],
+  props:J=>P_.db(J.w,0)+P_.floor(), dur:1300},
+ {id:'scap_set',view:'back',vb:[40,4,120,90],poses:[
+   {p:[100,75],t:-90,hw:7,sw:14,w:[116,110],w2:[84,110],a:[107,124],a2:[93,124],v:0},
+   {p:[100,77],t:-90,hw:7,sw:14,s:[100,42],w:[116,111],w2:[84,111],a:[107,124],a2:[93,124],v:1}],
+  props:J=>{const v=J.v,y=52+v*4,dx=10-v*4;return `<path class="scap" d="M${f1(100+dx)},${f1(y)} l10,-4 l-2,14 z"/><path class="scap" d="M${f1(100-dx)},${f1(y)} l-10,-4 l2,14 z"/>`+P_.arrow([128,40],[128,50])+P_.arrow([72,40],[72,50]);}, dur:1600},
+ {id:'overhead_reach_test',poses:[
+   {p:[60,75],t:-90,w:[66,111],w2:[63,111],a:[66,124],a2:[62,124]},
+   {p:[60,75],t:-90,w:[62,4],w2:[60,6],a:[66,124],a2:[62,124]}],
+  props:J=>P_.wall(52)+P_.floor(), dur:2200},
+ /* ---- added for the merged programme ---- */
+ {id:'rdl',poses:[
+   ST(96,{w:[100,110],w2:[98,110]}),
+   {p:[86,78],t:-25,w:[117,99],w2:[115,99],a:[99,124],a2:[94,124],kb:-1}],
+  props:J=>P_.db(J.w,0)+P_.floor(), dur:1900},
+ {id:'lat_pulldown',poses:[
+   {p:[80,94],t:-84,k:[105,94],a:[106,120],k2:[103,94],a2:[104,120],ft:0,ft2:0,w:[93,24],w2:[91,25]},
+   {p:[80,94],t:-78,k:[105,94],a:[106,120],k2:[103,94],a2:[104,120],ft:0,ft2:0,w:[99,58],w2:[97,59],eb:1,eb2:1}],
+  props:J=>P_.rect(64,98,30,7)+P_.line([79,105],[79,128],'prop thick')+P_.rect(96,82,18,6,'eqp soft')+P_.line([J.w[0],J.w[1]],[J.w[0],6],'prop')+P_.plate(J.w,3.4)+P_.line([120,128],[120,6],'prop')+P_.line([120,6],[J.w[0],6],'prop')+P_.floor(), dur:1800},
+ {id:'face_pull',poses:[
+   ST(78,{w:[114,46],w2:[112,47]}),
+   ST(78,{e:[68,36],w:[88,32],e2:[66,38],w2:[86,34]})],
+  props:J=>P_.band(J.w,[172,44])+P_.rect(172,14,7,114,'eqp')+P_.floor(), dur:1700},
+ {id:'curl',poses:[
+   ST(100,{e:[101,58],w:[103,76],e2:[98,58],w2:[100,76]}),
+   ST(100,{e:[101,58],w:[112,44],e2:[98,58],w2:[109,45]})],
+  props:J=>P_.db(J.w,0)+P_.floor(), dur:1500},
+ {id:'landmine',poses:[
+   {p:[90,98],t:-90,a:[118,124],kb:-1,a2:[64,124],kb2:-1,ft2:180,w:[100,64],eb:1,w2:[95,96]},
+   {p:[90,98],t:-90,a:[118,124],kb:-1,a2:[64,124],kb2:-1,ft2:180,w:[115,37],eb:1,w2:[95,96]}],
+  props:J=>P_.line([182,126],J.w,'bar')+P_.plate([J.w[0]+5,J.w[1]+5],5)+P_.floor(), dur:1800},
+ {id:'incline_press',poses:[
+   {p:[78,104],t:-150,hd:0,a:[112,124],a2:[110,124],kb:-1,w:[52,68],w2:[50,69],eb:1,eb2:1},
+   {p:[78,104],t:-150,hd:0,a:[112,124],a2:[110,124],kb:-1,w:[48,50],w2:[46,51],eb:1,eb2:1}],
+  props:J=>P_.line([90,112],[34,80],'bench')+P_.line([60,100],[60,128],'prop thick')+P_.line([88,114],[88,128],'prop thick')+P_.db(J.w,0)+P_.floor(), dur:1700},
+ {id:'lateral_raise',view:'front',poses:[
+   {p:[100,75],t:-90,hw:7,sw:13,w:[117,75],w2:[83,75],a:[107,124],a2:[93,124]},
+   {p:[100,75],t:-90,hw:7,sw:13,w:[146,55],w2:[54,55],a:[107,124],a2:[93,124]}],
+  props:J=>P_.db(J.w,0)+P_.db(J.w2,0)+P_.floor(), dur:1700},
+ {id:'carry',poses:[
+   {p:[100,75],t:-90,a:[114,124],a2:[88,121],kb:-1,ft2:25,w:[103,110],w2:[98,110]},
+   {p:[100,75],t:-90,a:[88,121],a2:[114,124],kb:-1,ft:25,ft2:0,w:[103,110],w2:[98,110]}],
+  props:J=>P_.db(J.w,0)+P_.floor(), dur:800},
+ {id:'walk',poses:[
+   {p:[100,75],t:-87,a:[115,124],a2:[87,121],kb:-1,ft2:25,w:[90,104],w2:[112,100],eb:-1,eb2:-1},
+   {p:[100,75],t:-87,a:[87,121],a2:[115,124],kb:-1,ft:25,ft2:0,w:[112,100],w2:[90,104],eb:-1,eb2:-1}],
+  props:J=>P_.floor(), dur:700},
+ {id:'bulgarian',poses:[
+   {p:[100,74],t:-88,a:[122,124],a2:[70,100],ft2:170,kb:-1,w:[104,109],w2:[101,109]},
+   {p:[98,95],t:-82,a:[122,124],a2:[70,100],ft2:170,kb:-1,w:[104,124],w2:[101,124]}],
+  props:J=>P_.rect(50,104,32,7)+P_.line([56,111],[56,128],'prop thick')+P_.line([76,111],[76,128],'prop thick')+P_.db(J.w,0)+P_.floor(), dur:1800},
+ {id:'reverse_lunge',poses:[
+   ST(108,{a:[112,124],a2:[106,124],w:[110,111],w2:[107,111]}),
+   {p:[94,98],t:-86,a:[112,124],a2:[64,118],ft2:40,kb:-1,w:[98,124],w2:[95,124]}],
+  props:J=>P_.floor(), dur:1700},
+ {id:'ham_curl',poses:[
+   {p:[84,102],t:0,hd:-6,k:[60,102],a:[35,102],k2:[58,103],a2:[33,103],ft:90,ft2:90,w:[128,112],w2:[126,113]},
+   {p:[84,102],t:0,hd:-6,k:[60,102],a:[70,79],k2:[58,103],a2:[68,80],ft:-170,ft2:-170,w:[128,112],w2:[126,113]}],
+  props:J=>P_.rect(52,106,84,7)+P_.line([62,113],[62,128],'prop thick')+P_.line([126,113],[126,128],'prop thick')+P_.plate([J.a[0]-3,J.a[1]-5],4)+P_.floor(), dur:1700},
+ {id:'leg_ext',poses:[
+   {p:[70,92],t:-100,k:[95,92],a:[96,117],k2:[93,92],a2:[94,117],ft:0,ft2:0,w:[74,98],w2:[72,98]},
+   {p:[70,92],t:-100,k:[95,92],a:[119,88],k2:[93,92],a2:[117,89],ft:-80,ft2:-80,w:[74,98],w2:[72,98]}],
+  props:J=>P_.rect(58,96,38,7)+P_.line([64,96],[58,54],'prop thick')+P_.line([78,103],[78,128],'prop thick')+P_.plate([J.a[0]+4,J.a[1]-3],4)+P_.floor(), dur:1700},
+ {id:'copenhagen',poses:[
+   {p:[112,98],s:[78,106],t:170,e:[78,124],w:[96,124],w2:[108,90],k:[134,96],a:[156,97],ft:0,k2:[132,108],a2:[152,117],ft2:10},
+   {p:[112,105],s:[78,107],t:170,e:[78,124],w:[96,124],w2:[108,97],k:[134,97],a:[156,97],ft:0,k2:[130,115],a2:[151,122],ft2:10}],
+  props:J=>P_.rect(126,101,40,7)+P_.line([132,108],[132,128],'prop thick')+P_.line([160,108],[160,128],'prop thick')+P_.floor(), dur:2200},
+ {id:'db_row',poses:[
+   {p:[80,86],t:-8,hd:-8,w:[113,116],w2:[119,103],a:[84,124],a2:[76,124],kb:-1},
+   {p:[80,86],t:-8,hd:-8,w:[104,92],eb:1,w2:[119,103],a:[84,124],a2:[76,124],kb:-1}],
+  props:J=>P_.rect(106,106,62,7)+P_.line([114,113],[114,128],'prop thick')+P_.line([160,113],[160,128],'prop thick')+P_.db(J.w,0)+P_.floor(), dur:1700}
+];
+const HL={bike:['thigh'],cat_cow:['spine'],tspine_rot:['back'],hip_9090:['glute'],couch_stretch:['thigh'],deep_squat_hold:['glute','ankle'],knee_to_wall:['ankle','calf'],tib_raise:['calf'],calf_raise_step:['calf'],sl_calf_raise:['calf'],seated_calf:['calf'],sl_balance:['ankle'],glute_bridge:['glute'],sl_glute_bridge:['glute'],lateral_walk:['thigh'],goblet_box_squat:['thigh','glute'],split_squat:['thigh','glute'],leg_press:['thigh'],step_up:['thigh','glute'],hip_thrust:['glute'],back_ext_45:['glute'],cossack:['thigh'],adductor_rockback:['thigh'],hip_cars:['glute'],figure4:['glute'],cs_db_row:['back'],hk_cable_row:['back'],seated_cable_row:['back'],pushup_plus:['shoulder','back'],db_floor_press:['back','arm'],pallof:['core'],dead_bug:['core'],chin_tuck:['neck'],iso_er_ir:['shoulder'],banded_er:['shoulder'],sidelying_er:['shoulder'],wall_slide:['shoulder'],prone_iyt:['back','shoulder'],serratus_punch:['shoulder'],scap_set:['back'],overhead_reach_test:['shoulder'],
+ rdl:['thigh','glute'],lat_pulldown:['back'],face_pull:['shoulder','back'],curl:['arm'],landmine:['shoulder','arm'],incline_press:['arm','shoulder'],lateral_raise:['shoulder'],carry:['core','arm'],walk:['thigh','calf'],bulgarian:['thigh','glute'],reverse_lunge:['thigh','glute'],ham_curl:['thigh'],leg_ext:['thigh'],copenhagen:['thigh','core'],db_row:['back']};
+const EXI={}; EX.forEach(e=>{ e.hl=HL[e.id]||[]; EXI[e.id]=e; });
+const cache={};
+const poseSet=ex=>cache[ex.id]||(cache[ex.id]=ex.poses.map(resolve));
+function frame(ex,tms){ const n=ex.poses.length, Rr=poseSet(ex); let J;
+  if(n===1) J=Rr[0]; else { const dur=ex.dur||1500, hold=dur*0.35, seg=dur+hold, total=seg*(n===2?2:n); let t=tms%total; const i=Math.floor(t/seg); let f=Math.min(1,(t-i*seg)/dur); f=0.5-0.5*Math.cos(Math.PI*f);
+    J=lerpJ(Rr[i%n], Rr[(i+1)%n], f); }
+  return ex.props(J)+figureSVG(J,ex); }
+function svg(id,cls,pose){ const ex=EXI[id]; if(!ex) return '';
+  cls=cls||''; const vb=ex.vb||[0,0,200,136], Rr=poseSet(ex), st=(pose!=null), n=Rr.length;
+  const ghost=(!st&&n>1&&cls.indexOf('mini')<0)?`<g class="ghostfig">${figureSVG(Rr[n-1],ex,{ghost:1})}</g>`:'';
+  const inner=st?ex.props(Rr[pose])+figureSVG(Rr[pose],ex):frame(ex,0);
+  return `<svg class="fig ${cls}" viewBox="${vb.join(' ')}" ${st?'':`data-anim="${ex.id}"`} aria-hidden="true"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ahp"/></marker></defs>${ghost}<g class="figg">${inner}</g></svg>`; }
+const visible=new Set();
+let reduced=false; try{ reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+const io=(typeof IntersectionObserver!=='undefined')?new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?visible.add(e.target):visible.delete(e.target)),{rootMargin:'40px'}):null;
+function watch(root){ (root||document).querySelectorAll('svg.fig[data-anim]').forEach(s=>{ if(s._w) return; s._w=1; if(io) io.observe(s); else visible.add(s); }); }
+let lastF=0;
+function loop(ts){ if(!reduced && ts-lastF>40){ lastF=ts; visible.forEach(s=>{ if(!s.isConnected){ visible.delete(s); return; } const ex=EXI[s.dataset.anim]; if(!ex) return; if(s._off==null) s._off=Math.random()*400; (s._g||(s._g=s.querySelector('.figg'))).innerHTML=frame(ex,ts+s._off); }); } requestAnimationFrame(loop); }
+if(typeof requestAnimationFrame!=='undefined') requestAnimationFrame(loop);
+return {svg:svg, watch:watch, has:function(id){ return !!EXI[id]; }, ids:function(){ return EX.map(function(e){ return e.id; }); }};
+})();
+</script>
 <script>
 /* ═══════════════════ STORAGE ═══════════════════ */
 var KEY='reset84_v2', canStore=true, memBlob=null;
@@ -436,6 +834,7 @@ function mergeState(inc){
   Object.keys(inc.reviews||{}).forEach(function(wk){ out.reviews[wk]=out.reviews[wk]||{};
     Object.keys(inc.reviews[wk]).forEach(function(q){ if(!out.reviews[wk][q]) out.reviews[wk][q]=inc.reviews[wk][q]; }); });
   Object.keys(inc.ladder||{}).forEach(function(i){ if(inc.ladder[i]) out.ladder[i]=true; });
+  out.clr=out.clr||{}; Object.keys(inc.clr||{}).forEach(function(i){ if(inc.clr[i]) out.clr[i]=true; });
   (inc.badges||[]).forEach(function(b){ if(out.badges.indexOf(b)<0) out.badges.push(b); });
   (inc.books||[]).forEach(function(b){ if(!out.books.some(function(x){ return x.d===b.d&&x.t===b.t&&x.min===b.min; })) out.books.push(b); });
   out.xp=Math.max(out.xp||0, inc.xp||0);
@@ -449,10 +848,11 @@ function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2])
 function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
 function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
 
-var BUILD='2026-07-28 · build 5 · muscle readiness';   /* bump this whenever the file changes, so you can tell which version is live */
-var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], v:2 };
+var BUILD='2026-11-16 · build 6 · merged plan, illustrations, readiness v2';   /* bump this whenever the file changes, so you can tell which version is live */
+var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], clr:{}, sore:{}, v:3 };
+var FRESH_INSTALL=!rd();
 var S=rd()||JSON.parse(JSON.stringify(DEF));
-['days','ex','met','wt','wa','reviews','ladder'].forEach(function(k){ if(!S[k])S[k]={}; });
+['days','ex','met','wt','wa','reviews','ladder','clr','sore'].forEach(function(k){ if(!S[k])S[k]={}; });
 if(!S.books)S.books=[]; if(!S.badges)S.badges=[]; if(typeof S.xp!=='number')S.xp=0; if(!S.start)S.start=DEF.start;
 
 var TODAY=iso(new Date()), cur=TODAY;
@@ -507,101 +907,134 @@ z2:{n:'Zone 2 cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Conversational pace �
 card:{n:'Moderate-vigorous cardio',s:1,r:'40 min',tag:'Aerobic',cues:['Harder than Tuesday — breathing noticeably, still continuous.','Run, cycle, row. Swim only once your shoulders are cleared.'],why:'40 minutes of moderate-to-vigorous work four times a week is the dose used in the vascular-health trials, which found a clinically meaningful mean improvement on the standard index.'}
 };
 
-/* ═══════════════════ MUSCLE MODEL ═══════════════════ */
-/* recov = hours for fatigue to clear · sat = effective sets that count as fully worked · pri = one of his stated priorities */
+/* ═══════════════════ MUSCLE MODEL (v2) ═══════════════════ */
+/* recov = hours for fatigue to clear · sat = effective sets that count as fully worked · pri = a stated priority */
 var MUS={
- chest:{n:'Chest',recov:72,sat:6,side:'f'},
- fdelt:{n:'Front delts',recov:60,sat:4,side:'f'},
- sdelt:{n:'Side delts',recov:60,sat:4,side:'f'},
- rdelt:{n:'Rear delts',recov:60,sat:4,side:'b'},
- cuff:{n:'Rotator cuff',recov:48,sat:4,side:'b',pri:1,note:'The muscle group that decides whether your shoulders feel trustworthy. Worked every day in the morning flow as well as in the gym.'},
- traps:{n:'Traps & lower trap',recov:60,sat:5,side:'b',pri:1,note:'Lower trap holds the shoulder blade where it belongs. Weak in almost everyone with desk posture.'},
- lats:{n:'Lats & upper back',recov:72,sat:6,side:'b'},
- lback:{n:'Spinal erectors',recov:72,sat:5,side:'b'},
- biceps:{n:'Biceps',recov:60,sat:4,side:'f'},
- triceps:{n:'Triceps',recov:60,sat:4,side:'b'},
- grip:{n:'Grip & forearms',recov:48,sat:4,side:'f'},
- abs:{n:'Abs & anterior core',recov:60,sat:5,side:'f'},
- glutes:{n:'Glutes',recov:72,sat:6,side:'b',pri:1},
- gmed:{n:'Glute medius',recov:48,sat:4,side:'b',pri:1,note:'Controls the knee and pelvis. Weakness here shows up as hip and ankle instability.'},
- quads:{n:'Quads',recov:72,sat:6,side:'f',pri:1},
- hams:{n:'Hamstrings',recov:72,sat:6,side:'b',pri:1},
- adduc:{n:'Adductors',recov:60,sat:4,side:'f'},
- calves:{n:'Calves — gastroc & soleus',recov:60,sat:5,side:'b',pri:1,note:'Two muscles, two exercises: straight-knee raises hit the gastrocnemius, bent-knee seated raises hit the soleus. Skipping the seated version is why most calves never grow.'},
- tib:{n:'Tibialis anterior',recov:48,sat:4,side:'f',pri:1,note:'The front of the shin. This is the muscle behind "weak ankles", and virtually nobody trains it.'}
+ chest:{n:'Chest',recov:72,sat:6},
+ fdelt:{n:'Front delts',recov:60,sat:4},
+ sdelt:{n:'Side delts',recov:60,sat:4},
+ rdelt:{n:'Rear delts',recov:60,sat:4},
+ cuff:{n:'Rotator cuff',recov:48,sat:5,pri:1,note:'The group that decides whether a shoulder feels trustworthy. It is worked a little every day on purpose, so it rarely shows as fully fresh — that is fine.'},
+ utrap:{n:'Upper traps',recov:60,sat:5,note:'Usually over-working already after a day at a desk. If rows land here instead of the mid-back, drop the load and re-set the shoulder blades.'},
+ ltrap:{n:'Mid & lower traps',recov:60,sat:5,pri:1,note:'These hold the shoulder blade where it belongs. Weak in almost everyone with desk posture.'},
+ serr:{n:'Serratus',recov:48,sat:4,pri:1,note:'Keeps the shoulder blade flat on the ribs — the other half of a shoulder that feels secure overhead.'},
+ lats:{n:'Lats',recov:72,sat:6},
+ lback:{n:'Spinal erectors',recov:72,sat:5},
+ biceps:{n:'Biceps',recov:60,sat:4},
+ triceps:{n:'Triceps',recov:60,sat:4},
+ grip:{n:'Forearms & grip',recov:48,sat:4},
+ abs:{n:'Abs',recov:60,sat:5},
+ obliq:{n:'Obliques',recov:60,sat:4},
+ glutes:{n:'Glutes',recov:72,sat:6,pri:1},
+ gmed:{n:'Glute medius',recov:48,sat:4,pri:1,note:'Controls the knee and pelvis. Weakness here shows up as hip and ankle instability.'},
+ quads:{n:'Quads',recov:72,sat:6,pri:1},
+ hams:{n:'Hamstrings',recov:72,sat:6,pri:1},
+ adduc:{n:'Adductors',recov:60,sat:4},
+ calves:{n:'Calves — gastrocnemius',recov:60,sat:5,pri:1,note:'The upper, visible calf. Straight-knee raises with a pause in the stretch. Skipping the pause is why most calves never grow.'},
+ soleus:{n:'Calves — soleus',recov:48,sat:5,pri:1,note:'The deep calf, trained with the knee bent. It is most of your standing endurance and ankle support, and it recovers fast — which is why it can be trained three or four times a week.'},
+ tib:{n:'Tibialis anterior',recov:48,sat:4,pri:1,note:'The front of the shin. This is the muscle behind "weak ankles", and virtually nobody trains it.'}
 };
-/* exercise → muscles worked, weighted */
+/* exercise → muscles worked, weighted (1 = primary target) */
 var EXM={
- squat:{quads:1,glutes:.5,adduc:.3,abs:.2,calves:.1},
- bulg:{quads:.8,glutes:.8,gmed:.4,adduc:.3,abs:.2},
- legext:{quads:1},
- calfst:{calves:1}, calfse:{calves:1}, slcalf:{calves:1},
- tib:{tib:1}, toes:{tib:.5},
- cope:{adduc:1,abs:.4,gmed:.2},
- bal:{tib:.4,calves:.3,gmed:.3},
- floorp:{chest:1,fdelt:.5,triceps:.6},
- csrow:{lats:1,rdelt:.4,biceps:.5,traps:.4},
- crow:{lats:1,biceps:.4,rdelt:.3,traps:.3},
- facep:{rdelt:.8,cuff:.7,traps:.5},
- frontr:{fdelt:1},
- sler:{cuff:1}, cer45:{cuff:1},
- pronY:{traps:1,rdelt:.4,cuff:.3},
- hang:{grip:.6,lats:.3},
- arms:{biceps:1,triceps:1,grip:.3},
- rdl:{hams:1,glutes:.7,lback:.7,grip:.3},
- hipt:{glutes:1,hams:.4},
- hamc:{hams:1},
- revl:{quads:.7,glutes:.8,gmed:.3},
- hipab:{gmed:1,glutes:.3},
- kraise:{abs:1},
- pdown:{lats:1,biceps:.4,rdelt:.2},
- land:{fdelt:1,sdelt:.4,triceps:.5,abs:.3,cuff:.3},
- dbrow:{lats:1,biceps:.4,traps:.3,grip:.3},
- incp:{chest:1,fdelt:.6,triceps:.5},
- latr:{sdelt:1,cuff:.2},
- reard:{rdelt:1,traps:.3},
- farm:{grip:1,traps:.5,abs:.4},
- z2:{calves:.3,quads:.2},
- card:{calves:.4,quads:.3,hams:.2}
+ squat:{quads:1,glutes:.5,adduc:.3,abs:.2,lback:.2}, gobbox:{quads:1,glutes:.5,adduc:.3,abs:.2,lback:.2},
+ bulg:{quads:.8,glutes:.8,gmed:.4,adduc:.3}, splitsq:{quads:.8,glutes:.7,gmed:.3,adduc:.3},
+ stepup:{quads:.8,glutes:.6,gmed:.3,calves:.2}, legpress:{quads:1,glutes:.5,adduc:.3}, legext:{quads:1},
+ calfst:{calves:1,soleus:.4}, slcalf:{calves:1,soleus:.4}, calfse:{soleus:1,calves:.2},
+ tib:{tib:1}, toes:{tib:.3}, cope:{adduc:1,obliq:.4,gmed:.2}, bal:{tib:.3,soleus:.3,gmed:.3},
+ floorp:{chest:1,fdelt:.5,triceps:.6}, pushplus:{chest:.7,serr:.8,triceps:.5,fdelt:.4,abs:.2},
+ incp:{chest:1,fdelt:.6,triceps:.5}, land:{fdelt:1,sdelt:.3,triceps:.5,serr:.4,obliq:.3,cuff:.2},
+ csrow:{lats:.8,ltrap:.8,rdelt:.4,biceps:.5,utrap:.2}, crow:{lats:.8,ltrap:.7,biceps:.4,rdelt:.3,utrap:.2},
+ hkrow:{lats:1,ltrap:.5,biceps:.4,rdelt:.3,obliq:.3}, dbrow:{lats:1,ltrap:.5,biceps:.4,rdelt:.3,grip:.3},
+ pdown:{lats:1,biceps:.5,ltrap:.3,rdelt:.2}, facep:{rdelt:.8,cuff:.7,ltrap:.6}, frontr:{fdelt:1},
+ sler:{cuff:1}, cer45:{cuff:1}, isoer:{cuff:.6}, bander:{cuff:.8},
+ pronY:{ltrap:1,rdelt:.4,cuff:.3}, reard:{rdelt:1,ltrap:.4}, latr:{sdelt:1,utrap:.2},
+ wallslide:{serr:.6,ltrap:.5}, serr:{serr:1}, scapset:{ltrap:.6}, chintuck:{},
+ hang:{grip:.6,lats:.3}, arms:{biceps:1,triceps:1,grip:.3},
+ rdl:{hams:1,glutes:.7,lback:.7,grip:.3}, backext:{glutes:.8,hams:.8,lback:.8}, hipt:{glutes:1,hams:.4}, hamc:{hams:1},
+ revl:{quads:.7,glutes:.8,gmed:.3}, hipab:{gmed:1,glutes:.3},
+ kraise:{abs:1}, deadbug:{abs:.8,obliq:.3}, pallof:{obliq:1,abs:.5},
+ farm:{grip:1,utrap:.6,abs:.3,obliq:.3},
+ z2:{calves:.2,soleus:.3,quads:.2}, card:{calves:.3,soleus:.3,quads:.3,hams:.2}, walkx:{soleus:.2,calves:.1}
 };
-var SESSION_HOUR=19.25;                 /* his slot — used to time-stamp a logged session */
+/* how costly a set is to recover from: long-stretch and slow-lowering work costs more, activation drills much less */
+var EXK={rdl:1.2,bulg:1.2,splitsq:1.1,backext:1.1,revl:1.1,calfst:1.1,slcalf:1.1,isoer:.5,bander:.6,wallslide:.5,scapset:.5,chintuck:.3,sler:.7,pronY:.7,serr:.7,deadbug:.7,bal:.5,toes:.4,tib:.8};
+/* joints an exercise leans on — a flagged joint overrides a green muscle */
+var EXJ={sh:['floorp','pushplus','incp','land','pdown','facep','latr','frontr','hang','farm','wallslide','pronY','reard','cer45','sler','bander','isoer','serr','csrow','crow','hkrow','dbrow'],
+ arm:['farm','rdl','hang','dbrow','csrow'],
+ quad:['squat','gobbox','legpress','legext','splitsq','bulg','stepup','revl'],
+ ank:['calfst','slcalf','calfse','bal','stepup','splitsq','bulg','revl','z2','card','walkx']};
+var JN=[['sh','Shoulders'],['arm','Neck & arm'],['quad','Front of thigh'],['ank','Ankles']];
+var SESSION_HOUR=20.5;                  /* evening slot — used to time-stamp a logged session */
 function recovMult(){ return dayN(TODAY)<=28 ? 1.25 : 1; }   /* returning to training: longer windows for 4 weeks */
-
-/* returns {id:{fresh, fat, last, sets7, hrs}} */
-function muscleState(){
-  var now=Date.now(), out={};
-  Object.keys(MUS).forEach(function(m){ out[m]={fresh:100,fat:0,last:null,sets7:0,hrs:null}; });
+function effMult(r){ return r>=10?1.3:r>=9?1.15:r>=8?1:r>=7?.9:r>=6?.8:1; }
+function setCount(a){ return (a||[]).filter(function(s){ return s && (s.w!=null||s.r!=null||s.d); }).length; }
+function sleepMult(k){   /* average of the nights logged after a session */
+  var v=[], d=add(k,1), i=0;
+  while(d<=TODAY && i<4){ var a=S.days[d]&&S.days[d].a&&S.days[d].a.sleep; if(a&&a.v!=null&&a.v>0) v.push(+a.v); d=add(d,1); i++; }
+  if(!v.length) return 1;
+  var avg=v.reduce(function(x,y){ return x+y; },0)/v.length;
+  return avg>=7.5?1:(avg>=6.5?1.1:1.2);
+}
+function sessList(){
+  var out=[], now=Date.now();
   Object.keys(S.days).forEach(function(k){
     var t=S.days[k] && S.days[k].a && S.days[k].a.train;
     if(!t||!t.ex) return;
-    if(pd(k).getTime()>now) return;                 /* a day that hasn't started yet */
-    /* assume the 19:15 slot, but never pretend a session happened later than right now —
-       otherwise logging this evening's work at 18:00 would show as zero fatigue */
-    var when=Math.min(pd(k).getTime()+SESSION_HOUR*3600000, now);
-    var hrs=Math.max(0,(now-when)/3600000);
-    Object.keys(t.ex).forEach(function(xid){
-      var map=EXM[xid]; if(!map) return;
-      var sets=(t.ex[xid]||[]).filter(function(s){ return s && (s.w!=null||s.r!=null); }).length;
-      if(!sets) return;
-      Object.keys(map).forEach(function(m){
-        if(!out[m]) return;
-        var es=sets*map[m];
-        if(hrs<=168) out[m].sets7+=es;
-        var win=MUS[m].recov*recovMult();
-        var decay=Math.max(0,1-hrs/win);
-        out[m].fat+=es*decay;
-        if(out[m].last===null || when>out[m].last){ out[m].last=when; out[m].hrs=hrs; }
-      });
-    });
-  });
-  Object.keys(out).forEach(function(m){
-    var sat=MUS[m].sat;
-    out[m].fresh=Math.round(100*(1-Math.min(1,out[m].fat/sat)));
-    out[m].sets7=Math.round(out[m].sets7*10)/10;
+    var d0=pd(k).getTime(); if(d0>now) return;
+    var ex={}, any=false;
+    Object.keys(t.ex).forEach(function(x){ var n=setCount(t.ex[x]); if(n && EXM[x]){ ex[x]=n; any=true; } });
+    if(any) out.push({k:k, when:Math.min(d0+SESSION_HOUR*3600000, now), rpe:t.rpe||0, ex:ex});
   });
   return out;
 }
-function freshCol(v){ return v>=80?'#34d399':v>=60?'#4da3ff':v>=35?'#fbbf24':'#f87171'; }
+/* returns {id:{fresh, fat, last, hrs, sets7, win, sm, src:[{k,x,amt}], over}} — pass a future time to look ahead */
+function muscleState(at){
+  var now=at||Date.now(), out={}, SL=sessList();
+  Object.keys(MUS).forEach(function(m){ out[m]={fresh:100,fat:0,last:null,hrs:null,sets7:0,win:MUS[m].recov*recovMult(),sm:1,src:[],over:null,sore:null}; });
+  SL.forEach(function(se){
+    var hrs=(now-se.when)/3600000; if(hrs<0) hrs=0;
+    var em=effMult(se.rpe), sm=sleepMult(se.k), per={};
+    Object.keys(se.ex).forEach(function(x){
+      var map=EXM[x], kf=EXK[x]||1;
+      Object.keys(map).forEach(function(m){
+        if(!out[m]) return;
+        if(!per[m]) per[m]={tot:0,raw:0,by:{}};
+        var es=se.ex[x]*map[m]*kf*em;
+        per[m].tot+=es; per[m].raw+=se.ex[x]*map[m]; per[m].by[x]=(per[m].by[x]||0)+es;
+      });
+    });
+    Object.keys(per).forEach(function(m){
+      var P=per[m], o=out[m], over=P.tot/MUS[m].sat;
+      if(hrs<=168) o.sets7+=P.raw;
+      var win=MUS[m].recov*recovMult()*sm*(1+0.25*Math.min(1,Math.max(0,over-1)));
+      var x=hrs/win, rem=x>=1?0:0.5*(1+Math.cos(Math.PI*x));
+      if(rem>0){ o.fat+=P.tot*rem; Object.keys(P.by).forEach(function(xid){ o.src.push({k:se.k,x:xid,amt:P.by[xid]*rem}); }); }
+      if(o.last===null || se.when>o.last){ o.last=se.when; o.hrs=hrs; o.win=win; o.sm=sm; }
+      if(hrs<=168 && over>1.25 && (!o.over || over>o.over.r)){
+        var top=Object.keys(P.by).sort(function(a,b){ return P.by[b]-P.by[a]; })[0];
+        o.over={r:over,k:se.k,x:top,sets:Math.round(P.tot*10)/10};
+      }
+    });
+  });
+  var sore=(!at && S.sore && S.sore[TODAY]) || {};
+  Object.keys(out).forEach(function(m){
+    var o=out[m];
+    o.fresh=Math.round(100*(1-Math.min(1,o.fat/MUS[m].sat)));
+    o.sets7=Math.round(o.sets7*10)/10;
+    o.src.sort(function(a,b){ return b.amt-a.amt; });
+    if(sore[m]===1){ o.fresh=Math.min(o.fresh,55); o.sore=1; }
+    if(sore[m]===2){ o.fresh=Math.min(o.fresh,25); o.sore=2; }
+    if(sore[m]===0){ o.fresh=Math.max(o.fresh,82); o.sore=0; }
+  });
+  return out;
+}
+function hoursToReady(m){ for(var h=2;h<=240;h+=2){ if(muscleState(Date.now()+h*3600000)[m].fresh>=80) return h; } return null; }
+function mixc(a,b,t){ function h(s,i){ return parseInt(s.substr(1+i*2,2),16); } var o='#'; for(var i=0;i<3;i++){ var v=Math.round(h(a,i)+(h(b,i)-h(a,i))*t).toString(16); o+=(v.length<2?'0':'')+v; } return o; }
+function freshCol(v){
+  var st=[[0,'#ef4444'],[35,'#fb923c'],[60,'#facc15'],[80,'#34d399'],[100,'#2ac7a1']];
+  for(var i=1;i<st.length;i++){ if(v<=st[i][0]) return mixc(st[i-1][1],st[i][1],(v-st[i-1][0])/(st[i][0]-st[i-1][0])); }
+  return st[st.length-1][1];
+}
 function freshWord(v){ return v>=80?'Fresh':v>=60?'Ready':v>=35?'Recovering':'Worked'; }
 function hoursTxt(h){
   if(h==null) return 'never logged';
@@ -609,54 +1042,128 @@ function hoursTxt(h){
   if(h<24) return Math.round(h)+' hours ago';
   var d=h/24; return (d<1.5?'yesterday':Math.round(d)+' days ago');
 }
-function readyIn(m,st){
-  if(st.fresh>=80) return 'Ready now';
-  var win=MUS[m].recov*recovMult();
-  var left=Math.max(0,win-(st.hrs||0));
-  if(left<1) return 'Ready now';
-  return left<24? ('Fully clear in ~'+Math.round(left)+' h') : ('Fully clear in ~'+Math.round(left/24*10)/10+' days');
+function whenTxt(h){
+  if(h==null) return 'more than 10 days';
+  var t=new Date(Date.now()+h*3600000), dd=diff(iso(t),TODAY);
+  var day=dd===0?'today':dd===1?'tomorrow':DOW[t.getDay()];
+  return day+' around '+String(t.getHours()).padStart(2,'0')+':00';
 }
+function dayLbl(k){ var dd=diff(TODAY,k); return dd===0?'today':dd===1?'yesterday':DOW[pd(k).getDay()]; }
 function exercisesFor(m){
   return Object.keys(EXM).filter(function(x){ return EXM[x][m] && EX[x]; })
     .sort(function(a,b){ return EXM[b][m]-EXM[a][m]; });
 }
+function jointState(){ return (S.days[TODAY]&&S.days[TODAY].jc)||{}; }
+/* verdict for one exercise tonight: joints first, then the least-recovered muscle it leans on */
+function exVerdict(x,st){
+  var jc=jointState(), bad=null, uneasy=null;
+  JN.forEach(function(j){ if(EXJ[j[0]].indexOf(x)>=0){ if(jc[j[0]]===2) bad=j[1]; else if(jc[j[0]]===1) uneasy=j[1]; } });
+  var map=EXM[x]||{}, lim=null;
+  Object.keys(map).forEach(function(m){ if(map[m]>=0.5 && st[m] && (lim===null || st[m].fresh<st[lim].fresh)) lim=m; });
+  var f=lim?st[lim].fresh:100;
+  if(bad) return {c:'p-b',t:'Leave it out today',w:bad+' flagged as painful — pain overrides the colours.',f:f,lim:lim};
+  if(f<35) return {c:'p-b',t:'Swap, or 1–2 easy sets',w:MUS[lim].n+' at '+f+'%',f:f,lim:lim};
+  if(uneasy) return {c:'p-w',t:'Light and slow',w:uneasy+' flagged as uneasy — shorten the range, stop at any apprehension.',f:f,lim:lim};
+  if(f<60) return {c:'p-w',t:'Drop a set, stay easy',w:MUS[lim].n+' at '+f+'%',f:f,lim:lim};
+  return {c:'p-g',t:'Good to go',w:lim?(MUS[lim].n+' at '+f+'%'):'',f:f,lim:lim};
+}
 
-/* ── mobility flow ── */
+
+/* ═══════════════════ MERGED PROGRAMME (build 6) ═══════════════════ */
+/* extra movements brought in from the re-entry programme */
+var EXADD={
+gobbox:{n:'Goblet squat to a box',s:3,r:'8',tag:'Quads · Glutes',cues:['Three seconds down, touch the box, stand up.','Heels flat, knees travel out over the toes.','Front-of-thigh pain stays at 3/10 or below — otherwise shorten the range.'],why:'Re-grooves the squat with a built-in depth limit while knees, hips and ankles re-adapt.'},
+splitsq:{n:'Split squat',s:2,r:'8 / side',tag:'Quads · Glutes',cues:['Weaker leg forward first.','Back knee lightly kisses the floor.','Torso tall, weight through the whole front foot.'],why:'Single-leg strength is where hip and ankle stability actually get built.'},
+stepup:{n:'Step-up',s:2,r:'8 / side',tag:'Quads · Glutes',cues:['30–40 cm box.','Drive through the whole foot — no push off the back leg.','Three seconds on the way down. The lowering is the exercise.'],why:'Knee control and single-leg strength in the pattern sport uses.'},
+legpress:{n:'Leg press',s:3,r:'10',tag:'Quads',cues:['Feet mid-platform, shoulder width.','Lower until the hips start to tuck — no bounce.','Leave three reps in the tank.'],why:'Leg volume without loading the shoulders or needing balance.'},
+backext:{n:'45° back extension',s:2,r:'10',tag:'Glutes · Hamstrings',cues:['Hinge from the hips with a flat back.','Arms crossed on the chest — nothing hanging from the hands.','Squeeze the glutes at the top; do not over-arch.'],why:'Hinge strength with no weight pulling on the arms.'},
+hkrow:{n:'Half-kneeling one-arm cable row',s:3,r:'10 / side',tag:'Back',cues:['Cable at chest height or lower.','Elbow to the back pocket.','Shoulder blade back and down, neck long.'],why:'Teaches the mid-back to do the rowing instead of the upper traps.'},
+pushplus:{n:'Push-up plus, hands on a bench',s:2,r:'10',tag:'Chest · Serratus',nl:1,cues:['Hands on a bench to start.','At the top, push the bench away so the shoulder blades spread.','Floor version only when every rep is clean.'],why:'Pressing plus serratus work — the muscle that keeps the shoulder blade flat on the ribs.'},
+pallof:{n:'Pallof press',s:2,r:'10 / side',tag:'Core',cues:['Stand side-on to the cable.','Press out, hold two seconds, resist the twist.','Ribs down, hips square.'],why:'Anti-rotation strength — what racket and court sports actually demand of the trunk.'},
+deadbug:{n:'Dead bug',s:1,r:'6 / side',tag:'Core',nl:1,cues:['Lower back pressed into the floor.','Opposite arm and leg reach slowly.','Exhale as you reach.'],why:'Deep core control without loading the spine or shoulders.'},
+isoer:{n:'Wall isometric rotation — out, then in',s:1,r:'5 × 10 s each way',tag:'Rotator cuff',nl:1,cues:['Elbow at your side, towel under it.','Press into the wall at about 30% effort for ten seconds.','Outward, then inward, each arm.'],why:'Wakes the cuff up with the arm in its safest position. Level 1 of the shoulder ladder.'},
+bander:{n:'Banded rotation at the side — out and in',s:1,r:'12 each way',tag:'Rotator cuff',nl:1,cues:['Towel roll pinned under the elbow.','Rotate only as far as feels secure.','Two slow seconds back.'],why:'Cuff strength through a small, controlled range.'},
+wallslide:{n:'Foam-roller wall slide',s:1,r:'8',tag:'Serratus · Lower trap',nl:1,cues:['Forearms on the roller, press gently into the wall.','Slide up only to the height that feels secure.','No tingling, no apprehension.'],why:'Earns overhead range actively instead of stretching into it.'},
+serr:{n:'Supine serratus punch',s:1,r:'12 / arm',tag:'Serratus',cues:['4–6 kg, elbow straight.','Reach for the ceiling by spreading the shoulder blade.','Lower slowly back to the floor.'],why:'Direct serratus strength with the shoulder fully supported.'},
+scapset:{n:'Shoulder-blade back-and-down holds',s:1,r:'5 × 10 s',tag:'Lower trap',nl:1,cues:['Shoulders away from the ears.','Gently squeeze the blades back and down.','Hold ten seconds, neck relaxed.'],why:'The position every row and press should start from.'},
+chintuck:{n:'Chin tucks',s:1,r:'10 × 3 s',tag:'Neck',nl:1,cues:['Slide the head straight back, like making a double chin.','Hold three seconds, gentle effort.','Stop if any tingling appears in the arm.'],why:'Deep neck flexors — the counterweight to a day of looking at a screen.'},
+walkx:{n:'Brisk walk',s:1,r:'25 min',tag:'Aerobic',nl:1,cues:['Fast enough that talking takes a little effort.','Outside if you can.'],why:'Recovery that still counts as moving. A non-lifting day is never a zero day.'}
+};
+Object.keys(EXADD).forEach(function(k){ EX[k]=EXADD[k]; });
+['z2','card','bal','tib','toes','cope','hang','farm','kraise'].forEach(function(k){ if(EX[k]) EX[k].nl=1; });
+EX.calfse.n='Seated calf raise — bent knee';
+EX.calfse.cues=['Knee bent — this is the soleus, which the standing version largely misses.','No machine needed: sit on a bench, forefeet on a step, dumbbells or a padded Smith bar on the knees.','Full stretch at the bottom, one-second squeeze at the top.'];
+EX.z2.r='35 min'; EX.z2.n='Zone 2 cardio — or padel at social pace';
+EX.z2.cues=['Conversational pace — you could talk but would not want to sing.','Incline walk, bike or elliptical.','Padel counts if it stays social: no smashes at full effort while the shoulders are at Level 1.'];
+EX.tib.r='15–20';
+
+/* exercise → illustration */
+var EXFIG={squat:'goblet_box_squat',gobbox:'goblet_box_squat',bulg:'bulgarian',splitsq:'split_squat',stepup:'step_up',legpress:'leg_press',legext:'leg_ext',calfst:'calf_raise_step',calfse:'seated_calf',slcalf:'sl_calf_raise',tib:'tib_raise',cope:'copenhagen',bal:'sl_balance',toes:'sl_balance',floorp:'db_floor_press',csrow:'cs_db_row',crow:'seated_cable_row',hkrow:'hk_cable_row',facep:'face_pull',frontr:'lateral_raise',sler:'sidelying_er',pronY:'prone_iyt',arms:'curl',rdl:'rdl',hipt:'hip_thrust',hamc:'ham_curl',revl:'reverse_lunge',hipab:'lateral_walk',kraise:'dead_bug',pdown:'lat_pulldown',land:'landmine',dbrow:'db_row',incp:'incline_press',cer45:'banded_er',latr:'lateral_raise',reard:'prone_iyt',farm:'carry',z2:'walk',card:'bike',backext:'back_ext_45',pushplus:'pushup_plus',pallof:'pallof',deadbug:'dead_bug',isoer:'iso_er_ir',bander:'banded_er',wallslide:'wall_slide',serr:'serratus_punch',scapset:'scap_set',chintuck:'chin_tuck',walkx:'walk'};
+function figHTML(f,cls){ try{ return (window.FIG&&f&&FIG.has(f))? FIG.svg(f,cls||'') : ''; }catch(e){ return ''; } }
+function figFor(xid,cls){ return figHTML(EXFIG[xid],cls); }
+function figWatch(root){ try{ if(window.FIG) FIG.watch(root||document); }catch(e){} }
+
+/* ── mobility flow: 12 drills, ten minutes ── */
 var FLOW=[
- {n:'Knee-to-wall ankle rock',t:40,h:'Toe about 10 cm from a wall. Drive the knee forward to touch the wall, heel stays down. 10 each side.',g:'Ankles'},
- {n:'Tibialis raise',t:40,h:'Heels down, lean back on a wall, pull the toes up. 20 slow reps.',g:'Ankles'},
- {n:'Toe splay + short foot',t:45,h:'Spread the toes and hold 3 s. Then, without curling, draw the ball of the foot toward the heel to lift the arch, hold 5 s. 15 total.',g:'Feet'},
- {n:'Single-leg balance, eyes closed',t:60,h:'Shoes off, hands on hips, 30 seconds each side. Let the foot grip.',g:'Feet'},
- {n:'90/90 hip switch',t:50,h:'Sit with both knees bent at 90°, rotate both legs to the other side without using your hands. 8 each way.',g:'Hips'},
- {n:'Couch stretch',t:60,h:'Back knee against a wall or sofa, front foot forward, squeeze the glute on the stretching side. 30 s each side.',g:'Hips'},
- {n:'Cat–camel',t:35,h:'On all fours. Round the spine fully, then arch fully. 10 slow reps, move one vertebra at a time.',g:'Spine'},
- {n:'Seated thoracic rotation',t:45,h:'Sit tall, hands behind the head, rotate the ribcage — not the hips. 8 each side.',g:'Spine'},
- {n:'Wall slide',t:40,h:'Back and arms against a wall, slide the forearms up while keeping contact. Stop where contact breaks. 10 reps.',g:'Shoulders'},
- {n:'Band external rotation',t:50,h:'Elbow pinned to your side at 90°, rotate the forearm outward against a band. 15 each side.',g:'Shoulders'},
- {n:'Band pull-apart',t:35,h:'Arms straight in front, pull a band apart to your chest, squeeze the shoulder blades. 20 reps.',g:'Shoulders'},
- {n:'Doorway pec stretch',t:45,h:'Forearm on a door frame at shoulder height, step through gently. 30 s each side. GENTLE — never force the arm back.',g:'Shoulders'},
- {n:'Dead hang',t:25,h:'20 seconds. ONLY if completely pain-free — skip it otherwise and mention it to your physio.',g:'Shoulders'}
+ {n:'Cat–cow',t:35,h:'On all fours. Round the spine fully, then arch. Eight slow reps, one vertebra at a time.',g:'Spine',f:'cat_cow'},
+ {n:'Quadruped thoracic rotation',t:50,h:'Hand behind the head, hips still. Rotate from the mid-back and follow the elbow with your eyes. Six each side.',g:'Spine',f:'tspine_rot'},
+ {n:'90/90 hip switch',t:50,h:'Both knees at 90°, chest tall. Switch sides slowly, hands off the floor when you can. Six each way.',g:'Hips',f:'hip_9090'},
+ {n:'Couch stretch',t:95,h:'Back knee against a wall or sofa. Tuck the pelvis, squeeze the glute. 45 seconds each side.',g:'Hips',f:'couch_stretch'},
+ {n:'Knee-to-wall ankle rock',t:45,h:'Heel glued down, knee tracks over the second toe to the wall. Ten each side.',g:'Ankles',f:'knee_to_wall'},
+ {n:'Tibialis raise',t:40,h:'Back on a wall, heels about 30 cm out, pull the toes up hard and lower slowly. Twenty reps.',g:'Ankles',f:'tib_raise'},
+ {n:'Supported deep squat hold',t:60,h:'Hold a door frame, heels down, sit deep. Shift gently side to side. Slow nasal breathing for a minute.',g:'Hips',f:'deep_squat_hold'},
+ {n:'Chin tucks',t:30,h:'Slide the head straight back like making a double chin. Hold three seconds. Eight reps. Stop if any tingling appears in the arm.',g:'Neck',f:'chin_tuck'},
+ {n:'Wall slide',t:40,h:'Forearms on the wall or a roller, slide up only as high as feels secure. Ten reps.',g:'Shoulders',f:'wall_slide'},
+ {n:'Band external rotation',t:50,h:'Towel under the elbow, rotate out against a band only as far as feels secure. Twelve each side.',g:'Shoulders',f:'banded_er'},
+ {n:'Single-leg balance',t:65,h:'Barefoot, hands on hips, 30 seconds each side. Eyes closed once eyes-open is easy.',g:'Feet',f:'sl_balance'},
+ {n:'Toe splay + short foot',t:40,h:'Spread the toes and hold three seconds. Then draw the ball of the foot toward the heel to lift the arch, hold five. Ten in total.',g:'Feet',f:'sl_balance'}
 ];
 
-/* ── meals ── */
-var MEALS={
- m1:{n:'Meal 1',o:['Greek yogurt 2% 250 g + oats 35 g + honey 5 g + almonds 10 g + strawberries 100 g','Egg whites 220 g + low-fat cheese 40 g + brown tortilla + cucumber + watermelon 150 g','Smoked salmon 100 g + light labneh 50 g + 2 slices wholewheat toast + cucumber + green apple 80 g']},
- m2:{n:'Meal 2',o:['Chicken breast 200 g + sautéed vegetables + basmati 180 g cooked + 1 tsp olive oil','Lean beef steak 180 g + grilled vegetables + basmati 180 g cooked + 1 tsp olive oil','Fish fillet 240 g + garlic, lemon, vegetables + basmati 190 g cooked + 1 tsp olive oil']},
- sn:{n:'Snack',o:['Cottage cheese 200 g + lettuce, cucumber, carrot + strawberries 100 g','Roast beef 100 g + lettuce, mushroom, peppers + green apple 80 g','Greek yogurt 2% 200 g + green apple 100 g']},
- m3:{n:'Meal 3',o:['Chicken breast 170 g + sautéed vegetables + basmati 120 g cooked + 1 tsp olive oil','Lean beef steak 170 g + grilled vegetables + basmati 120 g cooked + 1 tsp olive oil','Fish fillet 220 g + garlic, lemon, vegetables + basmati 130 g cooked + 1 tsp olive oil']},
- m4:{n:'Meal 4',o:['Cottage cheese 150 g + cucumber','Greek yogurt 2% 170 g + 85% dark chocolate 10 g','Roast beef 80 g + lettuce + cucumber']}
-};
+/* ── meals: lean gain, ≈2,750 kcal · 160–175 g protein · ≈90 g fat ── */
+var MEALS={"m1": {"n": "Breakfast", "o": ["3 whole eggs + 2 slices whole-wheat toast + areesh or cottage cheese 60 g + tomato and cucumber + 1 tsp olive oil + a banana <em>≈ 590 kcal · 35 g protein</em>", "Overnight oats: oats 60 g + 1 scoop whey + whole milk 250 ml + a banana + 2 tsp honey <em>≈ 640 kcal · 43 g protein</em>", "Greek yoghurt 250 g + oats 50 g + honey + a banana + pumpkin seeds 20 g + 1 boiled egg <em>≈ 700 kcal · 47 g protein</em>"]}, "m2": {"n": "Lunch box", "o": ["Chicken breast 150 g cooked + rice 300 g cooked + vegetables + 2 tsp olive oil <em>≈ 770 kcal · 57 g protein</em>", "Lean beef 140 g cooked + pasta 250 g cooked + vegetables + 1 tsp olive oil <em>≈ 790 kcal · 53 g protein</em>", "Shish tawook 160 g + rice 220 g + half a baladi loaf + salad + a little garlic dip — the ordering-in option <em>≈ 800 kcal · 54 g protein</em>"]}, "sn": {"n": "Pre-training snack", "o": ["Greek yoghurt 200 g + a banana + 1 tbsp honey + 3 dates <em>≈ 370 kcal · 22 g protein</em>", "Whole milk 300 ml + a banana + 3 dates — the in-the-car option <em>≈ 360 kcal · 12 g protein</em>", "2 slices toast + areesh 120 g + honey + a banana <em>≈ 410 kcal · 22 g protein</em>"]}, "m3": {"n": "Dinner", "o": ["Salmon 150 g + potatoes 350 g + vegetables + 2 tsp olive oil — twice a week <em>≈ 750 kcal · 42 g protein</em>", "Lean beef, steak or kofta 160 g + rice 280 g + salad + 1 tsp olive oil — the zinc nights <em>≈ 790 kcal · 51 g protein</em>", "Shrimp 180 g + rice 300 g + vegetables + 1 tbsp olive oil <em>≈ 750 kcal · 54 g protein</em>"]}, "m4": {"n": "Before bed", "o": ["Areesh or cottage cheese 120 g + an apple + 85% dark chocolate 15 g <em>≈ 280 kcal · 16 g protein</em>", "1 scoop whey in whole milk 250 ml — when protein is short <em>≈ 270 kcal · 32 g protein</em>", "Greek yoghurt 200 g + honey + 85% dark chocolate 15 g <em>≈ 270 kcal · 21 g protein</em>"]}};
 
-/* ── sessions ── */
+/* ── sessions ── each exercise is [id, sets, reps] */
+var W_FB='3 min easy bike · knee-to-wall 10/side · 90/90 switch 5/side · thoracic rotation 6/side · glute bridge 12 · banded lateral walk 10 steps/side · tibialis raise 15 · band rotation 12/side';
 var SESS={
- lowerA:{n:'Lower A — quads, calves, feet',warm:'5 min bike · knee-to-wall 2×10/side · tibialis raise 2×20 · glute bridge 2×15 · leg swings 10/side',ex:['squat','bulg','legext','calfst','calfse','tib','cope','bal'],fin:'10 min incline walk. Quad and calf stretch 30 s each.'},
- upperA:{n:'Upper A — horizontal push &amp; pull',warm:'Band pull-apart 2×20 · scapular push-up 2×10 · external rotation 2×15/side · prone Y-T-W 2×8',ex:['floorp','csrow','crow','facep','frontr','sler','pronY','hang','arms'],fin:'Pec and lat stretch 2×30 s. No behind-the-back stretching, ever.'},
- lowerB:{n:'Lower B — posterior chain &amp; hips',warm:'90/90 hip switch 2×8/side · glute bridge 2×15 · hamstring sweep 10/side · ankle circles',ex:['rdl','hipt','hamc','revl','hipab','slcalf','toes','kraise'],fin:'Pigeon 2×45 s/side. Couch stretch 2×45 s/side — the antidote to the chair.'},
- upperB:{n:'Upper B — vertical pull &amp; shoulder rebuild',warm:'Band pull-apart 2×20 · cuff ER 2×15/side · scapular pull-up 2×8 · wall slide 2×10',ex:['pdown','land','dbrow','incp','cer45','latr','reard','farm'],fin:'Thoracic extension over a roller 2 min. Wall angels 2×10.'},
- z2:{n:'Zone 2 — 40 min + mobility',warm:'The first five minutes is the warm-up.',ex:['z2'],fin:'Full 12-minute mobility flow, unhurried.'},
- cardio:{n:'Cardio 40 min + mobility',warm:'5 min easy build.',ex:['card'],fin:'Full 12-minute mobility flow, unhurried.'}
+ fbA:{n:'Full body A — squat &amp; push',warm:W_FB,ex:[['gobbox',3,'8'],['csrow',3,'10'],['splitsq',2,'8 / side'],['pushplus',2,'10'],['calfst',3,'12'],['tib',2,'15'],['isoer',1,'5 × 10 s each way'],['sler',1,'12 / side'],['wallslide',1,'8'],['deadbug',1,'6 / side']],fin:'Couch stretch 45 s per side. Supported deep squat hold 45 s.'},
+ fbB:{n:'Full body B — hinge &amp; glutes',warm:W_FB,ex:[['hipt',3,'10'],['hkrow',3,'10 / side'],['backext',2,'10'],['floorp',2,'10'],['slcalf',3,'8–12 / side'],['pallof',2,'10 / side'],['bander',1,'12 each way'],['pronY',1,'6 of each letter'],['serr',1,'12 / arm'],['scapset',1,'5 × 10 s']],fin:'Assisted Cossack squat 5 per side. Adductor rock-backs 8 per side.'},
+ fbC:{n:'Full body C — single leg &amp; balance',warm:W_FB,ex:[['legpress',3,'10'],['crow',3,'10'],['stepup',2,'8 / side'],['pushplus',2,'8–10'],['calfse',3,'15'],['bal',3,'30 s / side'],['chintuck',1,'10 × 3 s'],['sler',1,'12 / side'],['pronY',1,'8 T-raises'],['deadbug',1,'6 / side']],fin:'Hip circles, 3 slow per side. Figure-4 stretch 45 s per side.'},
+ walk:{n:'Active recovery — brisk walk',warm:'None needed.',ex:[['walkx',1,'25 min']],fin:'Five minutes of the hip drills from the morning flow if the hips feel tight.'},
+ padel:{n:'Padel at social pace — or Zone 2',warm:'Eight minutes: ankle rocks, hip switches, band rotations, then easy rallies before any pace.',ex:[['z2',1,'40 min']],fin:'Calf and hip stretch. Note how the shoulders and the ankle feel afterwards.'},
+ lowerA:{n:'Lower A — quads, calves, feet',warm:'5 min bike · knee-to-wall 2×10/side · tibialis raise 2×15 · glute bridge 2×12 · banded lateral walk 10/side',ex:[['squat',3,'8–12'],['splitsq',3,'8–10 / side'],['legext',3,'12–15'],['calfst',4,'10–15'],['tib',3,'15–20'],['cope',2,'20 s / side'],['bal',3,'30 s / side']],fin:'10 min incline walk. Quad and calf stretch 30 s each.'},
+ upperA:{n:'Upper A — pull emphasis',warm:'Band pull-apart 2×15 · wall isometric rotation 5×10 s · shoulder-blade holds 5×10 s · thoracic rotation 6/side',ex:[['csrow',4,'10–12'],['pdown',3,'10–12'],['floorp',3,'10–12'],['facep',3,'15–20'],['sler',3,'15 / side'],['arms',3,'12 each'],['calfse',3,'15–20']],fin:'Thoracic extension over a roller, 2 min. Nothing that pulls the arm behind the body.'},
+ lowerB:{n:'Lower B — posterior chain &amp; hips',warm:'90/90 switch 2×6/side · glute bridge 2×12 · single-leg bridge 8 on the weaker side · ankle circles',ex:[['hipt',4,'10–12'],['rdl',3,'8–10'],['hamc',3,'12–15'],['revl',3,'10 / leg'],['hipab',3,'15–20'],['slcalf',3,'12 / side'],['toes',2,'15'],['pallof',2,'10 / side']],fin:'Figure-4 stretch 45 s per side. Couch stretch 45 s per side — the antidote to the chair.'},
+ upperB:{n:'Upper B — press &amp; shoulder rebuild',warm:'Band rotation 2×12/side · wall slide 2×8 · serratus punch 12/arm · push-up plus 8',ex:[['hkrow',3,'10 / side'],['land',3,'10 / side'],['dbrow',3,'12 / side'],['incp',3,'10–12'],['cer45',3,'15 / side'],['reard',3,'15'],['farm',3,'40 m'],['deadbug',2,'8 / side']],fin:'Wall slides 2×10. Chin tucks ×10.'},
+ z2:{n:'Zone 2 — 35 min + mobility',warm:'The first five minutes is the warm-up.',ex:[['z2',1,'35 min']],fin:'The full hip block from the morning flow, unhurried.'}
 };
-var DAYSESS={0:'lowerA',1:'upperA',2:'z2',3:'lowerB',4:'upperB',5:'cardio',6:null};
+/* clearances — a movement stays swapped for its safer stand-in until the matching check is ticked in More → Plan */
+var CLR=[
+ ['hang','Arm-and-neck check done: hanging loads cleared','Unlocks Romanian deadlifts and farmer carries. Until then: back extensions and serratus work instead.'],
+ ['sh2','Shoulders re-assessed: Level 2 cleared','Unlocks face pulls, landmine press, incline press and cable rotation at 45°. Until then: the Level 1 versions.'],
+ ['quad','Front-of-thigh pain settled','Unlocks leg extensions. Until then: step-ups.'],
+ ['ank','Ankle green for two weeks','Unlocks hops and jumping in weeks 8–11. Until then: balance and calf strength only.']
+];
+var SWAP={rdl:['hang','backext'],farm:['hang','serr'],hang:['hang',null],facep:['sh2','pronY'],land:['sh2','pushplus'],cer45:['sh2','bander'],incp:['sh2','floorp'],legext:['quad','stepup']};
+function clr(k){ return !!(S.clr&&S.clr[k]); }
+function phaseOf(w){ return w<=2?{k:'p0',n:'Phase 0 · Re-entry',rpe:'RPE 6–7'}:w<=6?{k:'p1',n:'Phase 1 · Foundation',rpe:'RPE 7–8'}:w===7?{k:'dl',n:'Deload + re-test',rpe:'RPE 6'}:w<=11?{k:'p2',n:'Phase 2 · Build',rpe:'RPE 7–9'}:{k:'dl',n:'Deload + final re-test',rpe:'RPE 6'}; }
+var WEEK0={0:'fbA',1:'walk',2:'fbB',3:'walk',4:'fbC',5:'padel',6:null};
+var WEEK1={0:'lowerA',1:'upperA',2:'z2',3:'lowerB',4:'upperB',5:'padel',6:null};
+function sessOn(k){ var w=wkN(k), g=pd(k).getDay(); return (w<=2?WEEK0:WEEK1)[g]||null; }
+/* the session actually prescribed for a date: phase, deload and safety swaps applied */
+function sessGet(k){
+  var sk=sessOn(k); if(!sk) return null;
+  var base=SESS[sk], w=wkN(k), ph=phaseOf(w), seen={}, ex=[];
+  base.ex.forEach(function(r){
+    var id=r[0], s=r[1], rp=r[2], sw=SWAP[id];
+    if(sw && !clr(sw[0])){ if(!sw[1]) return; id=sw[1]; rp=EX[id].r; }
+    if(ph.k==='p2'){ if(id==='splitsq'){ id='bulg'; rp='8–10 / side'; } if(id==='squat'||id==='hipt'||id==='csrow') s=4; }
+    if(ph.k==='dl') s=Math.max(1,Math.ceil(s/2));
+    if(seen[id]) return; seen[id]=1;
+    ex.push({id:id,s:s,r:rp});
+  });
+  return {key:sk,n:base.n,warm:base.warm,fin:base.fin,ex:ex,ph:ph,lift:(sk!=='walk'&&sk!=='padel'&&sk!=='z2')};
+}
+var DAYSESS=WEEK1; /* kept for older code paths */
 
 /* ═══════════════════ ACTIVITY DEFINITIONS ═══════════════════ */
 function iqCap(w){ if(w<8) return 20; if(w===8) return 15; if(w===9) return 10; if(w===10) return 5; return 0; }
@@ -666,79 +1173,89 @@ function weedRule(k){
   if(w<=6) return (g===5)?{cap:1,txt:'Friday only — 1 session max'}:{cap:0,txt:'Phase 2 — Friday only. Not today.'};
   return {cap:0,txt:'Stopped. Quit date was day 43.'};
 }
+function stepTar(k){ var w=wkN(k); return w<=1?6000:w===2?7000:8000; }
+function tarOf(a,k){ return typeof a.tar==='function'? a.tar(k||cur) : a.tar; }
 
 var ACTS={
-wake:{n:'Wake, water, no phone',ic:'☀',t:'08:15',xp:4,sec:'Morning',kind:'check',
-  sub:'500 ml before anything else. Phone stays out of reach.',
-  how:['Get up. Drink 500 ml of water before you look at a screen.','Phone stays wherever you left it last night — not in your hand.','The first ten minutes of your day sets whether you scroll or move.'],
-  why:'Target 08:15. If you are waking later than that now, move it in 20–30 minute steps every three or four days rather than in one jump — a single big shift usually buys four bad nights and then a return to the old time.'},
-flow:{n:'Ten-minute morning flow',ic:'◍',t:'08:20',xp:12,sec:'Morning',kind:'flow',
-  sub:'13 drills — ankles, feet, hips, spine, shoulders. Guided player.',
-  how:['Tap Start guided flow and follow it. It counts each drill for you.','Do it at whatever time you actually wake — the anchor is waking, not the clock.','Every day, including rest days.'],
+wake:{n:'Wake, water, daylight — no phone',ic:'☀',t:'07:45',xp:4,sec:'Morning',kind:'check',
+  sub:'500 ml of water, curtains open. Phone stays where it slept.',
+  how:['Get up at the same time every day — weekends within an hour of it.','500 ml of water before any screen. Curtains open, or step onto the balcony for a minute.','Phone stays wherever you left it last night.'],
+  why:'A fixed wake time is the strongest single lever on sleep, and sleep is the strongest single lever on energy, mood and testosterone. Morning light is what sets the clock that makes tonight\'s bedtime possible.'},
+sleep:{n:'Last night\'s sleep',ic:'🌙',t:'07:46',xp:8,sec:'Morning',kind:'num',unit:'hours',ph:'7.5',tar:7.5,
+  sub:'Log what you actually got. Target 7.5–8 h.',
+  how:['Log last night, honestly. Lights out 23:45 to a 07:45 alarm is eight hours in bed.','If you are far from that now, move bedtime 15–20 minutes earlier every three or four days rather than in one jump.'],
+  why:'Most daily testosterone is released during sleep, and a week of five-hour nights measurably lowers it in healthy young men. Of everything in this app, this is the largest lever and the fastest to move. The readiness map also uses this number: short nights stretch recovery windows.'},
+flow:{n:'Ten-minute morning flow',ic:'◍',t:'07:50',xp:12,sec:'Morning',kind:'flow',
+  sub:'12 drills — spine, hips, ankles, neck, shoulders, feet. Guided, illustrated.',
+  how:['Tap Start guided flow and follow it. It shows each drill and counts it for you.','Do it at whatever time you actually wake — the anchor is waking, not the clock.','Every day, including rest days.'],
   why:'The single highest-leverage habit here. It hits the shoulders, ankles, hips and posture at once, takes ten minutes, needs no gym, and work cannot eat it.'},
-meal1:{n:'Meal 1 + supplements',ic:'🍽',t:'08:35',xp:6,sec:'Morning',kind:'meal',meal:'m1',
-  how:['Pick one of the three options. Weigh it for the first two weeks.','With it: creatine 5 g, multivitamin, omega-3.'],
-  why:'Breakfast is the easiest meal to control completely — no cooking, no negotiation. Between this and the two small meals, three of five are fully yours.'},
-audio:{n:'Audiobook on before the car',ic:'🎧',t:'08:50',xp:6,sec:'Commute',kind:'mins',tar:60,unit:'min',work:1,
-  sub:'One hour each way. Ten hours a week.',
-  how:['Queue it before you start the engine, not at the first traffic light.','Month 1: Dopamine Nation. Month 2: Supercommunicators. Month 3: The Psychology of Money.'],
-  why:'Two hours a day of commuting is roughly a book a week without adding a minute to the day. It is the largest block of reclaimable time in the schedule.'},
+weigh:{n:'Weigh-in',ic:'⚖',t:'08:00',xp:3,sec:'Morning',kind:'num',unit:'kg',ph:'79.0',opt:1,
+  sub:'After the bathroom, before food. The weekly average is the number.',
+  how:['Same conditions every time. Type the number and move on — one reading means nothing.','Target: about +0.2 kg a week on the 7-day average. Expect an extra kilo in the first three weeks from creatine and fuller muscles.'],
+  why:'Gaining on purpose needs a trend line. More than 0.5 kg behind the path for two weeks: add about 150 kcal. More than 0.5 kg ahead: take 150 away.'},
+meal1:{n:'Breakfast + creatine',ic:'🍳',t:'08:10',xp:6,sec:'Morning',kind:'meal',meal:'m1',
+  how:['Pick one of the three. At home, or packed and eaten at your desk by 10:00.','With it: creatine 5 g and the multivitamin — every day, not only training days.'],
+  why:'Protein and fat before the espresso instead of after it. Eggs most mornings is deliberate: under-eating and very low-fat eating both push testosterone the wrong way.'},
+audio:{n:'Audiobook on before the car',ic:'🎧',t:'08:30',xp:6,sec:'Commute',kind:'mins',tar:60,unit:'min',work:1,
+  sub:'Ninety minutes each way is fifteen hours a week.',
+  how:['Queue it before you start the engine, not at the first traffic light.','Month 1: Dopamine Nation. Month 2: Supercommunicators. Month 3: The Psychology of Money.','One direction is enough to hit the target. The drive home can be music.'],
+  why:'The commute is the largest block of reclaimable time in the week — roughly a book every eight working days without adding a minute to the day.'},
 deep:{n:'Deep work block',ic:'◫',t:'10:15',xp:10,sec:'Work',kind:'check',work:1,
   sub:'90 minutes, one task, phone in a drawer.',
-  how:['10:15 to 11:45. One task, chosen before you sit down.','Phone in a drawer. Notifications off, not just silenced.','Write one paragraph afterwards in the learning log.'],
-  why:'In self-directed work, learning that is not scheduled does not happen — and it then registers as being behind rather than as an unmanaged calendar.'},
-meal2:{n:'Meal 2 — packed last night',ic:'🍱',t:'13:00',xp:6,sec:'Work',kind:'meal',meal:'m2',work:1,
-  how:['Packed the night before. Non-negotiable.','Add ~150 g extra cooked basmati here — this is where the extra training carbohydrate goes.'],
+  how:['10:15 to 11:45. One task, chosen before you sit down.','Phone in a drawer. Notifications off, not just silenced.','Afterwards, one paragraph in a learning log: what I now know that I did not know at 10:00.'],
+  why:'This is the skills block. In a new role, learning that is not scheduled does not happen — and it then registers as being behind rather than as an unmanaged calendar.'},
+meal2:{n:'Lunch box — packed last night',ic:'🍱',t:'13:00',xp:6,sec:'Work',kind:'meal',meal:'m2',work:1,
+  how:['Packed the night before. The biggest meal of the day.','About a third of the day\'s protein, and the carbohydrate that fuels the 20:00 session.'],
   why:'If lunch is not in a box, lunch is whatever happens to be near the office.'},
-walk:{n:'Ten-minute walk, outside',ic:'🚶',t:'13:30',xp:6,sec:'Work',kind:'check',work:1,
-  how:['Outside. Actually outside, not the corridor.','Ten minutes is about 1,000–1,200 steps.'],
-  why:'This plus the gym gets you most of the way to 8,000 steps, which is where mortality risk flattens for adults under 60.'},
-snack:{n:'Snack + posture reset',ic:'🥗',t:'16:00',xp:5,sec:'Work',kind:'meal',meal:'sn',work:1,
-  how:['Pick an option.','Then two minutes: stand, 10 wall angels, 10 chin tucks, roll the shoulders back.'],
-  why:'Eight hours seated is the direct cause of most desk-job posture problems. Two minutes at 16:00 costs nothing.'},
-home:{n:'Home — change now, do not sit down',ic:'🚪',t:'19:00',xp:8,sec:'Evening',kind:'check',work:1,
+walk:{n:'Ten minutes outside, in daylight',ic:'🚶',t:'13:30',xp:6,sec:'Work',kind:'check',
+  how:['Outside. Actually outside, not the corridor.','Ten minutes is 1,000–1,200 steps. Phone in the pocket.'],
+  why:'Daylight, steps and a break from the chair in one move. On a desk day this is most of the difference between 3,000 steps and 6,000.'},
+desk:{n:'Desk breaks',ic:'🪑',t:'all day',xp:6,sec:'Work',kind:'count',tar:4,unit:'breaks',work:1,
+  sub:'Every 60–90 minutes: stand, 10 calf raises, 5 chin tucks, 5 shoulder-blade squeezes.',
+  how:['Stand up. Ten calf raises. Five deep-squat breaths holding the desk. Five chin tucks. Five shoulder-blade squeezes, back and down.','Two minutes. Tap + each time.'],
+  why:'Eight hours seated is the direct cause of most desk posture problems, and the calves respond to frequency — forty extra raises a day is free volume for the weakest link.'},
+snack:{n:'Pre-training snack',ic:'🍌',t:'17:00',xp:5,sec:'Work',kind:'meal',meal:'sn',
+  how:['Pick an option and eat it before leaving work — it is two to three hours before the session.'],
+  why:'Carbohydrate plus some protein before lifting keeps the session quality up and stops the 20:00 energy crash.'},
+home:{n:'Home — change now, do not sit down',ic:'🚪',t:'19:30',xp:8,sec:'Evening',kind:'check',work:1,
   sub:'Gym bag, straight back out. The sofa is the enemy.',
-  how:['Walk in. Change immediately.','Do not sit down in work clothes. Not for five minutes, not for one song.','Out of the door by 19:15.'],
-  why:'When the gym is near home the commute comes first, which puts a sofa between you and the session. This exact moment is where four training days a week becomes two.'},
-train:{n:'Training',ic:'🏋',t:'19:15',xp:24,sec:'Evening',kind:'train',
-  how:['Warm-up first — it is listed in the session.','Log every set. Last week\'s numbers are shown next to each exercise so you know what to beat.','Rest timer is built in: 90 s for accessories, 2–3 min for the main lifts.'],
-  why:'Four lifting days, two cardio days. Legs and shoulder rebuilding are the priorities.'},
-meal3:{n:'Meal 3 + whey',ic:'🍗',t:'20:40',xp:6,sec:'Evening',kind:'meal',meal:'m3',
-  how:['Pick an option. 25 g whey with it if you are short on the day\'s protein.'],
-  why:'Post-training meal. Protein target is 165 g a day; this and Meal 2 carry most of it.'},
-meal4:{n:'Meal 4 — if you need it',ic:'🥛',t:'21:30',xp:4,sec:'Night',kind:'meal',meal:'m4',opt:1,
-  how:['Optional. Use it if you are short on calories or protein for the day.'],
-  why:'Optional by design. Some days you will not need it, and forcing food you do not want is how plans start feeling like punishment.'},
-story:{n:'Story recording',ic:'🎙',t:'21:45',xp:10,sec:'Night',kind:'story',days:[0,2,4],
+  how:['Walk in. Change immediately.','Do not sit down in work clothes. Not for five minutes, not for one song.','In the gym by 20:00.'],
+  why:'When the gym is near home the commute comes first, which puts a sofa between you and the session. This exact moment is where three sessions a week becomes one.'},
+train:{n:'Training',ic:'🏋',t:'20:00',xp:24,sec:'Evening',kind:'train',
+  how:['Warm-up first — it is listed in the session.','Tap any exercise to see it move, with cues. Log every set; last time\'s numbers are shown so you know what to beat.','Finish by tapping how hard it felt. The readiness map uses it.'],
+  why:'Legs and shoulder rebuilding are the priorities. Heavy, multi-joint leg work is also the training that best supports the hormonal picture — the benefit comes from months of it, not from any single session.'},
+meal3:{n:'Dinner',ic:'🍗',t:'21:15',xp:6,sec:'Evening',kind:'meal',meal:'m3',
+  how:['Pick an option. Red meat or shrimp three or four nights a week, salmon twice.'],
+  why:'Protein to repair what the session trained and carbohydrate to refill it. The rotation is deliberate: red meat and shellfish are the best zinc sources in the plan, salmon covers omega-3 and vitamin D.'},
+story:{n:'Story recording',ic:'🎙',t:'21:45',xp:10,sec:'Night',kind:'story',days:[1,3,5],
   sub:'90 seconds, then the same story in 45.',
   how:['Record on your phone. Nobody hears it. Delete it afterwards.','Shape: Context → Complication → Turn → So-what.','Record it in 90 seconds. Then record the same story in 45. The second one is always better.'],
   why:'For most people the limiting factor in storytelling is compression, not material. The drill is cutting, which is why the second take is always the better one.'},
-read:{n:'Twenty minutes, paper book',ic:'📖',t:'22:00',xp:12,sec:'Night',kind:'read',tar:20,
+read:{n:'Twenty minutes, paper book',ic:'📖',t:'22:15',xp:12,sec:'Night',kind:'read',tar:20,
   how:['Paper. Not a phone, not a tablet.','Same chair, same time — context consistency is the actual mechanism behind habit formation.','Timer is built in.'],
-  why:'Half the point is the reading. The other half is proving you can hold attention on one thing for twenty minutes, which is the capacity doomscrolling erodes.'},
-logd:{n:'Log the day',ic:'✎',t:'22:40',xp:5,sec:'Night',kind:'check',
+  why:'Half the point is the reading. The other half is proving you can hold attention on one thing for twenty minutes, which is the capacity doomscrolling erodes — and it is the wind-down that makes 23:45 possible.'},
+meal4:{n:'Before bed — if the day is short',ic:'🥛',t:'22:40',xp:4,sec:'Night',kind:'meal',meal:'m4',opt:1,
+  how:['Optional. Use it when calories or protein are behind for the day.'],
+  why:'Optional by design. Slow dairy protein tops the day up; forcing food you do not want is how plans start feeling like punishment.'},
+logd:{n:'Log the day',ic:'✎',t:'22:50',xp:5,sec:'Night',kind:'check',
   sub:'Sixty seconds. Log the misses too.',
   how:['Tick what you did. Skip what you did not, with a reason.','Add one line in the note field.'],
   why:'A red day logged honestly beats a green day you did not earn. The failure mode is not a bad week — it is quietly stopping opening the app because you do not want to look at it.'},
-phone:{n:'Phone out of the bedroom',ic:'📵',t:'23:15',xp:10,sec:'Night',kind:'check',
-  how:['Not on silent. Not face down. Out of the room.','Buy a cheap alarm clock if that is the excuse.'],
-  why:'The doomscrolling fix is environmental, not a willpower exercise. Distance beats discipline every time.'},
-sleep:{n:'Sleep',ic:'🌙',t:'23:45',xp:8,sec:'Night',kind:'num',unit:'hours',ph:'8.5',tar:7.5,
-  sub:'Target 8 h 30 m — 23:45 to 08:15.',
-  how:['Target 8 h 30 m — 23:45 to 08:15.','Log what you actually got, not what you meant to get.'],
-  why:'Memory consolidation happens during sleep, and adults need seven hours or more. Of everything here, this is usually the largest single lever and the fastest to move.'},
+phone:{n:'Phone out of the bedroom · lights out 23:45',ic:'📵',t:'23:15',xp:10,sec:'Night',kind:'check',
+  how:['Not on silent. Not face down. Out of the room, on charge.','Buy a cheap alarm clock if that is the excuse.','Lights out by 23:45.'],
+  why:'Falling asleep with the phone in your hand is what turns an eight-hour night into six. Distance beats discipline every time.'},
 /* all-day */
-water:{n:'Water',ic:'💧',t:'all day',xp:8,sec:'All day',kind:'count',tar:7,unit:'× 500 ml',
-  sub:'3.5 litres — seven 500 ml refills.',
-  how:['Keep a 1 litre bottle on your desk. Three and a half refills over the day.','Tap + each time you finish 500 ml.'],
-  why:'3–4 L is the standard range for a training adult at this bodyweight. Dehydration reads exactly like fatigue.'},
-steps:{n:'Steps',ic:'👣',t:'all day',xp:8,sec:'All day',kind:'num',tar:8000,unit:'steps',ph:'8000',
-  how:['Target 8,000. Read it off your phone at the end of the day.'],
-  why:'Paluch et al. (2022), 47,471 adults: mortality risk flattens at roughly 8,000–10,000 steps a day for the under-60s. Above that you are buying very little.'},
-prot:{n:'Protein &amp; calories',ic:'🥩',t:'all day',xp:10,sec:'All day',kind:'num',tar:165,unit:'g protein',ph:'165',
-  sub:'165 g protein · 2,400–2,500 kcal.',
-  how:['Target 165 g protein, 2,400–2,500 kcal.','A typical cutting plan lands nearer 2,070 kcal and 206 g protein. Adding ~100 g of carbohydrate around training brings it into range.'],
-  why:'At 80 kg, 2.0–2.2 g/kg is the useful range. Protein above that buys nothing, and the excess is displacing carbs that would fuel your leg training.'},
+water:{n:'Water',ic:'💧',t:'all day',xp:8,sec:'All day',kind:'count',tar:6,unit:'× 500 ml',
+  sub:'3 litres — six 500 ml refills.',
+  how:['Keep a 1 litre bottle on your desk. Three refills over the day.','Tap + each time you finish 500 ml.'],
+  why:'About 3 L suits a training adult at this bodyweight. Dehydration reads exactly like fatigue.'},
+steps:{n:'Steps',ic:'👣',t:'all day',xp:8,sec:'All day',kind:'num',tar:stepTar,unit:'steps',ph:'7000',
+  how:['6,000 in week 1, 7,000 in week 2, 8,000 from week 3. Read it off your phone at night.'],
+  why:'Paluch et al. (2022), 47,471 adults: mortality risk flattens at roughly 8,000–10,000 steps a day for the under-60s. Starting from a desk-and-car baseline, the ramp matters more than the number.'},
+prot:{n:'Protein &amp; calories',ic:'🥩',t:'all day',xp:10,sec:'All day',kind:'num',tar:150,unit:'g protein',ph:'160',
+  sub:'160 g protein · about 2,750 kcal.',
+  how:['Target 160 g protein and about 2,750 kcal. 150 g counts as a hit.','If appetite is the limit, drink some of it: milk, whey, a banana and oats in a blender is 600 kcal.'],
+  why:'This is a lean gain, not a cut. Eating enough is part of the hormonal picture too: a long energy deficit lowers testosterone, and so does very low fat — the plan sits near 30% of calories from fat on purpose.'},
 social:{n:'Social rep',ic:'💬',t:'anytime',xp:14,sec:'All day',kind:'social',
   how:['This week\'s rung is shown below. Do it once, log what happened in a line.'],
   why:'Graded exposure is the mechanism that works: start at a level that feels almost embarrassingly easy and climb only when the rung is boring. Confidence follows evidence; it does not arrive first.'},
@@ -753,25 +1270,26 @@ review:{n:'Weekly review',ic:'◎',t:'15:00',xp:20,sec:'Saturday',kind:'review',
   sub:'Six questions, fifteen minutes.',
   how:['Answer the six questions in the More tab.','On Saturday it shapes the week ahead. On Sunday night it is just guilt.'],
   why:'One deliberate look back a week is what stops a bad Tuesday becoming a bad month.'},
-plan:{n:'Plan the week · pack Sunday\'s lunch · export backup',ic:'📦',t:'16:00',xp:10,sec:'Saturday',kind:'check',days:[6],
-  how:['Look at next week in the Programme tab.','Pack Sunday\'s Meal 2 now.','Export your backup from the More tab — storage is easy to lose.'],
+plan:{n:'Plan the week · sort the lunch boxes · export backup',ic:'📦',t:'16:00',xp:10,sec:'Saturday',kind:'check',days:[6],
+  how:['Look at next week in the Programme tab. Put the sessions in your calendar like meetings.','Agree the week\'s lunch boxes — protein grilled or baked, rice served separately.','Export your backup from the More tab — storage is easy to lose.'],
   why:'Three minutes of admin that prevents three separate failures.'},
 people:{n:'People — actual plans with actual humans',ic:'🫂',t:'18:00',xp:16,sec:'Saturday',kind:'check',days:[6],
-  how:['Make the plan earlier in the week, not at 18:00 on Saturday.','It counts if you leave the house and speak to people who are not your family.'],
+  how:['Make the plan earlier in the week, not at 18:00 on Saturday.','Padel or a 3×3 game counts double. So does dinner. It counts if you leave the house and speak to people who are not your family.'],
   why:'Not optional. Isolation, far more than difficulty, is what ends programmes like this. It is the single best predictor of whether the other eleven weeks hold.'}
 };
 
 var SECORDER=['Morning','Commute','Work','Evening','Night','Saturday','All day'];
-
+var MINSET=['wake','sleep','flow','train','prot','phone','logd'];   /* the minimum day */
+function isMin(k){ return !!(S.days[k]&&S.days[k].min); }
 function actsFor(k){
-  var g=pd(k).getDay(), sat=(g===6), out=[];
+  var g=pd(k).getDay(), sat=(g===6), wknd=(g===5||g===6), out=[], mn=isMin(k);
   Object.keys(ACTS).forEach(function(id){
     var a=ACTS[id];
     if(a.days && a.days.indexOf(g)<0) return;
-    if(a.work && sat) return;
-    if(sat && (id==='deep'||id==='audio'||id==='home'||id==='train'||id==='logd')) { if(id!=='logd') return; }
+    if(a.work && wknd) return;
     if(!sat && a.sec==='Saturday') return;
-    if(id==='train' && !DAYSESS[g]) return;
+    if(id==='train' && !sessOn(k)) return;
+    if(mn && MINSET.indexOf(id)<0) return;
     out.push(id);
   });
   out.sort(function(x,y){
@@ -782,6 +1300,17 @@ function actsFor(k){
   });
   return out;
 }
+/* the seven daily behaviours with evidence behind them for energy, mood and testosterone */
+var DRIVE=[
+ ['Slept 7.5 h or more',function(d,k){ return d.sleep&&d.sleep.v>=7.5; }],
+ ['Morning flow',function(d){ return d.flow&&d.flow.done; }],
+ ['Trained, or hit the step target',function(d,k){ return (d.train&&d.train.done)||(d.steps&&d.steps.v>=stepTar(k)); }],
+ ['Ate enough — 150 g protein or more',function(d){ return d.prot&&d.prot.v>=150; }],
+ ['Ten minutes of daylight',function(d){ return (d.walk&&d.walk.done)||(d.wake&&d.wake.done); }],
+ ['Phone out, lights out on time',function(d){ return d.phone&&d.phone.done; }],
+ ['Inside the nicotine and weed plan',function(d,k){ var q=d.iqos, w=d.weed; if(!q||q.c==null) return false; return q.c<=iqCap(wkN(k)) && ((w&&w.c)||0)<=weedRule(k).cap; }]
+];
+function driveScore(k){ var d=(S.days[k]&&S.days[k].a)||{}; return DRIVE.filter(function(r){ try{ return !!r[1](d,k); }catch(e){ return false; } }).length; }
 
 /* ── social ladder ── */
 var LADDER=[
@@ -797,15 +1326,16 @@ function rung(k){ var w=wkN(k); return LADDER[Math.min(5,Math.floor((w-1)/2))]; 
 var PROMPTS=['A time you were certain and wrong.','A ten-minute stretch that changed a year.','Something you feared that turned out to be nothing.','The best decision you made when nobody was watching.','A stranger who said something you still think about.','A day you would least want to relive — and what it gave you.','A time you kept something to yourself and it got worse.','Something you were good at as a child and abandoned.','The last time you surprised yourself.','A thing you believed at 18 and have since dropped.','A small kindness you did not deserve.','The moment you knew the training was working.','A conversation you wish you had handled differently.','A decision that looked small at the time and was not.'];
 
 var METS=[
- {n:'Weight',t:'trend down slowly'},{n:'Waist at navel',t:'down'},{n:'Mid-thigh',t:'UP — the legs number'},
+ {n:'Weight',t:'up ~0.2 kg a week'},{n:'Waist at navel',t:'flat or down'},{n:'Mid-thigh',t:'UP — the legs number'},
  {n:'Knee-to-wall L',t:'≥ 10 cm'},{n:'Knee-to-wall R',t:'≥ 10 cm'},
  {n:'Pain-free overhead °',t:'toward 170–180°'},{n:'Balance eyes shut L',t:'≥ 30 s'},{n:'Balance eyes shut R',t:'≥ 30 s'},
- {n:'Resting HR',t:'down 5–10 bpm'}
+ {n:'Resting HR',t:'down 5–10 bpm'},
+ {n:'Calf raises, single leg L',t:'≥ 25 reps'},{n:'Calf raises, single leg R',t:'≥ 25 reps'},{n:'Deep squat hold',t:'120 s'}
 ];
 
 var LEVELS=[
  [0,'Getting off the sofa'],[400,'Showing up'],[900,'Two weeks in'],[1600,'It has a rhythm'],
- [2500,'Stronger than August'],[3600,'The habit is yours'],[5000,'Clean and consistent'],[6600,'Unrecognisable'],[8500,'Finished what you started']
+ [2500,'Stronger than day one'],[3600,'The habit is yours'],[5000,'Clean and consistent'],[6600,'Unrecognisable'],[8500,'Finished what you started']
 ];
 var BADGES=[
  {id:'d1',e:'🚩',n:'Day One',d:'Logged your first day'},
@@ -864,6 +1394,8 @@ function paintTop(){
   h+='<div class="chip">Day <b>'+(n<1?'—':(n>84?'84+':n))+'</b>/84</div>';
   h+='<div class="chip">Week <b>'+wkN(TODAY)+'</b></div>';
   h+='<div class="chip'+(st>0?' gd':'')+'">🔥 <b>'+st+'</b> streak</div>';
+  var dv=driveScore(TODAY);
+  h+='<div class="chip'+(dv>=5?' gd':'')+'">⚡ Drive <b>'+dv+'</b>/7</div>';
   h+='<div class="chip">Lv <b>'+(L.i+1)+'</b> · '+S.xp+' XP</div>';
   h+='<div class="chip'+(cl>=7?' gd':'')+'">🌿 <b>'+cl+'</b>d clean</div>';
   if(toQ>0) h+='<div class="chip hot">Quit date in <b>'+toQ+'</b>d</div>';
@@ -903,8 +1435,8 @@ var openAct=null;
 function paintToday(){
   var ids=actsFor(cur), d=DY(cur), n=dayN(cur);
   E('d-t1').textContent = (cur===TODAY?'Today · ':'') + pretty(cur);
-  E('d-t2').textContent = (n>=1&&n<=84? 'Day '+n+' of 84 · week '+wkN(cur) : 'Outside the 84 days') +
-    (DAYSESS[pd(cur).getDay()] ? ' · '+SESS[DAYSESS[pd(cur).getDay()]].n.replace(/&amp;/g,'&') : ' · rest day');
+  E('d-t2').textContent = (n>=1&&n<=84? 'Day '+n+' of 84' : 'Outside the 84 days') +
+    ' · '+phaseOf(wkN(cur)).n;
 
   var done=0, tot=0;
   ids.forEach(function(id){ if(ACTS[id].opt) return; tot++; if(d.a[id]&&d.a[id].done) done++; });
@@ -913,7 +1445,8 @@ function paintToday(){
   E('ring-p').setAttribute('stroke-dashoffset', String(195-195*pct/100));
   E('ring-p').setAttribute('stroke', pct>=100?'#34d399':(pct>=50?'#4da3ff':'#fbbf24'));
 
-  var html='', lastSec=null;
+  var mn=isMin(cur);
+  var html='<div class="minbar'+(mn?' on':'')+'"><span>'+(mn?'<b>Minimum day.</b> These are the ones that keep the chain alive. Everything else can wait.':'Low on energy? A minimum day still counts.')+'</span><button class="btn g sm" id="minbtn">'+(mn?'Show the full day':'Minimum day')+'</button></div>', lastSec=null;
   ids.forEach(function(id){
     var a=ACTS[id], st=d.a[id]||{};
     if(a.sec!==lastSec){
@@ -945,6 +1478,8 @@ function paintToday(){
     b.onclick=function(){ openAct = (openAct===b.dataset.open? null : b.dataset.open); paintToday(); };
   });
   if(openAct) wireBody(openAct);
+  E('minbtn').onclick=function(){ var dd=DY(cur); dd.min=!dd.min; openAct=null; wr(); paintToday(); };
+  figWatch(E('acts'));
 
   var nt=E('d-note'); nt.value=d.n||'';
   nt.oninput=function(){ DY(cur).n=nt.value; wr(); };
@@ -953,7 +1488,7 @@ function paintToday(){
 function badgeFor(id,st){
   var a=ACTS[id];
   if(a.opt) return '<span class="pill p-p">optional</span>';
-  if(id==='train'){ var s=DAYSESS[pd(cur).getDay()]; return s&&s.indexOf('lower')===0?'<span class="pill p-o">legs</span>':(s==='upperA'||s==='upperB'?'<span class="pill p-w">shoulder care</span>':'<span class="pill p-a">cardio</span>'); }
+  if(id==='train'){ var sg=sessGet(cur); return sg? (sg.lift? '<span class="pill p-o">'+sg.ph.rpe+'</span>':'<span class="pill p-a">easy</span>') : ''; }
   if(id==='weed'){ var r=weedRule(cur); return r.cap? '<span class="pill p-w">allowance '+r.cap+'</span>':'<span class="pill p-g">none today</span>'; }
   if(id==='iqos'){ var c=iqCap(wkN(cur)); return '<span class="pill '+(c?'p-o':'p-g')+'">cap '+c+'</span>'; }
   return '';
@@ -962,15 +1497,15 @@ function subFor(id,st){
   var a=ACTS[id];
   if(st.skip) return 'Skipped — '+esc(st.skip);
   switch(a.kind){
-    case 'count': return (st.c||0)+' / '+a.tar+' '+a.unit;
-    case 'num': return st.v!=null? (st.v+' '+a.unit+(a.tar? (st.v>=a.tar?' ✓':' / '+a.tar):'')) : (a.sub || (a.tar? ('target '+a.tar+' '+a.unit) : a.unit));
-    case 'mins': return (st.v||0)+' / '+a.tar+' min';
+    case 'count': return (st.c||0)+' / '+tarOf(a)+' '+a.unit;
+    case 'num': return st.v!=null? (st.v+' '+a.unit+(tarOf(a)? (st.v>=tarOf(a)?' ✓':' / '+tarOf(a)):'')) : (a.sub || (tarOf(a)? ('target '+tarOf(a)+' '+a.unit) : a.unit));
+    case 'mins': return (st.v||0)+' / '+tarOf(a)+' min';
     case 'read': return (st.v||0)+' / 20 min'+(st.bk? ' · '+esc(st.bk):'');
     case 'meal': return st.o!=null? 'Option '+(st.o+1)+' — '+esc(MEALS[a.meal].o[st.o]).slice(0,52)+'…' : 'Three options — pick one';
     case 'iqos': return (st.c||0)+' sticks today';
     case 'weed': return weedRule(cur).txt + (st.c? ' · logged '+st.c:'');
-    case 'train': var s=DAYSESS[pd(cur).getDay()]; return s? SESS[s].n.replace(/&amp;/g,'&') : 'Rest';
-    case 'flow': return st.done? 'Done — 13 drills':'13 drills, guided';
+    case 'train': var sg=sessGet(cur); return sg? sg.n.replace(/&amp;/g,'&') : 'Rest';
+    case 'flow': return st.done? 'Done — '+FLOW.length+' drills':FLOW.length+' drills, guided and illustrated';
     case 'social': return st.t? esc(st.t).slice(0,60) : 'Week '+wkN(cur)+' rung';
     case 'story': return st.done? 'Recorded':'90 seconds, then 45';
     default: return a.sub||'';
@@ -982,8 +1517,8 @@ function bodyFor(id){
   h+='<h5>What to do</h5><ol>'+(a.how||[]).map(function(x){ return '<li>'+x+'</li>'; }).join('')+'</ol>';
 
   if(a.kind==='count'){
-    h+='<h5>Log</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">of '+a.tar+' '+a.unit+'</div></div>';
-    h+='<div class="dots" id="cdots">'+Array.apply(null,{length:a.tar}).map(function(_,i){ return '<div class="dot'+((st.c||0)>i?' on':'')+'">'+(i+1)+'</div>'; }).join('')+'</div>';
+    h+='<h5>Log</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">of '+tarOf(a)+' '+a.unit+'</div></div>';
+    h+='<div class="dots" id="cdots">'+Array.apply(null,{length:tarOf(a)}).map(function(_,i){ return '<div class="dot'+((st.c||0)>i?' on':'')+'">'+(i+1)+'</div>'; }).join('')+'</div>';
   }
   if(a.kind==='num'){
     h+='<h5>Log</h5><div class="row"><input type="number" id="nv" value="'+(st.v!=null?st.v:'')+'" placeholder="'+(a.ph||'')+'" style="max-width:130px"><span style="color:var(--dim);font-size:13px">'+a.unit+'</span></div>';
@@ -1000,7 +1535,7 @@ function bodyFor(id){
     var M=MEALS[a.meal];
     h+='<h5>Pick one</h5><div class="opts">'+M.o.map(function(o,i){ return '<button class="opt'+(st.o===i?' on':'')+'" data-o="'+i+'"><i>'+(i+1)+'</i><span>'+o+'</span></button>'; }).join('')+'</div>';
     h+='<div class="row" style="margin-top:9px"><input id="mnote" placeholder="Swapped something? Note it." value="'+esc(st.t||'')+'"></div>';
-    h+='<div class="why"><b>If someone else cooks:</b> do not ask for a separate diet to be cooked for you. Ask for two things only — protein grilled or baked rather than fried, and the rice and salad served unmixed so you can weigh your own portion.</div>';
+    h+='<div class="why"><b>If someone else cooks:</b> do not ask for a separate diet. Ask for two things only — protein grilled or baked rather than fried, and the rice served separately so you can portion your own. Weigh things for the first two weeks; after that your eye is good enough.</div>';
   }
   if(a.kind==='iqos'){
     var cap=iqCap(wkN(cur));
@@ -1027,32 +1562,39 @@ function bodyFor(id){
   }
   if(a.kind==='flow'){
     h+='<div class="row" style="margin-top:6px"><button class="btn wide" id="startflow">▶ Start guided flow — 10 min</button></div>';
-    h+='<h5>The 13 drills</h5><ul>'+FLOW.map(function(f){ return '<li><b>'+f.n+'</b> — '+f.h+'</li>'; }).join('')+'</ul>';
+    h+='<h5>The '+FLOW.length+' drills</h5><div class="tn">'+FLOW.map(function(f){ return '<div class="drow"><div class="tnfig">'+figHTML(f.f,'mini')+'</div><div class="tnt"><b>'+f.n+'</b><small>'+f.h+'</small></div></div>'; }).join('')+'</div>';
   }
   if(a.kind==='train'){
-    var sk=DAYSESS[pd(cur).getDay()];
-    if(sk){
-      var Sx=SESS[sk];
-      h+='<div class="info"><b>Warm-up:</b> '+Sx.warm+'</div>';
-      h+='<div class="row" style="margin:10px 0"><button class="btn g sm" data-rest="90">⏱ 90 s rest</button><button class="btn g sm" data-rest="120">⏱ 2 min</button><button class="btn g sm" data-rest="180">⏱ 3 min</button></div>';
+    var Sx=sessGet(cur);
+    if(Sx){
+      var stt=Sx.lift? muscleState() : null;
+      h+='<div class="info"><b>'+Sx.ph.n+' · '+Sx.ph.rpe+'.</b> '+(Sx.ph.k==='dl'?'Deload week: half the sets, same loads. ':'')+(Sx.ph.k==='p0'?'Leave three reps in the tank on everything. The goal this fortnight is to finish wanting more. ':'')+'<br><b>Warm-up:</b> '+Sx.warm+'</div>';
+      if(Sx.lift) h+='<div class="row" style="margin:10px 0"><button class="btn g sm" data-rest="60">⏱ 60 s</button><button class="btn g sm" data-rest="90">⏱ 90 s</button><button class="btn g sm" data-rest="120">⏱ 2 min</button></div>';
       h+='<div class="extab">';
-      Sx.ex.forEach(function(xid){
-        var X=EX[xid], log=(st.ex&&st.ex[xid])||[], prev=lastLog(xid,cur);
+      Sx.ex.forEach(function(e){
+        var xid=e.id, X=EX[xid], log=(st.ex&&st.ex[xid])||[], prev=lastLog(xid,cur), v=stt?exVerdict(xid,stt):null;
         h+='<div class="exrow" data-ex="'+xid+'">'
-          +'<div class="exhead"><div class="n">'+X.n+'</div><div class="pr">'+(prev?('last: '+prev):'—')+'</div><button class="btn g sm" data-exhow="'+xid+'">?</button></div>'
-          +'<div class="exmeta">'+X.s+' × '+X.r+' <span class="pill p-a" style="margin-left:5px">'+X.tag+'</span></div>'
-          +'<div class="sets">'+Array.apply(null,{length:X.s}).map(function(_,i){
+          +'<div class="exhead"><button class="exfig" data-exhow="'+xid+'" aria-label="Show how">'+figFor(xid,'mini')+'</button>'
+          +'<div class="n">'+X.n+'<div class="exmeta">'+e.s+' × '+e.r+' <span class="pill p-a" style="margin-left:5px">'+X.tag+'</span></div>'+(v&&v.c!=='p-g'?'<div class="exmeta"><span class="pill '+v.c+'" style="text-transform:none">'+v.t+'</span></div>':'')+'</div>'
+          +'<div class="pr">'+(prev?('last: '+prev):'')+'</div></div>'
+          +'<div class="sets">'+Array.apply(null,{length:e.s}).map(function(_,i){
               var L=log[i]||{};
-              return '<div class="setbox"><span>'+(i+1)+'</span><input type="number" data-s="'+xid+'|'+i+'|w" value="'+(L.w!=null?L.w:'')+'" placeholder="kg"><span>×</span><input type="number" data-s="'+xid+'|'+i+'|r" value="'+(L.r!=null?L.r:'')+'" placeholder="r"></div>';
+              if(X.nl) return '<button class="setdone'+(L.d?' on':'')+'" data-d="'+xid+'|'+i+'">'+(e.s>1?'Set '+(i+1):'Done')+' ✓</button>';
+              return '<div class="setbox"><span>'+(i+1)+'</span><input type="number" inputmode="decimal" data-s="'+xid+'|'+i+'|w" value="'+(L.w!=null?L.w:'')+'" placeholder="kg"><span>×</span><input type="number" inputmode="numeric" data-s="'+xid+'|'+i+'|r" value="'+(L.r!=null?L.r:'')+'" placeholder="r"></div>';
             }).join('')+'</div>'
-          +'<div class="exhow"><ul>'+X.cues.map(function(c){ return '<li>'+c+'</li>'; }).join('')+'</ul>'
+          +'<div class="exhow"><div class="exbig">'+figFor(xid,'')+'</div><ul>'+X.cues.map(function(c){ return '<li>'+c+'</li>'; }).join('')+'</ul>'
             +'<div class="why"><b>Why:</b> '+X.why+'</div>'
+            +(v&&v.c!=='p-g'? '<div class="safe"><b>'+v.t+'.</b> '+v.w+'</div>':'')
             +(X.safe? '<div class="safe"><b>Shoulder rule:</b> '+X.safe+'</div>':'')
           +'</div></div>';
       });
       h+='</div>';
+      if(Sx.lift){
+        h+='<h5>How hard was that?</h5><div class="seg3" id="rpe">'+[6,7,8,9,10].map(function(r){ return '<button data-rpe="'+r+'" class="'+(st.rpe===r?'on':'')+'">'+r+'</button>'; }).join('')+'</div>'
+          +'<div class="src">6 = could have done it twice · 8 = two reps left on most sets · 10 = nothing left. The readiness map scales recovery by this.</div>';
+      }
       h+='<div class="note" style="margin-top:8px"><b style="color:var(--tx)">Finish:</b> '+Sx.fin+'</div>';
-      h+='<div class="safe" style="margin-top:12px"><b>Before you load those shoulders:</b> two Bankart repairs with current pain and limited overhead range needs a physiotherapist\'s assessment, not a web page. Nothing behind the head, pulldowns in front with a medium grip, lateral raises stop at 60–70°, never to failure, and any movement that hurts comes out of the plan.</div>';
+      if(Sx.lift) h+='<div class="safe" style="margin-top:12px"><b>Shoulder rules, every session.</b> Nothing behind the head. Pulldowns in front, medium grip. Nothing that forces the arm back. High reps, never to failure. Tingling in the arm, or any movement that hurts, ends that exercise for the day — and goes in the note.</div>';
     }
   }
   if(a.kind==='review'){
@@ -1074,13 +1616,15 @@ function wireBody(id){
     b.onclick=function(){
       var d=b.dataset.c==='+'?1:-1;
       st.c=Math.max(0,(st.c||0)+d);
-      if(d>0 && a.tar && st.c===a.tar && !st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n,'xp'); }
+      if(d>0 && tarOf(a) && st.c===tarOf(a) && !st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n,'xp'); }
       wr(); paintToday();
     };
   });
   var nv=root.querySelector('#nv');
-  if(nv){ nv.oninput=function(){ st.v = nv.value===''?null:+nv.value; wr(); };
-          nv.onchange=function(){ if(a.tar&&st.v>=a.tar&&!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } paintToday(); }; }
+  if(nv){ nv.oninput=function(){ st.v = nv.value===''?null:+nv.value;
+            if(id==='weigh'){ if(st.v==null) delete S.wt[cur]; else { S.wt[cur]=st.v; if(!st.done){ st.done=true; S.xp+=a.xp; } } }
+            wr(); };
+          nv.onchange=function(){ if(tarOf(a)&&st.v>=tarOf(a)&&!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } paintToday(); }; }
   root.querySelectorAll('[data-quick]').forEach(function(b){
     b.onclick=function(){ st.v=(st.v||0)+ +b.dataset.quick; wr(); paintToday(); };
   });
@@ -1110,6 +1654,19 @@ function wireBody(id){
       S.ex[xid][cur]=st.ex[xid];
       wr();
     };
+  });
+  root.querySelectorAll('[data-d]').forEach(function(b){
+    b.onclick=function(){
+      var p=b.dataset.d.split('|'), xid=p[0], idx=+p[1];
+      if(!st.ex) st.ex={}; if(!st.ex[xid]) st.ex[xid]=[];
+      var L=st.ex[xid][idx]||{}; L.d=L.d?0:1; st.ex[xid][idx]=L;
+      if(!S.ex[xid]) S.ex[xid]={}; S.ex[xid][cur]=st.ex[xid];
+      wr(); b.classList.toggle('on',!!L.d);
+    };
+  });
+  root.querySelectorAll('[data-rpe]').forEach(function(b){
+    b.onclick=function(){ var r=+b.dataset.rpe; st.rpe=(st.rpe===r?null:r); wr();
+      root.querySelectorAll('[data-rpe]').forEach(function(x){ x.classList.toggle('on', +x.dataset.rpe===st.rpe); }); };
   });
   root.querySelectorAll('[data-done]').forEach(function(b){
     b.onclick=function(){ toggle(b.dataset.done); };
@@ -1177,17 +1734,17 @@ function flowPlay(i){
   if(i>=FLOW.length){
     var st=A(cur,'flow'); if(!st.done){ st.done=true; xpAdd(ACTS.flow.xp); } wr();
     modal('<div class="pl-step">Complete</div><div class="pl-name">Flow done</div>'
-      +'<div class="pl-how">Thirteen drills. Ankles, feet, hips, spine, shoulders. Ten minutes you cannot lose to work.</div>'
+      +'<div class="pl-how">Twelve drills. Spine, hips, ankles, neck, shoulders, feet. Ten minutes you cannot lose to work.</div>'
       +'<button class="btn wide" data-close="1">Close</button>');
     boom(); paintToday(); return;
   }
   var f=FLOW[i], left=f.t;
   modal('<div class="pl-step">'+f.g+' · '+(i+1)+' of '+FLOW.length+'</div>'
-   +'<div class="pl-name">'+f.n+'</div><div class="pl-how">'+f.h+'</div>'
+   +'<div class="pl-name">'+f.n+'</div><div class="plfig">'+figHTML(f.f,'')+'</div><div class="pl-how">'+f.h+'</div>'
    +'<div class="pl-time" id="tv">'+fmt(left)+'</div>'
    +'<div class="pl-dots">'+FLOW.map(function(_,j){ return '<i class="'+(j<i?'did':(j===i?'on':''))+'"></i>'; }).join('')+'</div>'
    +'<div class="row"><button class="btn" id="nx" style="flex:1">Next →</button><button class="btn g" data-close="1">Stop</button></div>',
-   function(m){ m.querySelector('#nx').onclick=function(){ if(tick){clearInterval(tick);tick=null;} flowPlay(i+1); }; });
+   function(m){ figWatch(m); m.querySelector('#nx').onclick=function(){ if(tick){clearInterval(tick);tick=null;} flowPlay(i+1); }; });
   if(tick) clearInterval(tick);
   tick=setInterval(function(){
     left--; var t=E('tv'); if(!t){ clearInterval(tick); tick=null; return; }
@@ -1210,16 +1767,16 @@ function paintProg(){
   progBody();
 }
 var PHASE=[
- {w:[1,2],b:'Physio assessment. Learn the four sessions at conservative loads. Morning flow daily.',s:'Weed: Fri/Sat only. IQOS unchanged — deliberately.',so:'One 20-second exchange a day.',m:'Atomic Habits + Dopamine Nation. 90-min deep block daily.'},
- {w:[3,4],b:'Add load. First re-test on day 28.',s:'Weed: Fri/Sat only, logged every time.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
- {w:[5,6],b:'Progressive overload. Cardio to four sessions a week.',s:'Weed: Friday only.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
- {w:[7,8],b:'Shoulder re-test. Overhead progression if cleared.',s:'Week 7: weed quit date. Week 8: IQOS cap 15.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
- {w:[9,10],b:'Heaviest block. Day 56 re-test.',s:'IQOS 10 then 5. Weed held.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
- {w:[11,12],b:'Day 84 re-test against baseline.',s:'IQOS quit day 71. Both held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
+ {w:[1,2],b:'Phase 0 — re-entry. Three full-body sessions at RPE 6–7, a brisk walk on the days between, the morning flow daily, baseline tests. Book the arm-and-neck check, the shoulder re-assessment and the blood work.',s:'Weed: Fri/Sat only. IQOS unchanged — deliberately.',so:'One 20-second exchange a day.',m:'Atomic Habits on paper, Dopamine Nation on the commute. 90-minute deep block daily.'},
+ {w:[3,4],b:'Phase 1 — foundation. Four days: two lower, two upper, calves or tibialis in every one. First re-test on day 28.',s:'Weed: Fri/Sat only, logged every time.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
+ {w:[5,6],b:'Phase 1 continues. Add one rep, or the smallest load step, to one set of each main lift a week. Shoulders progress by reps and control, never by load.',s:'Weed: Friday only.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
+ {w:[7,8],b:'Week 7 is a deload and re-test: half the sets, same loads. Week 8 opens Phase 2 — a fourth set on the main lifts, Bulgarian split squats, and whatever the clearances have unlocked.',s:'Week 7: weed quit date. Week 8: IQOS cap 15.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
+ {w:[9,10],b:'Phase 2 — the heaviest block. Day 56 re-test. Hops and jumps only if the ankle has been green for two weeks.',s:'IQOS 10 then 5. Weed held.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
+ {w:[11,12],b:'Week 11 finishes the build. Week 12 is a deload and the day 84 re-test against baseline.',s:'IQOS quit day 71. Both held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
 ];
 function progBody(){
   var ph=PHASE.find(function(p){ return progWk>=p.w[0]&&progWk<=p.w[1]; });
-  var h='<div class="card"><h2>Week '+progWk+' <span class="pill p-a">'+pretty(add(S.start,(progWk-1)*7))+'</span></h2>'
+  var h='<div class="card"><h2>Week '+progWk+' <span class="pill p-o">'+phaseOf(progWk).n+'</span> <span class="pill p-a">'+pretty(add(S.start,(progWk-1)*7))+'</span></h2>'
    +'<div style="margin-top:10px"><table><tbody>'
    +'<tr><td style="width:80px;color:var(--dim)">Body</td><td>'+ph.b+'</td></tr>'
    +'<tr><td style="color:var(--dim)">Substances</td><td>'+ph.s+'</td></tr>'
@@ -1227,7 +1784,7 @@ function progBody(){
    +'<tr><td style="color:var(--dim)">Mind</td><td>'+ph.m+'</td></tr>'
    +'</tbody></table></div></div>';
   for(var i=0;i<7;i++){
-    var k=add(S.start,(progWk-1)*7+i), g=pd(k).getDay(), sk=DAYSESS[g];
+    var k=add(S.start,(progWk-1)*7+i), g=pd(k).getDay(), sk=sessOn(k);
     var ids=actsFor(k), d=S.days[k], done=ids.filter(function(x){ return d&&d.a[x]&&d.a[x].done; }).length;
     var isToday=(k===TODAY);
     h+='<div class="card" style="'+(isToday?'border-color:var(--ac)':'')+'">'
@@ -1249,31 +1806,32 @@ function progBody(){
 
 /* ═══════════════════ LIBRARY ═══════════════════ */
 function paintLib(){
-  var q=(E('libq').value||'').toLowerCase();
-  var h='';
-  var groups=[['Lower body','lowerA'],['Upper body','upperA'],['Posterior chain','lowerB'],['Shoulder rebuild','upperB'],['Cardio','z2']];
-  var seen={};
-  ['lowerA','upperA','lowerB','upperB','z2','cardio'].forEach(function(sk){
-    SESS[sk].ex.forEach(function(xid){
-      if(seen[xid]) return; seen[xid]=1;
-      var X=EX[xid];
-      if(q && (X.n+' '+X.tag+' '+X.why+' '+X.cues.join(' ')).toLowerCase().indexOf(q)<0) return;
-      var prev=lastLog(xid,add(TODAY,1));
-      h+='<div class="card"><h2>'+X.n+' <span class="pill p-a">'+X.tag+'</span>'+(X.safe?' <span class="pill p-w">shoulder rule</span>':'')+'</h2>'
-        +'<div class="note">'+X.s+' × '+X.r+(prev? ' · your last: <b style="color:var(--tx)">'+prev+'</b>':'')+'</div>'
-        +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:13px 0 7px">How</h5>'
-        +'<ul style="padding-left:18px;font-size:13px;color:var(--dim)">'+X.cues.map(function(c){ return '<li style="margin-bottom:4px">'+c+'</li>'; }).join('')+'</ul>'
-        +'<div class="why" style="margin-top:11px"><b>Why:</b> '+X.why+'</div>'
-        +(X.safe? '<div class="safe" style="margin-top:10px"><b>Shoulder rule:</b> '+X.safe+'</div>':'')
-        +histHtml(xid)
-        +'</div>';
-    });
+  var q=(E('libq').value||'').toLowerCase(), h='', inPlan={};
+  Object.keys(SESS).forEach(function(sk){ SESS[sk].ex.forEach(function(r){ inPlan[r[0]]=1; var sw=SWAP[r[0]]; if(sw&&sw[1]) inPlan[sw[1]]=1; }); });
+  inPlan.bulg=1;
+  Object.keys(EX).forEach(function(xid){
+    if(!inPlan[xid]) return;
+    var X=EX[xid], sw=SWAP[xid], locked=(sw && !clr(sw[0]));
+    if(q && (X.n+' '+X.tag+' '+X.why+' '+X.cues.join(' ')).toLowerCase().indexOf(q)<0) return;
+    var prev=lastLog(xid,add(TODAY,1)), fg=figFor(xid,'');
+    h+='<div class="card"><h2>'+X.n+' <span class="pill p-a">'+X.tag+'</span>'+(X.safe?' <span class="pill p-w">shoulder rule</span>':'')+(locked?' <span class="pill p-b">locked</span>':'')+'</h2>'
+      +'<div class="note">'+X.s+' × '+X.r+(prev? ' · your last: <b style="color:var(--tx)">'+prev+'</b>':'')+'</div>'
+      +(fg? '<div class="libfig">'+fg+'</div>':'')
+      +(locked? '<div class="safe" style="margin-top:10px"><b>Not in your sessions yet.</b> It unlocks when you tick the matching check in More → Plan. Until then the programme uses '+(sw[1]?EX[sw[1]].n.toLowerCase():'nothing in its place')+'.</div>':'')
+      +'<h5 class="h5">How</h5>'
+      +'<ul style="padding-left:18px;font-size:13px;color:var(--dim)">'+X.cues.map(function(c){ return '<li style="margin-bottom:4px">'+c+'</li>'; }).join('')+'</ul>'
+      +'<div class="why" style="margin-top:11px"><b>Why:</b> '+X.why+'</div>'
+      +(X.safe? '<div class="safe" style="margin-top:10px"><b>Shoulder rule:</b> '+X.safe+'</div>':'')
+      +histHtml(xid)
+      +'</div>';
   });
-  FLOW.forEach(function(f,i){
+  FLOW.forEach(function(f){
     if(q && (f.n+' '+f.h+' '+f.g).toLowerCase().indexOf(q)<0) return;
-    h+='<div class="card"><h2>'+f.n+' <span class="pill p-p">flow · '+f.g+'</span></h2><div class="note" style="margin-top:7px">'+f.h+'</div></div>';
+    var fg=figHTML(f.f,'');
+    h+='<div class="card"><h2>'+f.n+' <span class="pill p-p">flow · '+f.g+'</span></h2>'+(fg? '<div class="libfig">'+fg+'</div>':'')+'<div class="note" style="margin-top:9px">'+f.h+'</div></div>';
   });
   E('libbody').innerHTML = h || '<div class="empty">Nothing matches that.</div>';
+  figWatch(E('libbody'));
 }
 function histHtml(xid){
   if(!S.ex[xid]) return '';
@@ -1281,8 +1839,8 @@ function histHtml(xid){
   if(!ks.length) return '';
   return '<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:13px 0 6px">Your log</h5>'
    +'<table><tbody>'+ks.map(function(k){
-     var sets=(S.ex[xid][k]||[]).filter(function(s){ return s&&s.w!=null; });
-     return '<tr><td class="n" style="color:var(--dim)">'+k+'</td><td class="n">'+(sets.map(function(s){ return s.w+'×'+(s.r!=null?s.r:'?'); }).join('  ·  ')||'—')+'</td></tr>';
+     var sets=(S.ex[xid][k]||[]).filter(function(s){ return s&&s.w!=null; }), dn=setCount(S.ex[xid][k]);
+     return '<tr><td class="n" style="color:var(--dim)">'+k+'</td><td class="n">'+(sets.map(function(s){ return s.w+'×'+(s.r!=null?s.r:'?'); }).join('  ·  ')||(dn? dn+' set'+(dn===1?'':'s')+' done':'—'))+'</td></tr>';
    }).join('')+'</tbody></table>';
 }
 E('libq').oninput=paintLib;
@@ -1424,107 +1982,172 @@ function chkBadges(){
   }
 }
 
-/* ═══════════════════ BODY MAP ═══════════════════ */
-var BODY={
- f:[ /* front — [muscleId, svg shapes] */
-  ['chest','<ellipse cx="84" cy="84" rx="17" ry="13"/><ellipse cx="116" cy="84" rx="17" ry="13"/>'],
-  ['fdelt','<ellipse cx="63" cy="70" rx="11" ry="10"/><ellipse cx="137" cy="70" rx="11" ry="10"/>'],
-  ['sdelt','<ellipse cx="53" cy="76" rx="7" ry="9"/><ellipse cx="147" cy="76" rx="7" ry="9"/>'],
-  ['biceps','<ellipse cx="53" cy="108" rx="8" ry="16"/><ellipse cx="147" cy="108" rx="8" ry="16"/>'],
-  ['grip','<ellipse cx="48" cy="144" rx="7" ry="18"/><ellipse cx="152" cy="144" rx="7" ry="18"/>'],
-  ['abs','<rect x="86" y="100" width="28" height="52" rx="9"/>'],
-  ['adduc','<ellipse cx="91" cy="205" rx="7" ry="24"/><ellipse cx="109" cy="205" rx="7" ry="24"/>'],
-  ['quads','<ellipse cx="78" cy="208" rx="14" ry="34"/><ellipse cx="122" cy="208" rx="14" ry="34"/>'],
-  ['tib','<ellipse cx="82" cy="288" rx="8" ry="26"/><ellipse cx="118" cy="288" rx="8" ry="26"/>']
+/* ═══════════════════ ANATOMY — muscle shapes for the readiness map ═══════════════════
+   Drawn for one side of the body on a 200 × 440 canvas and mirrored. [id, [filled shapes], [definition lines]] */
+var ANAT={
+ sil:'M100,44 L108,44 C108,56 109,62 112,64 C120,67 130,69 138,73 C147,75 153,84 154,96 C155,108 156,118 158,130 C160,142 163,150 165,160 C168,172 170,186 171,200 L172,212 C174,220 175,230 172,238 C170,244 164,244 162,238 C160,230 160,222 160,212 C158,196 154,178 151,164 C149,154 147,146 145,136 C143,126 141,118 138,112 C137,124 135,138 133,152 C131,166 131,176 133,188 C137,200 142,214 143,232 C143,258 140,286 135,308 C134,316 134,324 135,332 C139,346 140,362 137,380 C134,394 130,406 128,416 C128,424 131,430 134,434 L112,436 C110,430 112,422 114,414 C113,400 111,380 110,360 C109,348 109,338 110,326 C110,314 108,300 106,284 C104,264 102,244 100,228 Z',
+ nf:['M109,52 C109,60 106,68 101.5,74','M103,76 C114,73 126,73 136,74','M118,316 C118,311 128,311 128,316 C129,323 127,328 123,328 C119,328 117,323 118,316 Z','M160,214 C162,222 163,230 162,236'],
+ nb:['M101.5,84 L101.5,206','M117,318 C120,321 127,321 130,318','M121,412 L121,428','M150,156 C152,158 156,158 158,156'],
+ f:[
+  ['utrap',['M109,57 C112,62 122,66 135,71 C127,73 117,73 110,71 Z'],[]],
+  ['chest',['M101,78 C108,75 122,74 134,76 C138,80 140,90 139,104 C136,111 130,116 122,119 C114,121 106,120 101,117 Z'],['M103,93 C115,90 128,92 138,101','M104,84 C114,81 126,81 135,83']],
+  ['fdelt',['M136,73 C144,74 149,79 151,88 C152,98 151,106 148,112 C144,108 141,100 140,92 C139,85 138,79 136,73 Z'],['M141,80 C145,88 147,98 147,108']],
+  ['sdelt',['M148,77 C153,82 156,94 155,108 C153,114 150,116 148.5,113 C151.5,106 152.5,98 151.5,88 C151,84 150,80 148,77 Z'],[]],
+  ['biceps',['M141,113 C145,110 150,112 153,118 C156,128 158,140 157,150 C153,156 148,154 146,148 C144,138 142,124 141,113 Z'],['M146,116 C150,128 152,140 152,151']],
+  ['grip',['M148,157 C153,154 160,154 164,160 C168,174 170,190 170,206 L161,208 C159,194 154,176 150,166 Z'],['M154,158 C160,172 164,190 165,206','M151,164 C156,176 160,192 162,206']],
+  ['serr',['M127,122 L135.5,125 L134.8,130 L126,127 Z','M126,131 L134.6,134 L134,139 L125,136 Z','M125,140 L133.6,143 L133,148 L124,145 Z'],[]],
+  ['obliq',['M123,149 C128,152 131,160 131,170 C131,180 132,188 133,195 C128,201 123,205 119.5,207 C120.5,190 120.5,170 120.5,151 Z'],['M122,164 C126,166 129,170 131,174','M122,180 C126,182 129,186 132,190']],
+  ['abs',['M101.5,123 L117,123 C118.5,123 119,125 119,127 L119,136 C119,138 118,139 116,139 L101.5,139 Z','M101.5,141 L116.5,141 C118,141 119,142 119,144 L119,154 C119,156 118,157 116,157 L101.5,157 Z','M101.5,159 L116.5,159 C118,159 119,160 119,162 L119,172 C119,174 118,175 116,175 L101.5,175 Z','M101.5,177 L116.5,177 C118,177 119,178 119,180 C119,192 114,206 104,216 L101.5,217 Z'],[]],
+  ['adduc',['M101.5,226 C108,228 115,234 117,246 C116,256 115,264 114,270 C112.5,280 111.5,290 110.5,300 C107,286 103,260 101.5,238 Z'],['M106,234 C109,252 110.5,274 110.5,292']],
+  ['quads',['M122,213 C130,224 133,246 132,268 C131,288 128,302 124,310 C119.5,302 116.5,286 116.5,264 C116.5,244 118,226 122,213 Z','M130,207 C138,213 142.5,230 142.5,248 C142.5,270 139.5,290 135.5,304 C133.5,310 130,312 127,310 C131.5,296 134,274 134,254 C134,236 133,220 130,207 Z','M114.5,268 C118,280 122,298 121.5,311 C118,318 113,317 111.5,311 C110.5,298 111.5,282 114.5,268 Z'],['M124,226 C126,246 126,274 124,300','M138,226 C140,246 139,272 135,296']],
+  ['tib',['M124,333 C130,336 132.5,348 132.5,364 C132.5,380 130,396 127,410 L122,410 C122,394 120.5,374 120.5,356 C120.5,346 121.5,338 124,333 Z'],['M126,342 C127,362 126,386 124,404']],
+  ['calves',['M112,334 C116,340 119,352 119,368 C119,378 117,386 115,392 C112,380 110,362 110.5,348 C110.8,342 111,338 112,334 Z'],[]],
+  ['soleus',['M134,338 C138,348 138.5,366 135.5,384 C134,390 132,396 130,400 C132,384 133,362 134,338 Z'],[]]
  ],
  b:[
-  ['traps','<path d="M78 58 L100 50 L122 58 L114 86 L86 86 Z"/>'],
-  ['rdelt','<ellipse cx="63" cy="70" rx="11" ry="10"/><ellipse cx="137" cy="70" rx="11" ry="10"/>'],
-  ['cuff','<ellipse cx="76" cy="66" rx="7" ry="7"/><ellipse cx="124" cy="66" rx="7" ry="7"/>'],
-  ['lats','<path d="M78 88 L122 88 L118 132 L82 132 Z"/>'],
-  ['lback','<rect x="88" y="134" width="24" height="28" rx="7"/>'],
-  ['triceps','<ellipse cx="52" cy="108" rx="8" ry="16"/><ellipse cx="148" cy="108" rx="8" ry="16"/>'],
-  ['gmed','<ellipse cx="74" cy="170" rx="8" ry="8"/><ellipse cx="126" cy="170" rx="8" ry="8"/>'],
-  ['glutes','<ellipse cx="87" cy="180" rx="14" ry="14"/><ellipse cx="113" cy="180" rx="14" ry="14"/>'],
-  ['hams','<ellipse cx="80" cy="222" rx="13" ry="30"/><ellipse cx="120" cy="222" rx="13" ry="30"/>'],
-  ['calves','<ellipse cx="81" cy="288" rx="10" ry="26"/><ellipse cx="119" cy="288" rx="10" ry="26"/>']
+  ['utrap',['M100,48 L107,50 C109,60 118,66 136,72 C128,76 116,78 100,80 Z'],['M104,56 C110,66 120,72 132,73']],
+  ['ltrap',['M100,82 C112,81 124,78 134,75 C128,84 118,96 110,112 C106,124 103,138 100,150 Z'],['M102,90 C112,88 122,84 130,80','M102,112 C106,104 112,96 120,90']],
+  ['rdelt',['M136,73 C146,74 153,82 154,96 C154,104 152,110 149,114 C144,108 140,100 137,92 C135,86 135,80 136,73 Z'],['M141,80 C146,88 149,98 150,108']],
+  ['cuff',['M134,79 C137,88 140,98 142,106 C137,111 131,111 127,108 C125,102 124,96 126,90 C128,85 131,82 134,79 Z'],['M128,92 C132,96 136,100 140,104']],
+  ['lats',['M142,108 C141,124 138,140 134,154 C130,168 124,180 114,190 C110,180 106,166 103,152 C105,138 108,124 112,113 C118,115 126,115 132,113 C136,112 139,110 142,108 Z'],['M112,122 C122,128 132,128 139,122','M108,140 C118,148 128,150 135,146','M106,158 C113,166 120,170 126,170']],
+  ['lback',['M101.5,152 C104,160 108,174 110,188 C110,196 108,204 106,208 L101.5,208 Z'],['M104,162 C106,176 107,192 105,204']],
+  ['obliq',['M134,158 C132,168 131,178 133,190 C128,194 122,194 117,192 C124,183 130,171 134,158 Z'],[]],
+  ['triceps',['M150,114 C155,118 158,128 159,140 C160,148 160,154 159,158 C154,160 149,158 146,152 C144,140 143,126 143,115 C145,112 148,112 150,114 Z'],['M150,118 C152,130 152,142 151,154','M146,126 C147,138 148,146 151,154']],
+  ['grip',['M147,159 C153,161 160,161 165,163 C168,176 170,190 170,206 L161,208 C159,194 154,176 149,168 Z'],['M153,163 C159,176 163,192 165,206']],
+  ['gmed',['M120,192 C128,189 137,192 140,200 C142,206 141,212 139,217 C132,213 125,207 120,201 Z'],[]],
+  ['glutes',['M101.5,208 C108,204 118,203 126,207 C135,211 141,220 142,232 C142,242 136,250 127,252 C116,254 107,250 101.5,244 Z'],['M106,214 C117,216 129,224 136,238']],
+  ['hams',['M127,255 C135,254 141,259 142,270 C142,288 139,302 136,314 C133,318 130,317 128,313 C127,296 126,276 127,255 Z','M103,252 C110,256 119,257 125,256 C125,278 125,298 124,314 C120,319 114,319 111,314 C108,298 104,276 103,252 Z'],['M114,260 C115,280 116,298 117,314','M134,262 C135,280 134,298 132,312']],
+  ['calves',['M111,332 C116,328 122,330 123.5,340 C124.5,354 123.5,368 121.5,378 C118,381 114,379 112.5,372 C110,358 109.5,344 111,332 Z','M125,330 C131,327 137,334 138.5,346 C139,358 136.5,370 133,378 C129.5,381 126,379 124.8,374 C125.8,360 125.6,344 125,330 Z'],[]],
+  ['soleus',['M113,381 C119,384 129,384 134,381 C134,390 131,400 128,410 L119,410 C116,400 114,390 113,381 Z'],['M123.5,385 L123.5,408']]
  ]
 };
+
+/* ═══════════════════ BODY MAP ═══════════════════ */
 var selM=null;
 function bodySvg(side,st){
-  var outline='<ellipse cx="100" cy="30" rx="16" ry="18" fill="#1b2230" stroke="#28334a"/>'
-   +'<path d="M74 56 Q100 46 126 56 L132 130 Q126 160 122 168 L118 250 L112 330 L104 330 L100 250 L96 330 L88 330 L82 250 L78 168 Q74 160 68 130 Z" fill="#141922" stroke="#28334a" stroke-width="1"/>'
-   +'<path d="M74 60 L50 92 L44 168 M126 60 L150 92 L156 168" fill="none" stroke="#28334a" stroke-width="9" stroke-linecap="round"/>';
-  var shapes=BODY[side].map(function(r){
-    var m=r[0], v=st[m]?st[m].fresh:100;
-    return '<g class="msc'+(selM===m?' sel':'')+'" data-m="'+m+'" fill="'+freshCol(v)+'" fill-opacity="'+(0.35+0.55*(1-v/100)+0.1)+'" stroke="'+freshCol(v)+'" stroke-width="1">'+r[1]+'</g>';
-  }).join('');
-  return '<div style="flex:1 1 150px;max-width:49%"><svg viewBox="0 0 200 345" xmlns="http://www.w3.org/2000/svg">'+outline+shapes+'</svg>'
-   +'<div class="cap">'+(side==='f'?'Front':'Back')+'</div></div>';
-}
-function paintBody(){
-  var st=muscleState();
-  E('bd-maps').innerHTML='<div class="bodywrap">'+bodySvg('f',st)+bodySvg('b',st)+'</div>';
-  E('bd-maps').querySelectorAll('[data-m]').forEach(function(g){
-    g.onclick=function(){ selM=(selM===g.dataset.m?null:g.dataset.m); paintBody(); };
+  var rows=ANAT[side], m='';
+  rows.forEach(function(r){
+    var id=r[0], v=st[id]?st[id].fresh:100, col=freshCol(v), sel=(selM===id);
+    var paths=r[1].map(function(d){ return '<path d="'+d+'"/>'; }).join('');
+    m+='<g class="msc'+(sel?' sel':'')+'" data-m="'+id+'" fill="'+col+'">'+paths+'</g>'
+      +'<g class="msh">'+paths+'</g>'
+      +'<g class="mln">'+r[2].map(function(d){ return '<path d="'+d+'"/>'; }).join('')+'</g>';
   });
-
-  /* summary — what today's session will hit, and whether that's sensible */
-  var sk=DAYSESS[pd(TODAY).getDay()], warn=[], ok=[];
-  if(sk){
-    var hit={};
-    SESS[sk].ex.forEach(function(x){ var mp=EXM[x]||{}; Object.keys(mp).forEach(function(m){ hit[m]=Math.max(hit[m]||0,mp[m]); }); });
-    Object.keys(hit).forEach(function(m){
-      if(hit[m]<0.5) return;
-      if(st[m].fresh<35) warn.push(MUS[m].n+' ('+st[m].fresh+'%)');
-      else ok.push(MUS[m].n);
-    });
-  }
+  var nx='<g class="mnx">'+ANAT[side==='f'?'nf':'nb'].map(function(d){ return '<path d="'+d+'"/>'; }).join('')+'</g>';
+  var half='<path class="sil" d="'+ANAT.sil+'"/>'+m+nx;
+  return '<div class="bfig"><svg viewBox="26 4 148 436" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+(side==='f'?'Front':'Back')+' muscle map">'
+   +'<defs><linearGradient id="sheen'+side+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".30"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".30"/></linearGradient>'
+   +'<radialGradient id="skin'+side+'" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#27324a"/><stop offset="1" stop-color="#161d2b"/></radialGradient></defs>'
+   +'<ellipse class="sil" cx="100" cy="27" rx="14" ry="18"/>'
+   +'<g class="s'+side+'">'+half+'</g><g class="s'+side+'" transform="translate(200,0) scale(-1,1)">'+half+'</g>'
+   +'</svg><div class="cap">'+(side==='f'?'Front':'Back')+'</div></div>';
+}
+function anyLogged(){ return sessList().length>0; }
+function paintBody(){
+  var st=muscleState(), sess=sessGet(TODAY), jc=jointState();
+  E('bd-maps').innerHTML='<div class="bodywrap">'+bodySvg('f',st)+bodySvg('b',st)+'</div>'
+    +'<div class="heatkey"><span>Worked</span><i></i><span>Fresh</span></div>';
+  E('bd-maps').querySelectorAll('[data-m]').forEach(function(g){
+    g.onclick=function(){ selM=(selM===g.dataset.m?null:g.dataset.m); paintBody(); if(selM){ var d=E('bd-detail'); if(d&&d.scrollIntoView) d.scrollIntoView({behavior:'smooth',block:'nearest'}); } };
+  });
   var sorted=Object.keys(MUS).sort(function(a,b){ return st[a].fresh-st[b].fresh; });
-  var worst=sorted.slice(0,3).filter(function(m){ return st[m].fresh<80; });
-  var h='';
-  if(!Object.keys(S.days).some(function(k){ return S.days[k].a.train&&S.days[k].a.train.ex; })){
-    h='<div class="info" style="margin-top:14px"><b>Nothing logged yet, so everything reads as fresh.</b> Log your sets in a training session and this fills in — it needs real data, and it will not invent any.</div>';
-  } else {
-    h='<div class="info" style="margin-top:14px"><b>'+(sk? 'Today is '+SESS[sk].n.replace(/&amp;/g,'&')+'.' : 'Today is a rest day.')+'</b> '
-     +(warn.length? 'Still carrying fatigue in <b>'+warn.join(', ')+'</b> — either go lighter on those or swap the session with a day that trains something else.'
-       : (sk? 'Everything it targets has recovered enough to train.' : 'Recovery day. That is doing work too.'))
-     +(worst.length? '<br><br><b>Least recovered right now:</b> '+worst.map(function(m){ return MUS[m].n+' '+st[m].fresh+'%'; }).join(' · ') : '')
-     +'</div>';
-  }
-  E('bd-summary').innerHTML=h;
 
-  /* detail panel */
+  /* ── tonight ── */
+  var h='';
+  if(sess && sess.lift){
+    var vs=sess.ex.map(function(e){ var v=exVerdict(e.id,st); v.id=e.id; return v; });
+    var avg=Math.round(vs.reduce(function(s,v){ return s+v.f; },0)/Math.max(1,vs.length));
+    var flagged=vs.filter(function(v){ return v.c!=='p-g'; });
+    h+='<h2>Tonight — '+sess.n+' <span class="pill" style="background:'+freshCol(avg)+'22;color:'+freshCol(avg)+'">'+avg+'% ready</span></h2>'
+      +'<div class="note">'+(flagged.length? flagged.length+' of '+vs.length+' movements need adjusting. Everything else is clear.' : 'Every movement in tonight\'s session is clear to train.')+'</div>'
+      +'<div class="tn">'+vs.map(function(v){
+        return '<div class="tnrow"><div class="tnfig">'+figFor(v.id,'mini')+'</div><div class="tnt"><b>'+EX[v.id].n+'</b><small>'+v.w+'</small></div><span class="pill '+v.c+'">'+v.t+'</span></div>';
+      }).join('')+'</div>';
+  } else {
+    h+='<h2>Today — '+(sess? sess.n : 'rest day')+'</h2><div class="note">'+(sess? 'No lifting today. Easy movement speeds recovery up rather than costing any.' : 'Recovery day. That is doing work too.')+'</div>';
+  }
+  E('bd-tonight').innerHTML=h;
+
+  /* ── what is holding you back ── */
+  var hold=sorted.filter(function(m){ return st[m].fresh<80; }).slice(0,4), hb='';
+  if(!anyLogged()){
+    hb='<h2>Nothing logged yet</h2><div class="note">Everything reads as fresh because the map only knows what you log. Log the sets in tonight\'s session and it fills in — it needs real data and will not invent any.</div>';
+  } else if(!hold.length){
+    hb='<h2>Fully recovered</h2><div class="note">Nothing is carrying meaningful fatigue. If the next session is not for a day or two, that is the plan working — not a sign to add more.</div>';
+  } else {
+    hb='<h2>What is still recovering</h2><div class="note">The least-recovered muscles, and the exercise that put most of the remaining fatigue there.</div>'
+     +hold.map(function(m){
+        var s=st[m], top=s.src[0], share=top&&s.fat? Math.round(top.amt/s.fat*100):0, hr=hoursToReady(m);
+        return '<div class="hold" data-pick="'+m+'"><div class="hd"><b>'+MUS[m].n+'</b><span style="color:'+freshCol(s.fresh)+'">'+s.fresh+'%</span></div>'
+          +'<div class="bar"><i style="width:'+s.fresh+'%;background:'+freshCol(s.fresh)+'"></i></div>'
+          +'<small>'+(s.sore? 'You marked it '+(s.sore===2?'very sore':'sore')+' today. ' : '')
+          +(top? 'Mostly <b>'+EX[top.x].n+'</b> ('+dayLbl(top.k)+') — '+share+'% of what is left. ' : '')
+          +(s.over? '<span class="ovr">That session went past the useful dose.</span> ' : '')
+          +'Ready '+whenTxt(hr)+'.</small></div>';
+      }).join('');
+  }
+  E('bd-hold').innerHTML=hb;
+  E('bd-hold').querySelectorAll('[data-pick]').forEach(function(d){ d.onclick=function(){ selM=d.dataset.pick; paintBody(); var x=E('bd-detail'); if(x&&x.scrollIntoView) x.scrollIntoView({behavior:'smooth',block:'nearest'}); }; });
+
+  /* ── detail ── */
   if(selM){
-    var m=selM, s=st[m], ex=exercisesFor(m);
-    E('bd-detail').innerHTML='<h2>'+MUS[m].n+' <span class="pill" style="background:'+freshCol(s.fresh)+'22;color:'+freshCol(s.fresh)+'">'+s.fresh+'% · '+freshWord(s.fresh)+'</span>'+(MUS[m].pri?' <span class="pill p-o">priority</span>':'')+'</h2>'
+    var m=selM, s=st[m], ex=exercisesFor(m), hr=s.fresh>=80?0:hoursToReady(m);
+    var mods=[]; if(recovMult()>1) mods.push('+25% while returning to training'); if(s.sm>1) mods.push('+'+Math.round((s.sm-1)*100)+'% for short sleep since'); if(s.over) mods.push('longer after a big session');
+    var d='<h2>'+MUS[m].n+' <span class="pill" style="background:'+freshCol(s.fresh)+'22;color:'+freshCol(s.fresh)+'">'+s.fresh+'% · '+freshWord(s.fresh)+'</span>'+(MUS[m].pri?' <span class="pill p-o">priority</span>':'')+'</h2>'
      +'<div class="bar" style="margin-top:10px"><i style="width:'+s.fresh+'%;background:'+freshCol(s.fresh)+'"></i></div>'
      +'<table style="margin-top:14px"><tbody>'
      +'<tr><td>Last trained</td><td class="n">'+hoursTxt(s.hrs)+'</td></tr>'
-     +'<tr><td>Status</td><td class="n">'+readyIn(m,s)+'</td></tr>'
+     +'<tr><td>Ready to train hard</td><td class="n">'+(s.fresh>=80?'now':whenTxt(hr))+'</td></tr>'
      +'<tr><td>Effective sets, last 7 days</td><td class="n"><b>'+s.sets7+'</b>'+(s.sets7<10?' <span class="pill p-w">under 10</span>':(s.sets7>20?' <span class="pill p-b">over 20</span>':' <span class="pill p-g">in range</span>'))+'</td></tr>'
-     +'<tr><td>Recovery window used</td><td class="n">'+Math.round(MUS[m].recov*recovMult())+' h'+(recovMult()>1?' (+25% while returning)':'')+'</td></tr>'
-     +'</tbody></table>'
-     +(MUS[m].note? '<div class="why" style="margin-top:12px"><b>Why this one matters for you:</b> '+MUS[m].note+'</div>':'')
-     +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:15px 0 7px">What trains it in your programme</h5>'
-     +'<div style="display:flex;flex-wrap:wrap;gap:5px">'+ex.map(function(x){
+     +'<tr><td>Recovery window used</td><td class="n">'+Math.round(s.win)+' h'+(mods.length?'<br><span style="color:var(--dim);font-size:11.5px">'+mods.join(' · ')+'</span>':'')+'</td></tr>'
+     +'</tbody></table>';
+    if(s.src.length){
+      d+='<h5 class="h5">Where the remaining fatigue came from</h5>'+s.src.slice(0,5).map(function(c){
+        var p=Math.round(c.amt/s.fat*100);
+        return '<div class="srcrow"><div class="tnfig">'+figFor(c.x,'mini')+'</div><div class="tnt"><b>'+EX[c.x].n+'</b><small>'+dayLbl(c.k)+' · '+p+'% of what is left</small><div class="bar sm"><i style="width:'+p+'%;background:'+freshCol(s.fresh)+'"></i></div></div></div>';
+      }).join('');
+    }
+    if(s.over){
+      d+='<div class="safe" style="margin-top:12px"><b>One session overshot.</b> In one session ('+dayLbl(s.over.k)+') this muscle took about '+s.over.sets+' effective sets — roughly '+Math.round(s.over.r*100)+'% of what it can usefully recover from in a session. <b>'+EX[s.over.x].n+'</b> was the biggest part. Sets past that point add recovery time, not growth: next time take one set off it, or stop two reps earlier.</div>';
+    }
+    d+='<h5 class="h5">How does it actually feel today?</h5><div class="seg3" data-sore="'+m+'">'
+      +[[0,'Fine'],[1,'Sore'],[2,'Very sore']].map(function(o){ return '<button data-v="'+o[0]+'" class="'+(s.sore===o[0]?'on s'+o[0]:'')+'">'+o[1]+'</button>'; }).join('')+'</div>'
+      +'<div class="src">Your answer overrides the estimate for today. Sore caps it at 55%, very sore at 25%, fine lifts it to at least 82%. Tap again to clear.</div>';
+    if(MUS[m].note) d+='<div class="why" style="margin-top:12px"><b>Why this one matters:</b> '+MUS[m].note+'</div>';
+    d+='<h5 class="h5">What trains it in the programme</h5><div style="display:flex;flex-wrap:wrap;gap:5px">'+ex.map(function(x){
         var w=EXM[x][m];
         return '<span class="pill '+(w>=0.8?'p-a':'p-p')+'" style="text-transform:none;font-weight:600">'+EX[x].n+' · '+(w>=0.8?'primary':'assists')+'</span>';
       }).join('')+'</div>'
      +'<div class="row" style="margin-top:13px"><button class="btn g sm" id="bd-close">Close</button></div>';
-    var cb=E('bd-close'); if(cb) cb.onclick=function(){ selM=null; paintBody(); };
+    E('bd-detail').innerHTML=d;
+    E('bd-close').onclick=function(){ selM=null; paintBody(); };
+    E('bd-detail').querySelectorAll('[data-sore] button').forEach(function(b){
+      b.onclick=function(){ if(!S.sore) S.sore={}; if(!S.sore[TODAY]) S.sore[TODAY]={};
+        var v=+b.dataset.v; if(S.sore[TODAY][m]===v) delete S.sore[TODAY][m]; else S.sore[TODAY][m]=v; wr(); paintBody(); };
+    });
   } else {
-    E('bd-detail').innerHTML='<h2>Tap a muscle</h2><div class="note">Tap any shaded area on either figure for its freshness, when you last trained it, weekly volume, and which of your exercises hit it.</div>'
-     +'<table style="margin-top:12px"><thead><tr><th>Muscle</th><th>Fresh</th><th>Last</th><th>Sets 7d</th></tr></thead><tbody>'
+    E('bd-detail').innerHTML='<h2>Every muscle</h2><div class="note">Tap a muscle on the figure, or a row here, for where its fatigue came from and when it is ready.</div>'
+     +'<table style="margin-top:12px"><thead><tr><th>Muscle</th><th>Ready</th><th>Last</th><th>Sets 7d</th></tr></thead><tbody>'
      +sorted.map(function(m){ var s=st[m];
-        return '<tr><td>'+MUS[m].n+(MUS[m].pri?' <span class="pill p-o">pri</span>':'')+'</td>'
+        return '<tr data-pick="'+m+'" style="cursor:pointer"><td>'+MUS[m].n+(MUS[m].pri?' <span class="pill p-o">pri</span>':'')+'</td>'
          +'<td class="n" style="color:'+freshCol(s.fresh)+';font-weight:700">'+s.fresh+'%</td>'
          +'<td class="n" style="color:var(--dim);font-size:12px">'+hoursTxt(s.hrs)+'</td>'
          +'<td class="n">'+s.sets7+'</td></tr>';
       }).join('')+'</tbody></table>';
+    E('bd-detail').querySelectorAll('[data-pick]').forEach(function(r){ r.onclick=function(){ selM=r.dataset.pick; paintBody(); }; });
   }
 
-  /* weekly volume */
+  /* ── joint check ── */
+  E('bd-joint').innerHTML=JN.map(function(j){
+    return '<div class="jrow"><b>'+j[1]+'</b><div class="seg3" data-j="'+j[0]+'">'
+      +[[0,'Fine'],[1,'Uneasy'],[2,'Painful']].map(function(o){ return '<button data-v="'+o[0]+'" class="'+(jc[j[0]]===o[0]?'on s'+o[0]:'')+'">'+o[1]+'</button>'; }).join('')+'</div></div>';
+  }).join('');
+  E('bd-joint').querySelectorAll('[data-j] button').forEach(function(b){
+    b.onclick=function(){ var d=DY(TODAY); if(!d.jc) d.jc={}; var k=b.parentNode.dataset.j, v=+b.dataset.v;
+      if(d.jc[k]===v) delete d.jc[k]; else d.jc[k]=v; var c=cur; cur=TODAY; wr(); cur=c; paintBody(); };
+  });
+
+  /* ── weekly volume ── */
   E('bd-vol').innerHTML=Object.keys(MUS).sort(function(a,b){
       return (MUS[b].pri?1:0)-(MUS[a].pri?1:0) || st[b].sets7-st[a].sets7;
     }).map(function(m){
@@ -1535,12 +2158,13 @@ function paintBody(){
       +'<div class="vbar"><i style="width:'+pct+'%;background:'+col+'"></i>'
       +'<u style="left:'+(10/24*100)+'%"></u><u style="left:'+(20/24*100)+'%"></u></div></div>';
   }).join('')
-   +'<div class="src">The two vertical marks are 10 and 20 sets. Below 10 is maintenance rather than growth; above 20 has diminishing returns and rising fatigue cost. Cardio contributes a small amount to calves and quads. Your daily mobility flow is deliberately excluded — it keeps the cuff and tibialis moving but it is not loading them.</div>';
+   +'<div class="src">The two marks are 10 and 20 sets. Phase 0 sits below 10 on purpose — the first fortnight is about re-entry, not volume. From week 3 the priority muscles should climb into the band. The morning flow is excluded: it keeps things moving but it is not loading them.</div>';
+  figWatch(E('v-body'));
 }
 
 /* ═══════════════════ MORE ═══════════════════ */
 var moreTab='why';
-var MORETABS=[['why','How this works'],['review','Weekly review'],['food','Food & numbers'],['quit','Quitting'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
+var MORETABS=[['why','How this works'],['plan','Plan & checks'],['hormone','Hormones & drive'],['review','Weekly review'],['food','Food & numbers'],['quit','Quitting'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
 function paintMore(){
   E('mtabs').innerHTML=MORETABS.map(function(t){ return '<button data-t="'+t[0]+'" class="'+(t[0]===moreTab?'on':'')+'">'+t[1]+'</button>'; }).join('');
   E('mtabs').querySelectorAll('button').forEach(function(b){ b.onclick=function(){ moreTab=b.dataset.t; paintMore(); }; });
@@ -1549,19 +2173,21 @@ function paintMore(){
   if(moreTab==='data') wireData();
   if(moreTab==='social') wireSocial();
   if(moreTab==='sync') wireSync();
+  if(moreTab==='plan') wirePlan();
 }
 var MOREHTML={
 why:function(){ return '<div class="card"><h2>How this works</h2>'
- +'<div class="note">Twelve weeks. Four lifting days, two cardio days, one rest day, and a short list of daily non-negotiables. The full written programme, including the reasoning behind each choice, lives in the Word document on your laptop.</div>'
- +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">The five rules</h5>'
+ +'<div class="note">Twelve weeks, one plan. Training comes in phases: a two-week re-entry of three full-body sessions, then four days a week of upper and lower work, with a deload and re-test at weeks 7 and 12. Around it sits one daily routine — sleep, the morning flow, food, daylight, reading, people.</div>'
+ +'<h5 class="h5">The six rules</h5>'
  +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Body first.</b> Sleep, training and food are the foundation the rest stands on. When a day gets squeezed, those three stay and everything else gives.</li>'
  +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Edit it.</b> Change exercises, move days, cut what you do not believe in. A plan you have modified is one you will finish.</li>'
- +'<li style="margin-bottom:7px"><b style="color:var(--tx)">The morning flow is the one that matters most.</b> Ten minutes, every day including rest days. It is the only habit here that a long workday cannot eat.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">A minimum day still counts.</b> On a flat day, tap Minimum day on the Today tab. Wake on time, do the flow, move, eat, phone out. A low day done small is what stops it becoming a low week.</li>'
  +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Log the misses.</b> Use Skip with a reason rather than leaving a blank. A red day recorded honestly is worth more than a green day you did not earn.</li>'
  +'<li style="margin-bottom:7px"><b style="color:var(--tx)">One missed day does not break this.</b> Lally et al. followed 96 people forming daily habits over twelve weeks: a single missed opportunity had no material effect. Two in a row is where it starts to matter.</li>'
  +'<li><b style="color:var(--tx)">Do it with people.</b> The social rung each week is not decoration. It is the part most likely to determine whether the other eleven weeks hold.</li>'
  +'</ul>'
- +'<div class="safe" style="margin-top:16px"><b>Two things this app cannot do.</b> It is not a physiotherapist, and shoulders with current pain and restricted overhead range need one before you load them. And it is not a substitute for talking to a professional about the parts of this that are not physical.</div></div>'; },
+ +'<div class="safe" style="margin-top:16px"><b>Two things this app cannot do.</b> It is not a physiotherapist or a doctor: shoulders with pain and restricted range, tingling in an arm, and months of low energy each need one. And it is not a substitute for talking to a professional about the parts of this that are not physical.</div></div>'; },
 
 review:function(){
   var w=Math.min(12,Math.max(1,wkN(TODAY)));
@@ -1575,30 +2201,83 @@ review:function(){
   return h;
 },
 
-food:function(){ return '<div class="card"><h2>Your numbers <span class="pill p-a">183 cm · 80 kg · BMI 23.9</span></h2>'
- +'<div class="note">Calculated, not eyeballed. BMI 23.9 is the healthy range, which matters: you do not need an aggressive cut, and running one fights the thing you actually want, which is bigger legs.</div>'
+food:function(){ return '<div class="card"><h2>Your numbers <span class="pill p-a">lean gain</span></h2>'
+ +'<div class="note">The goal is to get bigger without getting softer: a small surplus, enough protein, and fat kept high enough to look after hormones. Not a cut — a cut would fight the thing you actually want.</div>'
  +'<table style="margin-top:11px"><tbody>'
- +'<tr><td>BMR (Mifflin–St Jeor)</td><td class="n"><b>1,824 kcal</b></td></tr>'
- +'<tr><td>Maintenance with this training</td><td class="n"><b>≈ 2,690 kcal</b></td></tr>'
- +'<tr><td><b>Daily target</b></td><td class="n"><span class="pill p-g">2,400–2,500 kcal</span></td></tr>'
- +'<tr><td>Protein (2.0–2.2 g/kg)</td><td class="n"><b>160–176 g</b> · aim 165</td></tr>'
- +'<tr><td>Fat</td><td class="n"><b>70–80 g</b></td></tr>'
- +'<tr><td>Carbohydrate</td><td class="n"><b>≈ 290–300 g</b></td></tr>'
- +'<tr><td>Expected fat loss</td><td class="n"><b>0.2–0.3 kg/week</b></td></tr>'
- +'<tr><td>Water</td><td class="n"><b>3.5 L</b></td></tr></tbody></table>'
- +'<div class="safe" style="margin-top:14px"><b>A standard cutting plan will run short of this.</b> A typical five-meal cutting template totals roughly <b>2,070 kcal and 206 g protein</b> — a 620 kcal deficit, about 0.57 kg a week, protein at 2.6 g/kg. That is a good fat-loss plan. It is not a grow-your-legs plan, and protein above ~2.2 g/kg buys nothing, so about 40 g of it is displacing carbs that would fuel your leg training.<br><br><b>The fix is small:</b> keep every meal as written and add ~100 g of carbohydrate around training — about 150 g more cooked basmati at Meal 2, plus a banana and a couple of dates pre-gym. That lands near 2,500 kcal with protein ~175 g, and turns a cut into slow recomposition. Run any change past whoever wrote your nutrition plan rather than doing it unilaterally.</div>'
- +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">Supplements — what the evidence supports</h5>'
+ +'<tr><td>Estimated maintenance</td><td class="n"><b>≈ 2,550 kcal</b></td></tr>'
+ +'<tr><td><b>Daily target</b></td><td class="n"><span class="pill p-g">≈ 2750 kcal</span></td></tr>'
+ +'<tr><td>Protein (2 g/kg)</td><td class="n"><b>160 g</b> · the meal plan lands near 172</td></tr>'
+ +'<tr><td>Fat</td><td class="n"><b>≈ 85 g</b> · about 28% of calories</td></tr>'
+ +'<tr><td>Carbohydrate</td><td class="n"><b>≈ 328 g</b> · most of it around training</td></tr>'
+ +'<tr><td>Expected gain</td><td class="n"><b>≈ 0.2 kg a week</b> on the 7-day average</td></tr>'
+ +'<tr><td>Water</td><td class="n"><b>3 L</b></td></tr></tbody></table>'
+ +'<div class="info" style="margin-top:14px"><b>Adjusting.</b> Weigh most mornings and read the weekly average. More than 0.5 kg behind the path for two weeks: add about 150 kcal — an extra 40 g of rice at lunch and dinner does it. More than 0.5 kg ahead: take 150 away. Expect roughly an extra kilo in weeks 1–3 from creatine and fuller muscles; that is not fat.</div>'
+ +'<h5 class="h5">Why the plan is built the way it is</h5>'
+ +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Enough food, every day.</b> Under-eating is the commonest reason a hard-training man feels flat. A long deficit lowers testosterone; a small surplus does the opposite job.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Fat near 30% of calories.</b> Controlled trials find lower testosterone on diets around 20% fat than on diets around 40%. Eggs most mornings, olive oil on the lunch box, salmon twice a week — that is where it comes from.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Zinc from food.</b> Red meat and shellfish are the richest sources in the plan; three or four dinners a week covers it. A zinc pill only helps if you are actually short.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Carbohydrate around training.</b> Lunch and the 17:00 snack fuel the 20:00 session; dinner refills it. Hard training on low carbohydrate is a reliable way to feel worse.</li>'
+ +'<li><b style="color:var(--tx)">Protein at every meal, not above 2.2 g/kg.</b> More than that buys nothing and crowds out the calories that do the growing.</li>'
+ +'</ul>'
+ +'<div class="why" style="margin-top:12px"><b>The kitchen rule.</b> Do not ask for a separate diet to be cooked. Ask for two things only: protein grilled or baked rather than fried, and the rice served separately. Own breakfast, the snack and the before-bed meal yourself — three of five are then fully yours.</div>'
+ +'<h5 class="h5">Supplements — what the evidence supports</h5>'
  +'<table><thead><tr><th>Supplement</th><th>Dose</th><th>Verdict</th></tr></thead><tbody>'
- +'<tr><td>Creatine</td><td>5 g daily</td><td><span class="pill p-g">Strong</span> Best-supported there is. Timing irrelevant.</td></tr>'
- +'<tr><td>Whey</td><td>25 g post</td><td><span class="pill p-g">Strong</span> As a tool for hitting 165 g. No magic window.</td></tr>'
- +'<tr><td>Beta-alanine</td><td>4 g split</td><td><span class="pill p-g">Good</span> For 1–4 minute efforts.</td></tr>'
- +'<tr><td>Citrulline malate</td><td>6 g pre</td><td><span class="pill p-w">Modest</span> Pump is real, hypertrophy signal is weak.</td></tr>'
- +'<tr><td>Omega-3</td><td>1–2 caps</td><td><span class="pill p-w">Modest</span> Worth it if you eat little fatty fish.</td></tr>'
+ +'<tr><td>Creatine monohydrate</td><td>5 g daily</td><td><span class="pill p-g">Strong</span> Every day, any time. The best-supported supplement there is.</td></tr>'
+ +'<tr><td>Whey</td><td>as needed</td><td><span class="pill p-g">Strong</span> Food, not magic — only to close the protein gap.</td></tr>'
+ +'<tr><td>Vitamin D3</td><td>per blood test</td><td><span class="pill p-w">Test first</span> Deficiency is common in desk workers even in sunny countries. Dose to the result, with a doctor.</td></tr>'
+ +'<tr><td>Magnesium glycinate</td><td>200–400 mg, evening</td><td><span class="pill p-w">Useful</span> If sleep is poor or intake is low.</td></tr>'
+ +'<tr><td>Omega-3</td><td>1–2 g EPA+DHA</td><td><span class="pill p-w">Modest</span> Only in weeks without two salmon dinners.</td></tr>'
  +'<tr><td>Multivitamin</td><td>1 serving</td><td><span class="pill p-w">Insurance</span> Not performance. Harmless.</td></tr>'
- +'<tr><td>Arginine</td><td>3 g pre</td><td><span class="pill p-b">Weak — skip</span> Poor oral bioavailability. Citrulline does it better.</td></tr>'
+ +'<tr><td>"Testosterone boosters"</td><td>—</td><td><span class="pill p-b">Skip</span> Herbal blends, tribulus, D-aspartic acid: no reliable effect in trials. Money better spent on food.</td></tr>'
  +'</tbody></table>'
- +'<div class="safe" style="margin-top:14px"><b>Get bloodwork before you start.</b> Vitamin D, full blood count, lipids, HbA1c, thyroid, total testosterone. Vitamin D deficiency is common in Egypt despite the sunshine, and low vitamin D or a sluggish thyroid produces exactly the fatigue you have been reading as laziness. Rule out a physiological cause before concluding it is a character one.</div>'
- +'<div class="src">Morton et al. (2018), 49 studies and 1,863 participants: fat-free mass gains plateaued around 1.62 g/kg/day, authors noting the true breakpoint is likely higher; 1.6–2.2 g/kg/day is the practical range. Maintenance is a formula estimate — adjust on your weekly weight trend, not the arithmetic. Meal-plan calories are approximations from the listed foods; brand and cooking method move them ±100 kcal.</div></div>'; },
+ +'<div class="safe" style="margin-top:14px"><b>Clear every supplement and medicine with a pharmacist first</b>, and tell them your full medical history when you do. Herbal blends in particular contain things that are not on the front of the label.</div></div>'; },
+
+hormone:function(){
+  var d=(S.days[TODAY]&&S.days[TODAY].a)||{}, sc=driveScore(TODAY), tot=0, n=0;
+  for(var i=1;i<=7;i++){ var k=add(TODAY,-i); if(S.days[k]){ tot+=driveScore(k); n++; } }
+  var h='<div class="card"><h2>Drive score <span class="pill '+(sc>=5?'p-g':'p-a')+'">today '+sc+' / 7</span></h2>'
+   +'<div class="note">Seven daily behaviours with evidence behind them for energy, mood and testosterone. It scores what you did — it is not a hormone reading.'+(n? ' Average over your last '+n+' logged day'+(n===1?'':'s')+': <b style="color:var(--tx)">'+(Math.round(tot/n*10)/10)+'</b>.':'')+'</div><div style="margin-top:8px">'
+   +DRIVE.map(function(r){ var ok=false; try{ ok=!!r[1](d,TODAY); }catch(e){} return '<div class="dr'+(ok?' ok':'')+'"><i>'+(ok?'✓':'')+'</i>'+r[0]+'</div>'; }).join('')
+   +'</div></div>';
+  h+='<div class="card"><h2>What actually moves testosterone</h2><div class="note">In rough order of how much each one matters for a lean young man. Honest sizes, not marketing ones.</div>'
+   +'<ol class="rank">'
+   +'<li><b>Sleep.</b> The largest lever by a distance. In a controlled study, one week of five-hour nights lowered daytime testosterone by 10–15% in healthy men in their twenties. Short nights with a phone in the bed are the first thing to fix, and fixing them is free.</li>'
+   +'<li><b>Eating enough, with enough fat.</b> Long calorie deficits lower it, and so do very low-fat diets. This plan runs a small surplus with close to 30% of calories from fat.</li>'
+   +'<li><b>Lifting — especially legs.</b> The spike after a session lasts under an hour and is not what does the work. The real effect is slower: months of training build muscle, improve sleep and change how you feel in your body.</li>'
+   +'<li><b>Fixing a real deficiency.</b> Zinc, vitamin D and magnesium matter when you are short of them. Topping up a normal level does nothing, which is why the blood test comes before the pills.</li>'
+   +'<li><b>Nicotine, weed and alcohol.</b> The research on each one\'s direct effect is mixed. What is not mixed is what they do to sleep and to training quality — which is where numbers one and three come from.</li>'
+   +'<li><b>Daylight, movement, people.</b> Less a hormone lever than a mood and energy one. They act on the feeling directly, which is the thing you actually want changed.</li>'
+   +'</ol>'
+   +'<div class="src">Sleep: Leproult &amp; Van Cauter, JAMA 2011. Dietary fat: Whittaker &amp; Wu, J Steroid Biochem Mol Biol 2021 — six controlled trials, 206 men. Exercise: Riachy et al., J Funct Morphol Kinesiol 2020.</div></div>';
+  h+='<div class="card"><h2>Get the number before you chase it</h2><div class="note">Feeling flat for months is a reason to measure, not to guess. One morning at a lab settles it.</div>'
+   +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim);margin-top:10px">'
+   +'<li style="margin-bottom:6px"><b style="color:var(--tx)">Total testosterone</b>, drawn before 10:00, fasted, after a normal night. Levels fall through the day, so an afternoon sample reads falsely low.</li>'
+   +'<li style="margin-bottom:6px">If it comes back low, a doctor will repeat it on another morning and add <b style="color:var(--tx)">LH, FSH, SHBG and prolactin</b> to find out why.</li>'
+   +'<li style="margin-bottom:6px">In the same draw: <b style="color:var(--tx)">vitamin D, TSH, full blood count, ferritin, B12, HbA1c, lipids</b>. Low vitamin D, an underactive thyroid and low iron all produce the same tiredness.</li>'
+   +'<li>A normal result is useful too. It means the flatness has another cause, and it stops you spending money on boosters.</li></ul>'
+   +'<div class="safe" style="margin-top:14px"><b>Worth saying plainly.</b> Months of low mood and no drive deserve a conversation with a doctor in their own right, whatever the blood test says. Low testosterone is one possible cause. Short sleep, the substances, and a low mood that has quietly settled in are others — and they overlap. This plan helps with all of them; it does not replace finding out.</div></div>';
+  return h;
+},
+
+plan:function(){
+  var CHK=[['b1','Arm and neck check — sports medicine or spine doctor','First priority. Until it is done: no carries, no doorway chest stretches, nothing hanging from the hands in a hinge.'],
+   ['b2','Shoulder re-assessment — surgeon or sports physiotherapist','Before week 3. They tell you which ranges are safe to chase.'],
+   ['b3','Ankles and front of thigh — sports physiotherapist','Same visit if you can. Before any jumping.'],
+   ['b4','Blood work — morning testosterone, vitamin D, thyroid, blood count, ferritin, B12, HbA1c, lipids','This month. See Hormones & drive for how to time the draw.']];
+  var h='<div class="card"><h2>Checks to book</h2><div class="note">Four appointments that change what the plan is allowed to do. Tick each when it has happened.</div><div style="margin-top:6px">'
+   +CHK.map(function(c){ return '<label class="ck"><input type="checkbox" data-clr="'+c[0]+'"'+(clr(c[0])?' checked':'')+'><span><b>'+c[1]+'</b><small>'+c[2]+'</small></span></label>'; }).join('')+'</div></div>';
+  h+='<div class="card"><h2>Clearances <span class="pill p-w">unlock exercises</span></h2><div class="note">Some movements stay swapped for a safer stand-in until the matching check is ticked. Tick one only when a clinician has actually said so, or the symptom has genuinely settled.</div><div style="margin-top:6px">'
+   +CLR.map(function(c){ return '<label class="ck"><input type="checkbox" data-clr="'+c[0]+'"'+(clr(c[0])?' checked':'')+'><span><b>'+c[1]+'</b><small>'+c[2]+'</small></span></label>'; }).join('')+'</div></div>';
+  h+='<div class="card"><h2>The twelve weeks</h2><table style="margin-top:8px"><tbody>'
+   +'<tr><td style="width:92px;color:var(--dim)">Weeks 1–2</td><td><b>Re-entry.</b> Three full-body sessions, 45 minutes, RPE 6–7. Walk on the days between.</td></tr>'
+   +'<tr><td style="color:var(--dim)">Weeks 3–6</td><td><b>Foundation.</b> Four days, upper and lower. Calves and tibialis every session. RPE 7–8.</td></tr>'
+   +'<tr><td style="color:var(--dim)">Week 7</td><td><b>Deload + re-test.</b> Half the sets.</td></tr>'
+   +'<tr><td style="color:var(--dim)">Weeks 8–11</td><td><b>Build.</b> A fourth set on the main lifts, heavier single-leg work. RPE 7–9.</td></tr>'
+   +'<tr><td style="color:var(--dim)">Week 12</td><td><b>Deload + final re-test</b> against day 1.</td></tr></tbody></table>'
+   +'<div class="why" style="margin-top:12px"><b>Shoulder ladder.</b> Level 1 is control with the arm by the side. Level 2 adds mid-range strength. Move up only when every Level 1 drill is pain 2/10 or less and confidence is 7/10 or more for two weeks running — and drop back a level after any moment of apprehension.</div></div>';
+  return h;
+},
 
 quit:function(){ return '<div class="card"><h2>Cannabis</h2>'
  +'<div class="note">Weekends → Friday → stopped. Quit date is day 43: <b style="color:var(--wn)">'+pretty(add(S.start,42))+'</b>.</div>'
@@ -1774,6 +2453,11 @@ function wireSync(){
     rdr.readAsText(f);
   };
 }
+function wirePlan(){
+  E('morebody').querySelectorAll('[data-clr]').forEach(function(c){
+    c.onchange=function(){ if(!S.clr) S.clr={}; S.clr[c.dataset.clr]=c.checked; wr(); toast(c.checked?'Noted':'Cleared'); };
+  });
+}
 function wireSocial(){
   E('morebody').querySelectorAll('[data-l]').forEach(function(c){
     c.onchange=function(){ S.ladder[c.dataset.l]=c.checked; wr(); };
@@ -1814,6 +2498,21 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ closeModa
 E('toast').onclick=hideToast;               /* tap to dismiss immediately */
 var ft=document.querySelector('footer'); if(ft) ft.innerHTML+='<br>'+BUILD;
 paintToday(); chkBadges();
+(function(){
+  if(FRESH_INSTALL){ S.v=3; wr(); }
+  else if((S.v||2)<3){
+    var n=dayN(TODAY), sun=add(TODAY,-pd(TODAY).getDay());
+    modal('<div class="pl-step">Build 6</div><div class="pl-name">The plan has been rebuilt</div>'
+     +'<div class="pl-how">One programme now: phased training with moving illustrations, a new daily routine, a lean-gain meal plan and a rebuilt muscle readiness map. Everything you logged is still here.<br><br>You are on day '+n+' of the old count. Where should day 1 be?</div>'
+     +'<button class="btn wide" id="mg-new" style="margin-bottom:8px">Start fresh — week 1 from '+pretty(sun)+'</button>'
+     +'<button class="btn g wide" id="mg-keep">Keep my current day count</button>', function(m){
+       m.querySelector('#mg-new').onclick=function(){ S.start=sun; S.v=3; wr(); closeModal(); cur=TODAY; paintToday(); toast('Day 1 is '+pretty(sun)); };
+       m.querySelector('#mg-keep').onclick=function(){ S.v=3; wr(); closeModal(); };
+     });
+  }
+  figWatch(document);
+})();
+
 </script>
 <footer>RESET 84 · nothing here replaces a physiotherapist, a doctor or a therapist — it is a plan, not a diagnosis</footer>
 </body>
