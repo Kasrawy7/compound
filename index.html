@@ -421,11 +421,10 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
       <div class="src">Same conditions every time: morning, after the bathroom, before food. Judge the weekly average, never a single day — daily swings of 1–2 kg are water.</div>
     </div>
     <div class="card">
-      <h2>Substances</h2>
+      <h2>Nicotine</h2>
       <svg id="ch-sub" style="width:100%;height:110px;display:block;margin-top:8px"></svg>
       <div class="row" style="margin-top:8px;gap:14px;font-size:12px;color:var(--dim)">
         <span><i style="display:inline-block;width:9px;height:9px;background:var(--or);border-radius:2px"></i> IQOS sticks</span>
-        <span><i style="display:inline-block;width:9px;height:9px;background:var(--pu);border-radius:2px"></i> Weed sessions</span>
       </div>
       <div id="sub-stat" style="margin-top:10px;font-size:13px;color:var(--dim)"></div>
     </div>
@@ -892,7 +891,7 @@ function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2])
 function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
 function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
 
-var BUILD='2026-11-16 · build 7 · Fuel tab: goal-driven meal plan';   /* bump this whenever the file changes, so you can tell which version is live */
+var BUILD='2026-11-18 · build 7.1 · Fuel tab, nicotine-only quitting';   /* bump this whenever the file changes, so you can tell which version is live */
 var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], clr:{}, sore:{}, v:3 };
 var FRESH_INSTALL=!rd();
 var S=rd()||JSON.parse(JSON.stringify(DEF));
@@ -1209,12 +1208,6 @@ var DAYSESS=WEEK1; /* kept for older code paths */
 
 /* ═══════════════════ ACTIVITY DEFINITIONS ═══════════════════ */
 function iqCap(w){ if(w<8) return 20; if(w===8) return 15; if(w===9) return 10; if(w===10) return 5; return 0; }
-function weedRule(k){
-  var w=wkN(k), g=pd(k).getDay(), wknd=(g===5||g===6);
-  if(w<=4) return wknd?{cap:1,txt:'Weekend allowance — 1 session max today'}:{cap:0,txt:'Weekday — none. Phase 1 is Friday and Saturday only.'};
-  if(w<=6) return (g===5)?{cap:1,txt:'Friday only — 1 session max'}:{cap:0,txt:'Phase 2 — Friday only. Not today.'};
-  return {cap:0,txt:'Stopped. Quit date was day 43.'};
-}
 function stepTar(k){ var w=wkN(k); return w<=1?6000:w===2?7000:8000; }
 function tarOf(a,k){ return typeof a.tar==='function'? a.tar(k||cur) : a.tar; }
 
@@ -1303,9 +1296,6 @@ social:{n:'Social rep',ic:'💬',t:'anytime',xp:14,sec:'All day',kind:'social',
 iqos:{n:'IQOS',ic:'🚬',t:'all day',xp:8,sec:'All day',kind:'iqos',
   how:['Count honestly. Weeks 1–7 you are only establishing a baseline — no cutting yet.','From week 8 the cap steps down: 15, then 10, then 5, then zero on day 71.'],
   why:'Twenty sticks a day is nicotine in the same territory as twenty cigarettes. Nicotine acutely raises heart rate and blood pressure and constricts blood vessels, which works against both training recovery and vascular health.'},
-weed:{n:'Weed',ic:'🌿',t:'all day',xp:8,sec:'All day',kind:'weed',
-  how:['Log every session. The allowance for today is shown below.','Weeks 1–4: Friday and Saturday only. Weeks 5–6: Friday only. Week 7: stopped.'],
-  why:'Habits outlive the situations that created them — that is what makes them habits, and it is also why the fix is structural rather than a matter of resolve. Replace the function, not just the substance.'},
 /* saturday */
 review:{n:'Weekly review',ic:'◎',t:'15:00',xp:20,sec:'Saturday',kind:'review',days:[6],
   sub:'Six questions, fifteen minutes.',
@@ -1349,7 +1339,7 @@ var DRIVE=[
  ['Hit the protein target',function(d,k){ return intakeOf(k).p>=protHit(); }],
  ['Ten minutes of daylight',function(d){ return (d.walk&&d.walk.done)||(d.wake&&d.wake.done); }],
  ['Phone out, lights out on time',function(d){ return d.phone&&d.phone.done; }],
- ['Inside the nicotine and weed plan',function(d,k){ var q=d.iqos, w=d.weed; if(!q||q.c==null) return false; return q.c<=iqCap(wkN(k)) && ((w&&w.c)||0)<=weedRule(k).cap; }]
+ ['Inside the nicotine plan',function(d,k){ var q=d.iqos; if(!q||q.c==null) return false; return q.c<=iqCap(wkN(k)); }]
 ];
 function driveScore(k){ var d=(S.days[k]&&S.days[k].a)||{}; return DRIVE.filter(function(r){ try{ return !!r[1](d,k); }catch(e){ return false; } }).length; }
 
@@ -1713,7 +1703,7 @@ var METS=[
 
 var LEVELS=[
  [0,'Getting off the sofa'],[400,'Showing up'],[900,'Two weeks in'],[1600,'It has a rhythm'],
- [2500,'Stronger than day one'],[3600,'The habit is yours'],[5000,'Clean and consistent'],[6600,'Unrecognisable'],[8500,'Finished what you started']
+ [2500,'Stronger than day one'],[3600,'The habit is yours'],[5000,'Locked in'],[6600,'Unrecognisable'],[8500,'Finished what you started']
 ];
 var BADGES=[
  {id:'d1',e:'🚩',n:'Day One',d:'Logged your first day'},
@@ -1725,8 +1715,6 @@ var BADGES=[
  {id:'bk300',e:'📚',n:'Reader',d:'300 minutes of paper reading'},
  {id:'so10',e:'💬',n:'Cold Open',d:'10 social reps'},
  {id:'so30',e:'🎤',n:'Comfortable',d:'30 social reps'},
- {id:'cl7',e:'🌱',n:'One Week Clean',d:'7 days, no weed'},
- {id:'cl28',e:'🧠',n:'Twenty-Eight',d:'28 days clean — the CB1 recovery mark'},
  {id:'nic1',e:'🚭',n:'Under the Cap',d:'7 days inside the IQOS cap'},
  {id:'st20',e:'👣',n:'Walker',d:'8,000+ steps on 20 days'},
  {id:'half',e:'⛰',n:'Halfway',d:'Reached day 42'},
@@ -1765,9 +1753,9 @@ function boom(){
 
 /* ── top chips ── */
 function paintTop(){
-  var n=dayN(TODAY), L=lvl(), st=streak(), cl=cleanDays();
+  var n=dayN(TODAY), L=lvl(), st=streak();
   var cap=iqCap(wkN(TODAY));
-  var qd=add(S.start,42), toQ=diff(qd,TODAY);
+  var toQ=diff(add(S.start,70),TODAY);
   var h='';
   h+='<div class="chip">Day <b>'+(n<1?'—':(n>84?'84+':n))+'</b>/84</div>';
   h+='<div class="chip">Week <b>'+wkN(TODAY)+'</b></div>';
@@ -1775,8 +1763,7 @@ function paintTop(){
   var dv=driveScore(TODAY);
   h+='<div class="chip'+(dv>=5?' gd':'')+'">⚡ Drive <b>'+dv+'</b>/7</div>';
   h+='<div class="chip">Lv <b>'+(L.i+1)+'</b> · '+S.xp+' XP</div>';
-  h+='<div class="chip'+(cl>=7?' gd':'')+'">🌿 <b>'+cl+'</b>d clean</div>';
-  if(toQ>0) h+='<div class="chip hot">Quit date in <b>'+toQ+'</b>d</div>';
+  if(toQ>0 && toQ<=28) h+='<div class="chip hot">IQOS quit in <b>'+toQ+'</b>d</div>';
   h+='<div class="chip">IQOS cap <b>'+(cap||'0')+'</b></div>';
   E('tmeta').innerHTML=h;
 }
@@ -1787,12 +1774,6 @@ function streak(){
   for(var i=0;i<400;i++){ if(ok(k)){ n++; k=add(k,-1); } else break; }
   return n;
 }
-function cleanDays(){
-  var last=null;
-  Object.keys(S.days).sort().forEach(function(d){ var a=S.days[d].a.weed; if(a&&a.c>0) last=d; });
-  return last? Math.max(0,diff(TODAY,last)) : Math.max(0,diff(TODAY,S.start));
-}
-
 /* ── nav ── */
 document.querySelectorAll('nav.bot button').forEach(function(b){
   b.onclick=function(){ go(b.dataset.v); };
@@ -1868,7 +1849,6 @@ function badgeFor(id,st){
   var a=ACTS[id];
   if(a.opt) return '<span class="pill p-p">optional</span>';
   if(id==='train'){ var sg=sessGet(cur); return sg? (sg.lift? '<span class="pill p-o">'+sg.ph.rpe+'</span>':'<span class="pill p-a">easy</span>') : ''; }
-  if(id==='weed'){ var r=weedRule(cur); return r.cap? '<span class="pill p-w">allowance '+r.cap+'</span>':'<span class="pill p-g">none today</span>'; }
   if(id==='iqos'){ var c=iqCap(wkN(cur)); return '<span class="pill '+(c?'p-o':'p-g')+'">cap '+c+'</span>'; }
   return '';
 }
@@ -1883,7 +1863,6 @@ function subFor(id,st){
     case 'meal': var PM=plan().meals[a.meal]; return st.o!=null? 'Option '+(st.o+1)+' — '+PM.m.opts[st.o].n+' · '+r0((st.m||PM.o[st.o].tot)[0])+' kcal' : 'Three options, ≈ '+r0(PM.t[0])+' kcal each — pick one';
     case 'fuel': var I=intakeOf(cur), FT=fuelTargets(); return I.k||I.p? (I.k.toLocaleString('en-US')+' / '+FT.kcal.toLocaleString('en-US')+' kcal · '+I.p+' / '+FT.p+' g protein') : ('Target '+FT.kcal.toLocaleString('en-US')+' kcal · '+FT.p+' g protein');
     case 'iqos': return (st.c||0)+' sticks today';
-    case 'weed': return weedRule(cur).txt + (st.c? ' · logged '+st.c:'');
     case 'train': var sg=sessGet(cur); return sg? sg.n.replace(/&amp;/g,'&') : 'Rest';
     case 'flow': return st.done? 'Done — '+FLOW.length+' drills':FLOW.length+' drills, guided and illustrated';
     case 'social': return st.t? esc(st.t).slice(0,60) : 'Week '+wkN(cur)+' rung';
@@ -1909,7 +1888,7 @@ function bodyFor(id){
   if(a.kind==='read'){
     h+='<h5>Log</h5><div class="row"><input id="bk" placeholder="Book title" value="'+esc(st.bk||'')+'" style="flex:1;min-width:140px"><input type="number" id="nv" value="'+(st.v!=null?st.v:'')+'" placeholder="min" style="max-width:80px"></div>';
     h+='<div class="row" style="margin-top:9px"><button class="btn" id="rtimer">▶ Start 20-minute timer</button></div>';
-    h+='<div class="why"><b>This month:</b> paper — <em>Atomic Habits</em>. Commute — <em>Dopamine Nation</em>. Lembke explains precisely why the weed and the scrolling feel identical, and why the first fortnight without them feels flat. Read it <em>while</em> quitting, not after.</div>';
+    h+='<div class="why"><b>This month:</b> paper — <em>Atomic Habits</em>. Commute — <em>Dopamine Nation</em>. Lembke explains why scrolling and other quick hits flatten everything else, and why the first fortnight without them feels dull. Read it <em>while</em> quitting, not after.</div>';
   }
   if(a.kind==='meal'){
     var PM=plan().meals[a.meal], show=(st.o!=null?st.o:0);
@@ -1932,12 +1911,6 @@ function bodyFor(id){
     h+='<h5>Count</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">'+(cap? 'cap '+cap+' today':'quit — cap 0')+'</div></div>';
     if(cap&&(st.c||0)>cap) h+='<div class="safe" style="margin-top:10px"><b>Over today\'s cap.</b> Not a disaster. Log it, look at what triggered it, and put a plan against that trigger tomorrow.</div>';
     h+='<div class="why"><b>Step-down:</b> weeks 1–7 no change, just count. Week 8 → 15. Week 9 → 10. Week 10 → 5. Day 71 → zero. See a pharmacist in week 8 — a patch plus a fast-acting form beats either alone, and both beat willpower by roughly 50–60%.</div>';
-  }
-  if(a.kind==='weed'){
-    var r=weedRule(cur);
-    h+='<h5>Count</h5><div class="count"><button class="cbtn" data-c="-">−</button><div class="cval" id="cv">'+(st.c||0)+'</div><button class="cbtn" data-c="+">+</button><div class="ctar">'+r.txt+'</div></div>';
-    h+='<div class="why"><b>Days clean:</b> '+cleanDays()+'. Quit date is day 43 — '+pretty(add(S.start,42))+'. After your last session: onset 24–72 h, peak days 2–6, most acute symptoms gone by ~3 weeks, CB1 receptors back to normal around day 28, and sleep is the last to settle — up to 30–45 days. That is the timeline, not a failure.</div>';
-    if((st.c||0)>r.cap && (st.c||0)>0) h+='<div class="safe" style="margin-top:10px"><b>Over the allowance.</b> Log it anyway — that is the whole point. Then ask what the 20:00–22:00 slot had in it, because an empty evening is the actual cause.</div>';
   }
   if(a.kind==='social'){
     var R=rung(cur);
@@ -2160,12 +2133,12 @@ function paintProg(){
   progBody();
 }
 var PHASE=[
- {w:[1,2],b:'Phase 0 — re-entry. Three full-body sessions at RPE 6–7, a brisk walk on the days between, the morning flow daily, baseline tests. Book the arm-and-neck check, the shoulder re-assessment and the blood work.',s:'Weed: Fri/Sat only. IQOS unchanged — deliberately.',so:'One 20-second exchange a day.',m:'Atomic Habits on paper, Dopamine Nation on the commute. 90-minute deep block daily.'},
- {w:[3,4],b:'Phase 1 — foundation. Four days: two lower, two upper, calves or tibialis in every one. First re-test on day 28.',s:'Weed: Fri/Sat only, logged every time.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
- {w:[5,6],b:'Phase 1 continues. Add one rep, or the smallest load step, to one set of each main lift a week. Shoulders progress by reps and control, never by load.',s:'Weed: Friday only.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
- {w:[7,8],b:'Week 7 is a deload and re-test: half the sets, same loads. Week 8 opens Phase 2 — a fourth set on the main lifts, Bulgarian split squats, and whatever the clearances have unlocked.',s:'Week 7: weed quit date. Week 8: IQOS cap 15.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
- {w:[9,10],b:'Phase 2 — the heaviest block. Day 56 re-test. Hops and jumps only if the ankle has been green for two weeks.',s:'IQOS 10 then 5. Weed held.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
- {w:[11,12],b:'Week 11 finishes the build. Week 12 is a deload and the day 84 re-test against baseline.',s:'IQOS quit day 71. Both held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
+ {w:[1,2],b:'Phase 0 — re-entry. Three full-body sessions at RPE 6–7, a brisk walk on the days between, the morning flow daily, baseline tests. Book the arm-and-neck check, the shoulder re-assessment and the blood work.',s:'IQOS unchanged — count honestly and build the baseline.',so:'One 20-second exchange a day.',m:'Atomic Habits on paper, Dopamine Nation on the commute. 90-minute deep block daily.'},
+ {w:[3,4],b:'Phase 1 — foundation. Four days: two lower, two upper, calves or tibialis in every one. First re-test on day 28.',s:'IQOS unchanged — keep counting.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
+ {w:[5,6],b:'Phase 1 continues. Add one rep, or the smallest load step, to one set of each main lift a week. Shoulders progress by reps and control, never by load.',s:'IQOS unchanged. Pick the week-8 pharmacist appointment.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
+ {w:[7,8],b:'Week 7 is a deload and re-test: half the sets, same loads. Week 8 opens Phase 2 — a fourth set on the main lifts, Bulgarian split squats, and whatever the clearances have unlocked.',s:'Week 8: IQOS cap 15. See the pharmacist.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
+ {w:[9,10],b:'Phase 2 — the heaviest block. Day 56 re-test. Hops and jumps only if the ankle has been green for two weeks.',s:'IQOS 10 then 5.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
+ {w:[11,12],b:'Week 11 finishes the build. Week 12 is a deload and the day 84 re-test against baseline.',s:'IQOS quit day 71. Held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
 ];
 function progBody(){
   var ph=PHASE.find(function(p){ return progWk>=p.w[0]&&progWk<=p.w[1]; });
@@ -2267,15 +2240,14 @@ function paintProgress(){
   }).join('');
 
   lineChart('ch-wt',[{data:S.wt,c:'#4da3ff',lab:'kg'},{data:S.wa,c:'#fb923c',lab:'cm'}]);
-  var iq={},wd={};
+  var iq={};
   Object.keys(S.days).forEach(function(k){
     var a=S.days[k].a;
     if(a.iqos&&a.iqos.c!=null) iq[k]=a.iqos.c;
-    if(a.weed&&a.weed.c!=null) wd[k]=a.weed.c;
   });
-  lineChart('ch-sub',[{data:iq,c:'#fb923c'},{data:wd,c:'#a78bfa'}]);
+  lineChart('ch-sub',[{data:iq,c:'#fb923c'}]);
   var iqk=Object.keys(iq).sort(), avg=iqk.length? (iqk.reduce(function(s,k){ return s+iq[k]; },0)/iqk.length).toFixed(1):'—';
-  E('sub-stat').innerHTML='Days clean of weed: <b style="color:var(--gd)">'+cleanDays()+'</b> · average IQOS/day logged: <b style="color:var(--tx)">'+avg+'</b> · today\'s cap: <b style="color:var(--tx)">'+iqCap(wkN(TODAY))+'</b>';
+  E('sub-stat').innerHTML='Average IQOS/day logged: <b style="color:var(--tx)">'+avg+'</b> · today\'s cap: <b style="color:var(--tx)">'+iqCap(wkN(TODAY))+'</b>';
 
   var vol={};
   Object.keys(S.days).forEach(function(k){
@@ -2360,7 +2332,6 @@ function chkBadges(){
   if(rm>=300) give('bk300');
   var so=ks.filter(function(k){ return S.days[k].a.social&&S.days[k].a.social.done; }).length;
   if(so>=10) give('so10'); if(so>=30) give('so30');
-  var cl=cleanDays(); if(cl>=7) give('cl7'); if(cl>=28) give('cl28');
   var nic=ks.filter(function(k){ var a=S.days[k].a.iqos; return a&&a.c!=null&&a.c<=iqCap(wkN(k)); }).length;
   if(nic>=7) give('nic1');
   var st=ks.filter(function(k){ var a=S.days[k].a.steps; return a&&a.v>=8000; }).length;
@@ -2557,7 +2528,7 @@ function paintBody(){
 
 /* ═══════════════════ MORE ═══════════════════ */
 var moreTab='why';
-var MORETABS=[['why','How this works'],['plan','Plan & checks'],['hormone','Hormones & drive'],['review','Weekly review'],['food','Food & numbers'],['quit','Quitting'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
+var MORETABS=[['why','How this works'],['plan','Plan & checks'],['hormone','Hormones & drive'],['review','Weekly review'],['food','Food & numbers'],['quit','Nicotine'],['social','Speaking'],['read','Reading & work'],['sync','Sync devices'],['data','Data']];
 function paintMore(){
   E('mtabs').innerHTML=MORETABS.map(function(t){ return '<button data-t="'+t[0]+'" class="'+(t[0]===moreTab?'on':'')+'">'+t[1]+'</button>'; }).join('');
   E('mtabs').querySelectorAll('button').forEach(function(b){ b.onclick=function(){ moreTab=b.dataset.t; paintMore(); }; });
@@ -2638,7 +2609,7 @@ hormone:function(){
    +'<li><b>Eating enough, with enough fat.</b> Long calorie deficits lower it, and so do very low-fat diets. This plan runs a small surplus with close to 30% of calories from fat.</li>'
    +'<li><b>Lifting — especially legs.</b> The spike after a session lasts under an hour and is not what does the work. The real effect is slower: months of training build muscle, improve sleep and change how you feel in your body.</li>'
    +'<li><b>Fixing a real deficiency.</b> Zinc, vitamin D and magnesium matter when you are short of them. Topping up a normal level does nothing, which is why the blood test comes before the pills.</li>'
-   +'<li><b>Nicotine, weed and alcohol.</b> The research on each one\'s direct effect is mixed. What is not mixed is what they do to sleep and to training quality — which is where numbers one and three come from.</li>'
+   +'<li><b>Nicotine and alcohol.</b> The research on each one\'s direct effect is mixed. What is not mixed is what they do to sleep and to training quality — which is where numbers one and three come from.</li>'
    +'<li><b>Daylight, movement, people.</b> Less a hormone lever than a mood and energy one. They act on the feeling directly, which is the thing you actually want changed.</li>'
    +'</ol>'
    +'<div class="src">Sleep: Leproult &amp; Van Cauter, JAMA 2011. Dietary fat: Whittaker &amp; Wu, J Steroid Biochem Mol Biol 2021 — six controlled trials, 206 men. Exercise: Riachy et al., J Funct Morphol Kinesiol 2020.</div></div>';
@@ -2648,7 +2619,7 @@ hormone:function(){
    +'<li style="margin-bottom:6px">If it comes back low, a doctor will repeat it on another morning and add <b style="color:var(--tx)">LH, FSH, SHBG and prolactin</b> to find out why.</li>'
    +'<li style="margin-bottom:6px">In the same draw: <b style="color:var(--tx)">vitamin D, TSH, full blood count, ferritin, B12, HbA1c, lipids</b>. Low vitamin D, an underactive thyroid and low iron all produce the same tiredness.</li>'
    +'<li>A normal result is useful too. It means the flatness has another cause, and it stops you spending money on boosters.</li></ul>'
-   +'<div class="safe" style="margin-top:14px"><b>Worth saying plainly.</b> Months of low mood and no drive deserve a conversation with a doctor in their own right, whatever the blood test says. Low testosterone is one possible cause. Short sleep, the substances, and a low mood that has quietly settled in are others — and they overlap. This plan helps with all of them; it does not replace finding out.</div></div>';
+   +'<div class="safe" style="margin-top:14px"><b>Worth saying plainly.</b> Months of low mood and no drive deserve a conversation with a doctor in their own right, whatever the blood test says. Low testosterone is one possible cause. Short sleep, nicotine, and a low mood that has quietly settled in are others — and they overlap. This plan helps with all of them; it does not replace finding out.</div></div>';
   return h;
 },
 
@@ -2671,29 +2642,7 @@ plan:function(){
   return h;
 },
 
-quit:function(){ return '<div class="card"><h2>Cannabis</h2>'
- +'<div class="note">Weekends → Friday → stopped. Quit date is day 43: <b style="color:var(--wn)">'+pretty(add(S.start,42))+'</b>.</div>'
- +'<table style="margin-top:11px"><thead><tr><th>Phase</th><th>Rule</th></tr></thead><tbody>'
- +'<tr><td>Weeks 1–4</td><td>Friday and Saturday only, one session maximum. Log every use.</td></tr>'
- +'<tr><td>Weeks 5–6</td><td>Friday only.</td></tr>'
- +'<tr><td>Week 7 →</td><td><b>Stopped.</b> Nothing in the house. Two friends know the date.</td></tr>'
- +'</tbody></table>'
- +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">After your last session</h5>'
- +'<table><tbody>'
- +'<tr><td class="n">24–72 h</td><td>Onset: irritability, anxiety, restlessness, appetite drop, poor sleep.</td></tr>'
- +'<tr><td class="n">Days 2–6</td><td>Peak. Protect this week — nothing new gets added, and drop a session if you need to.</td></tr>'
- +'<tr><td class="n">~3 weeks</td><td>Most acute symptoms resolved.</td></tr>'
- +'<tr><td class="n">~28 days</td><td>CB1 receptor availability measured back in line with people who never used regularly.</td></tr>'
- +'<tr><td class="n">30–45 days</td><td>Sleep disruption and vivid dreams are last to go. Nobody warns people about this, which is why they relapse in week four thinking it should be over.</td></tr>'
- +'</tbody></table>'
- +'<h5 style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--dim2);margin:16px 0 8px">The five things that decide it</h5>'
- +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
- +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Fill the 20:00–22:00 slot.</b> Weed and doomscrolling do the same job — numbing after ten hours of work and two of traffic. Remove the substance without replacing the function and you are back inside a month.</li>'
- +'<li style="margin-bottom:7px"><b style="color:var(--tx)">No supply in the house from the quit date.</b> Not hidden, not for guests. Gone.</li>'
- +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Two friends get told the date.</b> Quitting silently, with nobody expecting anything of you, is the version that fails most often.</li>'
- +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Write the if-then in advance.</b> "If I want to smoke on a Thursday, then I put my shoes on and walk ten minutes first." Decided beforehand, not in the moment.</li>'
- +'<li><b style="color:var(--tx)">Know what the taper is for.</b> In the smoking literature abrupt quitting beats gradual reduction for long-term abstinence — roughly 16% versus 12%. The step-down here stops week one blowing up everything else you are starting. The hard stop still has to happen on the date, or it becomes a permanent taper.</li>'
- +'</ul></div>'
+quit:function(){ return ''
  +'<div class="card"><h2>IQOS <span class="pill p-o">~20/day</span></h2>'
  +'<div class="safe"><b>A pack a day is heavy dependence, not a casual habit.</b> Twenty HeatSticks is nicotine in the same territory as twenty cigarettes. Two straight consequences: this is the item most likely to need pharmacological help rather than resolve — Cochrane reviews put nicotine replacement at roughly 50–60% better quit rates than nothing, and a patch plus a fast-acting form beats either alone — and at this dose it measurably works against training recovery and against vascular function. If you reach for it within thirty minutes of waking, that is the standard marker of high dependence; tell the pharmacist, because it changes the patch strength.</div>'
  +'<table style="margin-top:13px"><thead><tr><th>Week</th><th>Cap</th><th>Note</th></tr></thead><tbody>'
@@ -2704,6 +2653,12 @@ quit:function(){ return '<div class="card"><h2>Cannabis</h2>'
  +'<tr><td>11 (day 71)</td><td class="n">0</td><td><b>Quit date.</b> Device leaves the house.</td></tr>'
  +'<tr><td>12</td><td class="n">0</td><td>Held.</td></tr>'
  +'</tbody></table>'
+ +'<h5 class="h5">The things that decide it</h5><ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Map the automatic ones first.</b> In weeks 1–7 just count — and notice which sticks happen without a decision: car, coffee, after food. Those go first in week 8.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">See a pharmacist in week 8.</b> At this dose a patch plus a fast-acting form roughly doubles the odds. Say how soon after waking the first one happens — it sets the patch strength.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Write the if-then in advance.</b> "If I want one in the car, then the gum goes in first." Decided beforehand, not in the moment.</li>'
+ +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Tell two people the date.</b> Quitting silently is the version that fails most often.</li>'
+ +'<li><b style="color:var(--tx)">On day 71 the device leaves the house.</b> Not hidden, not in a drawer. Gone.</li></ul>'
  +'<div class="src">CDC, Heated Tobacco Products · Public Health Law Center FAQ on the IQOS modified-risk authorisation — the FDA permits only a reduced-<em>exposure</em> claim for complete switchers, not reduced risk, and heated tobacco has not been shown to help people quit.</div></div>'; },
 
 social:function(){
@@ -2740,7 +2695,7 @@ read:function(){ return '<div class="card"><h2>Your commute is ten hours a week<
  +'<tr><td><b>2</b></td><td><em>Storyworthy</em> — Dicks</td><td><em>Supercommunicators</em> — Duhigg</td></tr>'
  +'<tr><td><b>3</b></td><td><em>Deep Work</em> — Newport</td><td><em>The Psychology of Money</em> — Housel</td></tr>'
  +'</tbody></table>'
- +'<div class="why" style="margin-top:12px"><b>Order matters.</b> Lembke explains precisely why the weed and the scrolling feel identical and why the first fortnight without them feels flat. Read it while quitting, not afterwards. Dicks and Duhigg land exactly when you are on rungs 5–8 of the social ladder.</div></div>'
+ +'<div class="why" style="margin-top:12px"><b>Order matters.</b> Lembke explains why scrolling and other quick hits flatten everything else, and why the first fortnight without them feels dull. Read it while cutting the IQOS, not afterwards. Dicks and Duhigg land exactly when you are on rungs 5–8 of the social ladder.</div></div>'
  +'<div class="card"><h2>The "always behind" problem</h2>'
  +'<div class="note">In early-stage, self-directed work there is no external definition of "caught up" to reach. Feeling behind is structurally guaranteed unless you build the structure yourself.</div>'
  +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim);margin-top:11px">'
@@ -2750,10 +2705,9 @@ read:function(){ return '<div class="card"><h2>Your commute is ten hours a week<
  +'<li><b style="color:var(--tx)">Friday, 30 minutes:</b> what shipped, what is stuck, what I learned, what I need from someone else. The last one is the one everyone skips and the one that unblocks things.</li></ul>'
  +'<div class="why" style="margin-top:12px"><b>Note the connection:</b> not delivering at your level and not speaking up around people you do not know well are usually one problem in two hats. Value that is not visible does not count, and visibility runs through speaking up. That is what rungs 9–10 of the ladder are for.</div></div>'
  +'<div class="card"><h2>Your memory</h2>'
- +'<div class="note">Four likely contributors. Three are already being addressed.</div>'
+ +'<div class="note">Three likely contributors. Two are already being addressed.</div>'
  +'<table style="margin-top:11px"><tbody>'
- +'<tr><td style="width:110px"><b>Cannabis</b></td><td>Acute effects on working memory and attention are well documented, and verbal learning tends to improve over sustained abstinence. Expect noticeable change in the month after your quit date.</td></tr>'
- +'<tr><td><b>Sleep debt</b></td><td>Consolidation happens during sleep. The schedule puts you at 8 h 30 m. Probably your largest single factor and the fastest to move.</td></tr>'
+ +'<tr><td style="width:110px"><b>Sleep debt</b></td><td>Consolidation happens during sleep. The schedule puts you at 8 h 30 m. Probably your largest single factor and the fastest to move.</td></tr>'
  +'<tr><td><b>Nicotine</b></td><td>Week 8 onward.</td></tr>'
  +'<tr><td><b>No system</b></td><td>The fixable-today one, and not a brain problem. <b>One</b> capture inbox — one notes app, not five. Calendar reminders for anything time-bound. A five-minute shutdown each evening where tomorrow\'s three items get written down. Holding it in your head is the actual failure, and better recall would not rescue that strategy.</td></tr>'
  +'</tbody></table></div>'; },
@@ -2782,12 +2736,10 @@ data:function(){ return '<div class="card"><h2>Your data</h2>'
  +'<div class="info" style="margin-top:13px"><b>Export every Saturday</b>, right after the review. Three seconds, and there is no undo on lost storage.</div>'
  +(canStore?'':'<div class="safe" style="margin-top:11px"><b>This browser is blocking local storage.</b> Data will only last until you close the page. Export before you leave.</div>')
  +'<div id="d-st" style="margin-top:11px;color:var(--dim);font-size:12.5px"></div></div>'
- +'<div class="card"><h2>Start date</h2><div class="note">Day 1. Phases, quit dates and review weeks all count from here.</div>'
+ +'<div class="card"><h2>Start date</h2><div class="note">Day 1. Phases, the IQOS step-down and review weeks all count from here.</div>'
  +'<div class="row" style="margin-top:11px"><input type="date" id="d-start" value="'+S.start+'" style="max-width:180px"><button class="btn sm" id="d-save">Save</button></div>'
  +'<div style="margin-top:13px;font-size:13px;color:var(--dim);line-height:1.8">'
  +'<b style="color:var(--tx)">Day 1:</b> '+pretty(S.start)+'<br>'
- +'<b style="color:var(--tx)">Weed → Friday only:</b> '+pretty(add(S.start,28))+'<br>'
- +'<b style="color:var(--tx)">Weed quit date:</b> '+pretty(add(S.start,42))+'<br>'
  +'<b style="color:var(--tx)">IQOS step-down begins:</b> '+pretty(add(S.start,49))+'<br>'
  +'<b style="color:var(--tx)">IQOS quit date:</b> '+pretty(add(S.start,70))+'<br>'
  +'<b style="color:var(--tx)">Day 84:</b> '+pretty(add(S.start,83))+'</div></div>'
@@ -2891,6 +2843,8 @@ E('toast').onclick=hideToast;               /* tap to dismiss immediately */
 var ft=document.querySelector('footer'); if(ft) ft.innerHTML+='<br>'+BUILD;
 paintToday(); chkBadges();
 (function(){
+  Object.keys(S.days).forEach(function(k){ if(S.days[k].a&&S.days[k].a.weed) delete S.days[k].a.weed; });
+  S.badges=(S.badges||[]).filter(function(b){ return b!=='cl7'&&b!=='cl28'; }); wr();
   if(FRESH_INSTALL){ S.v=3; wr(); }
   else if((S.v||2)<3){
     var n=dayN(TODAY), sun=add(TODAY,-pd(TODAY).getDay());
