@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#0b0e13">
+<meta name="theme-color" content="#0A0B0D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Reset 84">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230b0e13'/%3E%3Ccircle cx='90' cy='90' r='58' fill='none' stroke='%23222b3b' stroke-width='13'/%3E%3Cpath d='M90 32a58 58 0 0 1 41 99' fill='none' stroke='%234da3ff' stroke-width='13' stroke-linecap='round'/%3E%3Ctext x='90' y='104' font-family='-apple-system,Helvetica,sans-serif' font-size='44' font-weight='800' fill='%23e9eef6' text-anchor='middle'%3E84%3C/text%3E%3C/svg%3E">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e13'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-size='26' font-weight='800' fill='%234da3ff' text-anchor='middle'%3E84%3C/text%3E%3C/svg%3E">
+<meta name="apple-mobile-web-app-title" content="Compound">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0B0D'/%3E%3Cpath d='M47 20a20 20 0 1 0 0 24' fill='none' stroke='%23D4FF3A' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <meta name="referrer" content="no-referrer">
-<title>Reset 84</title>
+<title>Compound</title>
 <style>
 :root{
   --bg:#0b0e13; --card:#141922; --card2:#1b2230; --card3:#222b3b; --line:#28334a;
@@ -327,12 +328,133 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 .mopt .tbl{padding-bottom:4px}.mopt .src{margin:2px 0 10px}
 .lnk{color:var(--ac);font-weight:700;font-size:12px;margin-left:6px}
 .chips{display:flex;gap:6px;flex-wrap:wrap}button.chip{cursor:pointer}
+/* ═══════════ build 8 — ATLAS-style theme ═══════════ */
+:root{--bg:#0A0B0D;--card:#131519;--card2:#1A1D22;--card3:#252930;--line:#23262c;--tx:#F5F6F7;--dim:#9CA1AA;--dim2:#666B74;--ac:#D4FF3A;--gd:#3DDC97;--wn:#FFC24B;--bd:#FF5F5F;--or:#FF8A3D;--pu:#B69CFF;--pr:#5AA9FF;--r:20px}
+html,body{background:var(--bg)}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,system-ui,sans-serif;font-feature-settings:"tnum" 1}
+.wrap{max-width:560px;padding:0 16px 110px}
+.top{background:rgba(10,11,13,.86);border-bottom:0}
+.topin{max-width:560px;padding:12px 16px}
+.logo{font-size:15px;font-weight:900;letter-spacing:.6px}.logo b{color:var(--ac)}
+.tmeta{display:flex;align-items:center;justify-content:flex-end;gap:10px;overflow:visible}
+.tchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.tchips::-webkit-scrollbar{display:none}
+.tc{font-size:11.5px;font-weight:700;color:var(--dim);background:var(--card2);border-radius:999px;padding:5px 10px;white-space:nowrap}.tc.on{color:var(--ac)}.tc.hot{color:var(--wn)}
+.av{width:34px;height:34px;flex:none;border-radius:50%;background:var(--ac);color:#0A0B0D;font-weight:900;font-size:12.5px;letter-spacing:.3px;display:grid;place-items:center}
+.card{background:linear-gradient(180deg,#15171b,#111316);border:1px solid rgba(255,255,255,.055);border-radius:var(--r);padding:18px}
+.card h2{font-size:17px;font-weight:800;letter-spacing:-.2px}
+.note{color:var(--dim)}
+.eyb{font-size:10.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim2)}
+.btn{background:var(--ac);color:#0A0B0D;border-radius:999px;font-weight:800;padding:11px 18px}
+.btn.g{background:var(--card2);color:var(--tx);border:1px solid var(--line)}
+.btn.sm{padding:7px 13px;border-radius:999px}
+.btn.wide{display:block;width:100%}
+.lnk{color:var(--ac);font-weight:700;font-size:12.5px;background:none}
+.dimtx{color:var(--dim);font-size:12.5px}
+.info{background:var(--card2);border:1px solid var(--line);color:var(--dim)}.info b{color:var(--tx)}
+.why{background:var(--card2);border-left:3px solid var(--ac)}.why b{color:var(--tx)}
+.pill{border-radius:999px;letter-spacing:.6px}
+.p-a{background:rgba(90,169,255,.14)!important;color:#8cc4ff!important}
+.bar{background:#24272d}.bar>i{background:var(--ac)}
+/* nav */
+nav.bot{background:rgba(12,13,16,.9);border-top:1px solid rgba(255,255,255,.05);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+nav.bot .in{max-width:560px}
+nav.bot button{color:var(--dim2);font-size:10.5px;font-weight:700;gap:4px;padding:6px 2px;border-radius:14px}
+nav.bot button svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+nav.bot button.on{color:var(--ac);background:transparent}
+/* home */
+.hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 2px 12px}
+.hello{font-size:27px;font-weight:900;letter-spacing:-.9px;line-height:1.05}
+.hsub{color:var(--dim);font-size:13.5px;margin-top:5px}
+.hring{background:none;padding:0}
+.aring{position:relative;flex:none}.aring svg{display:block}.aring-in{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center}
+.aring-in b{font-size:17px;font-weight:900;letter-spacing:-.5px;line-height:1}.aring-in small{font-size:9.5px;color:var(--dim);font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+.phase{background:var(--card2);border-radius:16px;padding:12px 14px;margin-bottom:12px}.phase>div:first-child{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.phase small{font-size:10.5px;font-weight:800;letter-spacing:1.2px;color:var(--dim)}.phase b{font-size:15px;font-weight:900}.phase b i{font-style:normal;color:var(--dim2);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid rgba(255,255,255,.055);border-radius:16px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:3px}
+.stat small{font-size:11px;color:var(--dim);font-weight:600}.stat b{font-size:19px;font-weight:900;letter-spacing:-.5px;white-space:nowrap}.stat b i{font-style:normal;font-size:11px;color:var(--dim2);font-weight:700;letter-spacing:0}
+.stat .bar{margin-top:6px}
+.ci .ci-q{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;font-size:13.5px;font-weight:600}
+.ci .ci-q.col{display:block}.ci .ci-q.col>span{display:block;margin-bottom:7px}
+.ci .stp{width:140px}
+.ci5{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.ci5 button{height:40px;border-radius:12px;background:var(--card2);border:1px solid var(--line);font-weight:800;color:var(--dim)}
+.ci5 button.on{background:var(--ac);color:#0A0B0D;border-color:var(--ac)}
+.dl{display:flex;justify-content:space-between;margin-top:4px}.dl small{font-size:10.5px;color:var(--dim2)}
+.ci-row{display:flex;align-items:center;gap:14px}.ci-t{flex:1;display:flex;flex-direction:column;gap:2px}.ci-t small{font-size:10.5px;font-weight:800;letter-spacing:1.3px;color:var(--dim2)}.ci-t b{font-size:18px;font-weight:900}.ci-t span{font-size:12px;color:var(--dim)}
+.card.ci.done{padding:14px 16px}
+.wk{position:relative;overflow:hidden;border:1px solid rgba(212,255,58,.22);background:radial-gradient(120% 90% at 100% 0%,rgba(212,255,58,.10),transparent 55%),linear-gradient(180deg,#16181c,#111316)}
+.wk h3{font-size:22px;font-weight:900;letter-spacing:-.6px;margin-top:4px;text-transform:uppercase}
+.wk-h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.wk-m{color:var(--dim);font-size:12.5px;margin-top:4px}
+.wk-r{text-align:right}.wk-r b{display:block;font-size:24px;font-weight:900;letter-spacing:-.6px}.wk-r small{font-size:10.5px;color:var(--dim)}
+.wk-l{margin:12px 0 12px;display:grid;gap:4px}
+.wk-e{display:grid;grid-template-columns:40px 1fr auto 30px;gap:9px;align-items:center;padding:5px 6px;border-radius:12px;background:rgba(255,255,255,.025)}
+.wk-f{width:40px;height:30px;border-radius:8px;background:#0c0d10;overflow:hidden;display:grid;place-items:center}.wk-f .fig{width:40px;height:30px}
+.wk-n{font-size:13.5px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wk-s{font-size:12px;color:var(--dim);font-weight:700;white-space:nowrap}
+.wk-c{text-align:center;font-weight:900;color:var(--dim2);font-size:12px}.wk-e.ok .wk-c{color:var(--ac);font-size:15px}.wk-e.ok .wk-n{color:var(--dim)}
+.wk-more{font-size:12px;color:var(--dim2);padding:4px 8px}
+.wk-done{text-align:center;padding:11px;border-radius:999px;background:rgba(61,220,151,.12);color:var(--gd);font-weight:800}
+.wk.rest{border-color:rgba(255,255,255,.06);background:linear-gradient(180deg,#15171b,#111316)}
+.cardh{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.meal-r{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;width:100%;text-align:left;padding:10px 2px;border-bottom:1px solid var(--line);background:none}.meal-r:last-child{border-bottom:0}
+.meal-r .mt{font-size:11.5px;color:var(--dim2);font-weight:700}.meal-r .mn b{display:block;font-size:14px;font-weight:700}.meal-r .mn small{font-size:12px;color:var(--dim2)}
+.meal-r .mk{font-size:13px;font-weight:800;color:var(--dim2);white-space:nowrap}.meal-r.ok .mk{color:var(--tx)}.meal-r.ok .mn small{color:var(--dim)}
+.coach-c{display:flex;gap:10px;align-items:flex-start;margin:4px 0 14px}
+.cav{width:36px;height:36px;flex:none;border-radius:50%;background:var(--ac);color:#0A0B0D;font-weight:900;font-size:13px;display:grid;place-items:center}
+.cb{background:var(--card2);border-radius:4px 18px 18px 18px;padding:11px 14px;flex:1}.cb small{display:block;font-size:10.5px;font-weight:800;letter-spacing:1.2px;color:var(--dim2);text-transform:uppercase;margin-bottom:4px}
+.cb p{font-size:14px;line-height:1.45;margin:0}.cb p+p{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.score{display:block;width:100%;text-align:left}.sc-l{display:flex;align-items:center;gap:14px}.sc-w{font-size:20px;font-weight:900;letter-spacing:-.4px;margin-top:3px}
+.sc-b{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:14px}
+.sbar>div:first-child{display:flex;justify-content:space-between;font-size:12px;color:var(--dim)}.sbar b{color:var(--tx)}
+.score.big .aring-in b{font-size:30px}
+.sech{display:flex;justify-content:space-between;align-items:baseline;margin:22px 2px 2px}.sech h3{font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}.sech span{font-size:12px;color:var(--dim2);font-weight:700}
+.dayhead{padding:6px 0 0}.dayhead .ring{display:none}.dayhead .t1{font-size:15px;font-weight:800}.dayhead .t2{font-size:12px}
+/* routine list */
+.act{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:16px}
+.act.done{opacity:.7}
+.tick{border-radius:50%;border-color:#3a3f47}
+.act.done .tick{background:var(--ac);border-color:var(--ac);color:#0A0B0D}
+.sec h3{color:var(--dim);font-weight:800}
+.minbar{border-radius:14px}
+/* train */
+.trseg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--card2);border-radius:999px;padding:4px;margin:14px 0 12px}
+.trseg button{padding:9px 4px;border-radius:999px;font-size:13px;font-weight:800;color:var(--dim)}.trseg button.on{background:var(--ac);color:#0A0B0D}
+.trhero h1{font-size:30px;font-weight:900;letter-spacing:-1px;line-height:1;margin-top:6px;text-transform:uppercase}.trhero h1 span{display:block;font-size:15px;letter-spacing:0;color:var(--dim);font-weight:700;text-transform:none;margin-top:5px}
+.trhero{border:1px solid rgba(212,255,58,.22);background:radial-gradient(120% 90% at 100% 0%,rgba(212,255,58,.10),transparent 55%),linear-gradient(180deg,#16181c,#111316)}
+.trh-t{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.trprog{display:flex;align-items:center;gap:10px;margin-top:14px}.trprog .bar{flex:1}.trprog span{font-size:12px;color:var(--dim);font-weight:700;white-space:nowrap}
+.trnext{margin-top:12px;font-size:13px;color:var(--dim)}.trnext b{color:var(--tx)}
+.tgl{display:grid;gap:6px;margin-top:10px}.tgt{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center}
+.tn2 b{display:block;font-size:13.5px}.tn2 small{font-size:12px;color:var(--dim)}
+.trhost{border:0;background:none;margin:0}.trhost>.body{padding:0;border:0;display:block}
+.trhost .exrow{background:var(--card);border:1px solid rgba(255,255,255,.055);border-radius:18px;padding:12px;margin-bottom:10px}
+.exrow.isPR{border-color:rgba(212,255,58,.55)!important;box-shadow:0 0 0 1px rgba(212,255,58,.25) inset}
+.exrow.isPR .exhead .n:after{content:"PR";margin-left:8px;font-size:10px;font-weight:900;background:var(--ac);color:#0A0B0D;border-radius:999px;padding:2px 7px;vertical-align:2px}
+.setbox{border-radius:12px}.setdone.on{background:var(--ac);border-color:var(--ac);color:#0A0B0D}
+.prr{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:9px 0;border-bottom:1px solid var(--line)}.prr:last-child{border-bottom:0}
+.prr span{font-size:13.5px;font-weight:650}.prr b{font-size:14px;font-weight:900;color:var(--ac)}.prr small{grid-column:1/-1;font-size:11.5px;color:var(--dim2)}
+/* food */
+.ml{padding:11px 0;border-bottom:1px solid var(--line)}.ml:last-child{border-bottom:0}
+.ml-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}.ml-h b{font-size:14px}.ml-h small{font-size:11.5px;color:var(--dim2)}
+.ml-o{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.ml-o button{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:8px;text-align:left;display:flex;flex-direction:column;gap:2px;min-height:74px}
+.ml-o button b{font-size:11px;color:var(--dim2)}.ml-o button span{font-size:11.5px;line-height:1.25;color:var(--tx);font-weight:600}.ml-o button i{font-style:normal;font-size:11px;color:var(--dim);margin-top:auto}
+.ml-o button.on{background:rgba(212,255,58,.12);border-color:var(--ac)}.ml-o button.on b,.ml-o button.on i{color:var(--ac)}
+.mac .mp{border-color:var(--pr)}.sp{background:var(--pr)}.meter.mp .bar>i{background:var(--pr)}.mopt[open] summary .on{background:var(--ac)}
+.chip.gd{border-color:var(--ac);color:var(--ac)}
+/* progress */
+.wr-g{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}.wr-g div{background:var(--card2);border-radius:14px;padding:10px 12px}
+.wr-g small{display:block;font-size:11px;color:var(--dim)}.wr-g b{font-size:19px;font-weight:900;letter-spacing:-.4px}
+.wr-l{margin-top:10px;font-size:13px;color:var(--dim);line-height:1.5}
+/* body */
+.bfig .sil{fill:#16181d;stroke:#2a2e35}
+
+.trhost .body>h5:first-child,.trhost .body>h5:first-child+ol{display:none}
 </style>
 </head>
 <body>
 
 <div class="top"><div class="topin">
-  <div class="logo">RESET<b>84</b></div>
+  <div class="logo">COMPOUND<b>.</b></div>
   <div class="tmeta" id="tmeta"></div>
 </div></div>
 
@@ -340,6 +462,7 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 
 <!-- ============ TODAY ============ -->
 <section class="view on" id="v-today">
+  <div id="home"></div>
   <div class="dayhead">
     <div class="ring">
       <svg width="74" height="74"><circle cx="37" cy="37" r="31" fill="none" stroke="#222b3b" stroke-width="7"/>
@@ -367,8 +490,9 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 
 <!-- ============ PROGRAM ============ -->
 <section class="view" id="v-prog">
+  <div class="trsegw" data-seg="prog"></div>
   <div class="card">
-    <h2>The whole programme <span class="pill p-a">84 days</span></h2>
+    <h2>This block <span class="pill p-a" id="blk-pill">12 weeks</span></h2>
     <div class="note">Every week, every day, everything in it. Tap a day to see exactly what it contains.</div>
   </div>
   <div class="tabs" id="wtabs"></div>
@@ -377,6 +501,7 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 
 <!-- ============ LIBRARY ============ -->
 <section class="view" id="v-lib">
+  <div class="trsegw" data-seg="lib"></div>
   <div class="card">
     <h2>Exercise &amp; drill library</h2>
     <div class="note">How to do each one, what it's for, what to avoid, and every load you've logged.</div>
@@ -387,6 +512,7 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 
 <!-- ============ PROGRESS ============ -->
 <section class="view" id="v-prog2">
+  <div id="pg-top" style="margin-top:14px"></div>
   <div class="g2">
     <div class="card">
       <h2>Level <span id="lv-n" class="pill p-p">1</span></h2>
@@ -436,16 +562,20 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
   </div>
   <div class="card">
     <h2>Baseline &amp; re-tests</h2>
-    <div class="note">Day 1, 28, 56, 84. The ankle, shoulder and balance rows are the ones that will change how you feel — they measure the things people have least confidence in.</div>
+    <div class="note">Start of every block, then days 28, 56 and 84 of it. The ankle, shoulder and balance rows are the ones that will change how you feel — they measure the things people have least confidence in.</div>
     <div style="overflow-x:auto;margin-top:10px"><table><thead><tr><th>Measure</th><th>Target</th><th>D1</th><th>D28</th><th>D56</th><th>D84</th></tr></thead><tbody id="mtb"></tbody></table></div>
   </div>
 </section>
+
+<!-- ============ TRAIN ============ -->
+<section class="view" id="v-train"><div id="trainbody"></div></section>
 
 <!-- ============ FUEL ============ -->
 <section class="view" id="v-fuel"><div id="fuelbody"></div></section>
 
 <!-- ============ BODY ============ -->
 <section class="view" id="v-body">
+  <div class="card" id="bd-ready"></div>
   <div class="card">
     <h2>Muscle readiness <span class="pill p-a">modelled, not measured</span></h2>
     <div class="note">Built from the sets you log, how hard the session felt, and how you slept since. Tap any muscle to see which exercise is still costing it.</div>
@@ -488,13 +618,11 @@ footer{color:var(--dim2);font-size:11.5px;text-align:center;padding:24px 16px 8p
 </div>
 
 <nav class="bot"><div class="in">
-  <button data-v="today" class="on"><span class="g">◉</span>Today</button>
-  <button data-v="prog"><span class="g">▤</span>Plan</button>
-  <button data-v="fuel"><span class="g">◒</span>Fuel</button>
-  <button data-v="lib"><span class="g">☰</span>Library</button>
-  <button data-v="body"><span class="g">◈</span>Body</button>
-  <button data-v="prog2"><span class="g">◔</span>Progress</button>
-  <button data-v="more"><span class="g">⋯</span>More</button>
+  <button data-v="today" class="on"><svg viewBox="0 0 24 24"><path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1h-5v-6h-5v6h-5a1 1 0 0 1-1-1z"/></svg>Home</button>
+  <button data-v="train"><svg viewBox="0 0 24 24"><path d="M6.5 6v12M17.5 6v12M3 9.5v5M21 9.5v5M6.5 12h11"/></svg>Train</button>
+  <button data-v="fuel"><svg viewBox="0 0 24 24"><path d="M4 11.5h16a8 8 0 0 1-16 0zM9 3.5c0 2 2 2 2 4M14 3.5c0 2 2 2 2 4"/></svg>Food</button>
+  <button data-v="body"><svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.2"/><path d="M12 7.5v6.5l-3 7M12 14l3 7M5.5 10l6.5-2 6.5 2"/></svg>Body</button>
+  <button data-v="prog2"><svg viewBox="0 0 24 24"><path d="M3 20.5h18M6 17v-4M11 17V8.5M16 17v-6M21 17V5"/></svg>Progress</button>
 </div></nav>
 
 <div class="mask" id="mask"><div class="modal" id="modal"></div></div>
@@ -848,7 +976,7 @@ function wr(){
 /* ── merge two devices without losing anything ── */
 function doneCount(day){ if(!day||!day.a) return 0; return Object.keys(day.a).filter(function(x){ return day.a[x].done||day.a[x].skip; }).length; }
 function mergeState(inc){
-  if(!inc || typeof inc!=='object' || !inc.days) throw new Error('That does not look like a Reset 84 backup.');
+  if(!inc || typeof inc!=='object' || !inc.days) throw new Error('That does not look like a Compound backup.');
   var out=JSON.parse(JSON.stringify(S)), added=0, updated=0, kept=0;
   Object.keys(inc.days).forEach(function(k){
     var a=out.days[k], b=inc.days[k];
@@ -891,7 +1019,7 @@ function pd(s){ var p=String(s).split('-'); return new Date(+p[0],+p[1]-1,+p[2])
 function add(s,n){ var d=pd(s); d.setDate(d.getDate()+n); return iso(d); }
 function diff(a,b){ return Math.round((pd(a)-pd(b))/86400000); }
 
-var BUILD='2026-11-18 · build 7.1 · Fuel tab, nicotine-only quitting';   /* bump this whenever the file changes, so you can tell which version is live */
+var BUILD='2026-11-18 · build 8 · Compound: new look, rolling 12-week blocks';   /* bump this whenever the file changes, so you can tell which version is live */
 var DEF={ start:iso(new Date()), days:{}, ex:{}, met:{}, wt:{}, wa:{}, books:[], reviews:{}, ladder:{}, xp:0, badges:[], clr:{}, sore:{}, v:3 };
 var FRESH_INSTALL=!rd();
 var S=rd()||JSON.parse(JSON.stringify(DEF));
@@ -1186,7 +1314,13 @@ var CLR=[
 ];
 var SWAP={rdl:['hang','backext'],farm:['hang','serr'],hang:['hang',null],facep:['sh2','pronY'],land:['sh2','pushplus'],cer45:['sh2','bander'],incp:['sh2','floorp'],legext:['quad','stepup']};
 function clr(k){ return !!(S.clr&&S.clr[k]); }
-function phaseOf(w){ return w<=2?{k:'p0',n:'Phase 0 · Re-entry',rpe:'RPE 6–7'}:w<=6?{k:'p1',n:'Phase 1 · Foundation',rpe:'RPE 7–8'}:w===7?{k:'dl',n:'Deload + re-test',rpe:'RPE 6'}:w<=11?{k:'p2',n:'Phase 2 · Build',rpe:'RPE 7–9'}:{k:'dl',n:'Deload + final re-test',rpe:'RPE 6'}; }
+/* rolling 12-week blocks: block 1 opens with a two-week re-entry; every later block starts straight at foundation */
+function blkOf(k){ return Math.max(1,Math.floor((dayN(k)-1)/84)+1); }
+function bwOf(w){ return ((Math.max(1,w)-1)%12)+1; }
+function blkStart(k){ return add(S.start,(blkOf(k)-1)*84); }
+function dayInBlk(k){ return Math.max(1,dayN(k)-(blkOf(k)-1)*84); }
+function phaseOf(w){ var x=bwOf(w), b=Math.ceil(Math.max(1,w)/12);
+  return x<=2? (b===1?{k:'p0',n:'Phase 0 · Re-entry',rpe:'RPE 6–7'}:{k:'p1',n:'Phase 1 · Foundation',rpe:'RPE 7–8'}) : x<=6?{k:'p1',n:'Phase 1 · Foundation',rpe:'RPE 7–8'}:x===7?{k:'dl',n:'Deload + re-test',rpe:'RPE 6'}:x<=11?{k:'p2',n:'Phase 2 · Build',rpe:'RPE 7–9'}:{k:'dl',n:'Deload + block re-test',rpe:'RPE 6'}; }
 var WEEK0={0:'fbA',1:'walk',2:'fbB',3:'walk',4:'fbC',5:'padel',6:null};
 var WEEK1={0:'lowerA',1:'upperA',2:'z2',3:'lowerB',4:'upperB',5:'padel',6:null};
 function sessOn(k){ var w=wkN(k), g=pd(k).getDay(); return (w<=2?WEEK0:WEEK1)[g]||null; }
@@ -1579,7 +1713,7 @@ function fuelChart(){
 var fuelOpen={}, fuelDet=false;
 function paintFuel(){
   var g=G_(), T=fuelTargets(), P=plan(), cw=curWeight(), z=zoneOf(T.rate,T.w), end=add(g.start,g.weeks*7), I=intakeOf(TODAY);
-  var h='';
+  var h=mealsLogCard();
   /* goal */
   h+='<div class="card"><h2>Your goal <span class="pill '+z[0]+'">'+z[1]+'</span></h2>'
    +'<div class="note">Pick a starting point, then fine-tune the target and the timeline. Every number and every portion below follows.</div>'
@@ -1647,7 +1781,7 @@ function paintFuel(){
   });
   h+='<div class="src" style="margin:0 4px 14px">Values per 100 g are standard reference figures for each food; brands differ, so check your whey and yoghurt labels once. Portions are rounded to things you can actually measure — whole eggs, half bananas, teaspoons of oil — so each meal lands within a few percent of its target, not exactly on it.</div>';
   E('fuelbody').innerHTML=h;
-  wireFuel();
+  wireFuel(); wireMealsLog(E('fuelbody'));
 }
 function fuelChanged(){ var g=G_(), y=window.scrollY; g.u=Date.now(); PLAN=null; refreshSnaps(); wr(); paintFuel(); window.scrollTo(0,y); }
 function wireFuel(){
@@ -1718,7 +1852,7 @@ var BADGES=[
  {id:'nic1',e:'🚭',n:'Under the Cap',d:'7 days inside the IQOS cap'},
  {id:'st20',e:'👣',n:'Walker',d:'8,000+ steps on 20 days'},
  {id:'half',e:'⛰',n:'Halfway',d:'Reached day 42'},
- {id:'fin',e:'🏁',n:'Eighty-Four',d:'Reached day 84'}
+ {id:'fin',e:'🏁',n:'First Block',d:'Finished your first 12-week block'}
 ];
 
 /* ═══════════════════ UI PLUMBING ═══════════════════ */
@@ -1752,21 +1886,7 @@ function boom(){
 }
 
 /* ── top chips ── */
-function paintTop(){
-  var n=dayN(TODAY), L=lvl(), st=streak();
-  var cap=iqCap(wkN(TODAY));
-  var toQ=diff(add(S.start,70),TODAY);
-  var h='';
-  h+='<div class="chip">Day <b>'+(n<1?'—':(n>84?'84+':n))+'</b>/84</div>';
-  h+='<div class="chip">Week <b>'+wkN(TODAY)+'</b></div>';
-  h+='<div class="chip'+(st>0?' gd':'')+'">🔥 <b>'+st+'</b> streak</div>';
-  var dv=driveScore(TODAY);
-  h+='<div class="chip'+(dv>=5?' gd':'')+'">⚡ Drive <b>'+dv+'</b>/7</div>';
-  h+='<div class="chip">Lv <b>'+(L.i+1)+'</b> · '+S.xp+' XP</div>';
-  if(toQ>0 && toQ<=28) h+='<div class="chip hot">IQOS quit in <b>'+toQ+'</b>d</div>';
-  h+='<div class="chip">IQOS cap <b>'+(cap||'0')+'</b></div>';
-  E('tmeta').innerHTML=h;
-}
+function paintTop(){ paintTopA(); }
 function streak(){
   var core=['flow','read','phone'], k=TODAY, n=0;
   function ok(d){ var x=S.days[d]; return !!(x&&core.every(function(c){ return x.a[c]&&x.a[c].done; })); }
@@ -1779,14 +1899,18 @@ document.querySelectorAll('nav.bot button').forEach(function(b){
   b.onclick=function(){ go(b.dataset.v); };
 });
 function go(v){
-  document.querySelectorAll('nav.bot button').forEach(function(b){ b.classList.toggle('on',b.dataset.v===v); });
+  curView=v;
+  document.querySelectorAll('nav.bot button').forEach(function(b){ b.classList.toggle('on',b.dataset.v===(NAVOF[v]||v)); });
+  document.querySelectorAll('[data-seg]').forEach(function(s){ s.innerHTML=trSeg(s.dataset.seg); });
   document.querySelectorAll('.view').forEach(function(s){ s.classList.toggle('on', s.id==='v-'+v); });
   window.scrollTo(0,0);
   if(v==='prog') paintProg();
   if(v==='lib') paintLib();
   if(v==='fuel') paintFuel();
+  if(v==='train') paintTrain();
+  if(v==='today') paintToday();
   if(v==='body') paintBody();
-  if(v==='prog2') paintProgress();
+  if(v==='prog2'){ paintPgTop(); paintProgress(); }
   if(v==='more') paintMore();
 }
 
@@ -1794,8 +1918,8 @@ function go(v){
 var openAct=null;
 function paintToday(){
   var ids=actsFor(cur), d=DY(cur), n=dayN(cur);
-  E('d-t1').textContent = (cur===TODAY?'Today · ':'') + pretty(cur);
-  E('d-t2').textContent = (n>=1&&n<=84? 'Day '+n+' of 84' : 'Outside the 84 days') +
+  E('d-t1').textContent = cur===TODAY? 'Today' : pretty(cur);
+  E('d-t2').textContent = (n>=1? 'Block '+blkOf(cur)+' · day '+dayInBlk(cur)+' of 84' : 'Before day 1') +
     ' · '+phaseOf(wkN(cur)).n;
 
   var done=0, tot=0;
@@ -1843,7 +1967,7 @@ function paintToday(){
 
   var nt=E('d-note'); nt.value=d.n||'';
   nt.oninput=function(){ DY(cur).n=nt.value; wr(); };
-  paintTop();
+  paintTop(); paintHome();
 }
 function badgeFor(id,st){
   var a=ACTS[id];
@@ -1971,8 +2095,8 @@ function bodyFor(id){
   return h;
 }
 
-function wireBody(id){
-  var a=ACTS[id], st=A(cur,id), root=E('acts').querySelector('.act.open .body');
+function wireBody(id,host){
+  var a=ACTS[id], st=A(cur,id), root=host||E('acts').querySelector('.act.open .body');
   if(!root) return;
   function set(f,v){ st[f]=v; wr(); }
   root.querySelectorAll('[data-c]').forEach(function(b){
@@ -1980,23 +2104,23 @@ function wireBody(id){
       var d=b.dataset.c==='+'?1:-1;
       st.c=Math.max(0,(st.c||0)+d);
       if(d>0 && tarOf(a) && st.c===tarOf(a) && !st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n,'xp'); }
-      wr(); paintToday();
+      wr(); repaintAct();
     };
   });
   var nv=root.querySelector('#nv');
   if(nv){ nv.oninput=function(){ st.v = nv.value===''?null:+nv.value;
             if(id==='weigh'){ if(st.v==null) delete S.wt[cur]; else { S.wt[cur]=st.v; if(!st.done){ st.done=true; S.xp+=a.xp; } } }
             wr(); };
-          nv.onchange=function(){ if(tarOf(a)&&st.v>=tarOf(a)&&!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } paintToday(); }; }
+          nv.onchange=function(){ if(tarOf(a)&&st.v>=tarOf(a)&&!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } repaintAct(); }; }
   root.querySelectorAll('[data-quick]').forEach(function(b){
-    b.onclick=function(){ st.v=(st.v||0)+ +b.dataset.quick; wr(); paintToday(); };
+    b.onclick=function(){ st.v=(st.v||0)+ +b.dataset.quick; wr(); repaintAct(); };
   });
   var bk=root.querySelector('#bk'); if(bk) bk.oninput=function(){ set('bk',bk.value); };
   root.querySelectorAll('[data-gofuel]').forEach(function(b){ b.onclick=function(){ go('fuel'); }; });
   [['fkc','kc'],['fpv','v']].forEach(function(q){ var el=root.querySelector('#'+q[0]); if(!el) return;
-    el.onchange=function(){ st[q[1]]=el.value===''?null:+el.value; fuelCheck(cur); wr(); paintToday(); }; });
+    el.onchange=function(){ st[q[1]]=el.value===''?null:+el.value; fuelCheck(cur); wr(); repaintAct(); }; });
   root.querySelectorAll('[data-o]').forEach(function(b){
-    b.onclick=function(){ st.o=+b.dataset.o; st.m=plan().meals[a.meal].o[st.o].tot.map(r0); if(!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } fuelCheck(cur); wr(); paintToday(); };
+    b.onclick=function(){ st.o=+b.dataset.o; st.m=plan().meals[a.meal].o[st.o].tot.map(r0); if(!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP','xp'); } fuelCheck(cur); wr(); repaintAct(); };
   });
   var mn=root.querySelector('#mnote'); if(mn) mn.oninput=function(){ set('t',mn.value); };
   var sot=root.querySelector('#sot'); if(sot) sot.oninput=function(){ set('t',sot.value); };
@@ -2018,7 +2142,7 @@ function wireBody(id){
       st.ex[xid][idx][f]= i.value===''?null:+i.value;
       if(!S.ex[xid]) S.ex[xid]={};
       S.ex[xid][cur]=st.ex[xid];
-      wr();
+      wr(); prCheck(xid,cur,i);
     };
   });
   root.querySelectorAll('[data-d]').forEach(function(b){
@@ -2039,7 +2163,7 @@ function wireBody(id){
   });
   root.querySelectorAll('[data-skip]').forEach(function(b){
     b.onclick=function(){
-      if(st.skip){ delete st.skip; wr(); paintToday(); return; }
+      if(st.skip){ delete st.skip; wr(); repaintAct(); return; }
       askSkip(id);
     };
   });
@@ -2060,7 +2184,7 @@ function toggle(id){
     var ids=actsFor(cur).filter(function(x){ return !ACTS[x].opt; });
     if(ids.every(function(x){ var s=S.days[cur].a[x]; return s&&(s.done||s.skip); })){ boom(); toast('Day complete. That is the whole job.'); }
   }
-  save(); paintToday();
+  save(); paintToday(); if(curView==="train") paintTrain();
 }
 function askSkip(id){
   modal('<div class="pl-name" style="font-size:19px">Skip — '+ACTS[id].n.replace(/&amp;/g,'&')+'</div>'
@@ -2122,7 +2246,7 @@ function flowPlay(i){
 /* ═══════════════════ PROGRAMME ═══════════════════ */
 var progWk=1;
 function paintProg(){
-  progWk=Math.min(12,Math.max(1,wkN(TODAY)));
+  progWk=bwOf(wkN(TODAY)); if(E('blk-pill')) E('blk-pill').textContent='Block '+blkOf(TODAY)+' · 12 weeks';
   E('wtabs').innerHTML=Array.apply(null,{length:12}).map(function(_,i){
     return '<button data-w="'+(i+1)+'" class="'+((i+1)===progWk?'on':'')+'">Week '+(i+1)+'</button>'; }).join('');
   E('wtabs').querySelectorAll('button').forEach(function(b){
@@ -2133,16 +2257,16 @@ function paintProg(){
   progBody();
 }
 var PHASE=[
- {w:[1,2],b:'Phase 0 — re-entry. Three full-body sessions at RPE 6–7, a brisk walk on the days between, the morning flow daily, baseline tests. Book the arm-and-neck check, the shoulder re-assessment and the blood work.',s:'IQOS unchanged — count honestly and build the baseline.',so:'One 20-second exchange a day.',m:'Atomic Habits on paper, Dopamine Nation on the commute. 90-minute deep block daily.'},
+ {w:[1,2],b:'First block: Phase 0 re-entry (later blocks start at foundation). Three full-body sessions at RPE 6–7, a brisk walk on the days between, the morning flow daily, baseline tests. Book the arm-and-neck check, the shoulder re-assessment and the blood work.',s:'IQOS unchanged — count honestly and build the baseline.',so:'One 20-second exchange a day.',m:'Atomic Habits on paper, Dopamine Nation on the commute. 90-minute deep block daily.'},
  {w:[3,4],b:'Phase 1 — foundation. Four days: two lower, two upper, calves or tibialis in every one. First re-test on day 28.',s:'IQOS unchanged — keep counting.',so:'Second-question rule.',m:'Learning log daily. Start writing up the thing you built.'},
  {w:[5,6],b:'Phase 1 continues. Add one rep, or the smallest load step, to one set of each main lift a week. Shoulders progress by reps and control, never by load.',s:'IQOS unchanged. Pick the week-8 pharmacist appointment.',so:'One stranger conversation past two minutes, weekly.',m:'Storyworthy + Supercommunicators.'},
  {w:[7,8],b:'Week 7 is a deload and re-test: half the sets, same loads. Week 8 opens Phase 2 — a fourth set on the main lifts, Bulgarian split squats, and whatever the clearances have unlocked.',s:'Week 8: IQOS cap 15. See the pharmacist.',so:'A 90-second story to friends, then the same in 45.',m:'Compression drills 3× a week.'},
  {w:[9,10],b:'Phase 2 — the heaviest block. Day 56 re-test. Hops and jumps only if the ankle has been green for two weeks.',s:'IQOS 10 then 5.',so:'Speak up unprompted in one work meeting a week.',m:'Deep Work.'},
- {w:[11,12],b:'Week 11 finishes the build. Week 12 is a deload and the day 84 re-test against baseline.',s:'IQOS quit day 71. Held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next 84 days.'}
+ {w:[11,12],b:'Week 11 finishes the build. Week 12 is a deload and the end-of-block re-test. The next block starts at foundation.',s:'IQOS quit day 71. Held.',so:'Toastmasters, a presentation, or host something.',m:'The Psychology of Money. Plan the next block — what goes up, what stays.'}
 ];
 function progBody(){
   var ph=PHASE.find(function(p){ return progWk>=p.w[0]&&progWk<=p.w[1]; });
-  var h='<div class="card"><h2>Week '+progWk+' <span class="pill p-o">'+phaseOf(progWk).n+'</span> <span class="pill p-a">'+pretty(add(S.start,(progWk-1)*7))+'</span></h2>'
+  var h='<div class="card"><h2>Week '+progWk+' <span class="pill p-o">'+phaseOf((blkOf(TODAY)-1)*12+progWk).n+'</span> <span class="pill p-a">'+pretty(add(blkStart(TODAY),(progWk-1)*7))+'</span></h2>'
    +'<div style="margin-top:10px"><table><tbody>'
    +'<tr><td style="width:80px;color:var(--dim)">Body</td><td>'+ph.b+'</td></tr>'
    +'<tr><td style="color:var(--dim)">Substances</td><td>'+ph.s+'</td></tr>'
@@ -2150,7 +2274,7 @@ function progBody(){
    +'<tr><td style="color:var(--dim)">Mind</td><td>'+ph.m+'</td></tr>'
    +'</tbody></table></div></div>';
   for(var i=0;i<7;i++){
-    var k=add(S.start,(progWk-1)*7+i), g=pd(k).getDay(), sk=sessOn(k);
+    var k=add(blkStart(TODAY),(progWk-1)*7+i), g=pd(k).getDay(), sk=sessOn(k);
     var ids=actsFor(k), d=S.days[k], done=ids.filter(function(x){ return d&&d.a[x]&&d.a[x].done; }).length;
     var isToday=(k===TODAY);
     h+='<div class="card" style="'+(isToday?'border-color:var(--ac)':'')+'">'
@@ -2223,7 +2347,7 @@ function paintProgress(){
   for(var r=0;r<7;r++){ /* placeholder to keep grid square */ }
   var cells=[];
   for(var i=0;i<84;i++){
-    var k=add(S.start,i), ids=actsFor(k).filter(function(x){ return !ACTS[x].opt; });
+    var k=add(blkStart(TODAY),i), ids=actsFor(k).filter(function(x){ return !ACTS[x].opt; });
     var d=S.days[k], dn = d? ids.filter(function(x){ return d.a[x]&&d.a[x].done; }).length : 0;
     var pct = ids.length? dn/ids.length : 0;
     var fut = pd(k)>pd(TODAY);
@@ -2386,6 +2510,299 @@ var ANAT={
  ]
 };
 
+/* ═══════════════════ ATLAS-STYLE LAYER (build 8) — home dashboard, check-in, coach, score, PRs, train ═══════════════════ */
+var curView='today';
+var NAVOF={prog:'train',lib:'train'};
+function myName(){ return String(S.name||'').trim(); }
+function initials(){ var n=myName(); if(!n) return 'C'; var p=n.split(/\s+/); return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase(); }
+function rd0(k,id){ return (S.days[k]&&S.days[k].a&&S.days[k].a[id])||{}; }
+function routinePct(k){
+  var ids=actsFor(k), d=(S.days[k]&&S.days[k].a)||{}, done=0, tot=0;
+  ids.forEach(function(id){ if(ACTS[id].opt) return; tot++; if(d[id]&&d[id].done) done++; });
+  return {p:tot?Math.round(done/tot*100):0,done:done,tot:tot};
+}
+function ringSvg(p,size,stroke,col,inner){
+  var r=(size-stroke)/2, c=2*Math.PI*r, off=c*(1-Math.max(0,Math.min(100,p))/100);
+  return '<div class="aring" style="width:'+size+'px;height:'+size+'px"><svg viewBox="0 0 '+size+' '+size+'" width="'+size+'" height="'+size+'"><circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="#24272d" stroke-width="'+stroke+'"/>'
+   +'<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="'+(col||'var(--ac)')+'" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+c.toFixed(1)+'" stroke-dashoffset="'+off.toFixed(1)+'" transform="rotate(-90 '+size/2+' '+size/2+')"/></svg><div class="aring-in">'+inner+'</div></div>';
+}
+function minsOf(sg,k){ if(!sg) return 0; if(sg.key==='walk') return 25; if(sg.key==='padel') return 40; if(sg.key==='z2') return 40; return wkN(k)<=2?45:60; }
+
+/* ── readiness check-in: sleep, energy, soreness, mood ── */
+var CIQ=[['e','Energy','Flat','Charged'],['s','Soreness','None','Very sore'],['m','Mood','Low','Great']];
+function readiness(k){
+  var d=S.days[k]; if(!d) return null;
+  var ci=d.ci||{}, sl=d.a&&d.a.sleep&&d.a.sleep.v, w=0, t=0;
+  if(sl!=null&&sl!==''){ t+=Math.max(0,Math.min(1,(+sl-4)/4))*.35; w+=.35; }
+  if(ci.e){ t+=(ci.e-1)/4*.25; w+=.25; }
+  if(ci.s){ t+=(5-ci.s)/4*.2; w+=.2; }
+  if(ci.m){ t+=(ci.m-1)/4*.2; w+=.2; }
+  return w>=.5? Math.round(t/w*100) : null;
+}
+function readyWord(r){ return r>=80?'Primed':r>=65?'Good to train':r>=50?'Train, but easier':'Recovery first'; }
+function readyCol(r){ return r>=80?'var(--ac)':r>=65?'var(--gd)':r>=50?'var(--wn)':'var(--bd)'; }
+var ciEdit=false;
+function checkinCard(k){
+  var d=S.days[k]||{}, ci=d.ci||{}, sl=d.a&&d.a.sleep&&d.a.sleep.v, r=readiness(k), full=(ci.e&&ci.s&&ci.m&&sl!=null);
+  if(full && !ciEdit){
+    return '<div class="card ci done"><div class="ci-row">'+ringSvg(r,64,7,readyCol(r),'<b>'+r+'</b>')
+      +'<div class="ci-t"><small>READINESS</small><b>'+readyWord(r)+'</b><span>'+sl+' h sleep · energy '+ci.e+'/5 · soreness '+ci.s+'/5 · mood '+ci.m+'/5</span></div>'
+      +'<button class="lnk" data-ci-edit="1">Edit</button></div></div>';
+  }
+  var sv=(sl!=null?+sl:7.5);
+  return '<div class="card ci"><div class="eyb">Daily check-in · 10 seconds</div><h2 style="margin-top:4px">How are you today?</h2>'
+   +'<div class="ci-q"><span>Sleep last night</span><div class="stp"><button data-cis="-0.5">−</button><b id="ci-sl">'+sv.toFixed(1)+'<i>h</i></b><button data-cis="0.5">+</button></div></div>'
+   +CIQ.map(function(q){ return '<div class="ci-q col"><span>'+q[1]+'</span><div class="ci5" data-ciq="'+q[0]+'">'+[1,2,3,4,5].map(function(v){ return '<button data-v="'+v+'" class="'+(ci[q[0]]===v?'on':'')+'">'+v+'</button>'; }).join('')+'</div><div class="dl"><small>'+q[2]+'</small><small>'+q[3]+'</small></div></div>'; }).join('')
+   +'<button class="btn wide" id="ci-save" style="margin-top:12px">Check in</button></div>';
+}
+function wireCheckin(root,k,after){
+  var d=DY(k); if(!d.ci) d.ci={};
+  var sl=root.querySelector('#ci-sl');
+  root.querySelectorAll('[data-cis]').forEach(function(b){ b.onclick=function(){ var v=parseFloat(sl.textContent)||7.5; v=Math.max(3,Math.min(12,v+(+b.dataset.cis))); sl.innerHTML=v.toFixed(1)+'<i>h</i>'; }; });
+  root.querySelectorAll('[data-ciq] button').forEach(function(b){ b.onclick=function(){ var q=b.parentNode.dataset.ciq; d.ci[q]=+b.dataset.v; b.parentNode.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x===b); }); }; });
+  var sv=root.querySelector('#ci-save'); if(sv) sv.onclick=function(){
+    if(!(d.ci.e&&d.ci.s&&d.ci.m)){ toast('Tap a number for energy, soreness and mood'); return; }
+    var st=A(k,'sleep'); st.v=parseFloat(sl.textContent);
+    if(!st.done && st.v>=ACTS.sleep.tar){ st.done=true; xpAdd(ACTS.sleep.xp); }
+    if(!d.ci.x){ d.ci.x=1; xpAdd(4); }
+    ciEdit=false; wr(); toast('Readiness '+readiness(k)+'% — '+readyWord(readiness(k)),'xp'); after();
+  };
+  var ed=root.querySelector('[data-ci-edit]'); if(ed) ed.onclick=function(){ ciEdit=true; after(); };
+}
+
+/* ── personal records: estimated 1RM (Epley) beats every earlier session ── */
+function e1rm(w,r){ return w*(1+r/30); }
+function bestBefore(x,k){ var b=0; Object.keys(S.ex[x]||{}).forEach(function(d){ if(d>=k) return; (S.ex[x][d]||[]).forEach(function(s){ if(s&&s.w>0&&s.r>0) b=Math.max(b,e1rm(s.w,s.r)); }); }); return b; }
+function prEvents(){
+  var ev=[];
+  Object.keys(S.ex||{}).forEach(function(x){
+    if(!EX[x]) return; var best=0, first=true;
+    Object.keys(S.ex[x]).sort().forEach(function(k){
+      var top=null; (S.ex[x][k]||[]).forEach(function(s){ if(s&&s.w>0&&s.r>0){ var e=e1rm(s.w,s.r); if(!top||e>top.e) top={e:e,w:s.w,r:s.r}; } });
+      if(!top) return;
+      if(!first && top.e>best+0.01) ev.push({x:x,k:k,w:top.w,r:top.r,e:top.e,prev:best});
+      if(top.e>best) best=top.e; first=false;
+    });
+  });
+  return ev.sort(function(a,b){ return a.k<b.k?1:a.k>b.k?-1:b.e-a.e; });
+}
+function prCheck(x,k,box){
+  var L=((A(k,'train').ex||{})[x]||[]), prev=bestBefore(x,k), hit=false;
+  L.forEach(function(s){ if(s&&s.w>0&&s.r>0&&prev>0&&e1rm(s.w,s.r)>prev+0.01) hit=true; });
+  if(box){ var row=box.closest('.exrow'); if(row) row.classList.toggle('isPR',hit); }
+  var d=DY(k); if(!d.prx) d.prx={};
+  if(hit && !d.prx[x]){ d.prx[x]=1; toast('🏆 New PR — '+EX[x].n,'xp'); xpAdd(10); wr(); }
+}
+/* progression: every set at the top of the range last time → small load jump; shoulder work → reps, never load */
+function topReps(r){ var m=String(r).match(/\d+/g); return m? +m[m.length>1&&String(r).indexOf('–')>=0?1:0] : null; }
+function lastSession(x,before){ var ks=Object.keys(S.ex[x]||{}).filter(function(d){ return d<before; }).sort(); return ks.length? {k:ks[ks.length-1],sets:(S.ex[x][ks[ks.length-1]]||[]).filter(function(s){ return s&&s.w!=null&&s.r!=null; })} : null; }
+function nextTarget(e,k){
+  var X=EX[e.id]; if(!X||X.nl) return null;
+  var L=lastSession(e.id,k); if(!L||!L.sets.length) return {t:'First time — pick a weight that leaves three reps in the tank.',c:'p-a'};
+  var top=topReps(e.r), wmax=Math.max.apply(null,L.sets.map(function(s){ return s.w; })), atTop=L.sets.filter(function(s){ return s.w===wmax && top && s.r>=top; }).length;
+  var sh=EXJ.sh.indexOf(e.id)>=0, inc=(['legpress','hipt','squat','gobbox','rdl'].indexOf(e.id)>=0?5:2.5);
+  if(atTop>=Math.min(e.s,L.sets.length) && L.sets.length>=Math.min(e.s,2)){
+    return sh? {t:wmax+' kg again — add one rep to the last set. Shoulders progress by reps.',c:'p-w'} : {t:'Go '+(wmax+inc)+' kg — you hit '+top+' on every set last time.',c:'p-g'};
+  }
+  var best=L.sets.reduce(function(b,s){ return (!b||s.w>b.w||(s.w===b.w&&s.r>b.r))?s:b; },null);
+  return {t:'Match '+best.w+' kg × '+best.r+', then beat it by one rep.',c:'p-a'};
+}
+
+/* ── the Compound score: consistency, training, nutrition, recovery over the last 7 days ── */
+function resetScore(k){
+  var c=0,t=0,tp=0,n=0,r=0,days=0;
+  for(var i=0;i<7;i++){
+    var d=add(k,-i); if(d<S.start||d>TODAY) continue; days++;
+    c+=routinePct(d).p/100;
+    var sg=sessGet(d); if(sg){ tp++; if(rd0(d,'train').done) t++; }
+    var I=intakeOf(d), FT=fuelTargets(), ns=0; if(I.p>=protHit()) ns+=.6; if(I.full && Math.abs(I.k-FT.kcal)/FT.kcal<=.12) ns+=.4; n+=ns;
+    var sl=rd0(d,'sleep').v, rs=(sl!=null&&sl!=='')? Math.min(1,+sl/7.5):0, rr=readiness(d); r+= rr!=null? (rs+rr/100)/2 : rs;
+  }
+  if(!days) return null;
+  var o={c:Math.round(c/days*100),t:tp?Math.round(t/tp*100):100,n:Math.round(n/days*100),r:Math.round(r/days*100),days:days};
+  o.s=Math.round((o.c+o.t+o.n+o.r)/4); return o;
+}
+function scoreBars(o){
+  return [['Consistency',o.c],['Training',o.t],['Nutrition',o.n],['Recovery',o.r]].map(function(x){
+    return '<div class="sbar"><div><span>'+x[0]+'</span><b>'+x[1]+'</b></div><div class="bar sm"><i style="width:'+x[1]+'%;background:'+(x[1]>=75?'var(--ac)':x[1]>=50?'var(--wn)':'var(--bd)')+'"></i></div></div>'; }).join('');
+}
+
+/* ── coach: a short daily brief written from your own logs ── */
+function coachBrief(k){
+  var out=[], d=S.days[k]||{a:{}}, sl=rd0(k,'sleep').v, r=readiness(k), sg=sessGet(k), jc=(d.jc||{}), hr=new Date().getHours();
+  if(jc.sh===2||jc.arm===2) out.push([9,'Shoulder or arm flagged as painful. Pressing and hanging come out today — pain overrides every green on the map.']);
+  if(sl!=null && sl!=='' && +sl<6.5) out.push([8,'You slept '+sl+' h. Keep the session, but take one set off each exercise and cap effort at RPE 7. Lights out by 23:45 tonight — sleep is your biggest lever.']);
+  var prs=prEvents().filter(function(p){ return diff(k,p.k)>=0 && diff(k,p.k)<=3; });
+  if(prs.length){ var p=prs[0]; out.push([7,'New best on '+EX[p.x].n.toLowerCase()+': '+p.w+' kg × '+p.r+'. That is evidence, not a feeling — keep stacking it.']); }
+  if(sg && sg.lift && !rd0(k,'train').done){
+    var sug=null; sg.ex.some(function(e){ var n=nextTarget(e,k); if(n&&n.c==='p-g'){ sug=EX[e.id].n+': '+n.t; return true; } return false; });
+    if(sug) out.push([7,'Time to progress. '+sug]);
+    if(r!=null && r>=80) out.push([5,'Readiness '+r+'%. A good day to push — add a rep to the last set of the first exercise.']);
+    else if(r!=null && r<50) out.push([6,'Readiness '+r+'%. Show up anyway: the warm-up and the first two exercises at RPE 6, then decide. A short session beats a skipped one.']);
+  }
+  if(k===TODAY && hr>=18){ var I=intakeOf(k), FT=fuelTargets(), gap=FT.p-I.p; if(gap>25) out.push([6,'You are at '+I.p+' g protein — '+gap+' to go. A whey shake in milk closes about 35 g.']); }
+  var g=G_(), a7=avg7(k); if(a7 && a7.n>=3 && diff(k,g.start)>=14){ var dv=a7.v-pathAt(k); if(Math.abs(dv)>.5) out.push([5,'Your 7-day average is '+Math.abs(dv).toFixed(1)+' kg '+(dv<0?'under':'over')+' the goal line. The Food tab suggests '+(dv<0?'+150':'−150')+' kcal a day.']); }
+  if(pd(k).getDay()===6) out.push([4,'Saturday — your weekly report is ready in Progress. Read it before planning next week.']);
+  var st=streak(); if(st>=3) out.push([3,st+'-day streak on the morning flow, reading and phone-out. Protect it tonight.']);
+  if(readiness(k)==null && k===TODAY) out.push([2,'Check in first — ten seconds, and today\'s advice adjusts to it.']);
+  if(!out.length) out.push([1, sg? (sg.lift?'Week '+wkN(k)+', '+phaseOf(wkN(k)).n.toLowerCase()+'. Do the flow, eat the plan, finish the session — that is a winning day.':'Lighter day. Get the walk in and hit protein — recovery is training too.') : 'Rest day. Plan next week, see people, and get to bed on time.']);
+  return out.sort(function(a,b){ return b[0]-a[0]; }).slice(0,2).map(function(x){ return x[1]; });
+}
+
+/* ═══════════ HOME ═══════════ */
+function paintHome(){
+  var k=cur, T=fuelTargets(), I=intakeOf(k), rp=routinePct(k), sg=sessGet(k), hr=new Date().getHours(), n=dayN(k), nm=myName();
+  var greet= k===TODAY? (hr<5?'Good evening':hr<12?'Good morning':hr<17?'Good afternoon':'Good evening') : (k<TODAY?'Looking back':'Looking ahead');
+  var h='<div class="hero"><div><div class="hello">'+greet+(nm?', '+esc(nm.split(' ')[0]):'')+'</div>'
+   +'<div class="hsub">'+pd(k).toLocaleDateString('en-GB',{weekday:'long'})+(k!==TODAY?' '+pd(k).getDate()+' '+pd(k).toLocaleDateString('en-GB',{month:'short'}):'')+' · Block '+blkOf(k)+' · Week '+bwOf(wkN(k))+' of 12</div></div>'
+   +'<button class="hring" data-go="prog2" aria-label="Routine progress">'+ringSvg(rp.p,62,6,rp.p>=100?'var(--gd)':'var(--ac)','<b>'+rp.p+'%</b>')+'</button></div>';
+  var dib=dayInBlk(k);
+  h+='<div class="phase"><div><small>BLOCK '+blkOf(k)+' · '+phaseOf(wkN(k)).n.toUpperCase()+'</small><b>WEEK '+(n<1?'—':bwOf(wkN(k)))+' <i>/ 12</i></b></div><div class="bar sm"><i style="width:'+(n<1?0:Math.min(100,dib/84*100))+'%"></i></div></div>';
+  var steps=rd0(k,'steps').v||0;
+  h+='<div class="stats">'
+   +'<button class="stat" data-go="fuel"><small>Calories</small><b>'+I.k.toLocaleString('en-US')+'<i> / '+T.kcal.toLocaleString('en-US')+'</i></b><div class="bar sm"><i style="width:'+Math.min(100,I.k/T.kcal*100)+'%;background:var(--tx)"></i></div></button>'
+   +'<button class="stat" data-go="fuel"><small>Protein</small><b>'+I.p+'<i>g / '+T.p+'g</i></b><div class="bar sm"><i style="width:'+Math.min(100,I.p/T.p*100)+'%;background:var(--pr)"></i></div></button>'
+   +'<button class="stat" data-openact="steps"><small>Steps</small><b>'+(+steps).toLocaleString('en-US')+'</b><div class="bar sm"><i style="width:'+Math.min(100,steps/stepTar(k)*100)+'%;background:var(--gd)"></i></div></button></div>';
+  if(k===TODAY || (S.days[k]&&S.days[k].ci)) h+='<div id="h-ci">'+checkinCard(k)+'</div>';
+  /* today's workout */
+  if(sg){
+    var st=rd0(k,'train'), stt=sg.lift?stateFor(k):null, vs=sg.lift? sg.ex.map(function(e){ return exVerdict(e.id,stt).f; }):[], avg=vs.length? Math.round(vs.reduce(function(a,b){ return a+b; },0)/vs.length):null;
+    h+='<div class="card wk"><div class="wk-h"><div><div class="eyb">Today\'s workout</div><h3>'+sg.n.replace(/&amp;/g,'&').replace(/ — .*/,'')+'</h3><div class="wk-m">'+(sg.lift?sg.ex.length+' exercises · ':'')+'~'+minsOf(sg,k)+' min · '+sg.ph.rpe+'</div></div>'
+     +(avg!=null?'<div class="wk-r" style="color:'+(avg>=80?'var(--ac)':avg>=60?'var(--gd)':'var(--wn)')+'"><b>'+avg+'%</b><small>muscles ready</small></div>':'')+'</div>'
+     +'<div class="wk-l">'+sg.ex.slice(0,5).map(function(e){ var n=setCount((st.ex||{})[e.id]), ok=n>=e.s;
+        return '<div class="wk-e'+(ok?' ok':'')+'"><span class="wk-f">'+figFor(e.id,'mini')+'</span><span class="wk-n">'+EX[e.id].n+'</span><span class="wk-s">'+e.s+'×'+String(e.r).replace(' / side','/s')+'</span><span class="wk-c">'+(ok?'✓':(n?n+'/'+e.s:''))+'</span></div>'; }).join('')
+     +(sg.ex.length>5?'<div class="wk-more">+ '+(sg.ex.length-5)+' more</div>':'')+'</div>'
+     +(st.done? '<div class="wk-done">Done'+(st.rpe?' · RPE '+st.rpe:'')+' ✓</div>' : '<button class="btn wide" data-go="train">'+(setCount((st.ex||{})[sg.ex[0].id])?'Continue workout →':'Start workout →')+'</button>')+'</div>';
+  } else {
+    h+='<div class="card wk rest"><div class="eyb">Today</div><h3>Rest day</h3><div class="wk-m">Morning flow, the weekly review, and people. Recovery is part of the programme.</div></div>';
+  }
+  /* meals */
+  var P=plan(), logged=0, rows='';
+  P.on.concat(P.on.indexOf('m4')<0?['m4']:[]).forEach(function(mk){
+    var id=MEALACT[mk], st=rd0(k,id), M=P.meals[mk];
+    if(mk==='m4' && P.on.indexOf('m4')<0 && st.o==null) return;
+    if(st.o!=null) logged++;
+    rows+='<button class="meal-r'+(st.o!=null?' ok':'')+'" data-go="fuel"><span class="mt">'+M.m.t+'</span><span class="mn"><b>'+M.m.n+'</b><small>'+(st.o!=null? M.m.opts[st.o].n : 'Not logged yet')+'</small></span><span class="mk">'+(st.o!=null? r0((st.m||M.o[st.o].tot)[0])+' kcal' : '≈ '+r0(M.t[0]))+'</span></button>';
+  });
+  h+='<div class="card"><div class="cardh"><h2>Meals today</h2><button class="lnk" data-go="fuel">'+(logged<P.on.length?'+ '+(P.on.length-logged)+' to log →':'All logged ✓')+'</button></div>'+rows+'</div>';
+  /* coach */
+  if(k===TODAY) h+='<div class="coach-c"><div class="cav">C</div><div class="cb"><small>Coach · today\'s brief</small>'+coachBrief(k).map(function(t){ return '<p>'+t+'</p>'; }).join('')+'</div></div>';
+  /* score */
+  var sc=resetScore(k);
+  if(sc) h+='<button class="card score" data-go="prog2"><div class="sc-l">'+ringSvg(sc.s,74,7,sc.s>=75?'var(--ac)':sc.s>=50?'var(--wn)':'var(--bd)','<b>'+sc.s+'</b>')+'<div><div class="eyb">Compound score · 7 days</div><div class="sc-w">'+(sc.s>=80?'Locked in':sc.s>=65?'Building':sc.s>=45?'Finding the rhythm':'Restarting')+'</div></div></div><div class="sc-b">'+scoreBars(sc)+'</div></button>';
+  h+='<div class="sech"><h3>Today\'s routine</h3><span>'+rp.done+' of '+rp.tot+' done</span></div>';
+  E('home').innerHTML=h;
+  var ci=E('h-ci'); if(ci) wireCheckin(ci,k,function(){ paintToday(); });
+  E('home').querySelectorAll('[data-openact]').forEach(function(b){ b.onclick=function(){ openAct=b.dataset.openact; paintToday(); var el=E('acts').querySelector('.act.open'); if(el&&el.scrollIntoView) el.scrollIntoView({behavior:'smooth',block:'center'}); }; });
+  figWatch(E('home'));
+}
+var MEALACT={m1:'meal1',m2:'meal2',sn:'snack',m3:'meal3',m4:'meal4'};
+
+/* ═══════════ TOP BAR ═══════════ */
+function paintTopA(){
+  var st=streak(), cap=iqCap(wkN(TODAY)), toQ=diff(add(S.start,70),TODAY);
+  E('tmeta').innerHTML='<div class="tchips"><span class="tc'+(st?' on':'')+'">🔥 '+st+'</span><span class="tc">⚡ '+driveScore(TODAY)+'/7</span><span class="tc">Lv '+(lvl().i+1)+'</span>'+(toQ>0&&toQ<=28?'<span class="tc hot">IQOS quit '+toQ+'d</span>':(wkN(TODAY)>=8?'<span class="tc">IQOS cap '+cap+'</span>':''))+'</div>'
+   +'<button class="av" data-go="more" aria-label="Settings and more">'+initials()+'</button>';
+}
+
+/* ═══════════ TRAIN ═══════════ */
+function trSeg(on){ return '<div class="trseg">'+[['train','Today'],['prog','Programme'],['lib','Exercises']].map(function(x){ return '<button data-go="'+x[0]+'" class="'+(x[0]===on?'on':'')+'">'+x[1]+'</button>'; }).join('')+'</div>'; }
+function paintTrain(){
+  var k=cur, sg=sessGet(k), h=trSeg('train');
+  if(!sg){
+    var nx=null; for(var i=1;i<8;i++){ var s2=sessGet(add(k,i)); if(s2&&s2.lift){ nx=[add(k,i),s2]; break; } }
+    h+='<div class="card trhero rest"><div class="eyb">'+(k===TODAY?'Today':pretty(k))+'</div><h1>REST DAY</h1><div class="wk-m">The morning flow still counts. So does seeing people.</div>'
+      +(nx?'<div class="trnext">Next: <b>'+nx[1].n.replace(/&amp;/g,'&')+'</b> · '+pretty(nx[0])+'</div>':'')+'</div>';
+    E('trainbody').innerHTML=h; wireGo(E('trainbody')); return;
+  }
+  var st=rd0(k,'train'), stt=sg.lift?stateFor(k):null, vs=sg.lift? sg.ex.map(function(e){ return exVerdict(e.id,stt); }):[], avg=vs.length? Math.round(vs.reduce(function(a,v){ return a+v.f; },0)/vs.length):null;
+  var done=sg.ex.filter(function(e){ return setCount((st.ex||{})[e.id])>=e.s; }).length;
+  h+='<div class="card trhero"><div class="trh-t"><div><div class="eyb">'+(k===TODAY?'Today':pretty(k))+' · '+sg.ph.n+'</div><h1>'+sg.n.replace(/&amp;/g,'&').replace(/ — /,'<br><span>').replace(/$/,'</span>')+'</h1>'
+    +'<div class="wk-m">'+sg.ex.length+' exercises · ~'+minsOf(sg,k)+' min · '+sg.ph.rpe+'</div></div>'
+    +(avg!=null? ringSvg(avg,70,7,avg>=80?'var(--ac)':avg>=60?'var(--gd)':'var(--wn)','<b>'+avg+'%</b><small>ready</small>'):'')+'</div>'
+    +'<div class="trprog"><div class="bar sm"><i style="width:'+Math.round(done/sg.ex.length*100)+'%"></i></div><span>'+done+' of '+sg.ex.length+' complete</span></div>'
+    +(sg.lift?'<div class="row" style="margin-top:12px;gap:8px"><button class="btn g sm" data-go="body">Muscle map</button>'+(readiness(k)!=null?'<span class="pill" style="background:#1d2026;color:'+readyCol(readiness(k))+'">Check-in '+readiness(k)+'%</span>':'<button class="btn g sm" data-go="today">Check in first</button>')+'</div>':'')+'</div>';
+  if(sg.lift){
+    var tg=sg.ex.filter(function(e){ return EX[e.id]&&!EX[e.id].nl; }).slice(0,4).map(function(e){ var n=nextTarget(e,k); return n? '<div class="tgt"><span class="wk-f">'+figFor(e.id,'mini')+'</span><span class="tn2"><b>'+EX[e.id].n+'</b><small>'+n.t+'</small></span></div>':''; }).join('');
+    if(tg) h+='<div class="card"><h2>Today\'s targets</h2><div class="note">From your last session. Beat it by a rep or a little load — that is the whole game.</div><div class="tgl">'+tg+'</div></div>';
+  }
+  h+='<div class="act open trhost"><div class="body">'+bodyFor('train')+'</div></div>';
+  var prs=prEvents().slice(0,4);
+  if(prs.length) h+='<div class="card"><h2>Recent PRs 🏆</h2>'+prs.map(function(p){ return '<div class="prr"><span>'+EX[p.x].n+'</span><b>'+p.w+' kg × '+p.r+'</b><small>'+pd(p.k).getDate()+' '+pd(p.k).toLocaleDateString('en-GB',{month:'short'})+'</small></div>'; }).join('')+'</div>';
+  E('trainbody').innerHTML=h;
+  var host=E('trainbody').querySelector('.trhost .body');
+  wireBody('train',host);
+  host.querySelectorAll('[data-s]').forEach(function(inp){ var x=inp.dataset.s.split('|')[0], prev=bestBefore(x,k), L=((st.ex||{})[x]||[]);
+    if(prev>0 && L.some(function(s){ return s&&s.w>0&&s.r>0&&e1rm(s.w,s.r)>prev+0.01; })){ var row=inp.closest('.exrow'); if(row) row.classList.add('isPR'); } });
+  wireGo(E('trainbody')); figWatch(E('trainbody'));
+}
+function stateFor(k){ return k>TODAY? muscleState(pd(k).getTime()+20.5*3600000) : muscleState(); }
+function repaintAct(){ if(curView==='train') paintTrain(); else paintToday(); }
+
+/* ═══════════ FOOD: log today's meals in one tap ═══════════ */
+function mealsLogCard(){
+  var P=plan(), k=cur, I=intakeOf(k), T=P.T;
+  var h='<div class="card"><div class="cardh"><h2>Log '+(k===TODAY?'today':pretty(k))+'</h2><span class="dimtx">'+I.k.toLocaleString('en-US')+' / '+T.kcal.toLocaleString('en-US')+' kcal</span></div>'
+   +'<div class="bar sm" style="margin:8px 0 4px"><i style="width:'+Math.min(100,I.k/T.kcal*100)+'%;background:var(--tx)"></i></div><div class="note">Tap the option you ate. Tap it again to undo.</div>';
+  MEALT.forEach(function(m){
+    var id=MEALACT[m.k], st=rd0(k,id), M=P.meals[m.k];
+    h+='<div class="ml"><div class="ml-h"><b>'+m.n+'</b><small>'+m.t+(M.inPlan?'':' · extra')+'</small></div><div class="ml-o">'
+      +M.o.map(function(r,i){ return '<button data-ml="'+id+'|'+i+'" class="'+(st.o===i?'on':'')+'"><b>'+(i+1)+'</b><span>'+m.opts[i].n.replace(/ — .*/,'')+'</span><i>'+r0(r.tot[0])+'</i></button>'; }).join('')+'</div></div>';
+  });
+  return h+'</div>';
+}
+function wireMealsLog(root){
+  root.querySelectorAll('[data-ml]').forEach(function(b){ b.onclick=function(){
+    var q=b.dataset.ml.split('|'), id=q[0], o=+q[1], a=ACTS[id], st=A(cur,id);
+    if(st.o===o){ st.o=null; delete st.m; if(st.done){ st.done=false; S.xp=Math.max(0,S.xp-a.xp); } }
+    else { st.o=o; st.m=plan().meals[a.meal].o[o].tot.map(r0); if(!st.done){ st.done=true; xpAdd(a.xp); toast('+'+a.xp+' XP · '+a.n.replace(/&amp;/g,'&'),'xp'); } fuelCheck(cur); }
+    wr(); var y=window.scrollY; paintFuel(); window.scrollTo(0,y);
+  }; });
+}
+
+/* ═══════════ PROGRESS: score, weekly report, PRs ═══════════ */
+function weeklyReport(){
+  var end=TODAY, sess=0,plan_=0,sets=0,vol=0,sl=[],ph=0,nd=0,kc=[],best=null,miss={};
+  for(var i=0;i<7;i++){
+    var d=add(end,-i); if(d<S.start) continue; nd++;
+    var sg=sessGet(d), t=rd0(d,'train');
+    if(sg){ plan_++; if(t.done) sess++; }
+    Object.keys(t.ex||{}).forEach(function(x){ (t.ex[x]||[]).forEach(function(s){ if(s&&(s.w!=null||s.r!=null||s.d)){ sets++; if(s.w>0&&s.r>0) vol+=s.w*s.r; } }); });
+    var v=rd0(d,'sleep').v; if(v!=null&&v!=='') sl.push(+v);
+    var I=intakeOf(d); if(I.p>=protHit()) ph++; if(I.full) kc.push(I.k);
+    var rp=routinePct(d); if(!best||rp.p>best.p) best={d:d,p:rp.p};
+    actsFor(d).forEach(function(id){ if(ACTS[id].opt) return; var s=rd0(d,id); if(!s.done) miss[id]=(miss[id]||0)+1; });
+  }
+  var a1=avg7(end), a0=avg7(add(end,-7)), prs=prEvents().filter(function(p){ return diff(end,p.k)>=0&&diff(end,p.k)<7; });
+  var worst=Object.keys(miss).sort(function(a,b){ return miss[b]-miss[a]; })[0];
+  function av(a){ return a.length? (a.reduce(function(x,y){ return x+y; },0)/a.length) : null; }
+  var h='<div class="card"><div class="eyb">Weekly report · last 7 days</div><h2 style="margin-top:4px">Your week in numbers</h2><div class="wr-g">'
+   +[['Sessions',sess+'/'+plan_],['Sets logged',sets],['Volume',vol? Math.round(vol).toLocaleString('en-US')+' kg':'—'],['PRs',prs.length],['Avg sleep',av(sl)!=null?av(sl).toFixed(1)+' h':'—'],['Protein days',ph+'/'+nd],['Avg calories',av(kc)!=null?Math.round(av(kc)).toLocaleString('en-US'):'—'],['Weight',a1&&a0?((a1.v-a0.v>=0?'+':'')+(a1.v-a0.v).toFixed(1)+' kg'):(a1?a1.v.toFixed(1)+' kg':'—')]]
+     .map(function(x){ return '<div><small>'+x[0]+'</small><b>'+x[1]+'</b></div>'; }).join('')+'</div>'
+   +(best&&best.p? '<div class="wr-l"><span class="pill p-g">Best day</span> '+pretty(best.d)+' — '+best.p+'% of the routine.</div>':'')
+   +(worst? '<div class="wr-l"><span class="pill p-w">Focus next week</span> '+ACTS[worst].n.replace(/&amp;/g,'&')+' — missed '+miss[worst]+' time'+(miss[worst]===1?'':'s')+'. Make it easier, or move it to a time that actually exists.</div>':'')
+   +'</div>';
+  return h;
+}
+function paintPgTop(){
+  var sc=resetScore(TODAY), h='';
+  if(sc) h+='<div class="card score big"><div class="sc-l">'+ringSvg(sc.s,96,9,sc.s>=75?'var(--ac)':sc.s>=50?'var(--wn)':'var(--bd)','<b>'+sc.s+'</b><small>/ 100</small>')
+    +'<div><div class="eyb">Compound score</div><div class="sc-w">'+(sc.s>=80?'Locked in':sc.s>=65?'Building':sc.s>=45?'Finding the rhythm':'Restarting')+'</div><div class="note" style="margin-top:4px">Consistency, training, nutrition and recovery over the last '+sc.days+' day'+(sc.days===1?'':'s')+'.</div></div></div><div class="sc-b">'+scoreBars(sc)+'</div>'
+    +'<div class="src">Consistency is the share of your routine done. Training is sessions done against sessions planned. Nutrition is protein hit, plus calories within 12% on fully logged days. Recovery is sleep against 7.5 h, blended with your check-in.</div></div>';
+  h+=weeklyReport();
+  var prs=prEvents();
+  h+='<div class="card"><h2>Personal records 🏆</h2>'+(prs.length? prs.slice(0,8).map(function(p){ return '<div class="prr"><span>'+EX[p.x].n+'</span><b>'+p.w+' kg × '+p.r+'</b><small>est. 1RM '+Math.round(p.e)+' kg · '+pd(p.k).getDate()+' '+pd(p.k).toLocaleDateString('en-GB',{month:'short'})+'</small></div>'; }).join('')
+    : '<div class="note">Logged automatically. Your first session sets the baseline; the second one starts producing PRs.</div>')+'</div>';
+  E('pg-top').innerHTML=h; wireGo(E('pg-top'));
+}
+function readyCardBody(){
+  var r=readiness(TODAY);
+  return r!=null? '<div class="ci-row">'+ringSvg(r,56,6,readyCol(r),'<b>'+r+'</b>')+'<div class="ci-t"><small>TODAY\'S CHECK-IN</small><b>'+readyWord(r)+'</b><span>Your check-in and the muscle map are separate signals. Both have to agree before you push hard.</span></div></div>'
+    : '<div class="ci-row"><div class="ci-t"><small>TODAY\'S CHECK-IN</small><b>Not done yet</b><span>Ten seconds on Home: sleep, energy, soreness, mood.</span></div><button class="btn sm" data-go="today">Check in</button></div>';
+}
+function wireGo(){}
+document.addEventListener('click',function(ev){ var b=ev.target&&ev.target.closest? ev.target.closest('[data-go]') : null; if(b){ ev.preventDefault(); go(b.dataset.go); } });
+
 /* ═══════════════════ BODY MAP ═══════════════════ */
 var selM=null;
 function bodySvg(side,st){
@@ -2408,6 +2825,7 @@ function bodySvg(side,st){
 }
 function anyLogged(){ return sessList().length>0; }
 function paintBody(){
+  if(E('bd-ready')) E('bd-ready').innerHTML=readyCardBody();
   var st=muscleState(), sess=sessGet(TODAY), jc=jointState();
   E('bd-maps').innerHTML='<div class="bodywrap">'+bodySvg('f',st)+bodySvg('b',st)+'</div>'
     +'<div class="heatkey"><span>Worked</span><i></i><span>Fresh</span></div>';
@@ -2541,7 +2959,7 @@ function paintMore(){
 }
 var MOREHTML={
 why:function(){ return '<div class="card"><h2>How this works</h2>'
- +'<div class="note">Twelve weeks, one plan. Training comes in phases: a two-week re-entry of three full-body sessions, then four days a week of upper and lower work, with a deload and re-test at weeks 7 and 12. Around it sits one daily routine — sleep, the morning flow, food, daylight, reading, people.</div>'
+ +'<div class="note">Small things done daily, compounding for years. Training runs in rolling 12-week blocks: the first opens with a two-week re-entry of three full-body sessions, then four days a week of upper and lower work, with a deload and re-test at weeks 7 and 12. When a block ends the next one starts — no countdown, no finish line. Around it sits one daily routine — sleep, the morning flow, food, daylight, reading, people.</div>'
  +'<h5 class="h5">The six rules</h5>'
  +'<ul style="padding-left:18px;font-size:13.5px;color:var(--dim)">'
  +'<li style="margin-bottom:7px"><b style="color:var(--tx)">Body first.</b> Sleep, training and food are the foundation the rest stands on. When a day gets squeezed, those three stay and everything else gives.</li>'
@@ -2632,12 +3050,12 @@ plan:function(){
    +CHK.map(function(c){ return '<label class="ck"><input type="checkbox" data-clr="'+c[0]+'"'+(clr(c[0])?' checked':'')+'><span><b>'+c[1]+'</b><small>'+c[2]+'</small></span></label>'; }).join('')+'</div></div>';
   h+='<div class="card"><h2>Clearances <span class="pill p-w">unlock exercises</span></h2><div class="note">Some movements stay swapped for a safer stand-in until the matching check is ticked. Tick one only when a clinician has actually said so, or the symptom has genuinely settled.</div><div style="margin-top:6px">'
    +CLR.map(function(c){ return '<label class="ck"><input type="checkbox" data-clr="'+c[0]+'"'+(clr(c[0])?' checked':'')+'><span><b>'+c[1]+'</b><small>'+c[2]+'</small></span></label>'; }).join('')+'</div></div>';
-  h+='<div class="card"><h2>The twelve weeks</h2><table style="margin-top:8px"><tbody>'
+  h+='<div class="card"><h2>Each 12-week block</h2><table style="margin-top:8px"><tbody>'
    +'<tr><td style="width:92px;color:var(--dim)">Weeks 1–2</td><td><b>Re-entry.</b> Three full-body sessions, 45 minutes, RPE 6–7. Walk on the days between.</td></tr>'
    +'<tr><td style="color:var(--dim)">Weeks 3–6</td><td><b>Foundation.</b> Four days, upper and lower. Calves and tibialis every session. RPE 7–8.</td></tr>'
    +'<tr><td style="color:var(--dim)">Week 7</td><td><b>Deload + re-test.</b> Half the sets.</td></tr>'
    +'<tr><td style="color:var(--dim)">Weeks 8–11</td><td><b>Build.</b> A fourth set on the main lifts, heavier single-leg work. RPE 7–9.</td></tr>'
-   +'<tr><td style="color:var(--dim)">Week 12</td><td><b>Deload + final re-test</b> against day 1.</td></tr></tbody></table>'
+   +'<tr><td style="color:var(--dim)">Week 12</td><td><b>Deload + block re-test</b> against the start of the block.</td></tr></tbody></table><div class="note" style="margin-top:8px">Weeks 1–2 are re-entry only in your first block. Every later block starts straight at foundation.</div>'
    +'<div class="why" style="margin-top:12px"><b>Shoulder ladder.</b> Level 1 is control with the arm by the side. Level 2 adds mid-range strength. Move up only when every Level 1 drill is pain 2/10 or less and confidence is 7/10 or more for two weeks running — and drop back a level after any moment of apprehension.</div></div>';
   return h;
 },
@@ -2736,13 +3154,14 @@ data:function(){ return '<div class="card"><h2>Your data</h2>'
  +'<div class="info" style="margin-top:13px"><b>Export every Saturday</b>, right after the review. Three seconds, and there is no undo on lost storage.</div>'
  +(canStore?'':'<div class="safe" style="margin-top:11px"><b>This browser is blocking local storage.</b> Data will only last until you close the page. Export before you leave.</div>')
  +'<div id="d-st" style="margin-top:11px;color:var(--dim);font-size:12.5px"></div></div>'
+ +'<div class="card"><h2>Your name</h2><div class="note">Used for the greeting on Home. Stays on this device.</div><div class="row" style="margin-top:11px"><input id="d-name" value="'+esc(S.name||'')+'" placeholder="First name" style="max-width:220px" onchange="S.name=this.value.trim();wr();paintTop();toast(\'Saved\')"></div></div>'
  +'<div class="card"><h2>Start date</h2><div class="note">Day 1. Phases, the IQOS step-down and review weeks all count from here.</div>'
  +'<div class="row" style="margin-top:11px"><input type="date" id="d-start" value="'+S.start+'" style="max-width:180px"><button class="btn sm" id="d-save">Save</button></div>'
  +'<div style="margin-top:13px;font-size:13px;color:var(--dim);line-height:1.8">'
  +'<b style="color:var(--tx)">Day 1:</b> '+pretty(S.start)+'<br>'
  +'<b style="color:var(--tx)">IQOS step-down begins:</b> '+pretty(add(S.start,49))+'<br>'
  +'<b style="color:var(--tx)">IQOS quit date:</b> '+pretty(add(S.start,70))+'<br>'
- +'<b style="color:var(--tx)">Day 84:</b> '+pretty(add(S.start,83))+'</div></div>'
+ +'<b style="color:var(--tx)">This block ends:</b> '+pretty(add(blkStart(TODAY),83))+'</div></div>'
  +'<div class="card"><h2>Add this to your home screen</h2><div class="note">On your phone: open this file in your browser, then Share → Add to Home Screen. It opens like an app and works offline, because everything is in this one file.</div></div>'
  +'<div class="card"><h2>Which version am I running?</h2>'
  +'<div class="note">Useful after replacing the file — if this still shows the old build, the browser is serving a cached copy.</div>'
@@ -2781,7 +3200,7 @@ function wireSync(){
   E('s-file').onclick=function(){
     var b=new Blob([payload()],{type:'application/json'});
     var a=document.createElement('a'); a.href=URL.createObjectURL(b);
-    a.download='reset84-sync-'+TODAY+'.json'; a.click(); toast('Saved');
+    a.download='compound-sync-'+TODAY+'.json'; a.click(); toast('Saved');
   };
   E('s-merge').onclick=function(){
     var v=(E('s-in').value||'').trim();
@@ -2811,8 +3230,8 @@ function wireData(){
   E('d-exp').onclick=function(){
     var b=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
     var a=document.createElement('a'); a.href=URL.createObjectURL(b);
-    a.download='reset84-backup-'+TODAY+'.json'; a.click();
-    E('d-st').textContent='Exported reset84-backup-'+TODAY+'.json';
+    a.download='compound-backup-'+TODAY+'.json'; a.click();
+    E('d-st').textContent='Exported compound-backup-'+TODAY+'.json';
   };
   E('d-imp').onchange=function(e){
     var f=e.target.files[0]; if(!f) return;
@@ -2845,21 +3264,29 @@ paintToday(); chkBadges();
 (function(){
   Object.keys(S.days).forEach(function(k){ if(S.days[k].a&&S.days[k].a.weed) delete S.days[k].a.weed; });
   S.badges=(S.badges||[]).filter(function(b){ return b!=='cl7'&&b!=='cl28'; }); wr();
-  if(FRESH_INSTALL){ S.v=3; wr(); }
+  if(FRESH_INSTALL){ S.v=4; wr(); }
   else if((S.v||2)<3){
     var n=dayN(TODAY), sun=add(TODAY,-pd(TODAY).getDay());
     modal('<div class="pl-step">Build 6</div><div class="pl-name">The plan has been rebuilt</div>'
      +'<div class="pl-how">One programme now: phased training with moving illustrations, a new daily routine, a lean-gain meal plan and a rebuilt muscle readiness map. Everything you logged is still here.<br><br>You are on day '+n+' of the old count. Where should day 1 be?</div>'
      +'<button class="btn wide" id="mg-new" style="margin-bottom:8px">Start fresh — week 1 from '+pretty(sun)+'</button>'
      +'<button class="btn g wide" id="mg-keep">Keep my current day count</button>', function(m){
-       m.querySelector('#mg-new').onclick=function(){ S.start=sun; S.v=3; wr(); closeModal(); cur=TODAY; paintToday(); toast('Day 1 is '+pretty(sun)); };
-       m.querySelector('#mg-keep').onclick=function(){ S.v=3; wr(); closeModal(); };
+       m.querySelector('#mg-new').onclick=function(){ S.start=sun; S.v=4; wr(); closeModal(); cur=TODAY; paintToday(); toast('Day 1 is '+pretty(sun)); };
+       m.querySelector('#mg-keep').onclick=function(){ S.v=4; wr(); closeModal(); };
+     });
+  }
+  else if((S.v||3)<4){
+    modal('<div class="pl-step">Build 8 · new look, new name</div><div class="pl-name">Reset 84 is now Compound</div>'
+     +'<div class="pl-how">Not a countdown any more — a coach for as long as you train. The plan now runs in rolling 12-week blocks: when one ends, the next starts with a re-test and everything carries over.<br><br>Home is now a dashboard: a ten-second check-in, today\'s workout, your meals, a coach note written from your own logs, and a Compound score. Training lives under Train, with automatic personal records. Everything you logged is still here.<br><br>What should it call you?</div>'
+     +'<input id="nm-in" placeholder="First name" style="margin-bottom:10px">'
+     +'<button class="btn wide" id="nm-go">Let\'s go</button>', function(m){
+       m.querySelector('#nm-go').onclick=function(){ var v=m.querySelector('#nm-in').value.trim(); if(v) S.name=v; S.v=4; wr(); closeModal(); paintToday(); };
      });
   }
   figWatch(document);
 })();
 
 </script>
-<footer>RESET 84 · nothing here replaces a physiotherapist, a doctor or a therapist — it is a plan, not a diagnosis</footer>
+<footer>COMPOUND · nothing here replaces a physiotherapist, a doctor or a therapist — it is a plan, not a diagnosis</footer>
 </body>
 </html>
